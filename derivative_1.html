@@ -1,0 +1,1883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Παράγωγος Ι</title>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+            }
+        };
+    </script>
+
+    <style>  
+    /* for differents files */
+        html {
+            ---theme-color : #105b99;
+        }
+    </style>
+
+
+    <link rel="stylesheet" type="text/css" href="exercisesstyle.css">
+
+</head>
+<body>
+
+
+<div style="display: none;">
+    $\DeclareMathOperator{\gsin}{ημ}$
+    $\DeclareMathOperator{\gcos}{συν}$
+    $\DeclareMathOperator{\gtan}{εφ}$
+    $\DeclareMathOperator{\gctan}{σφ}$
+</div>
+
+<!-- <a id="home-button" href="#">&#129093;</a> -->
+<a id="home-button" href="#">&#11145;</a>
+
+<header>
+
+    <nav>
+        <ul>
+            <li><a href="derivative_1.html">Παραγωγος I</a></li>
+            <li><a href="derivative_2.html">Παραγωγος ΙΙ</a></li>
+        </ul>
+    </nav>
+
+
+    <div>
+        Δημοσθένης Σταλίδης,
+        Γυμνάσιο ΛΤ Άρνισσας,
+        2023
+    </div>
+</header>
+
+    <h1>Παραγωγος I</h1>
+
+    <div id="contents-container">
+        <ul id="contents">
+            <li><a href="#derivative-concept">Η έννοια της παραγώγου</a></li>
+            <li><a href="#derivative-function">Παράγωγος συνάρτηση</a>
+                <ul>
+                    <li>
+                        <a href="#derivative-definition-rules">Ορισμός και κανόνες παραγώγισης</a>
+                    </li>
+                    <li>
+                        <a href="#derivative-of-composition">Παράγωγος σύνθεσης συναρτήσεων</a>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#tangent">Εφαπτομένη</a></li>
+            <li><a href="#rate-of-change">Ρυθμός μεταβολής</a></li>
+            <li><a href="#rolle-theorem">Θεώρημα του Rolle</a>
+                <ul>
+                    <li>
+                        <a href="#rolle-general">Γενικά</a>
+                    </li>
+                    <li><a href="#rolle-equations">Εξισώσεις</a>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#mean-value-theorem">Θεώρημα Μέσης Τιμής</a>
+                <ul>
+                    <li>
+                        <a href="#mean-value-general">Γενικά</a>
+                    </li>
+                    <li><a href="#mean-value-inequalities">Ανισότητες</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <main>
+
+    <section id="derivative-concept">
+
+    <h2>Η έννοια της παραγώγου</h2>
+
+<div class="exercise">
+Να υπολογίσετε την παράγωγο της συνάρτησης $f$ στο $x_0$, στις παρακάτω περιπτώσεις:
+<ol class="array-list">
+<li>$f(x)=x^2 -x$,  $x_0=1$</li>
+<li>$f(x)=x^2 -3x+5$,  $x_0=2$</li>
+<li>$f(x)=-\frac{1}{x}$,  $x_0=-2$</li>
+<li>$f(x)=\sqrt{x-1}$,  $x_0=1$</li>
+<li>$f(x)=\sqrt{x+x^2}$,  $x_0=1$</li>
+<li>$f(x)=\gsin^2 x+1$,  $x_0=0$</li>
+<li>$f(x)=xe^x$,  $x_0=0$</li>
+<li>$f(x)=x+\gsin x$,  $x_0=\frac{\pi}{4}$</li>
+<li>$f(x)=x\ln x$,  $x_0=e^2$</li>
+<li>$f(x)=1-\ln^2 x$,  $x_0=0$</li>
+</ol>
+</div>
+
+<div class="exercise">
+Να υπολογίσετε (αν υπάρχει) την παράγωγο της συνάρτησης $f$ στο $x_0$, στις παρακάτω περιπτώσεις:
+<ol class="array-list">
+<li>$f(x)=|x-2|$, $x_0=2$</li>
+<li>$f(x)=|x^2-x|$, $x_0=0$</li>
+<li>$f(x)=|x^3 -x^2|$,  $x_0=0$</li>
+<li>$f(x)=x^2+|x-3|$, $x_0=3$</li>
+<li>$f(x)=|x|\sqrt{x}$, $x_0=0$</li>
+<li>$f(x)=|\gsin x|$, $x_0=0$</li>
+<li>$f(x)=x+\sqrt{3x+9}$, $x_0=-3$</li>
+<li>$f(x)=\begin{cases}-x^2+3x+2, &x\lt 1\\ 2\sqrt{x^2+3}, &x\geq 1 \end{cases}~$,  $x_0=1$</li>
+<li>$f(x)=\begin{cases}3x^2-x, &x\leq 2\\ 2\sqrt{x^2-4}, &x\gt 2 \end{cases}~$,		$x_0=2$</li>
+<li>$f(x)=\begin{cases}\sqrt{2-x}, &x\leq 2\\ \sqrt{x^2-4}, &x\gt 2 \end{cases}~$,	$x_0=2$</li>
+<li>$f(x)=\begin{cases}x^2\gsin\dfrac{1}{x}, &x\neq 0\\ 0, &x=0 \end{cases}~$,		$x_0=0$</li>
+<li>$f(x)=\begin{cases}\dfrac{\gsin^3 (x-1)}{x-1}, &x\neq 1\\ 0, &x=1 \end{cases}~$,				$x_0=2$</li>
+<li>$f(x)=\begin{cases}x^2+3, &x\lt \alpha\\ 2\alpha x-\alpha^2 +3, &x\geq \alpha \end{cases}~$,	$x_0=\alpha\in\mathbb{R}$</li>
+<li>$f(x)=\begin{cases}x^3+2, &x\leq\alpha\\ 3\alpha^2 x-2\alpha^3 +2, &x\gt \alpha \end{cases}~$,  $x_0=\alpha\in\mathbb{R}$</li>
+</ol>
+</div>
+
+<div class="exercise">
+Να εξετάσετε αν η συνάρτηση $f$ είναι δύο φορές παραγωγίσιμη στο $x_0$, στις παρακάτω περιπτώσεις:
+<ol class="vertical-list">
+<li>$f(x)=\begin{cases} x^2-x^3,  & x\lt 0\\ \gsin^2 x, & x\geq 0 \end{cases}~$,                $x_0=0$</li>
+<li>$f(x)=\begin{cases} x^3+2x^2-12x+3,  & x\lt 0\\ 3x^2-12x+3,  & x\geq 0  \end{cases}~$,      $x_0=0$</li>
+<li>$f(x)=\begin{cases} 3x^2-11,  & x\lt 2\\ 4x^3-12x^2+12x-7, & x\geq 2  \end{cases}~$,        $x_0=2$</li>
+</ol>
+</div>
+
+<div class="exercise">
+Δίνεται συνάρτηση $f$ στο $\mathbb{R}$ με $f^{\prime}(0)=f(0)=0$. Να αποδείξετε ότι η συνάρτηση
+\[g(x)=\begin{cases} f(x)\gsin(\ln x^2),&x\neq 0\\ 0, &x=0\end{cases}\]
+είναι παραγωγίσιμη στο 0.
+</div>
+
+<div class="exercise">
+Έστω $f,g:[0,+\infty)\to\mathbb{R}$ παραγωγίσιμες συναρτήσεις στο $1$ με $f(1)=g(1)$. Θεωρούμε τη συνάρτηση
+\[h(x)=\begin{cases}g\left(\sqrt[3]{x}\right),&0\lt x\lt 1 \\ f\left(\sqrt{x}\right),&x\geq 1\end{cases}~.\]
+Αποδείξτε ότι η $h$ παραγωγίζεται στο $1$ μόνο όταν $3f^{\prime}(1)=2g^{\prime}(1)$. 
+</div>
+
+<div class="exercise">
+Αν για συνάρτηση $f$ ισχύει $f(h-4)=5h^3-2h+1$, για κάθε  $h\in\mathbb{R}$, αποδείξτε ότι $f(-4)= 1$ και  $f^{\prime}(-4)=-2$.
+</div>
+
+<div class="exercise">
+Έστω $f$ παραγωγίσιμη στο 2 συνάρτηση και
+\[g(x)=\begin{cases}f(3x-10),&x\leq 4 \\ f(2x-6),&x\gt 4\end{cases}~.\]
+Αποδείξτε  ότι η $g$ είναι παραγωγίσιμη στο $4$ αν και μόνο αν $f^{\prime}(2)=0$.
+</div>
+
+<div class="exercise">
+Για τη συνάρτηση $f$ είναι γνωστό ότι $f (3)=4$ και $f^{\prime}(3)=2$. Προσδιορίστε τα παρακάτω όρια:
+<ol class="array-list">
+<li>$\lim\limits_{x\to 3}\dfrac{f^2(x)-16}{x^2-9}$</li>
+<li>$\lim\limits_{x\to 3}\dfrac{f(x)-4}{\sqrt{x}-\sqrt{3}}$</li>
+<li>$\lim\limits_{h\to 0}\dfrac{h^2+5h}{f(3+h)-4}$</li>
+<li>$\lim\limits_{\alpha\to 1}\dfrac{f(3\alpha)-4}{\alpha-1}$</li>
+</ol>
+</div>
+
+<div class="exercise">
+Για τη συνάρτηση $f$ είναι γνωστό ότι $f(1)=2$ και $f^{\prime}(1)=-3$. Υπολογίστε τα παρακάτω όρια:
+<ol class="array-list">
+<li>$\lim\limits_{x\to 1}\dfrac{f^3(x)-4f(x)}{x^3-1}$</li>
+<li>$\lim\limits_{h\to 0}\dfrac{f^2(1+h)-4}{\sqrt{1+h}-1}$</li>
+<li>$\lim\limits_{h\to 0}\dfrac{f(1+h)-f(1-h)}{h}$</li>
+<li>$\lim\limits_{x\to 1}\dfrac{\gsin(\frac{\pi}{2}x)-1}{f(x)-2}$</li>
+</ol>
+</div>
+
+<div class="exercise">
+Έστω $f$ παραγωγίσιμη συνάρτηση στο $x_0$. Να υπολογίσετε συναρτήσει των $x_0$, $f(x_0)$ και $f^{\prime}(x_0)$ τα όρια:
+<ol class="array-list">
+<li>$\lim\limits_{x\to x_0}\dfrac{f(x)-f(x_0)}{x^2-x_{0}^{2}}$</li>
+<li>$\lim\limits_{x\to x_0}\dfrac{\sqrt{f(x)}-\sqrt{f(x_0)}}{x^2-x_{0}^{2}}$</li>
+<li>$\lim\limits_{x\to x_0}\dfrac{f^2(x)-f^2(x_0)}{\sqrt{x}-\sqrt{x_{0}}}$</li>
+<li>$\lim\limits_{x\to x_0}\dfrac{f^3(x)-f^3(x_0)}{\sqrt{x}-\sqrt{x_{0}}}$</li>
+<li>$\lim\limits_{x\to x_0}\dfrac{f^3(x)-f^3(x_0)}{(x-x_{0})^2 f(x)}$</li>
+<li>$\lim\limits_{x\to x_0}\dfrac{f(x)-f(x_0)}{e^x-e^{x_{0}}}$</li>
+<li>$\lim\limits_{h\to 0}\dfrac{f(x_0+2h)-f(x_0-h)}{h}$</li>
+<li>$\lim\limits_{h\to 0}\dfrac{f^2(4h+x_0 )-f^2(x_0 -h)}{h}$</li>
+</ol>
+</div>
+
+<div class="exercise">
+Θεωρούμε συνάρτηση $f$.
+<ol class="vertical-list">
+<li>Αν η $f$ είναι συνεχής στο $1$ και $\lim\limits_{x\to 1}\dfrac{f(x)}{x-1}=5$, αποδείξτε ότι $f^{\prime}(1)=5$.</li>
+<li>Αν η $f$ είναι συνεχής στο $1$ και $\lim\limits_{x\to 1}\dfrac{f(x)+x^3}{x-1}=3$, προσδιορίστε τις τιμές $f(1)$ και $f^\prime(1)$.</li>
+<li>Αν η συνάρτηση $f$ είναι συνεχής στο $2$ και $\lim\limits_{x\to 0}\dfrac{f(2+3x)}{x}=5$, προσδιορίστε τις τιμές $f(2)$ και $f^\prime(2)$.</li>
+</ol>
+</div>
+
+<div class="exercise">
+Δίνεται συνάρτηση $f:\mathbb{R}\to\mathbb{R}$, συνεχής στο $x_0=0$, για την οποία ισχύει $\lim\limits_{x\to 0}\dfrac{f(x)-5}{x}=2$. Αποδείξτε ότι η $f$ είναι παραγωγίσιμη στο $x_0=0$ με $f^\prime(0)=2$.
+</div>
+
+<div class="exercise">
+Δίνεται συνεχής συνάρτηση $f:\mathbb{R}\to\mathbb{R}$, για την οποία ισχύει
+\[\lim\limits_{x\to 1}\dfrac{f(x)-\sqrt{x+3}}{x^2-1}=\dfrac{7}{8}.\tag{$\ast$}\]
+Να προσδιοριστούν οι τιμές $f(1)$ και $f^{\prime}(1)$.
+</div>
+
+<div class="exercise">
+Θεωρούµε συνάρτηση $f: \mathbb{R}\to\mathbb{R}$, συνεχή στο $0$, τέτοια ώστε $\lim\limits_{x\to 0}\dfrac{f(x)}{x}=3$.
+<ol class="vertical-list">
+<li>Αποδείξτε ότι $f(0)=0$ και $f^{\prime}(0)=3$.</li>
+<li>Υπολογίστε τα όρια $\lim\limits_{x\to 0}\dfrac{3x^2+f^2(x)}{4x^2+2\gsin^2 x}$ και $\lim\limits_{x\to -5}\dfrac{f(x+5)}{x^2-25}$.</li>
+</ol>
+</div>
+
+<div class="exercise">
+Θεωρούµε συνάρτηση $f: \mathbb{R}\to\mathbb{R}$, συνεχή στο $1$, με $\lim\limits_{x\to 1}\dfrac{f(x)-x^2+4}{x^2-1}=2$.
+<ol class="vertical-list">
+<li>Αποδείξτε ότι $f(1)=-3$ και $f^{\prime}(1)=6$.</li>
+<li>Υπολογίστε τα όρια $\lim\limits_{x\to 5}\dfrac{f(11-2x)+3}{x-5}$ και $\lim\limits_{x\to 0}\dfrac{f(1-2h)+3}{h}$.</li>
+</ol>
+</div>
+
+<div class="exercise">
+Δίνεται συνάρτηση $f:\mathbb{R}\to\mathbb{R}$, της οποίας η γραφική παράσταση διέρχεται από την αρχή των αξόνων και ισχύει ότι $f^{\prime}(0)=2$. Υπολογίστε το όριο $\lim\limits_{x\to 0}\dfrac{f(x)-\gsin x}{\sqrt{x+4}-2}$.
+</div>
+
+<div class="exercise">
+Έστω συνεχής στο $x_0=2$ συνάρτηση $f$ με $\lim\limits_{h\to 0}\dfrac{f(2-h)}{h}=3$.
+<ol class="vertical-list">
+<li>Αποδείξτε ότι $f(2)=0$ και $f^\prime(2)=-3$.</li>
+<li>Υπολογίστε τα όρια $\lim\limits_{x\to 0}\dfrac{f(2+2x)-f(2-x)}{x}$ και $\lim\limits_{x\to 0}\dfrac{f^2(4x+2)-f^2(2-x)}{x}$.</li>
+</ol>
+</div>
+
+<div class="exercise">
+Έστω συνεχής στο 1 συνάρτηση $f$ με $\lim\limits_{x\to 1}\dfrac{f(x)}{\sqrt{x}-1}=l\in\mathbb{R}$. Θεωρούμε τη συνάρτηση $g(x)=xf(x)$. Αποδείξτε ότι $f^{\prime}(1)=g^{\prime}(1)=\dfrac{l}{2}$
+</div>
+
+<div class="exercise">
+Δίνεται δύο φορές παραγωγίσιμη στο $\mathbb{R}$ συνάρτηση $f$ με $f(0)=f^{\prime}(0)=0$ και $f^{\prime\prime}(0)=1969$. Να υπολογίσετε το όριο 
+$$l=\lim\limits_{x\to 0}\dfrac{f(x)}{e^x \gsin x-x}.$$
+</div>
+
+<div class="exercise">
+Δίνεται η συνάρτηση \[f(x)=\begin{cases}4x^2-\alpha^2 x, &x\leq 1 \\7x-\alpha-3, &x\gt 1 \end{cases}\ ,\]
+όπου $\alpha\in\mathbb{R}$. Να προσδιορίσετε τις τιμές του $\alpha$ για τις οποίες η $f$ είναι:
+<ol class="array-list">
+<li>συνεχής στο 1,</li>
+<li>παραγωγίσιμη στο 1.</li>
+</ol>
+</div>
+
+<div class="exercise">
+Να προσδιορίσετε τις τιμές των $\alpha,\beta\in\mathbb{R}$ για τις οποίες η συνάρτηση
+\[f(x)=\begin{cases}
+x^2+\alpha x+\beta, & x\gt 1\\ 2x^2-\alpha x+3\alpha+1,  & x\leq 1 \end{cases}\]
+είναι παραγωγίσιμη στο 1.
+</div>
+
+<div class="exercise">
+Να προσδιορίσετε τις τιμές των  $\alpha,\beta\in\mathbb{R}$ για τις οποίες η συνάρτηση $f$  είναι παραγωγίσιμη στο $x_0$, όταν:
+<ol class="array-list">
+<li>$f(x)=\begin{cases} 2x^2+3& x\lt 0 \\ 3\beta+\alpha x& x\geq 0 \end{cases}~$,			&$x_0=0$</li>
+<li>$f(x)=\begin{cases}x^2+\alpha x, &x\lt 2 \\ 3x-\beta, &x\geq 2 \end{cases}~$,			&$x_0=2$</li>
+<li>$f(x)=\begin{cases}3x^2+2, &x\lt 1 \\ \alpha x-\beta &x\geq 1 \end{cases}~$,			&$x_0=1$</li>
+<li>$f(x)=\begin{cases}\alpha\sqrt{x}, &0\leq x\lt 1 \\ x-\beta &x\geq 1 \end{cases}~$,			&$x_0=1$</li>
+</ol>
+</div>
+
+<div class="exercise">
+Έστω η συνάρτηση
+\[f(x)=\begin{cases} \dfrac{x^2-\alpha x+2}{x-3},&x\leq 1\\[2ex] \dfrac{\sqrt{3x^2+1}-2}{x-1}, &x\gt 1\end{cases}\ ,\ \ \alpha\in\mathbb{R}.\]
+<ol class="vertical-list">
+<li>Να προσδιορίσετε το $\alpha$ ώστε η $f$ να είναι συνεχής.</li>
+<li>Για την  παραπάνω τιμή του $\alpha$, να εξετάσετε αν η $f$ είναι παραγωγίσιμη στο $x_0=1$.</li>
+</ol>
+</div>
+
+<div class="exercise">
+Προσδιορίστε τους $\alpha,\beta\in\mathbb{R}$ ώστε η συνάρτηση
+\[f(x)=\begin{cases}\alpha x^3-\beta x, &x\lt 0 \\ x^2 , &x\geq 0 \end{cases}\]
+να είναι παραγωγίσιμη στο $0$.
+</div>
+
+<div class="exercise">
+Αν η συνάρτηση $f$ είναι συνεχής στο $x_0= 0$ (ορισμένη σε κατάλληλο διάστημα), αποδείξτε ότι η συνάρτηση $g(x)= f(x)\gsin x$ είναι παραγωγίσιμη στο $0$. 
+</div>
+
+<div class="exercise">
+Αν $f$ είναι συνάρτηση με $f^{\prime}(0)=3$ και $f(0)=2$, να προσδιορίσετε την $g^{\prime}(0)$ όταν:
+<ol class="array-list">
+<li>$g(x)= x^2 f(x)+x$</li>
+<li>$g(x)=f(x)-\dfrac{x^2}{f(x)}$</li>
+</ol>
+</div>
+
+<div class="exercise">
+Έστω $f$ συνάρτηση παραγωγίσιμη στο $x_0$. Να προσδιορίσετε το $g^{\prime}(x_0)$, αν $$g(x)=f(x)+f^{\prime}(x_0)(x-x_0)-f(x_0),$$ για κάθε $x\in\mathbb{R}$. 
+</div>
+
+<div class="exercise">
+Δίνεται συνάρτηση $f:\mathbb{R}\to\mathbb{R}$ με
+\[f(x+y)=f(x)+f(y)+3xy-2,\tag{$\ast$}\]
+για οποιαδήποτε $x,y\in\mathbb{R}$. Αν γνωρίζουμε επίσης ότι $f^{\prime}(0)=4$, να αποδείξετε ότι η $f$ είναι παραγωγίσιμη σε κάθε σημείο $x_0\in\mathbb{R}$ και να προσδιορίσετε την παράγωγό της.
+</div>
+
+<div class="exercise">
+Δίνεται συνάρτηση $f:\mathbb{R}\to\mathbb{R}$, η οποία είναι παραγωγίσιμη στο $x_0=0$ με $f^{\prime}(0)=1$ και για την οποία ισχύει
+\[f(x+y)=f(x)e^{y}+f(y)e^{x},\tag{$\ast$}\]
+για κάθε $x,y\in\mathbb{R}$.
+<ol class="vertical-list">
+<li>Να υπολογίσετε το $f(0)$ και το $\lim\limits_{x\to 0}\dfrac{f(x)}{x}$.</li>
+<li>Να αποδείξετε ότι η $f$ είναι παραγωγίσιμη σε κάθε σημείο $x_0$ του πεδίου ορισμού της, με
+\[f^{\prime}(x_0)=f(x_0)+e^{x_0}.\]</li>
+</ol>
+</div>
+
+<div class="exercise">
+Έστω $f:\mathbb{R}\to\mathbb{R}$ άρτια και παραγωγίσιµη στο $x_0=0$ συνάρτηση. Θεωρούμε τη συνάρτηση $g(x)=(x^4+2)f(x)+\alpha x$, όπου $\alpha\in\mathbb{R}$.
+<ol class="vertical-list">
+<li>Αποδείξτε ότι $f^{\prime}(0)=0$.</li>
+<li>Αποδείξτε ότι η συνάρτηση $g$ είναι παραγωγίσιµη στο $x_0=0$ με $g^\prime(0)= \alpha$.</li>
+</ol>
+</div>
+
+
+<div class="exercise">
+Θεωρούµε παραγωγίσιµη στο $0$ συνάρτηση $f$ με $f(0)=0$ και
+\[f(x)\leq x^2,\tag{$\ast$}\]
+για κάθε $x\in\mathbb{R}$. Αποδείξτε ότι $f^{\prime}(0)=0$.
+</div>
+
+<div class="exercise">
+Θεωρούµε παραγωγίσιµες στο $x_0\in\mathbb{R}$ συναρτήσεις $f,g$ με $f(x_0)=g(x_0)$ και
+\[f(x)\leq g(x),\tag{$\ast$}\]
+για κάθε $x\in\mathbb{R}$. Αποδείξτε ότι $f^{\prime}(x_0)=g^{\prime}(x_0)$.
+</div>
+
+<div class="exercise">
+Θεωρούµε συνάρτηση $f$, τέτοια ώστε
+\[-5(x-2)^2+3x-4\leq f(x)\leq 6(x - 2)^2+3x - 4,\tag{$\ast$}\]
+για κάθε $x\in\mathbb{R}$.
+<ol class="vertical-list">
+<li>Αποδείξτε ότι η $f$ είναι συνεχής στο $2$.</li>
+<li>Εξετάστε αν η $f$ είναι παραγωγίσιµη στο $2$.</li>
+</ol>
+</div>
+
+<div class="exercise">
+Θεωρούµε συνάρτηση $f$, τέτοια ώστε
+\[|x-3|^3+x+1\leq f(x)\leq 2|x-3|^3 +x+1,\tag{$\ast$}\]
+για κάθε $x\in\mathbb{R}$.
+<ol class="vertical-list">
+<li>Αποδείξτε ότι η $f$ είναι συνεχής στο $3$.</li>
+<li>Εξετάστε αν η $f$ είναι παραγωγίσιµη στο $3$.</li>
+</ol>
+</div>
+
+<div class="exercise">
+Αν για τη συνάρτηση $f$ ισχύει
+\[-2x+1\leq f(x)\leq x^4-2x+1,\tag{$\ast$}\]
+για κάθε $x\in\mathbb{R}$, τότε:
+<ol class="vertical-list">
+<li>Αποδείξτε ότι η $f$ είναι συνεχής στο $x=0$.</li>
+<li>Αποδείξτε ότι η $f$ είναι παραγωγίσιμη στο $x=0$ και ισχύει $f^\prime(0)=-2$.</li>
+</ol>
+</div>
+
+<div class="exercise">
+Αν η συνάρτηση $f$ είναι συνεχής στο $0$ και για κάθε $x\in\mathbb{R}^{\ast}$ ισχύει
+\[x^2\left(\gcos\dfrac{1}{x}-3\right)\leq f(x)\leq x^2\left(\gcos\dfrac{1}{x}+3\right),\tag{$\ast$}\]
+να αποδείξετε ότι $f^{\prime}(0)=0$.   
+</div>
+
+
+<div class="exercise">
+Αν για τη συνεχή στο $0$ συνάρτηση $f$ ισχύει
+\[\gsin\pi x\leq f(x)\leq\gsin\pi x+|x|\sqrt{|x|},\tag{$\ast$}\]
+για κάθε $x\in\mathbb{R}$, να προσδιορίσετε τις τιμές $f(0)$ και $f^{\prime}(0)$.
+</div>
+
+<div class="exercise">
+Έστω $f,g$ συναρτήσεις στο $\mathbb{R}$ όπου η $f$ είναι συνεχής στο $2$, $g(x)\geq 0$ για κάθε $x\in\mathbb{R}$, $g(2)=4$, $g^{\prime}(2)=10$ και
+\[4\sqrt{g(x)}+2 \leq f(x)\leq g(x)+6,\tag{$\ast$}\]
+για κάθε $x\in\mathbb{R}$. Αποδείξτε ότι η $f$ είναι παραγωγίσιμη στο $2$.
+</div>
+
+<div class="exercise">
+Έστω $f,g$ συναρτήσεις στο $\mathbb{R}$ όπου η $g$ είναι παραγωγίσιμη στο $x_0 \in\mathbb{R}$ και
+\[|f(x)-g(x)|\leq (x-x_0 )^2,\tag{$\ast$}\]
+για κάθε $x\in\mathbb{R}$. Αποδείξτε ότι η $f$ είναι επίσης παραγωγίσιμη στο $x_0$, με  $f^{\prime}(x_0)=g^{\prime}(x_0)$.
+</div>
+
+<div class="exercise">
+Αν $f,g$ είναι συναρτήσεις στο $\mathbb{R}$ με $g(2)=3$, $g^{\prime}(2)=0$ και
+\[|f(x)-5|\leq |g(x)-3|,\tag{$\ast$}\]
+για κάθε $x\in\mathbb{R}$, αποδείξτε ότι η $f$ είναι παραγωγίσιμη στο $2$. 
+</div>
+
+<div class="exercise">
+Έστω ότι $f,g$ είναι συναρτήσεις στο $\mathbb{R}$. Αν η $g$ είναι συνεχής στο $-2$ και
+\[0\leq f(x)+g(x)(x^2 -4)\leq (x+2)^2,\tag{$\ast$}\]
+για κάθε $x\in\mathbb{R}$, αποδείξτε ότι η $f$ είναι παραγωγίσιμη στο $-2$. 
+</div>
+
+<div class="exercise">
+Αν για συνεχή στο $0$ συνάρτηση $f$ ισχύει
+\[\left| |f(x)-1|-x^2\right|\leq 3x^2,\tag{$\ast$}\]
+για κάθε $x\in\mathbb{R}$, αποδείξτε ότι $f(0)=1$ και $f^{\prime}(0)=0$.
+</div>
+
+<div class="exercise">
+Έστω $\alpha,\beta\in\mathbb{R}$ με $\alpha\lt \beta$. Θεωρούμε συνάρτηση $f$ ορισµένη στο διάστηµα $(\alpha,\beta)$ και παραγωγίσιµη στο σημείο $x_0\in(\alpha,\beta)$. Να προσδιορίσετε συναρτήσει των $x_0$, $f(x_0)$, $f^{\prime}(x_0)$ τα παρακάτω όρια:
+<ol class="vertical-list">
+<li>$\lim\limits_{x\to x_0}\dfrac{xf(x_0)-x_0 f(x)}{x-x_0}$</li>
+<li>$\lim\limits_{x\to x_0}\dfrac{xf(x)-x_0 f(x_0)}{x-x_0}$</li>
+<li>$\lim\limits_{x\to x_0}\dfrac{\sqrt{x}f(x)\!-\!\sqrt{x_0}f(x_0)}{x-x_0}$</li>
+</ol>
+</div>
+
+
+    </section>
+
+
+    <section id="derivative-function">
+
+    <h2>Παράγωγος συνάρτηση</h2>
+
+    <h3 id="derivative-definition-rules">Ορισμός και κανόνες παραγώγισης</h3>
+
+    <div class="exercise">
+    Προσδιορίστε την παράγωγο της συνάρτησης $f$ στο σημείο $x_0$, όταν:
+    <ol class="array-list">
+    <li>$f(x)=x^5$, $x_0=1$</li>
+    <li>$f(x)=\sqrt{x}$, $x_0=4$</li>
+    <li>$f(x)=\gcos x$, $x_0=\frac{\pi}{4}$</li>
+    <li>$f(x)=\ln x$, $x_0=e^2$</li>
+    <li>$f(x)=\gsin x$, $x_0=\frac{2\pi}{3}$</li>
+    <li>$f(x)=e^x$, $x_0=\ln 5$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Προσδιορίστε την παράγωγο της συνάρτησης $f$, όταν:
+    <ol class="array-list">
+    <li>$f(x)=2x^4+3x^2-7$</li>
+    <li>$f(x)=x^5 + \ln x$</li>
+    <li>$f(x)=\dfrac{x^4}{2}+\dfrac{1}{x}+\dfrac{1}{x^2}$</li>
+    <li>$f(x)=2\sqrt{x}-x^3$</li>
+    <li>$f(x)=e^x+2x^3-3\ln x$</li>
+    <li>$f(x)=\ln x\sqrt{x}$</li>
+    <li>$f(x)=x^{2}e^x+x^{-4}\ln x$</li>
+    <li>$f(x)=x^3\ln x$</li>
+    <li>$f(x)=xe^x\ln x$</li>
+    <li>$f(x)=\gtan x-\gctan x$</li>
+    <li>$f(x)=x\gsin x+x^2\gcos x$</li>
+    <li>$f(x)=(\gsin x+\gcos x)e^x$</li>
+    <li>$f(x)=\dfrac{x^3-5x^2+x+2}{x^2+1}$</li>
+    <li>$f(x)=\dfrac{1+\ln x}{x^2}$</li>
+    <li>$f(x)=\dfrac{1+\gsin x}{1+\gcos x}$</li>
+    <li>$f(x)=\dfrac{x\gsin x}{e^x\ln x}$</li>
+    <li>$f(x)=\dfrac{xe^x}{x+2}$</li>
+    <li>$f(x)=\dfrac{x-e^{x}}{1+x\ln x}$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Προσδιορίστε, όπου ορίζεται, την παράγωγο της συνάρτησης $f$, με τύπο:
+    <ol class="array-list">
+    <li>$f(x)=\begin{cases}x^2+3, &x\leq 1\\ 4\sqrt{x}, &x\gt  1\end{cases}$</li>
+    <li>$f(x)=\begin{cases}3x^2, &x\leq 0\\ -x^2, &x\gt 0\end{cases}$</li>
+    <li>$f(x)=\begin{cases}\sqrt{x}, &x\leq\frac{1}{4} \\ x, &x\gt \frac{1}{4} \end{cases}$</li>
+    <li>$f(x)=\begin{cases}x, & x\lt 1\\ \ln x, &x\geq 1 \end{cases}$</li>
+    <li>$f(x)=\begin{cases}\gcos x, & x\leq 0\\ \ln 3,& x\gt 0 \end{cases}$</li>
+    <li>$f(x)=\begin{cases}x^2, &x\leq 0 \\ e^x, &x\gt 0  \end{cases}$</li>
+    </ol>
+    </div>
+    
+    
+    
+    <div class="exercise">
+    Προσδιορίστε, όπου ορίζεται, την παράγωγο της συνάρτησης $f$, με τύπο:
+    <ol class="array-list">
+    <li>$f(x)=\begin{cases}x^3, &x\lt 1 \\ \sqrt{x}, &x\geq 1 \end{cases}$</li>
+    <li>$f(x)=\begin{cases}x, &x\leq 0 \\ \gsin x, &x\gt 0 \end{cases}$</li>
+    <li>$f(x)=\begin{cases}3x^2-5 x+6, & x\leq 1\\ 2\sqrt{x^2+3}, & x\gt 1\end{cases}$</li>
+    <li>$f(x)=\begin{cases}x^3+2x-4,  & x\lt 0\\ 3x-\gsin x-4, & x\geq 0\end{cases}$</li>
+    <li>$f(x)=\begin{cases}\dfrac{e(x^2+1)}{2}, & x\leq 1\\ e^x, & x\gt 1\end{cases}$</li>
+    <li>$f(x)=\begin{cases}2\ln x +x, & x\leq 2\\ 3x-2, & x\gt 2\end{cases}$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Προσδιορίστε, όπου ορίζεται, την παράγωγο της συνάρτησης $f$, με τύπο:
+    <ol class="array-list">
+    <li>$f(x)=5|x-4|+2x$</li>
+    <li>$f(x)=3x^2+|x-1|$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Προσδιορίστε τα $\alpha,\beta\in\mathbb{R}$, όταν για τη συνάρτηση $f$ ισχύει:
+    <ol class="array-list">
+    <li>$f(x)=\alpha e^x+\beta$, $f^{\prime}(1)=2$, $f^{\prime\prime}(1)=3$</li>
+    <li>$f(x)=\alpha x^2+\dfrac{\beta}{x}$, $f(1)=2$, $f^{\prime\prime}(1)=2$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Προσδιορίστε τις τιμές των $\alpha,\beta\in\mathbb{R}$ για τις οποίες η συνάρτηση με τύπο
+    \[f(x)=\begin{cases}\gcos x, &x\lt \frac{\pi}{2} \\ \alpha x+\beta, &x\geq\frac{\pi}{2} \end{cases}\] είναι παραγωγίσιμη.
+    </div>
+    
+    <div class="exercise">
+    Προσδιορίστε, όπου ορίζεται, τη δεύτερη παράγωγο της συνάρτησης $f$, με τύπο:
+    <ol class="array-list">
+    <li>$f(x)=\begin{cases}x^5, &x\leq 1 \\ \sqrt{x},&x\gt 1 \end{cases}$</li>
+    <li>$f(x)=\begin{cases}x^4+5x, & x\geq 0\\ 5\gsin x,  & x\lt 0\end{cases}$</li>
+    <li>$f(x)=\begin{cases}\gsin x, &x\leq 0 \\ x,&x\gt 0 \end{cases}$</li>
+    <li>$f(x)=\begin{cases}e^x, & x\geq 0\\ \gcos x,  & x\lt 0\end{cases}$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Να υπολογίσετε τα όρια:
+    <ol class="array-list">
+    <li>$\lim\limits_{x\to 1}\dfrac{\ln x-1}{x-e}$</li>
+    <li>$\lim\limits_{x\to 0}\dfrac{e^x-1}{\gsin x}$</li>
+    <li>$\lim\limits_{x\to 1^+}\dfrac{x^{10}-1}{x-1}$</li>
+    <li>$\lim\limits_{x\to 1^+}\dfrac{\ln x}{\sqrt{x-1}}$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Αν $f,g$ είναι συναρτήσεις με $f(x)= \dfrac{2x^2+2}{x^2-1}$ και $g(x)=\dfrac{|x|+1}{|x|-1}+\dfrac{|x|-1}{|x|+1}$, να αποδείξετε ότι $f^{\prime}=g^{\prime}$.
+    </div>
+    
+    
+    
+    <div class="exercise">
+    Αν η συνάρτηση $f$ είναι παραγωγίσιμη στο $\mathbb{R}$, προσδιορίστε την παράγωγο των συναρτήσεων $g,h$, όπου $g(x) =\dfrac{f(x)}{x^4+1}$ και $h(x)=\dfrac{3+x^2 f(x)}{\sqrt[3]{x}}$.
+    </div>
+    
+    <div class="exercise">
+    Αν η συνάρτηση $f$ είναι δύο φορές παραγωγίσιμη, προσδιορίστε την τιμή $g^{\prime\prime}(1)$, όπου $g(x)=f(x)\ln x$.
+    </div>
+    
+    <div class="exercise">
+    Δίνεται η συνάρτηση $f(x)=e^{x}\gsin x$. Να αποδείξετε ότι
+    \[f^{(3)}(x)+2f^{\prime}(x)=2f^{\prime\prime}(x),\]
+    για κάθε $x\in\mathbb{R}$.
+    </div>
+    
+    <div class="exercise">
+    Προσδιορίστε πολυώνυμο τρίτου βαθμού $P$ τέτοιο ώστε να ισχύει:
+    \[P(0)=1,\ \ \ P^{\prime}(1)=7,\ \ \ P^{\prime\prime}\left(\frac{1}{2}\right)=2,\ \ \ P^{\prime\prime\prime}(10)=12.\]
+    </div>
+    
+    <div class="exercise">
+    Να προσδιοριστεί πολυωνυμική συνάρτηση $Ρ$ τέτοια ώστε \[(e^x P(x))^{\prime}= e^x x(x+2),\tag{$\ast$}\] για κάθε $x\in\mathbb{R}$.
+    </div>
+    
+    <div class="exercise">
+    Δίνεται πολυωνυμική συνάρτηση $P$ για την οποία ισχύει \[\left(P^{\prime}(x)\right)^2=P(x),\tag{$\ast$}\] για κάθε $x\in\mathbb{R}$, και $P^{\prime}(1)=8$. Προσδιορίστε τον τύπο της συνάρτησης.
+    </div>
+    
+    <div class="exercise">
+    Προσδιορίστε την πολυωνυµική συνάρτηση $P$, µε $P(1) = 2$, για την οποία ισχύει
+    \[x(P^\prime(x))^2=3(P(x)+1),\tag{$\ast$}\]
+    για κάθε $x\in\mathbb{R}$.
+    </div>
+    
+    <div class="exercise">
+    Αποδείξτε ότι μια πολυωνυμική συνάρτηση $P(x)$ διαθέτει ως παράγοντα το $(x-\rho)^2$ αν και μόνον αν $P(\rho)=P^{\prime}(\rho)=0$.
+    </div>
+    
+
+    <h3 id="derivative-of-composition">Παράγωγος σύνθεσης συναρτήσεων</h3>
+    
+    <div class="exercise">
+    Προσδιορίστε την παράγωγο των συναρτήσεων με τύπο:
+    <ol class="array-list">
+    <li>$\sqrt{5x^8+1}$</li>
+    <li>$\sqrt[3]{x^2+1}$</li>
+    <li>$\sqrt[4]{(x^2-4)^3}$</li>
+    <li>$\sqrt{\gsin x}$</li>
+    <li>$\sqrt[4]{\ln x}$</li>
+    <li>$\sqrt{\dfrac{x^2-1}{x^2+1}}$</li>
+    <li>$\dfrac{e^x-e^{-x}}{e^x +e^{-x}}$</li>
+    <li>$\ln{\dfrac{x+1}{x-1}}$</li>
+    <li>$\dfrac{1}{x^4+x^2+1}$</li>
+    <li>$(x^3+5x^2-1)^4$</li>
+    <li>$e^{x^2-3x}$</li>
+    <li>$\ln(x+e^x)$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Προσδιορίστε την παράγωγο των συναρτήσεων με τύπο:
+    <ol class="array-list">
+    <li>$\gsin\sqrt{x}$</li>
+    <li>$\gsin^{3}x$</li>
+    <li>$\gtan x^2$</li>
+    <li>$\ln(\ln x)$</li>
+    <li>$\gcos(x^3 e^x)$</li>
+    <li>$e^{x^{2}}\ln(x^2+1)$</li>
+    <li>$(x^2+x)^x$</li>
+    <li>$(\ln x)^x$</li>
+    <li>$x^{\gsin^{2} x}$</li>
+    <li>$\gsin (x^x)$</li>
+    <li>$e^{x^x}$</li>
+    <li>$x^{\gsin x}$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Προσδιορίστε την παράγωγο των συναρτήσεων με τύπο:
+    <ol class="array-list">
+    <li>$(5x^2-3)^5$</li>
+    <li>$\ln(x^2-4)$</li>
+    <li>$2\gcos^2 x$</li>
+    <li>$f(x)= \dfrac{1}{4}\gsin^3(3-4x)$</li>
+    <li>$\sqrt{2x^2-4x+5}$</li>
+    <li>$\dfrac{(3x-1)^3}{1-2x}$</li>
+    <li>$3x+\gcos 4x$</li>
+    <li>$\sqrt{\gcos x-\gsin x}$</li>
+    <li>$(((1+x)^2+x^2)^3+x^3)^4$</li>
+    <li>$\gcos(x+\gcos x)$</li>
+    <li>$\gtan(\gsin x)$</li>
+    <li>$\sqrt{\ln^2 x+1}+\ln^2(\sqrt{x}+1)$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Προσδιορίστε την παράγωγο των συναρτήσεων με τύπο:
+    <ol class="array-list">
+    <li>$\gsin^2(x^3-\gcos x)$</li>
+    <li>$\gcos^{1000}x$</li>
+    <li>$\gcos(x^2+x^3)$</li>
+    <li>$\gcos(\gcos x)$</li>
+    <li>$\dfrac{\gcos(\gsin x)}{x}$</li>
+    <li>$\gcos\!\left(\dfrac{\gsin x}{x}\right)$</li>
+    <li>$2e^{-\frac{x}{4}}$</li>
+    <li>$\dfrac{1}{2^x}$</li>
+    <li>$x^3 3^x$</li>
+    <li>$\dfrac{3^x+3^{-x}}{3}$</li>
+    <li>$4^x-x^4$</li>
+    <li>$2^{2^x}$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Προσδιορίστε την παράγωγο των συναρτήσεων με τύπο:
+    <ol class="array-list">
+    <li>$\ln(1+\ln(1+e^{1+x}))$</li>
+    <li>$(\ln x)^{\ln x}$</li>
+    <li>$\ln|\gcos x|$</li>
+    <li>$\ln\left(\dfrac{1}{\sqrt[3]{x^2+3}}\right)$</li>
+    <li>$\dfrac{(\ln x)^{x}}{x^{\ln x}}$</li>
+    <li>$\ln\left(\sqrt[3]{x(1-\gcos 2x)}\right)$</li>
+    <li>$\left(1-\dfrac{1}{x}\right)2^x$</li>
+    <li>$x^2 \gsin 2^x$</li>
+    <li>$x^3-\sqrt[3]{x}$</li>
+    <li>$\sqrt[4]{x\gsin x}$</li>
+    <li>$(\gsin x)^{\gsin x}$</li>
+    <li>$\ln\left(\dfrac{e^x+1}{\gcos^2 x+1}\right)$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Για τις διάφορες τιμές των $\alpha,\beta, \gamma,\delta\in\mathbb{R}$ προσδιορίστε την παράγωγο της συνάρτησης $f$, όταν:
+    <ol class="array-list">
+    <li>$f(x)= \alpha x^3+\beta x^2+\gamma x+\delta$</li>
+    <li>$f(x)= (x-\alpha)(x-\beta)(x-\gamma)$</li>
+    <li>$f(x)=\dfrac{\alpha x+\beta}{\gamma x+\delta}$</li>
+    <li>$f(x)=\sqrt{\alpha x^2+\beta x+\gamma}$</li>
+    <li>$f(x)=\ln(\alpha+e^{\beta x+\gamma})$</li>
+    <li>$f(x)= \gsin(\alpha x^2+\beta x)\gcos(\gamma x+\delta)$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Προσδιορίστε τη δεύτερη παράγωγο των συναρτήσεων με τύπο:
+    <ol class="array-list">
+    <li>$(5x+2)^3$</li>
+    <li>$\ln(e^x +1)$</li>
+    <li>$e^{x^3+2}$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Αν $f(x)=x^2$ και $g(x)=\gsin x$, $x\in\mathbb{R}$, προσδιορίστε τις συναρτήσεις:
+    <ol class="array-list">
+    <li>$f^{\prime}(x)$</li>
+    <li>$g^{\prime}(x)$</li>
+    <li>$f^{\prime}(g(x))$</li>
+    <li>$g^{\prime}(f(x))$</li>
+    <li>$(f\circ g)^{\prime}(x)$</li>
+    <li>$(g\circ f)^{\prime}(x)$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Θεωρούμε τις συναρτήσεις $f,g$, για τις οποίες ορίζεται η $f\circ g$. Προσδιορίστε την παράγωγο στο $x_0=1$ της συνάρτησης $f\circ g$, αν
+    \[g(1)=0,\ \ \ f^{\prime}(0)=0,\ \ \ g^{\prime} (1)=1.\]
+    </div>
+    
+    <div class="exercise">
+    Αν η συνάρτηση $f$ είναι παραγωγίσιμη στο $x_0\in\mathbb{R}$ και για την συνάρτηση $F(x)=e^xf(x)$ ισχύει $F^{\prime}(x_0)=0$, να αποδείξετε ότι $f^{\prime} (x_0)+f(x_0)=0$.
+    </div>
+    
+    <div class="exercise">
+    Έστω $g$ παραγωγίσιμη στο $\mathbb{R}$ συνάρτηση και $f(x)=(x-3)^2 g(2x-1)$. Αποδείξτε ότι η $f$ είναι παραγωγίσιμη και προσδιορίστε την τιμή $f^{\prime} (3)$.
+    </div>
+    
+    <div class="exercise">
+    'Εστω ότι οι συναρτήσεις $f,g$ είναι παραγωγίσιμες στο $x_0\in\mathbb{R}$ με $f^{\prime} (x_0)\neq 0$. Αν για την συνάρτηση $G(x)=\dfrac{g(x)}{e^{f(x)}}$ ισχύει $G^{\prime} (x_0)=0$, αποδείξτε ότι $\dfrac{g^{\prime} (x_0)}{f^{\prime} (x_0)} =g(x_0)$.
+    </div>
+    
+    <div class="exercise">
+    Δίνεται συνάρτηση $f:\mathbb{R}\to\mathbb{R}$, παραγωγίσιμη στο $\mathbb{R}$. Να δείξετε ότι:
+    <ol class="vertical-list">
+    <li>Αν η $f$ είναι άρτια, τότε η $f^{\prime}$ είναι περιττή.</li>
+    <li>Αν η $f$ είναι περιττή, τότε η $f^{\prime}$ είναι άρτια.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Να προσδιορίσετε την παράγωγο της συνάρτησης $f(x)=e^{e^{e^{x}}}$.
+    </div>
+    
+    <div class="exercise">
+    Έστω οι συναρτήσεις $f(x)=e^{x^2}$ και $g(x)=e^x\sqrt{1-2x}$. Αποδείξτε ότι
+    \[(f(x)\cdot g(x))^{\prime}=f^{\prime}(x)g^{\prime}(x),\]
+    για κάθε $x\lt \dfrac{1}{2}$. 
+    </div>
+    
+    <div class="exercise">
+    Έστω $f,g$ συναρτήσεις, δύο φορές παραγωγίσιμες σε κατάλληλα πεδία ορισμού. Αποδείξτε ότι
+    \[(f\circ g)^{\prime\prime}=(f^{\prime\prime}\circ g)\cdot (g^{\prime})^2+(f^{\prime}\circ g)\cdot  g^{\prime\prime}.\]
+    </div>
+    
+    <div class="exercise">
+    Η περιττή συνάρτηση $f$ είναι δύο φορές παραγωγίσιμη στο $\mathbb{R}$. Θεωρούμε τη συνάρτηση $g(x)=e^{f(x)-k}$. Αποδείξτε ότι:
+    <ol class="array-list">
+    <li>$f(0)=f^{\prime\prime}(0)=0$</li>
+    <li>$g(0)g^{\prime\prime}(0)=(g^{\prime} (0))^2$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Για τη συνάρτηση $f$ με $f(x)=3\gcos 5x-7\gsin 5x$, αποδείξτε ότι
+    \[f^{\prime\prime}(x)+25f(x)=0,\]
+    για κάθε $x\in\mathbb{R}$.
+    </div>
+    
+    <div class="exercise">
+    Για τη συνάρτηση $f$ με $f(x)=\dfrac{1}{2}\ln^2 x+\ln x+1$, αποδείξτε ότι
+    \[f^{\prime}(x)x+f^{\prime\prime}(x)x^2=1,\]
+    για κάθε $x\gt 0$.
+    </div>
+    
+    <div class="exercise">
+    Έστω $f:\mathbb{R}\to\mathbb{R}$ άρτια και παραγωγίσιμη συνάρτηση. Θεωρούμε τη συνάρτηση
+    \[g(x)=(x^5 +\gcos x)e^{f(x)}+\gsin x+x.\]
+    <ol class="vertical-list">
+    <li>Αποδείξτε ότι η συνάρτηση $g$ είναι παραγωγίσιμη στο $\mathbb{R}$.</li>
+    <li>Υπολογίστε την τιμή $g^{\prime}(0)$.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Έστω $f:\mathbb{R}\to\mathbb{R}$ παραγωγίσιμη συνάρτηση και $g(x)=f(x)-f(2x)$. Υποθέτουμε ότι $g^{\prime}(1)=5$ και $g^{\prime\prime}(1)=7$. Προσδιορίστε την παράγωγο της συνάρτησης $h(x)=g(x)+g(2x)$ στο σημείο $x_0=1$.
+    </div>
+    
+    <div class="exercise">
+    Δίνεται η παραγωγίσιμη συνάρτηση $f:\mathbb{R}\to\mathbb{R}$ για την οποία ισχύει
+    \[f(xy)=f(x)+f(y)+x^2 y^2-x^2-y^2\tag{$\ast$}\]
+    για κάθε $x,y\in (0,+\infty)$. Αποδείξτε ότι
+    \[xf^{\prime}(x)-yf^{\prime}(y)=2(x^2 -y^2)\] για κάθε $x,y\in (0,+\infty)$.
+    </div>
+    
+    <div class="exercise">
+    ∆ίνονται οι παραγωγίσιµες στο $\mathbb{R}$  συναρτήσεις $f,g$, µε $g(0)=g^{\prime}
+    (0) = 1$ και
+    \[(f (x))^3 -(g(x))^2+x=0,\tag{$\ast$}\]
+    για κάθε $x\in\mathbb{R}$. Αποδείξτε ότι $f^\prime(0)=\dfrac{1}{3}$.
+    </div>
+
+    </section>
+
+    <section id="tangent">
+
+    <h2>Εφαπτομένη</h2>
+
+    <div class="exercise">
+    Προσδιορίστε την εξίσωση της εφαπτομένης της $C_f$ στο σημείο $\textnormal{M}$, όταν:
+    <ol class="array-list">
+    <li>$f(x)=x^2-4x$, $\textnormal{M}\left(3,f(3)\right)$</li>
+    <li>$f(x)=x^3-1$, $\textnormal{M}\left(0,f(0)\right)$</li>
+    <li>$f(x)=x+e^x$ $\textnormal{M}\left(1,f(1)\right)$</li>
+    <li>$f(x)=\dfrac{x+1}{x-1}$, $\textnormal{M}\left(2,f(2)\right)$</li>
+    <li>$f(x)=x^2+\ln x$, $\textnormal{M}\left(1,f(1)\right)$</li>
+    <li>$f(x)=\sqrt{x}+\dfrac{1}{\sqrt{x}}$, $\textnormal{M}\left(1,f(1)\right)$</li>
+    <li>$f(x)=x^3$,  $\textnormal{M}\left(1,f(1)\right)$</li>
+    <li>$f(x)=\dfrac{3}{x}$, $\textnormal{M}\left(1,f(1)\right)$</li>
+    <li>$f(x)=\gsin ^2 x$, $\textnormal{M}\left(0,f(0)\right)$</li>
+    <li>$f(x)=\gsin x+\gcos x$,  $\textnormal{M}\left(\frac{\pi}{4},f(\frac{\pi}{4})\right)$</li>
+    <li>$f(x)=\sqrt{x+3}$,  $\textnormal{M}\left(1,f(1)\right)$</li>
+    <li>$f(x)=\ln^3 x$,  $\textnormal{M}\left(1,f(1)\right)$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Προσδιορίστε την εξίσωση της εφαπτομένης της $C_f$ στο σημείο $\textnormal{M}$, όταν:
+    <ol class="vertical-list">
+    <li>$f(x)=\begin{cases}x^2+2x, & x\leq 1\\ 2x^2+1,  & x\gt 1\end{cases}~$, $\textnormal{M}\left(1,f(1)\right)$</li>
+    <li>$f(x)=\begin{cases}x^2+2, & x\leq 1\\ 3x,  & x\gt 1\end{cases}~$, $\textnormal{M}\left(1,f(1)\right)$</li>
+    <li>$f(x)=\begin{cases}3x^2-x+3 , & x\lt  1\\ 5x,  & x\geq 1\end{cases}~$, $\textnormal{M}\left(1,f(1)\right)$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Προσδιορίστε την εξίσωση της εφαπτομένης της $C_f$ που διέρχεται από το σημείο $\mathrm{M}$, όταν:
+    <ol class="array-list">
+    <li>$f(x)=x^2$, $\textnormal{M}\left(-1,-1\right)$.</li>
+    <li>$f(x)=x^2-6x+11$, $\textnormal{M}\left(3,4\right)$.</li>
+    <li>$f(x)=\dfrac{2}{x}$, $\textnormal{M}\left(1,1\right)$.</li>
+    <li>$f(x)=x+\dfrac{1}{x}$, $\textnormal{M}\left(1,1\right)$.</li>
+    <li>$f(x)=x+\sqrt{x}$, $\textnormal{M}\left(1,2\right)$</li>
+    <li>$f(x)=x+\dfrac{7-2x}{3-x}$, $\textnormal{M}\left(3,0\right)$.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Δίνεται η συνάρτηση $f(x)=x^2-3x+1$. Προσδιορίστε αν υπάρχουν σημεία της γραφικής παράστασης της $f$ στα οποία η εφαπτομένη:
+    <ol class="vertical-list">
+    <li>Να είναι παράλληλη στην ευθεία $y=x$.</li>
+    <li>Να σχηματίζει γωνία $135^{\circ}$ με τον άξονα $x^{\prime}x$.</li>
+    <li>Να είναι παράλληλη στον άξονα $x^{\prime}x$.</li>
+    <li>Να είναι κάθετη στην ευθεία $y=\dfrac{1}{2}x$.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Έστω η συνάρτηση $f(x)=3x^2-\alpha x+\beta$ και $\varepsilon$ η εφαπτομένη της $C_f$ στο σημείο επαφής $\textnormal{Α}(1,4)$. Να προσδιοριστούν οι $\alpha,\beta\in\mathbb{R}$ σε καθεμία από τις παρακάτω περιπτώσεις:
+    <ol class="vertical-list">
+    <li>Η κλίση της $\varepsilon$ είναι ίση με $-2$.</li>
+    <li>Η $\varepsilon$ διέρχεται από από το σημείο $\textnormal{B}(3,5)$.</li>
+    <li>Η $\varepsilon$ σχηματίζει με τον $x^\prime $ γωνία $\omega=\dfrac{\pi}{3}$.</li>
+    <li>Η $\varepsilon$ είναι παράλληλη προς την ευθεία με εξίσωση $4x+2y=1$.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Προσδιορίστε την εξίσωση της εφαπτομένης της $C_f$ η οποία σχηματίζει με τον άξονα $x^{\prime}x$ γωνία $\omega$ όταν:
+    <ol class="array-list">
+    <li>$f(x)= 2\sqrt{x-1}$, $\omega =\dfrac{\pi}{6}$</li>
+    <li>$f(x)=\sqrt{9-x^2}$, $\omega =\dfrac{2\pi}{3}$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Για τη συνάρτηση $f(x)= x^3-4x$ Προσδιορίστε τις εξισώσεις των εφαπτομένων της $C_f$ στα σημεία τομής της με τον άξονα $x^{\prime}x$.
+    </div>
+    
+    <div class="exercise">
+    Έστω οι συναρτήσεις $f(x)= x^2-2$ και $g(x)= -\sqrt{x}$.
+    <ol class="vertical-list">
+    <li>Να προσδιορίσετε το κοινό σημείο $\textnormal{M}$ των $C_f, C_g$.</li>
+    <li>Να αποδείξετε ότι οι εφαπτομένες των $C_f, C_g$  στο κοινό σημείο $\textnormal{M}$ είναι κάθετες.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Θεωρούµε τη συνάρτηση $f(x)=x^2-4x$. Προσδιορίστε την εξίσωση της εφαπτοµένης της $C_f$ που σχηματίζει µε τους άξονες $x^{\prime}x$, $y^{\prime}y$ ισοσκελές τρίγωνο.
+    </div>
+    
+    <div class="exercise">
+    ∆ίνεται η συνάρτηση $f(x)=x^2-4x+5$ και η ευθεία $\varepsilon$ µε εξίσωση $y=-2x+4$. Αποδείξτε ότι η $\varepsilon$ εφάπτεται στη γραφική παράσταση της $f$.
+    </div>
+    
+    <div class="exercise">
+    ∆ίνεται η συνάρτηση $f(x)=e^x$ και η ευθεία $\varepsilon$ µε εξίσωση $y=x+1$. Αποδείξτε ότι η $\varepsilon$ εφάπτεται στη γραφική παράσταση της $f$.
+    </div>
+    
+    <div class="exercise">
+    ∆ίνεται η συνάρτηση $f(x)=e^x+5$ και η ευθεία $\varepsilon$ µε εξίσωση $y=\lambda x + 5$, όπου $\lambda\in\mathbb{R}$. Προσδιορίστε το $\lambda$ ώστε η $\varepsilon$ να εφάπτεται στη γραφική παράσταση της $f$. Προσδιορίστε το σηµείο επαφής.
+    </div>
+    
+    <div class="exercise">
+    Θεωρούµε τη συνάρτηση $f(x)=x^3+2$.
+    <ol class="vertical-list">
+    <li>Προσδιορίστε την εξίσωση της εφαπτοµένης της $C_f$ στο σηµείο της $\mathrm{A}(1, f(1))$.</li>
+    <li>Eξετάστε αν η εφαπτόµενη στο $\mathrm{A}$ διαθέτει και άλλο κοινό σηµείο µε τη $C_f$.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Έστω η συνάρτηση $f(x) =\dfrac{\kappa}{4+x^2}$. Προσδιορίστε την τιμή του $\kappa\in\mathbb{R}$ για την οποία η εφαπτομένη της $C_f$  στο σημείο της με τετμημένη $-1$ είναι κάθετη στην ευθεία $\varepsilon$ εξίσωση $y=-5x+2$.
+    </div>
+    
+    <div class="exercise">
+    ∆ίνονται οι συναρτήσεις $f(x)=x^2-x$ και $g(x)=e^x-2$.
+    <ol class="vertical-list">
+    <li>Αποδείξτε ότι η εξίσωση της εφαπτοµένης $\varepsilon$ της $C_f$ στο $x_0=1$ είναι η $y=x-1$.</li>
+    <li>Αποδείξτε ότι η ευθεία $\varepsilon$ εφάπτεται στη $C_g$. Προσδιορίστε το σηµείο επαφής.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Θεωρούµε τις συναρτήσεις $f(x)=x^2+1$ και $g(x)=-2x^2-2$.
+    <ol class="vertical-list">
+    <li>Αποδείξτε ότι οι $C_f$ και $C_g$ δεν διαθέτουν κοινό σηµείο.</li>
+    <li>Προσδιορίστε τις εξισώσεις των κοινών εφαπτοµένων των $C_f$ και $C_g$.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Θεωρούµε τις συναρτήσεις $f(x)=\dfrac{1}{x}$ και $g(x)=-x^2$. Προσδιορίστε την εξίσωση της κοινής εφαπτοµένης των γραφικών παραστάσεων των $f$ και $g$.
+    </div>
+    
+    <div class="exercise">
+    Δίνονται οι συναρτήσεις $f(x)= \alpha x^2-\beta x+9$ και $g(x)= \dfrac{1}{x-1}$. Προσδιορίστε τους $\alpha, \beta\in\mathbb{R}$ ώστε οι $C_f$ και $C_g$ να διαθέτουν κοινή εφαπτομένη στο κοινό σημείο με τετμημένη $2$.
+    </div>
+    
+    <div class="exercise">
+    Προσδιορίστε τον $\alpha\in\mathbb{R}$ για τον οποίο οι εφαπτομένες των γραφικών παραστάσεων των συναρτήσεων $f(x)=x^2-2x+\alpha$, $g(x)=\ln(x-1)$, οι οποίες διέρχονται από το σημείο $\textnormal{Α}(1,0)$, να είναι κάθετες.
+    </div>
+    
+    <div class="exercise">
+    Προσδιορίστε τους $\alpha,\beta\in\mathbb{R}$ ώστε η γραφική παράσταση της συνάρτησης
+    \[f(x)=\dfrac{2x^2-2\alpha x-\beta}{x^2-3x-2}\]
+    να διέρχεται από την αρχή των αξόνων $\textnormal{O}(0,0)$ και η εφαπτομένη της στο σημείο $\textnormal{M}(1,f(1))$ να είναι κάθετη στην ευθεία με εξίσωση $3x+3y-4=0$.
+    </div>
+    
+    <div class="exercise">
+    Θεωρούµε τις συναρτήσεις $f(x)=\alpha x^2+\beta$ και $g(x)=e^x$. Οι γραφικές παραστάσεις των $f$ και $g$ διαθέτουν κοινή εφαπτόµενη στο κοινό σηµείο τους µε τετµηµένη $x_0 = 1$. Προσδιορίστε τους $\alpha,\beta\in\mathbb{R}$ και την εξίσωση της κοινής εφαπτοµένης.
+    </div>
+    
+    <div class="exercise">
+    Έστω η συνάρτηση
+    \[f(x)=\begin{cases}\alpha x^2-\beta, & x\leq 1\\[1ex] \dfrac{\gamma}{x},  & x\gt 1\end{cases}~.\]
+    Να προσδιορίσετε τις τιμές $\alpha, \beta, \gamma\in\mathbb{R}$ για τις οποίες η $C_f$ διαθέτει στο σημείο $\textnormal{Α}(1,f(1))$ εφαπτομένη κάθετη στην ευθεία $\varepsilon$ με εξίσωση $x-2y-3=0$.
+    </div>
+    
+    <div class="exercise">
+    Προσδιορίστε τις εξισώσεις των εφαπτομένων της γραφικής παράστασης της συνάρτησης $f(x)= \dfrac{4x^2}{2x+1}$ στα σημεία $\textnormal{M}(x_0,f(x_0))$ όπου  ισχύει $f^{\prime}(x_0)=2f(x_0)$. 
+    </div>
+    
+    <div class="exercise">
+    Δίνεται ότι η συνάρτηση f, συνεχής στο $x_0=5$, με 
+    \[\lim\limits_{u\to 1}\dfrac{f(5u)}{1-u} = 11.\tag{$\ast$}\]
+    <ol class="vertical-list">
+    <li>Προσδιορίστε την εφαπτομένη $\varepsilon$ της $C_f$ στο σημείο $\textnormal{Α}(5,f(5))$.</li>
+    <li>Αποδείξτε ότι η $\varepsilon$  διέρχεται από το σημείο $\textnormal{B}(0,11)$.</li>
+    <li>Υπολογίστε το εμβαδό του τριγώνου που σχηματίζει η ευθεία με τους άξονες $x^{\prime}x$, $y^{\prime}y$.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Έστω συναρτήσεις
+    \[f(x)=e^x+1,\ \ \ g(x)=\dfrac{e^x+1}{e^x},\ \ \ h(x)=\dfrac{(e^x+1)^2}{2 e^x}.\]
+    Αν $\varepsilon_1, \varepsilon_2, \varepsilon_3$ οι εφαπτομένες των $C_f$, $C_g$, $C_h$ στα σημεία $\textnormal{Α}(\alpha, f(\alpha)), \textnormal{Β}(\alpha,g (\alpha)), \Gamma(\alpha, h(\alpha))$ αντιστοίχως, αποδείξτε ότι οι $\varepsilon_1, \varepsilon_2, \varepsilon_3$ διέρχονται από το ίδιο σημείο, για κάθε $\alpha \in\mathbb{R}$.
+    </div>
+    
+    <div class="exercise">
+    Έστω οι συναρτήσεις
+    \[f(x)=\ln(1+2x),\ \ \ g(x)=2x-2x^2,\ \ \ h(x)= 2x-2x^2+\dfrac{8x^3}{3}.\]
+    Αποδείξτε ότι οι $C_f$, $C_g$, $C_h$ διαθέτουν κοινή εφαπτομένη στο μοναδικό κοινό τους σημείο.
+    </div>
+    
+    <div class="exercise">
+    Δίνεται η συνάρτηση $f(x)= x^2+4x$. Προσδιορίστε την εξίσωση:
+    <ol class="vertical-list">
+    <li>της εφαπτομένης $\varepsilon$ της $C_f$ στο σημείο της με τετμημένη $-3$,</li>
+    <li>της εφαπτομένης $\varepsilon^{\prime}$ της $C_f$ που είναι κάθετη στην $\varepsilon$.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Προσδιορίστε τις εξισώσεις των εφαπτόμενων της γραφικής παράστασης της συνάρτησης $f(x)=x^2$ που διέρχονται από το σημείο $\textnormal{A}\left(\frac{1}{2},-2\right)$.
+    </div>
+    
+    
+    
+    <div class="exercise">
+    Έστω η συνάρτηση $f(x)=\alpha x^2$, όπου $\alpha\in\mathbb{R}$, και $x_0\neq 0$.
+    <ol class="vertical-list">
+    <li>Αποδείξτε ότι η ευθεία που διέρχεται από τα σημεία $\textnormal{Α} (x_0,f(x_0))$ , $\textnormal{B} (0,-f(x_0))$ εφάπτεται της $C_f$  στο σημείο $\textnormal{Α}$.</li>
+    <li>Αποδείξτε ότι το εμβαδό $\textnormal{E}$ του τριγώνου που σχηματίζει η εφαπτομένη της $C_f$  στο $\textnormal{Α}$ με τους άξονες δίνεται από τη σχέση $\textnormal{E}=\dfrac{|x_0 f(x_0)|}{4}$.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Δίνεται η συνάρτηση $f(x)=\dfrac{4}{x}$, όπου $x\neq 0$.
+    <ol class="vertical-list">
+    <li>Προσδιορίστε την εξίσωση της εφαπτομένης της $C_f$ στο σημείο $\textnormal{M}(x_0,f(x_0))$ με $x_0\neq 0$.</li>
+    <li>Αποδείξτε ότι το τρίγωνο το οποίο σχηματίζει η προηγούμενη εφαπτομένη με τους άξονες έχει σταθερό εμβαδό.</li>
+    <li>Αν A και B είναι τα σημεία που η εφαπτομένη στο Μ τέμνει τους άξονες, αποδείξτε ότι το M είναι το μέσο του τμήματος AB.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Προσδιορίστε, αν υπάρχουν, τις εξισώσεις των εφαπτομένων της $C_f$ που διέρχονται από το σημείο $\mathrm{A}$ όταν:
+    <ol class="array-list">
+    <li>$f(x)= \dfrac{x}{x+2}$, $\textnormal{A}(0,1)$</li>
+    <li>$f(x)=x+x^3$, $\textnormal{A}(2,2)$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Δίνεται η συνάρτηση $f(x)=x^2-4x+3$.
+    <ol class="vertical-list">
+    <li>Να προσδιοριστεί η εξίσωση της εφαπτομένης της $C_f$ που είναι κάθετη στην ευθεία με εξίσωση $y=-\dfrac{1}{2}x+7$.</li>
+    <li>Να προσδιοριστούν τα σημεία επαφής των εφαπτόμενων της $C_f$ που διέρχονται από το $\textnormal{O}(0,0)$.</li>
+    <li>Υπάρχουν εφαπτόμενες που διέρχονται από σημείο $\textnormal{A}(2,0)$;</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Έστω πολυωνυμική συνάρτηση $P$ και $x_0\in\mathbb{R}$. Θεωρούμε το υπόλοιπο $\upsilon(x)$ της διαίρεσης του $P(x)$ δια $(x-x_0)^2$. Αποδείξτε ότι η εξίσωση της εφαπτομένης της $C_P$ στο $x_0$ είναι η $y=\upsilon(x)$.
+    </div>
+    
+    <div class="exercise">
+    Δίνεται η συνάρτηση $f(x)= \dfrac{3}{5}\sqrt{25-x^2}$. Έστω ότι η εφαπτομένη $\varepsilon$ της $C_f$ στο σημείο $\textnormal{Α}(\alpha,f(\alpha))$ με $-5\lt \alpha\lt 5$ τέμνει τους άξονες $x^{\prime}x$ και $y^{\prime}y$ στα σημεία $\textnormal{K}$ και $\Lambda$ αντιστοίχως. Έστω επίσης $\textnormal{M},\textnormal{N}$ οι προβολές του $\textnormal{Α}$ στους άξονες $x^{\prime}x,y^{\prime}y$ αντιστοίχως. Αποδείξτε ότι:
+    <ol class="array-list">
+    <li>$(\textnormal{OM})\cdot(\textnormal{OK})=25$,</li>
+    <li>$(\textnormal{ON})\cdot(\textnormal{O}\Lambda)=9$.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Έστω  $f(x) =\alpha x^3+\beta x^2+\gamma x+\delta$. Προσδιορίστε τις τιμές των $\alpha,\beta,\gamma,\delta\in\mathbb{R}$ για τις οποίες οι εφαπτομένες της $C_f$ στα σημεία της $\textnormal{O}(0,0)$ και $\textnormal{Α}(-1,1)$ είναι παράλληλες στον άξονα $x^{\prime}x$.
+    </div>
+    
+    <div class="exercise">
+    Έστω παραγωγίσιμη στο $\mathbb{R}$ συνάρτηση $f$ με $f^{\prime}(0)=-1$, για την οποία υπάρχει $\alpha\in\mathbb{R}$ ώστε
+    \[f(\alpha+x)+x=f(\alpha-x)-x,\tag{$\ast$}\]
+    για κάθε $x\in\mathbb{R}$. Αποδείξτε ότι η εφαπτομένες της $C_f$ στα σημεία $\textnormal{Α} (\alpha, f(\alpha))$ και $\textnormal{B} (2\alpha, f(2\alpha))$ είναι κάθετες στην ευθεία με εξίσωση $y=x$.
+    </div>
+    
+    <div class="exercise">
+    Έστω παραγωγίσιμη στο $\mathbb{R}$ συνάρτηση $f$, για την οποία υπάρχει $\kappa\in\mathbb{R}$ ώστε
+    \[f(\kappa -x)=f(\kappa +x),\tag{$\ast$}\]
+    για κάθε $x\in\mathbb{R}$. Αποδείξτε ότι για κάθε $\alpha\in\mathbb{R}$ οι εφαπτομένες της $C_f$ στα σημεία της με τετμημένες
+    $\kappa -\alpha,\kappa+\alpha$ τέμνονται επί της ευθείας με εξίσωση $x=\kappa$. 
+    </div>
+    
+    <div class="exercise">
+    Δίνεται η παραγωγίσιμη στο $\mathbb{R}$ συνάρτηση $g$. Η εφαπτομένη της $C_g$ στο σημείο της  $\textnormal{A}(-1,g(-1))$ είναι η ευθεία $\varepsilon: y=3x+1$. Αν $f(x)= g\left(e^{x-2}-2\gcos\pi x\right)$, προσδιορίστε την εξίσωση της εφαπτομένης της $C_f$ στο σημείο της $\textnormal{Α}(2,f(2))$.
+    </div>
+    
+    <div class="exercise">
+    Έστω η συνάρτηση $f(x)= x-4\sqrt{x}+4$. Αν η εφαπτομένη  $\varepsilon$ της $C_f$  στο σημείο $\textnormal{M}(x_0,f(x_0))$ με $0\lt x_0\lt 4$ τέμνει τους άξονες $x^{\prime}x$, $y^{\prime}y$ στα σημεία $\textnormal{A}$ και $\textnormal{B}$ αντιστοίχως, αποδείξτε ότι το άθροισμα $\textnormal{OA}+\textnormal{OB}$ είναι σταθερό, όπου $\textnormal{O}$ η αρχή των αξόνων. 
+    </div>
+    
+    <div class="exercise">
+    Δίνεται η συνάρτηση $f$ με τύπο $f(x)=x^3+\alpha x^2+\beta x+3$ με $\alpha,\beta\in\mathbb{R}$. Η ευθεία $y=10x-9$ εφάπτεται στη $C_f$ στο σημείο $\textnormal{M}(2,f(2))$.
+    <ol class="vertical-list">
+    <li>Προσδιορίστε τις τιμές των $\alpha,\beta$.</li>
+    <li>Αποδείξτε ότι η ευθεία $y=3x+2$ εφάπτεται στη $C_f$.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Έστω η συνάρτηση $f(x)=\sqrt{x}$ και $\textnormal{Α}\left(4\alpha,2\sqrt{\alpha}\right)$, $\alpha\gt 0$, σημείο της $C_f$. Να αποδειχθεί ότι η ευθεία που διέρχεται από τα σημεία $\textnormal{Α}$ και $\textnormal{Β}\left(-8\alpha,-\sqrt{\alpha}\right)$ εφάπτεται της $C_f$ στο σημείο $\textnormal{Α}$.
+    </div>
+    
+    <div class="exercise">
+    Έστω η συνάρτηση $f(x)=\alpha^x$, όπου $\alpha\gt 0, \alpha\neq 1$. Αν η εφαπτομένη $\varepsilon$ της $C_f$ στο σημείο $\textnormal{M}(x_0,f(x_0))$ τέμνει τον άξονα $x^{\prime}x$ στο σημείο $\textnormal{Α}$  και $\textnormal{M}^{\prime}$ η προβολή του $\textnormal{M}$ στον $x^{\prime}x$, αποδείξτε ότι το ευθύγραμμο τμήμα $\textnormal{AM}^{\prime}$ έχει μήκος ανεξάρτητο του $x_0$.
+    </div>
+    
+    <div class="exercise">
+    Δίνεται η συνάρτηση $f(x)= x^2$  και το σημείο $\textnormal{Α}(x_0,y_0)$ της $C_f$. Να αποδείξετε ότι η ευθεία $\varepsilon$ που διέρχεται από το $\textnormal{Α}$ καθώς και από το σημείο $\textnormal{B}(0, -y_0)$ εφάπτεται της $C_f$ στο σημείο Α. 
+    </div>
+    
+    <div class="exercise">
+    Για τις συναρτήσεις $f(x)=\gsin 3x-x^3$ και $g(x)= \dfrac{x^3}{3}-2x^2+7x$, προσδιορίστε τις εξισώσεις των εφαπτομένων των $C_f$, $C_g$ οι οποίες είναι παράλληλες μεταξύ τους. 
+    </div>
+    
+    <div class="exercise">
+    Έστω οι συναρτήσεις $f(x)=\kappa e^{x+\lambda}$ και $g(x)=\dfrac{e^{-x-\lambda}}{\kappa}$, όπου $\kappa,\lambda\in\mathbb{R}$ με $\lambda\neq 0$. Αποδείξτε ότι στα σημεία των $C_f$, $C_g$ με ίδιες τετμημένες, οι εφαπτομένες τους είναι κάθετες. 
+    </div>
+    
+    <div class="exercise">
+    Αν $f(x)= x^2$, προσδιορίστε την εφαπτομένη της $C_f$ που απέχει από το σημείο $\textnormal{Α}(0,-1)$ απόσταση $d=1$. 
+    </div>
+    
+    <div class="exercise">
+    Αν $f(x)= \dfrac{1}{4}x^2-1$, προσδιορίστε την εξίσωση της εφαπτομένης της $C_f$ που απέχει από την αρχή των αξόνων απόσταση $d$, στις περιπτώσεις $d=1$ και $d=\sqrt{2}$.
+    </div>
+    
+    <div class="exercise">
+    Έστω $f(x)= x^2-3x+1$. Προσδιορίστε το σημείο στο οποίο η εφαπτομένη της $C_f$ έχει εξίσωση $y=-x$. 
+    </div>
+    
+    <div class="exercise">
+    Έστω $f(x)= x^5+x+2$ και $g(x)=\gcos x$. Προσδιορίστε την εξίσωση της εφαπτομένης της $C_f$ για την οποία υπάρχει παράλληλη προς αυτή εφαπτομένη της $C_g$.
+    </div>
+    
+    <div class="exercise">
+    Έστω $f(x)= \dfrac{x^2-x-1}{x-1}$ και $g(x)= x^2-2x+1$. Αποδείξτε ότι οι $C_f , C_g$ διαθέτουν ακριβώς δύο κοινά σημεία, σε ένα εκ των οποίων διαθέτουν κοινή εφαπτομένη. 
+    </div>
+    
+    <div class="exercise">
+    Δίνεται η συνάρτηση $f(x)=x^3-3x^2+8$.
+    <ol class="vertical-list">
+    <li>Προσδιορίστε την εξίσωση της εφαπτομένης της $C_f$ στο σημείο της $\textnormal{Α}(\alpha, f(\alpha))$.</li>
+    <li>Για ποια τιμή του $\alpha$ η παραπάνω εφαπτομένη διαθέτει με την $C_f$ ακριβώς ένα κοινό σημείο;</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Αποδείξτε ότι η εφαπτομένη της γραφικής παράστασης της συνάρτησης $f$ στο σημείο της $\textnormal{A}$ εφάπτεται και στη γραφική παράσταση της συνάρτησης $g$, όταν:
+    <ol class="array-list">
+    <li>$f(x)=x^3$, $g(x)=2x^2+7x$, $\textnormal{A}(1,f(1))$.</li>
+    <li>$f(x)= x^2-2x+2$, $g(x)= x^2+4x-1$, $\textnormal{Α}(2,f(2))$.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Προσδιορίστε τις κοινές εφαπτομένες των γραφικών παραστάσεων των συναρτήσεων $f,g$ με $f(x)=x^2-3x$ και $g(x)=x^2+x$.
+    </div>
+    
+    <div class="exercise">
+    Έστω οι συναρτήσεις $f(x)=\dfrac{1}{2}(e^x+e^{-x})^2$ και $g(x)=4\gcos^2\dfrac{x}{2}-x^2-2$.
+    <ol class="vertical-list">
+    <li>Προσδιορίστε την εξίσωση της εφαπτομένης $\varepsilon$ της $C_f$ στο σημείο $\textnormal{Α}(0,f(0))$.</li>
+    <li>Αποδείξτε ότι η ευθεία $\varepsilon$ εφάπτεται και στην $C_g$.</li>
+    <li>Για $x\neq 0$, αποδείξτε ότι οι $C_f$, $C_g$ βρίσκονται εκατέρωθεν της $\varepsilon$.</li>
+    <li>Αποδείξτε ότι οι $C_f$ και $C_g$ διαθέτουν μοναδικό κοινό σημείο.</li>
+    </ol>
+    </div>
+
+    </section>
+
+
+    <section id="rate-of-change">
+
+        <h2>Ρυθμός μεταβολής</h2>
+        
+        
+<div class="exercise">
+    Η θέση $x(t)$ ενός υλικού σημείου, σε $\mathrm{cm}$, που κινείται πάνω σε έναν άξονα, δίνεται από τη σχέση
+    \[x(t)=2t^3 -12t^2+18t-5,\tag{$\ast$}\]
+    όπου $t\in[0,4]$ ο χρόνος σε $\mathrm{s}$.
+    <ol class="vertical-list">
+    <li>Προσδιορίστε την ταχύτητα και την επιτάχυνση του σημείου τη χρονική στιγμή $t=2\,\mathrm{s}$.</li>
+    <li>Προσδιορίστε τις χρονικές στιγμές όπου το σημείο είναι στιγμιαία ακίνητο.</li>
+    <li>Προσδιορίστε τα χρονικά διαστήματα στα οποία το σημείο κινείται προς τη θετική κατεύθυνση και σε ποια προς την αρνητική κατεύθυνση.</li>
+    <li>Προσδιορίστε το ολικό διάστημα που διήνυσε το σημείο κατά τα $4\,\mathrm{s}$ της κίνησής του.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Η θέση $x(t)$ ενός υλικού σημείου, σε $\mathrm{cm}$, που κινείται πάνω σε έναν άξονα, δίνεται από τη σχέση
+    \[x(t)=3t^2-6t+1,\tag{$\ast$}\] όπου $t\geq 0$ ο χρόνος σε $\mathrm{s}$.
+    <ol class="vertical-list">
+    <li>Προσδιορίστε την ταχύτητα και την επιτάχυνση του υλικού σημείου.</li>
+    <li>Προσδιορίστε το πρόσηµο της ταχύτητας του υλικού σημείου για κάθε $t\geq 0$.</li>
+    <li>Προσδιορίστε το ολικό διάστημα που διήνυσε το σημείο κατά τα πρώτα $3\,\mathrm{s}$ της κίνησης.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Η θέση $x(t)$ ενός υλικού σημείου, σε $\mathrm{cm}$, που κινείται πάνω σε έναν άξονα, δίνεται από τη σχέση
+    \[x(t)=2t^3-15t^2+24t+2,\tag{$\ast$}\] όπου $t\geq 0$ ο χρόνος σε $\mathrm{s}$.
+    <ol class="vertical-list">
+    <li>Προσδιορίστε την ταχύτητα και την επιτάχυνση του υλικού σημείου.</li>
+    <li>Προσδιορίστε το πρόσηµο της ταχύτητας του υλικού σημείου για κάθε $t\geq 0$.</li>
+    <li>Προσδιορίστε το ολικό διάστημα που διήνυσε το σημείο κατά τα πρώτα $3\,\mathrm{s}$ της κίνησης.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Σύμφωνα με την ειδική θεωρία της σχετικότητας, το μήκος $l$ ράβδου που κινείται με ταχύτητα $v$ ως προς αδρανειακό παρατηρητή δίνεται από τον τύπο 
+    $l=l_0\sqrt{1-\dfrac{v^2}{c^2}}$, όπου $l_0$ σταθερά και $c$ η ταχύτητα του φωτός. Προσδιορίστε τον ρυθμό μεταβολής του μήκους της ράβδου ως προς την ταχύτητα.
+    </div>
+    
+    
+    
+    <div class="exercise">
+    Ένας κυκλικός τομέας έχει εμβαδό $25\,\mathrm{cm}^2$. Αν $g(r)$ είναι η περίμετρος σε συνάρτηση με την ακτίνα $r$, προσδιορίστε τον ρυθμό μεταβολής ως προς την ακτίνα.
+    </div>
+    
+    <div class="exercise">
+    Οι κάθετες πλευρές $\textnormal{AB},\textnormal{A}\Gamma$ ενός ορθογωνίου τριγώνου $\textnormal{AB}\Gamma$ (με $\textnormal{A} =90^{\circ}$)  μεταβάλλονται ούτως ώστε $(\textnormal{AB}\Gamma)=24\,\mathrm{cm}^2$. Να προσδιοριστεί ο ρυθμός μεταβολής του τετραγώνου της υποτείνουσας ως προς την πλευρά $\textnormal{AB}$.
+    </div>
+    
+    <div class="exercise">
+    Δίνεται η συνεχής και παραγωγίσιμη συνάρτηση $f$, για την οποία ισχύει
+    \[f(e^x \gsin x)=2e^x\tag{$\ast$},\]
+    για κάθε $x\in\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$.
+    <ol class="vertical-list">
+    <li>Να δείξετε ότι $f^{\prime}(0)=2$.</li>
+    <li>Να δείξετε ότι η εξίσωση της εφαπτομένης της $C_f$ στο $\textnormal{A}(0,f(0))$ είναι η $y=2x+2$.</li>
+    <li>Αν ένα σημείο κινείται πάνω στην προηγούμενη ευθεία και η τετμημένη του αυξάνεται με ρυθμό $2\,$\mathrm{cm}/\mathrm{s}$, προσδιορίστε το ρυθμό μεταβολής της τεταγμένης του σημείου.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Προσδιορίστε το ρυθμό με τον οποίο μεταβάλλεται το εμβαδό του τριγώνου με κορυφές τα σημεία $\textnormal{A}(1,0)$, $\textnormal{B}(x,\ln x)$ και $\Gamma(x,0)$, $x\gt 1$, τη χρονική στιγμή 
+    $t_0$ κατά την οποία $x=2\,\mathrm{cm}$. Δίνεται ότι ο ρυθμός μεταβολής του $x$ ως συνάρτηση του χρόνου είναι σταθερός και ίσος με $0,5\,\mathrm{cm}/\mathrm{s}$.
+    </div>
+    
+    <div class="exercise">
+    Το εμβαδό ενός τετραγώνου αυξάνεται με ρυθμό $24\,\mathrm{cm}^2/\mathrm{s}$ τη χρονική στιγμή που η πλευρά του ισούται με $4\,\mathrm{cm}$. Σε αυτήν τη χρονική στιγμή, προσδιορίστε το ρυθμό μεταβολής της διαγωνίου του τετραγώνου.
+    </div>
+    
+    <div class="exercise">
+    ∆ίνεται η ορθή γωνία $\widehat{x\mathrm{O}y}$ και το ευθύγραµµο τµήµα $\mathrm{AB}$, µήκους $10\,\mathrm{m}$, του οποίου τα άκρα $\mathrm{A}$  και $\mathrm{B}$ ολισθαίνουν πάνω στις πλευρές $\mathrm{O}y$ και $\mathrm{O}x$ αντιστοίχως. Το σηµείο $\mathrm{B}$ κινείται µε σταθερή ταχύτητα $v =2\,\mathrm{m}/\mathrm{s}$ και η θέση του πάνω στην $\mathrm{O}x$  δίνεται από τη συνάρτηση $s(t)=vt$, $t\in[0, 5]$, όπου $t$ ο χρόνος σε $\mathrm{s}$.
+    <ol class="vertical-list">
+    <li>Να προσδιοριστεί το εµβαδόν $\mathrm{E}(t)$ του τριγώνου $\mathrm{AOB}$ ως συνάρτηση του χρόνου.</li>
+    <li>Ποιος είναι ο ρυθµός µεταβολής του εµβαδού $\mathrm{E}(t)$ τη στιγµή κατά την οποία το µήκος του τµήµατος $\mathrm{OA}$  είναι $6\,\mathrm{m}$;</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Θεωρούµε το ορθογώνιο τρίγωνο $\mathrm{OAB}$, όπου $\mathrm{O}(0,0)$, $\mathrm{A}(4, 0)$ και $\mathrm{B}(0, 3)$. Έστω $\mathrm{M}(x, 0)$ εσωτερικό σηµείο του τµήµατος $\mathrm{OA}$ µε $x = x(t) = 2t$ (το $x$ σε $\mathrm{cm}$ και το $t$ σε $\mathrm{s}$). Η κάθετη από το $\mathrm{M}$ στον άξονα $x^\prime x$ τέµνει το τµήµα $\mathrm{AB}$ στο $\mathrm{N}$.
+    <ol class="vertical-list">
+    <li>Προσδιορίστε το εµβαδό $\mathrm{E}(t)$ του τραπεζίου $\mathrm{OMNB}$ ως συνάρτηση του χρόνου.</li>
+    <li>Ποιος είναι ο ρυθµός µεταβολής του εµβαδού $\mathrm{E}(t)$ τη στιγµή κατά την οποία το µήκος του τµήµατος $\mathrm{OM}$  είναι $2\,\mathrm{cm}$;</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    To βάρος ενός κουνελιού $x$ εβδομάδες μετά την γέννησή του δίνεται από την σχέση $f(x)= 20+(x+1)^2$, με $x\lt 8$. Προσδιορίστε τον ρυθμό αύξησης του βάρους του έπειτα από  2 εβδομάδες.
+    </div>
+    
+    <div class="exercise">
+    Ο όγκος μιας σφαίρας αυξάνεται με ρυθμό $10\,\mathrm{m}^3/\mathrm{s}$.
+    <ol class="vertical-list">
+    <li>Προσδιορίστε τον ρυθμό αύξησης της επιφάνειας της σφαίρας τη χρονική στιγμή που η ακτίνα της είναι $r=5\,\mathrm{m}$.</li>
+    <li>Ποια είναι η ακτίνα της σφαίρας τη χρονική στιγμή που η επιφάνεια της αυξάνεται με ρυθμό $2\,\mathrm{m}^2/\mathrm{s}$;</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Ένα σφαιρικό αντικείμενο αυξάνεται σε μέγεθος διατηρώντας το σφαιρικό του σχήμα. Όταν η ακτίνα του ισούται με $3\,\mathrm{cm}$, ο ρυθμός μεταβολής της είναι $2\,\mathrm{cm}/\mathrm{s}$.
+    <ol class="vertical-list">
+    <li>Προσδιορίστε τον ρυθμό μεταβολής του εμβαδού του.</li>
+    <li>Προσδιορίστε τον ρυθμό μεταβολής του όγκου του.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Ο ρυθμός μεταβολής του όγκου σφαιρικού μπαλονιού το οποίο χάνει αέρα, ως προς τον χρόνο, είναι $100\,\mathrm{cm}^3/\mathrm{s}$. Προσδιορίστε τον ρυθμό μεταβολής της ακτίνας $R(t)$ του μπαλονιού ως προς τον χρόνο, την χρονική στιγμή $t_0$ για την οποία είναι $R(t_0)=10\,\mathrm{cm}$. 
+    </div>
+    
+    <div class="exercise">
+    Το μήκος ενός ορθογωνίου μειώνεται με ρυθμό $1\,\mathrm{cm}/\mathrm{s}$ και το πλάτος του αυξάνεται με ρυθμό $2\,\mathrm{cm}/\mathrm{s}$. Κάποια χρονική στιγμή $t_0$, το μήκος ισούται με $8\mathrm{cm}$ και το πλάτος ισούται με $6\,\mathrm{cm}$. Τη χρονική στιγμή αυτή προσδιορίστε:
+    <ol class="vertical-list">
+    <li>Τον ρυθμό μεταβολής της περιμέτρου του ορθογωνίου.</li>
+    <li>Τον ρυθμό μεταβολής του εμβαδού του ορθογωνίου.</li>
+    <li>Τον ρυθμό μεταβολής της διαγωνίου του ορθογωνίου.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Μια πισίνα έχει σχήμα ορθογωνίου παραλληλεπιπέδου και ο πυθμένας της έχει πλάτος $25\,\mathrm{m}$ και και μήκος $40\,\mathrm{m}$. Η πισίνα γεμίζει με νερό, με ρυθμό $500\,\mathrm{m}^3/\mathrm{min}$. Προσδιορίστε με ποιον ρυθμό αυξάνεται το ύψος του νερού στην πισίνα.
+    </div>
+    
+    <div class="exercise">
+    Ένας πληθυσμός μικροβίων μεταβάλλεται σύμφωνα με την σχέση
+    \[N(t)= \dfrac{40}{1+19\cdot 2^{-t}},\]
+    όπου $t$ ο χρόνος σε $\mathrm{min}$. Αν οι φυσιολογικές απώλειες του πληθυσμού $M(t)$ κάθε λεπτό είναι ανάλογες του τετραγώνου του υπάρχοντος πληθυσμού με συντελεστή $\kappa=10^{-3}$, προσδιορίστε τον ρυθμό μεταβολής του εναπομείναντος πληθυσμού.
+    </div>
+    
+    <div class="exercise">
+    Το εμβαδό επιφάνειας ενός κύβου αυξάνεται με ρυθμό $10\,\mathrm{cm}^2/\mathrm{s}$. Προσδιορίστε τον ρυθμό μεταβολής του όγκου του κύβου τη χρονική στιγμή που η ακμή του είναι $2\,\mathrm{cm}$.
+    </div>
+    
+    <div class="exercise">
+    Ένα ποδήλατο βρίσκεται $4\,\mathrm{km}$ δυτικά από ένα σταυροδρόμι και κινείται προς αυτό με ταχύτητα $9\,\mathrm{km}/\mathrm{h}$. Ταυτόχρονα, ένα άλλο ποδήλατο βρίσκεται $4\,\mathrm{km}$ βόρεια από το σταυροδρόμι και απομακρύνεται από αυτό με ταχύτητα $10\,\mathrm{km}/\mathrm{h}$. Προσδιορίστε τον ρυθμό μεταβολής της απόστασης των ποδηλάτων εκείνη την χρονική στιγμή.
+    </div>
+    
+    <div class="exercise">
+    Ευθεία $\epsilon$ στρέφεται γύρω από το σημείο $\textnormal{Α}(4,2)$. Ο ρυθμός μεταβολής του συντελεστή διεύθυνσης $\lambda$, όπου $\lambda\gt 0$, ισούται με $10^{-2}\,\mathrm{s}^{-1}$. Αν η ευθεία τέμνει τους άξονες $x^{\prime}x$, $y^{\prime}y$ στα σημεία $\textnormal{M}$ και $\textnormal{N}$ αντιστοίχως, να προσδιοριστεί ο ρυθμός μεταβολής του εμβαδού $(\textnormal{OMN})$ ως προς τον χρόνο, τη χρονική στιγμή που η ευθεία διέρχεται από το σημείο $\textnormal{B}(5,4)$. 
+    </div>
+    
+    <div class="exercise">
+    Η ακτίνα $r$ μιας σφαίρας μεταβάλλεται με τον χρόνο σύμφωνα με τη συνάρτηση $r(t)=t^2+1$, όπου $t$ σε $\mathrm{s}$ και $r(t)$ σε $\mathrm{cm}$. Κάποια χρονική στιγμή $t_0$ ο ρυθμός μεταβολής του εμβαδού της επιφάνειας της σφαίρας είναι $32\pi\,\mathrm{cm}^2/\mathrm{s}$. Προσδιορίστε: 
+    <ol class="vertical-list">
+    <li>Τη χρονική στιγμή $t_0$.</li>
+    <li>Τον ρυθμό μεταβολής του όγκου της σφαίρας τη χρονική στιγμή $t_0$.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Το εμβαδό της περιοχής ανάμεσα σε δύο ομόκεντρους κύκλους είναι σταθερό και ίσο με $9\pi\,\mathrm{m}^2$. Ο ρυθμός μεταβολής του εμβαδού του μεγαλύτερου κύκλου είναι $10\pi\,\mathrm{cm}^2 /\mathrm{s}$. Προσδιορίστε τον ρυθμό μεταβολής της περιφέρειας του μικρού κύκλου τη χρονική στιγμή που αυτός έχει εμβαδόν $16\pi\,\mathrm{cm}^2$.
+    </div>
+    
+    <div class="exercise">
+    Ένα κινητό σημείο $\textnormal{M}$ κινείται πάνω στη καμπύλη $y=\dfrac{x^3+2}{6}$.
+    <ol class="vertical-list">
+    <li>Τη χρονική στιγμή που το \textnormal{M}\ βρίσκεται στο σημείο $\textnormal{A}(-2,-1)$, η τετμημένη του αυξάνεται με ρυθμό 2 μονάδων ανά $\mathrm{s}$. Προσδιορίστε τον ρυθμό μεταβολής της τεταγμένης του \textnormal{M}\ όταν διέρχεται από το \textnormal{A}.</li>
+    <li>Υποθέτουμε ότι ο ρυθμός μεταβολής της τετμημένης του \textnormal{M}\ είναι θετικός. Προσδιορίστε σε ποια σημεία της καμπύλης ο ρυθμός μεταβολής της τεταγμένης του \textnormal{M}\ είναι οκταπλάσιος του ρυθμού μεταβολής της τετμημένης.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Σφαιρικό αντικείμενο συρρικνώνεται και η επιφάνεια του μειώνεται με ρυθμό $2\,\mathrm{cm}^2/\mathrm{min}$. Προσδιορίστε τον ρυθμό μεταβολής της διαμέτρου του αντικειμένου τη χρονική στιγμή που η διάμετρος της είναι ίση με $5\,\mathrm{cm}$.      
+    </div>
+
+    </section>
+
+    <section id="rolle-theorem">
+
+        <h2>Θεώρημα του Rolle</h2>
+
+        <h3 id="rolle-general">Γενικά</h3>
+
+
+<div class="exercise">
+    Εξετάστε ποιες από τις παρακάτω συναρτήσεις $f$ ικανοποιούν τις υποθέσεις του θεωρήματος Rolle στο διάστημα $\Delta$ που δίνεται. Στη συνέχεια, για τις συναρτήσεις που ισχύουν οι υποθέσεις, προσδιορίστε τον αριθμό $\xi$ του συμπεράσματος.\\
+    <ol class="array-list">
+    <li>$f(x)=x^2-3x+2$, $\Delta=[0,3]$</li>
+    <li>$f(x)=\gsin 4x$, $\Delta=\left[0, \dfrac{\pi}{2}\right]$</li>
+    <li>$f(x)= 3+\gcos 2x$, $\Delta=[0,\pi]$</li>
+    <li>$f(x)=|x|$, $\Delta=[-2,2]$</li>
+    <li>$f(x)= \dfrac{x^2+x+1}{x^2+1}$, $\Delta=\left[\dfrac{1}{2},2\right]$</li>
+    <li>$f(x)=e^{2x}-3e^x+2$, $\Delta=[0,\ln 2]$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Δίνεται συνάρτηση $f(x) = \begin{cases}{x^3}\gsin\dfrac{1}{x}, & x\neq 0\\ 0, & x=0 \end{cases}~$.
+    <ol class="vertical-list">
+    <li>Αποδείξτε ότι η $f$ είναι παραγωγίσιμη στο $x_0=0$.</li>
+    <li>Αποδείξτε ότι εφαρμόζεται το Θεώρημα Rolle για την $f$ στο $\left[\dfrac{1}{2\pi},\dfrac{1}{\pi}\right]$.</li>
+    <li>Αποδείξτε ότι η εξίσωση $\gctan\dfrac{1}{x}=3x$ διαθέτει τουλάχιστον μία λύση στο $\left(\dfrac{1}{2\pi},\dfrac{1}{\pi}\right)$.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Θεωρούµε τη συνάρτηση $f(x)=(x-3)(e^x-1) + 8$.
+    <ol class="vertical-list">
+    <li>Αποδείξτε ότι η γραφική παράσταση της $f$ διαθέτει µία τουλάχιστον εφαπτόµενη παράλληλη στον άξονα $x^{\prime}x$.</li>
+    <li>Αποδείξτε ότι υπάρχει ένα τουλάχιστον $\xi\in(0, 3)$ τέτοιο ώστε $\xi-2=e^{-\xi}$.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Δίνεται η συνάρτηση 
+    \[f(x) = \begin{cases} \alpha x^2 -3x+1, & x\lt  0\\ x^2+\beta x-\gamma, & x\geq 0 \end{cases}~,\]
+     όπου $\alpha,\beta,\gamma\in\mathbb{R}$. Για την $f$ είναι γνωστό ότι εφαρμόζεται το Θεώρημα Rolle στο διάστημα $[-1,1]$.
+    <ol class="vertical-list">
+    <li>Προσδιορίστε τους $\alpha,\beta,\gamma$.</li>
+    <li>Προσδιορίστε το σημείο $\xi\in(-1,1)$ για το οποίο ισχύει $f^{\prime}(\xi)=0$.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Δίνεται η συνάρτηση \[f(x) = \begin{cases}
+    \alpha x^2 +\alpha x+2, &\hspace{-0.9em} -1\leq x\lt 0\\ x^3+\beta x^2 +3x +\gamma, &0\leq x\leq 1 \end{cases}~,\] 
+    όπου $\alpha,\beta,\gamma\in\mathbb{R}$. Για την $f$ είναι γνωστό ότι εφαρμόζεται το Θεώρημα Rolle στο διάστημα $[-1,1]$.
+    <ol class="vertical-list">
+    <li>Προσδιορίστε τους $\alpha,\beta,\gamma$.</li>
+    <li>Προσδιορίστε το σημείο $\xi\in(-1,1)$ για το οποίο ισχύει $f^{\prime}(\xi)=0$.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Θεωρούμε τη συνάρτηση
+    \[f(x)=\begin{cases}\alpha x+x^2 \gsin\dfrac{\pi}{2x}, & x\in[-1,0) \\ \beta x+\gamma & x\in(0,1] \end{cases}~,\]
+    όπου $\alpha,\beta,\gamma\in\mathbb{R}$. Να υπολογιστούν οι $\alpha,\beta,\gamma\in\mathbb{R}$ ώστε να ισχύουν οι προϋποθέσεις του θεωρήματος του Rolle στο διάστημα $[-1,1]$.
+    </div>
+    
+    <div class="exercise">
+    Έστω η συνάρτηση $f(x)=4x-\pi^2 \gsin x$. Αποδείξτε ότι η $C_f$ διαθέτει ένα τουλάχιστον σηµείο τοµής µε τον άξονα $x^\prime x$, µε τετµηµένη αριθµό του διαστήµατος $(0, \pi)$.
+    </div>
+    
+    <div class="exercise">
+    Έστω $\alpha,\beta\in\mathbb{R}$ με $\alpha\lt \beta$. Θεωρούµε συνάρτηση $f$, η οποία είναι συνεχής στο $[\alpha,\beta]$, παραγωγίσιµη στο $(\alpha,\beta)$ και $f(\alpha)=f (\beta)=0$.
+    <ol class="vertical-list">
+    <li>Για τη συνάρτηση $g(x)= \dfrac{f(x)}{x-c}$, όπου $c\notin[\alpha,\beta]$ , αποδείξτε ότι υπάρχει $c_0\in(\alpha,\beta)$ τέτοιο ώστε $g^\prime(c_0) = 0$.</li>
+    <li>Για τα $c, c_0$  του ερωτήµατος (1), αποδείξτε ότι η εφαπτόµενη της γραφικής παράστασης της $f$ στο $\mathrm{M}(c_0, f(c_0))$ διέρχεται από το σηµείο $\mathrm{N}(c, 0)$.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Δίνεται η συνάρτηση $f(x)= x^{\nu}(x-1)^{\nu}$, όπου $\nu\in\mathbb{N}^{\ast}$. Αποδείξτε ότι υπάρχει υπάρχει $\xi\in(0,1)$ τέτοιο ώστε $f^{\prime}(\xi)=0$. 
+    </div>
+    
+    <div class="exercise">
+    Αποδείξτε ότι οι γραφικές παραστάσεις των συναρτήσεων $f(x)=e^{3x}+3x^7$ και $g(x)=e^{-x}-5x^3$ διαθέτουν μοναδικό κοινό σημείο, το οποίο βρίσκεται στον άξονα $y^{\prime}y$.
+    </div>
+    
+    <div class="exercise">
+    Αν η συνεχής συνάρτηση  $f: [2,3]\to\mathbb{R}$ είναι παραγωγίσιμη στο $(2,3)$ και ισχύει $f(3)-f(2)=\ln 3-\ln 2$, αποδείξτε ότι υπάρχει $\xi\in(2,3)$ ώστε $f^{\prime}(\xi)= \dfrac{1}{\xi}$. 
+    </div>
+    
+    <div class="exercise">
+    Αν η συνάρτηση $f$ είναι συνεχής στο $[-1,1]$ και παραγωγίσιμη στο $(-1,1)$, αποδείξτε ότι υπάρχει $\xi\in(-1,1)$ τέτοιο ώστε $2f^{\prime}(\xi) =5\xi^4 (f(1)-f(-1))$.
+    </div>
+    
+    <div class="exercise">
+    Δίνεται η συνεχής συνάρτηση $f:[1,2]\to\mathbb{R}$ η οποία είναι παραγωγίσιμη στο $(1,2)$, με $f(1)=1$ και $f(2)=2$.
+    <ol class="vertical-list">
+    <li>Αποδείξτε ότι υπάρχει $\xi_1\in(1,2)$ με $f^{\prime}(\xi_1)(\xi_1 -3)=-f(\xi_1)$.</li>
+    <li>Αποδείξτε ότι υπάρχει $\xi_2\in(1,2)$ με $f^{\prime}(\xi_2)=\dfrac{f(\xi_2)}{\xi_2}$.</li>
+    <li>Αποδείξτε ότι υπάρχει $\xi_3\in(1,2)$ με $f^{\prime}(\xi_3)f(\xi_3)=\xi_3$.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Αν $f(x)= x^6+4x^4+5x^2+x-7$, αποδείξτε ότι η $C_f$ δεν διαθέτει εφαπτομένες παράλληλες μεταξύ τους.
+    </div>
+    
+    <div class="exercise">
+    Έστω $\alpha\gt 0$ και συνάρτηση $f$, συνεχής στο διάστημα $[0,1]$ και παραγωγίσιμη στο διάστημα $(0,1)$. Αν $0\lt f(x)\lt  \alpha$ και $f^{\prime}(x)\neq\alpha$, για κάθε $x\in(0,1)$, αποδείξτε ότι υπάρχει μοναδικός αριθμός $\xi\in(0,1)$ με $f(\xi)=\alpha\xi$.
+    </div>
+    
+    <div class="exercise">
+    Έστω $f,g$ συνεχείς συναρτήσεις στο $[0,1]$ και παραγωγίσιμες στο $(0,1)$. Για την $f$ ισχύει $f(0)=f(1)=0$ και $f(x)\neq 0$ για κάθε $x\in (0,1)$.
+    <ol class="vertical-list">
+    <li>Να δείξετε ότι ισχύουν οι προϋποθέσεις του θεωρήματος του Rolle για τη συνάρτηση $h(x)=f^2(x)e^{g(x)}$ στο διάστημα $[0,1]$.</li>
+    <li>Να δείξετε ότι υπάρχει τουλάχιστον ένα $\xi\in (0,1)$ ώστε $\dfrac{f^{\prime}(\xi)}{f(\xi)}=-\dfrac{g^{\prime}(\xi)}{2}$.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Δίνεται η συνάρτηση $f:\mathbb{R}\to\mathbb{R}$ με συνεχή πρώτη παράγωγο. Αν για τους αριθμούς $\alpha,\beta,\gamma\in\mathbb{R}$ με $\alpha\lt \beta\lt \gamma$ 
+    ισχύει $f(\alpha)\lt f(\beta)\gt f(\gamma)$, να δείξετε ότι υπάρχει τουλάχιστον ένα $x_0\in (\alpha,\gamma)$ τέτοιο ώστε $f^{\prime}(x_0)=0$.
+    </div>
+    
+    <div class="exercise">
+    Θεωρούμε $\alpha,\beta\in\mathbb{R}$ με $\alpha\lt \beta$. Υποθέτουμε ότι η συνάρτηση $f$ είναι συνεχής στο διάστημα $[\alpha, \beta]$ και παραγωγίσιμη στο $(\alpha, \beta)$, με $f^{\prime}(x)\neq 0$ για κάθε $x\in(\alpha, \beta)$.
+    <ol class="vertical-list">
+    <li>Να αποδειχθεί ότι $f(\alpha)\neq f(\beta)$.</li>
+    <li>Αν επιπλέον $f(\beta)=0$, να επιλυθεί η εξίσωση $f(x)=0$ στο διάστημα $[\alpha, \beta]$.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Η συνεχής συνάρτηση $f:[0,1]\to\mathbb{R}$ είναι δύο φορές παραγωγίσιμη στο διάστημα $(0,1)$ με $f(0)=3$ και $f(1)=e+2$. Αν $f^{\prime\prime}(x)\neq e^x$, για κάθε $x\in(0,1)$, αποδείξτε ότι υπάρχει μοναδικός $\xi\in(0,1)$ με $f^{\prime}(\xi)=e^{\xi}$. 
+    </div>
+    
+    <div class="exercise">
+    H συνάρτηση $f$ είναι δύο φορές παραγωγίσιμη στο $\mathbb{R}$ με $f^{\prime} (0)\lt  1 \lt f^{\prime} (2)$. Αν ισχύει $f^{\prime\prime}(x)\neq 0$, για κάθε $x\in(0,2)$, αποδείξτε ότι υπάρχει ακριβώς ένα $x_0 \in(0,2)$ τέτοιο ώστε $f^{\prime}(x_0) =1$.
+    </div>
+    
+    <div class="exercise">
+    Έστω $\alpha,\beta\in\mathbb{R}$ με $\alpha\lt \beta$. Θεωρούμε συνάρτηση $f$ που ικανοποιεί τις προϋποθέσεις του Θεωρήματος Rolle στο $[\alpha,\beta]$. Αν $\lambda=f(\alpha)=f(\beta)$, αποδείξτε ότι υπάρχει $\xi\in(\alpha,\beta)$ με $f^{\prime}(\xi)=f(\xi)-\lambda$.
+    </div>
+    
+    
+    <h3 id="rolle-equations">Εξισώσεις</h3>
+    
+    <div class="exercise">
+    Να επιλυθούν οι εξισώσεις:
+    <ol class="array-list">
+    <li>$2x^2-2x+\ln x=0$</li>
+    <li>$e^x=x+1$</li>
+    <li>$2x+\gcos x=1$</li>
+    <li>$x^3+2x=\gsin x$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Αποδείξτε ότι οι παρακάτω εξισώσεις διαθέτουν το πολύ δύο λύσεις στο $\mathbb{R}$:
+    <ol class="array-list">
+    <li>$x^{10}-20x+4=0$</li>
+    <li>$x^4+24x^2+4x=40$</li>
+    <li>$6x^4-8x+1=0$</li>
+    <li>$\gcos x+2x=0$</li>
+    <li>$\gsin x+3x^2-5=0$</li>
+    <li>$5e^x=23-x^2$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+        Αποδείξτε ότι η εξίσωση $3x^5-2x^3=4$ διαθέτει μόνο μία λύση στο $(1,2)$.
+    </div>
+
+    <div class="exercise">
+    Αποδείξτε ότι η εξίσωση $x^2=x\gsin x+\gcos x$ διαθέτει ακριβώς δύο λύσεις στο $\left(-\frac{\pi}{2},0\right)$ και μία λύση στο $\left(0, \frac{\pi}{2}\right)$.
+    </div>
+
+    <div class="exercise">
+    Να αποδείξετε ότι για $\alpha\in\mathbb{R}$, η εξίσωση $x^3-12x+\alpha=0$ διαθέτει το πολύ μία λύση στο διάστημα $(-2,2)$.
+    </div>
+    
+    <div class="exercise">
+    Αν $\alpha,\beta\in\mathbb{R}$ με $\alpha\gt 0$,  αποδείξτε ότι η εξίσωση  $x^4+\alpha x^2+\beta x=0$ διαθέτει το πολύ μία μη μηδενική λύση στο $\mathbb{R}$. 
+    </div>
+
+    <div class="exercise">
+    Δίνεται η συνάρτηση $f(x)=4x^3+2(\lambda-1)x-\lambda$, με $\lambda\in\mathbb{R}$. Αποδείξτε ότι υπάρχει τουλάχιστον μία λύση της εξίσωσης $f(x)=0$ στο διάστημα $(0,1)$.
+    </div>
+    
+    <div class="exercise">
+    Αν $f(x)= x+ \alpha\gsin x-e^{\beta}$ με $-1\lt \alpha\lt 0$ και $\beta\in\mathbb{R}$, αποδείξτε ότι η εξίσωση $f(x)=0$ διαθέτει ακριβώς μία λύση στο διάστημα $(0,e^{\beta}-\alpha)$.
+    </div>
+    
+    <div class="exercise">
+    Θεωρούµε την παραγωγίσιµη στο $\mathbb{R}$ συνάρτηση $f$. Αποδείξτε ότι η εξίσωση
+    $f^{\prime}(x)\gsin x+f(x)\gcos x=0$ διαθέτει µία τουλάχιστον λύση στο διάστηµα $(\pi, 2\pi)$.
+    </div>
+    
+    <div class="exercise">
+    Θεωρούµε τη συνάρτηση $f$, παραγωγίσιµη στο $\mathbb{R}$, τέτοια ώστε $f(2)=2f (1)$. Αποδείξτε ότι η εξίσωση $xf^{\prime}(x)-f (x)=0$ διαθέτει µία τουλάχιστον λύση στο διάστηµα $(1, 2)$.
+    </div>
+    
+    <div class="exercise">
+    Αποδείξτε ότι η εξίσωση $2x^3+9x^2+12x+\alpha=0$, όπου $\alpha\in(4,5)$, διαθέτει μοναδική λύση στο διάστημα $(-2,-1)$.
+    </div>
+    
+    <div class="exercise">
+    Αποδείξτε ότι η εξίσωση  $8\alpha x^3+9\beta x^2-6\beta x-2\alpha=0$, όπου $\alpha,\beta\in\mathbb{R}$, διαθέτει μία τουλάχιστον λύση στο διάστημα $(0,1)$. 
+    </div>
+    
+    <div class="exercise"> Έστω $\alpha,\beta,\gamma\in\mathbb{R}$.
+    <ol class="vertical-list">
+    <li>Αποδείξτε ότι η εξίσωση $4\alpha  x^3-3\beta  x^2+2\gamma  x=\alpha  -\beta  +\gamma$  διαθέτει μία τουλάχιστον λύση στο διάστημα $(0,1)$.</li>
+    <li>Αποδείξτε ότι η εξίσωση $2x^3-3x^2-\alpha^4 x-\beta=0$ διαθέτει μία τουλάχιστον λύση στο διάστημα $[0,1]$ όταν $\alpha\gt 1$.</li>
+    <li>Aποδείξτε ότι η εξίσωση $\alpha x^2+\beta  x+\gamma =e^x$ διαθέτει το πολύ τρεις λύσεις.</li>
+    </ol>
+    </div>
+    
+
+    
+    <div class="exercise">
+    Αποδείξτε ότι η εξίσωση $2x^3+9x^2+12x+\alpha=0$, με $\alpha\in(4,5)$, διαθέτει μοναδική λύση στο διάστημα $(-2,-1)$.
+    </div>
+    
+    <div class="exercise">
+    Αν $f(x)=(x^2-1)(x^2-4)(x-3)$, αποδείξτε ότι η εξίσωση $f^{\prime}(x)=0$ διαθέτει ακριβώς τέσσερις λύσεις. 
+    </div>
+    
+    <div class="exercise">
+        Να λυθεί η εξίσωση $(2x^2-2x+\ln x)^2+(e^{x-1}-x)^2=0$.
+        </div>
+
+    <div class="exercise">
+    Θεωρούµε τη συνάρτηση $f(x)=x^4 e^x-x-1$.
+    <ol class="vertical-list">
+    <li>Αποδείξτε ότι η εξίσωση $f(x)=0$ διαθέτει µία τουλάχιστον λύση στο $(-1,0)$ και µία τουλάχιστον λύση στο $(0,1)$.</li>
+    <li>Αποδείξτε ότι η εξίσωση $4x^3 e^x+x^4 e^x-1=0$ διαθέτει µία τουλάχιστον λύση στο $(-1,1)$.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Έστω $\nu\in\mathbb{N}^{\ast}$ και $\alpha\in\mathbb{R}$. Θεωρούμε την εξίσωση
+    \[(x+\alpha)^{\nu}=x^{\nu}+\alpha^{\nu}.\tag{$\ast$}\]
+    <ol class="vertical-list"></li>
+    <li>Αν ο $\nu$ είναι άρτιος, αποδείξτε ότι η εξίσωση ($\ast$) διαθέτει μοναδική λύση, την $x=0$.</li>
+    <li>Αν ο $\nu$ είναι περιττός με $\nu\geq 3$, αποδείξτε ότι η εξίσωση ($\ast$) διαθέτει ως μοναδικές λύσεις τις $x=0$ και $x=-\alpha$.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Έστω $\alpha,\beta,\gamma,\delta\in\mathbb{R}$  και $\nu,\mu,\kappa\in\mathbb{N}^{\ast}$ με \[\dfrac{\alpha}{\nu+1}+\dfrac{\beta}{\mu+1}+\dfrac{\gamma}{\kappa+1}+\dfrac{\delta}{2}=0.\tag{$\ast$}\] Αποδείξτε ότι η εξίσωση $\alpha x^{\nu}+\beta x^{\mu}+\gamma x^{\kappa}+\delta x=0$ διαθέτει μία τουλάχιστον λύση στο διάστημα $(0,1)$. 
+    </div>
+    
+    <div class="exercise">
+    Αν $f(x)= x^2+\gsin x$, αποδείξτε ότι η ευθεία με εξίσωση $y=x$ εφάπτεται στη γραφική παράσταση της $f$. 
+    </div>
+    
+    <div class="exercise">
+    Αν $f(x)=x^4$, αποδείξτε ότι οποιαδήποτε εφαπτομένη της $C_f$ έχει με αυτήν ένα μόνο κοινό σημείο.
+    </div>
+    
+    <div class="exercise">
+    Έστω ότι η παραγωγίσιμη διάστημα $\Delta$ συνάρτηση $f$ διαθέτει τουλάχιστον 
+    $\nu$ ρίζες. Αποδείξτε ότι η συνάρτηση $(f^2(x))^{\prime}$ διαθέτει τουλάχιστον $2\nu-1$ ρίζες.
+    </div>
+
+
+    </section>
+
+    <section id="mean-value-theorem">
+
+        <h2>Θεώρημα Μέσης Τιμής</h2>
+
+        <h3 id="mean-value-general">Γενικά</h3>
+
+    <div class="exercise">
+    Για τη συνάρτηση $f:[1,4]\to\mathbb{R}$, επιβεβαιώστε ότι ικανοποιούνται οι υποθέσεις του Θεωρήματος Μέσης Τιμής και προσδιορίστε το αριθμό $\xi$ του συμπεράσματος, όταν:
+    <ol class="array-list">
+    <li>$f(x)=2x+1$</li>
+    <li>$f(x)=2x^2+1$</li>
+    <li>$f(x)=2x^3+x^2+1$</li>
+    <li>$f(x)=\dfrac{2x+3}{x+2}$</li>
+    <li>$f(x)=\dfrac{1}{x}-x$</li>
+    <li>$f(x)=\sqrt{-x^2+5x-4}$</li>
+    </ol>
+    </div>
+
+<div class="exercise">
+Να εξετάσετε ποιες από τις παρακάτω συναρτήσεις ικανοποιούν τις προϋποθέσεις του Θεωρήματος Μέσης Τιμής στο διάστημα $[-1,1]$:
+<ol class="array-list">
+<li>$f(x)=\begin{cases}3x^2-x,  &x\lt 0 \\ x^3-x, &x\geq 0\end{cases}$</li>
+<li>$g(x)=\begin{cases}3-x^3, &x\neq 1 \\ 4,  &x=1 \end{cases}$</li>
+</ol>
+</div>
+
+
+
+<div class="exercise">
+Θεωρούμε τη συνάρτηση $f(x)=\dfrac{x}{1+|x|}$.
+<ol class="vertical-list">
+<li>Αποδείξτε ότι $f$ είναι παραγωγίσιμη και προσδιορίστε την παράγωγό της.</li>
+<li>Εφαρμόστε για την $f$ το Θεώρημα Μέσης Τιμής στο διάστημα $[-1,1]$ και προσδιορίστε τον αριθμό $\xi$ του συμπεράσματος.</li>
+</ol>
+</div>
+
+<div class="exercise">
+Θεωρούμε τη συνάρτηση
+\[f(x)=\begin{cases}\ln^2 x, &1\leq x\leq e \\ \alpha x+\beta,  & e\leq x\leq 5\end{cases}~.\]
+Προσδιορίστε τους $\alpha,\beta\in\mathbb{R}$ ώστε να ισχύουν οι προϋποθέσεις του Θεωρήματος Μέσης Τιμής στο διάστημα $[1,5]$.
+</div>
+
+<div class="exercise">
+Αν $f(x)= \sqrt{4-x^2}$, $x\in[0,2]$, εξετάστε αν ισχύουν οι προϋποθέσεις του Θεωρήματος Μέσης Τιμής για την $f$ στο διάστημα $[0,2]$. Αν ναι, προσδιορίστε $\xi\in(0,2)$ τέτοιο ώστε $f^{\prime}(\xi)= \dfrac{f(2)- f(0)}{2}$.
+</div>
+
+<div class="exercise">
+Θεωρούµε τη συνάρτηση $f(x)=3x^{11}-5x^9+4$. Αποδείξτε ότι υπάρχει ένα τουλάχιστον $\xi\in(0, 1)$ τέτοιο ώστε η εφαπτόµενη της γραφικής παράστασης της $f$ στο σηµείο $\mathrm{M}(\xi,f(\xi))$ να είναι παράλληλη στην ευθεία με εξίσωση $y=-2x+5$.
+</div>
+
+<div class="exercise">
+Αν για τη συνεχή στο $[-1,1]$ συνάρτηση $f$ ισχύει $f(-1)=-2$, $f(1)=2$ και $f^{\prime}(x)\leq 2$, για κάθε $x\in(-1,1)$, να υπολογίσετε το $f(0)$.
+</div>
+
+<div class="exercise">
+Έστω $\alpha,\beta\in\mathbb{R}$ με $\alpha\lt \beta$. Θεωρούμε συνάρτηση $f$, συνεχή στο διάστημα $[\alpha,\beta]$ και παραγωγίσιμη στο $(\alpha,\beta)$, με $f(\alpha)=\beta\sqrt{3}$ και $f(\beta)=\alpha\sqrt{3}$. Αποδείξτε ότι υπάρχει $\xi\in(\alpha,\beta)$ ώστε η εφαπτομένη της $C_f$ στο σημείο $\textnormal{Α}(\xi,f(\xi))$ να σχηματίζει με τον άξονα $x^{\prime}x$ γωνία $\frac{2\pi}{3}$.
+</div>
+
+<div class="exercise">
+Έστω $\alpha,\beta\in\mathbb{R}$ με $\alpha\lt \beta$. Θεωρούµε συνάρτηση $f$ που ικανοποιεί τις προϋποθέσεις του Θεωρήματος Rolle στο διάστημα $[\alpha,\beta]$. Αποδείξτε ότι υπάρχουν $\xi_1,\xi_2\in(\alpha,\beta)$, διαφορετικά μεταξύ τους,  µε $f^{\prime}(\xi_1) + f^{\prime}(\xi_2) = 0$.
+</div>
+
+<div class="exercise">
+Θεωρούµε τη συνάρτηση $f$, η οποία είναι συνεχής στο $[0, 10]$, παραγωγίσιµη στο $(0, 10)$ και $f(0)=2$, $f(10)=12$.
+<ol class="vertical-list">
+<li>Αποδείξτε ότι υπάρχει ένα τουλάχιστον $\xi\in(0, 10)$ τέτοιο ώστε $f^{\prime}(\xi)= 1$.</li>
+<li>Αποδείξτε ότι υπάρχουν $\xi_1, \xi_2\in(0, 10)$ µε $\xi_1\neq\xi_2$ τέτοια ώστε $f^{\prime}(\xi_1)+ f^{\prime}(\xi_2)=2$.</li>
+<li>Αποδείξτε ότι υπάρχουν $x_1, x_2\in(0, 10)$ µε $x_1\neq x_2$ τέτοια ώστε $4f^{\prime}(x_1)+ f^{\prime}(x_2)=5$.</li>
+</ol>
+</div>
+
+<div class="exercise">
+Δίνεται η παραγωγίσιμη συνάρτηση $f:\mathbb{R}\to\mathbb{R}$ για την οποία ισχύει $f(1)=2$ και $f(3)=6$.
+<ol class="vertical-list">
+<li>Αποδείξτε ότι υπάρχει $\xi\in(1,3)$ με $f(\xi)=8-2\xi$.</li>
+<li>Αποδείξτε ότι υπάρχουν $x_1,x_2\in(1,3)$, διαφορετικά μεταξύ τους, με $f^{\prime}(x_1)f^{\prime}(x_2)=4$.</li>
+</ol>
+</div>
+
+<div class="exercise">
+Δίνεται η συνάρτηση $f:[1,6]\to\mathbb{R}$ η οποία είναι συνεχής στο $[1,6]$ και παραγωγίσιμη στο $(1,6)$ με $f(1)=f(6)$.
+<ol class="vertical-list">
+<li>Αποδείξτε ότι υπάρχει τουλάχιστον ένα $x_0\in (1,6)$ τέτοιο ώστε η γραφική παράσταση της συνάρτησης $f$ να έχει στο σημείο $\textnormal{A}(x_0,f(x_0))$ οριζόντια εφαπτομένη.</li>
+<li>Αποδείξτε ότι υπάρχουν $\xi_1,\xi_2\in (1,6)$ με $\xi_1\neq\xi_2$ τέτοια ώστε $f^{\prime}(\xi_1)+4f^{\prime}(\xi_2)=0$.</li>
+</ol>
+</div>
+
+<div class="exercise">
+Έστω $\alpha,\beta\in\mathbb{R}$ με $\alpha\lt \beta$. Δίνεται η συνεχής συνάρτηση $f:[\alpha,\beta]\to\mathbb{R}$, παραγωγίσιμη στο $(\alpha,\beta)$, με $f(\alpha)=3\alpha-\beta$ και $f(\beta)=\alpha+\beta$. Να αποδείξετε ότι υπάρχουν $\xi_1,\xi_2\in(\alpha,\beta)$ με $f^{\prime}(\xi_1)+f^{\prime}(\xi_2)=4$.
+</div>
+
+<div class="exercise">
+Δίνεται η παραγωγίσιμη συνάρτηση $f:\mathbb{R}\to\mathbb{R}$ με $f(2)-f(1)=16$. Να αποδείξετε ότι υπάρχει ένα τουλάχιστον $\xi\in(1,2)$ με $f^{\prime}(\xi)=3\xi^2+6\xi$.
+</div>
+
+<div class="exercise">
+Έστω $\alpha,\beta\in\mathbb{R}$ με $\alpha\lt \beta$. Θεωρούμε τη συνάρτηση $f$, συνεχή στο $[\alpha,\beta]$ και παραγωγίσιμη στο $(\alpha,\beta)$ με $f(\alpha)=\beta$ και $f(\beta)=\alpha$.
+<ol class="vertical-list">
+<li>Αποδείξτε ότι η εξίσωση $f(x)=x$  διαθέτει λύση στο  $(\alpha,\beta)$.</li>
+<li>Αποδείξτε ότι υπάρχουν $\xi_1,\xi_2\in(\alpha,\beta)$, διάφορα μεταξύ τους, με $f^{\prime}(\xi_1) =\dfrac{1}{f^{\prime}(\xi_2)}$.</li>
+</ol></div>
+
+<div class="exercise">
+Δίνεται συνάρτηση $f$, συνεχής στο $\left[\frac{1}{2},3\right]$ και παραγωγίσιμη στο $\left(\frac{1}{2},3\right)$, με $f\left(\frac{1}{2}\right)=2$ και $f(3)=12$.  
+<ol class="vertical-list">
+<li>Αποδείξτε ότι υπάρχει τουλάχιστον ένα $\xi\in\left(\frac{1}{2},3\right)$ τέτοιο ώστε η εφαπτομένη της $C_f$ στο $\textnormal{A}(\xi,f(\xi))$ να είναι παράλληλη στην ευθεία με εξίσωση $y=4x+2$.</li>
+<li>Αποδείξτε ότι υπάρχει τουλάχιστον ένα $\gamma\in\left(\frac{1}{2},3\right)$ τέτοιο ώστε η εφαπτομένη της $C_f$ στο $\textnormal{B}(\gamma,f(\gamma))$ να διέρχεται από το $\textnormal{O}(0,0)$.</li>
+</ol>
+</div>
+
+<div class="exercise">
+Θεωρούμε συνάρτηση $f$, δύο φορές παραγωγίσιμη στο $\mathbb{R}$. Υποθέτουμε ότι υπάρχει εφαπτομένη $\varepsilon$ της $C_f$ η οποία διαθέτει με την $C_f$ δύο τουλάχιστον κοινά σημεία.
+<ol class="vertical-list">
+<li>Αποδείξτε ότι η $f^{\prime}$ δεν είναι $1-1$.</li>
+<li>Αποδείξτε ότι υπάρχει $\xi\in\mathbb{R}$ με $f^{\prime\prime}(\xi)=0$.</li>
+</ol>
+</div>
+
+<div class="exercise"> 
+Έστω $\alpha,\beta\in\mathbb{R}$ με $\alpha\lt \beta$. Θεωρούμε τη συνάρτηση $f$, συνεχή στο $[\alpha,\beta]$ και παραγωγίσιμη στο $(\alpha,\beta)$ με σύνολο τιμών εντός του διαστήματος $(0,+\infty)$. Αποδείξτε ότι υπάρχει $\xi\in(\alpha,\beta)$ με $\dfrac{f(\beta)}{f(\alpha)}=e^{(\beta-\alpha) \frac{f^{\prime}(\xi)}{f(\xi)}}$
+</div>
+
+<div class="exercise">
+Έστω $\alpha,\beta\in\mathbb{R}$ με $\alpha\lt \beta$. Θεωρούμε συνάρτηση $f$, δύο φορές παραγωγίσιµη στο $[\alpha,\beta]$ με
+\[f\left(\dfrac{\alpha+\beta}{2}\right)=\dfrac{f(\alpha)+f(\beta)}{2}.\]
+Αποδείξτε ότι υπάρχει ένα τουλάχιστον $\xi\in(\alpha,\beta)$ τέτοιο ώστε $f^{\prime\prime}(\xi) = 0$.
+</div>
+
+<div class="exercise">
+Έστω $\alpha,\beta\in\mathbb{R}$ με $\alpha\lt \beta$. Θεωρούμε τη συνάρτηση $f$, συνεχή στο $[\alpha,\beta]$ και δύο φορές παραγωγίσιμη στο $(\alpha,\beta)$. Αν οι αριθμοί $f(\alpha), f(\mu), f(\beta)$ είναι διαδοχικοί όροι αριθμητικής προόδου, όπου $\mu$ το μέσο του $[\alpha,\beta]$, αποδείξτε ότι υπάρχει $x_0\in(\alpha,\beta)$ με $f^{\prime\prime} (x_0)=0$.
+</div>
+
+<div class="exercise">
+Έστω $\alpha,\beta\in\mathbb{R}$ με $\alpha\lt \beta$ και συνάρτηση $f$, συνεχής στο $[\alpha,\beta]$ και παραγωγίσιμη στο $(\alpha,\beta)$, με $f(\alpha)=f(\beta)$. Αποδείξτε ότι υπάρχουν $\xi_1,\xi_2$ με $\alpha\lt \xi_1\lt \mu\lt \xi_2\lt \beta$ και  $f^{\prime} (\xi_1) + f^{\prime} (\xi_2) =0$, όπου $\mu$ το μέσο του $[\alpha,\beta]$
+</div>
+
+    <h3 id="mean-value-inequalities">Ανισότητες</h3>
+
+
+<div class="exercise">
+Αποδείξτε ότι:
+<ol class="array-list">
+<li>$\gctan y (y-x)\lt \ln\gsin y-\ln\gsin x\lt \gctan x(y-x)$, αν $0\lt x\lt y\lt \dfrac{\pi}{2}$.</li>
+<li>$\dfrac{y-x}{\gcos^2 x}\lt \gtan y-\gtan x\lt \dfrac{y-x}{\gcos^2 y}$, αν $0\lt x\lt y\lt \dfrac{\pi}{2}$.</li>
+<li>$e^{-x}\lt \dfrac{x-y}{e^x-e^y}\lt e^{-y}$, αν $x\gt y$.</li>
+<li>$x\leq e^{x-1}\leq 1+(1-x)e$, αν $1\lt x\lt 2$.</li>
+<li>$1+\dfrac{x}{2\sqrt{1+x}}\lt \sqrt{1+x}\lt 1+\dfrac{x}{2}$, αν $-1\lt x\lt 0$.</li>
+<li>$\gsin (x + y) \lt  \gsin x + y\gcos x$, αν $0\lt x\lt x+y\lt \dfrac{\pi}{2}$.</li>
+<li>$1+x\lt e^x\lt 1+ex$, αν $0\lt x\lt 1$.</li>
+<li>$\ln(x + 1)-\ln x \lt  \dfrac{1}{x}$, αν $x \gt  0$.</li>
+<li>$\dfrac{x}{x+1}\lt \ln(x + 1) \lt  x$, αν $x \gt  0$.</li>
+</ol>
+</div>
+
+<div class="exercise">
+Αποδείξτε τις παρακάτω ανισότητες:
+<ol class="array-list">
+<li>$\ln\pi - \ln 3\lt  \dfrac{\pi}{3}-1$</li>
+<li>$5e^4(\pi-e)\lt \pi^5-e^5\lt 5\pi^4(\pi-e)$</li>
+<li>$2-\dfrac{e}{3}\lt \ln 3\lt \dfrac{3}{e}$</li>
+<li>$e\lt \dfrac{4-e}{2\ln2-1}\lt 4$</li>
+<li>$2+\dfrac{2}{165}\lt \sqrt[5]{33}\lt 2+\dfrac{1}{80}$</li>
+<li>$\gsin\dfrac{5\pi}{18}+\dfrac{\pi}{36}\lt  \dfrac{\sqrt{3}}{2}$</li>
+</ol>
+</div>
+
+<div class="exercise"> 
+Έστω $\alpha,\beta\in\mathbb{R}$ με $\alpha\lt \beta$. Δίνεται η συνάρτηση $f(x)=\gsin^2 x$, $x\in[\alpha,\beta]$.
+<ol class="vertical-list">
+<li>Αποδείξτε ότι ισχύουν οι προϋποθέσεις του Θεωρήματος Μέσης Τιμής για την $f$ στο $[\alpha,\beta]$.</li>
+<li>Αποδείξτε την ανισότητα $|\gsin^2 \beta-\gsin^2 \alpha|\leq |\beta-\alpha|$.</li>
+</ol>
+</div>
+
+<div class="exercise"> 
+Έστω $\alpha,\beta\in\mathbb{R}$ με $0\lt \alpha\lt \beta$. Δίνεται η συνάρτηση $f(x)=\ln x$, $x\in[\alpha,\beta]$.
+<ol class="vertical-list">
+<li>Αποδείξτε ότι ισχύουν οι προϋποθέσεις του Θεωρήματος Μέσης Τιμής για την $f$ στο $[\alpha,\beta]$.</li>
+<li>Αποδείξτε την ανισότητα $1-\dfrac{\alpha}{\beta}\lt \ln\alpha -\ln\beta\lt \dfrac{\beta}{\alpha}-1$.</li>
+</ol>
+</div>
+
+<div class="exercise">
+Αν $\alpha\gt 0$, αποδείξτε ότι $\left|\sqrt{x^2+\alpha^2}-\sqrt{y^2+\alpha^2}\right|\leq |x-y|$, για κάθε $x,y\in\mathbb{R}$.
+</div>
+
+<div class="exercise"> 
+Αποδείξτε ότι
+\[\left|\ln\left(\dfrac{\alpha^2+4}{\beta^2 +4}\right)\right|\leq \dfrac{1}{2}|\beta-\alpha|,\]
+για κάθε $\alpha,\beta\in\mathbb{R}$.
+</div>
+
+<div class="exercise">
+Έστω $f$ παραγωγίσιμη στο $\mathbb{R}$ συνάρτηση με $f(1)=0$ και $|f^{\prime}(x)|\leq 1$, για κάθε $x\in\mathbb{R}$. Αποδείξτε ότι $|f(x)|\leq x-1$, για κάθε $x\geq 1$.
+</div>
+
+<div class="exercise">
+Η συνάρτηση $f$ είναι συνεχής στο διάστημα $[3,+\infty)$ και παραγωγίσιμη στο $(3,+\infty)$. Αν $f(3)=0$ και $0\lt  f^{\prime}(x) \lt 1$ για κάθε $x\gt 3$, αποδείξτε ότι $0\lt f(x)\lt x-3$, για κάθε $x\gt 3$. 
+</div>
+
+<div class="exercise">
+Έστω $f$ παραγωγίσιμη στο $\mathbb{R}$ συνάρτηση για την οποία υπάρχει $M\in\mathbb{R}$ με $|f^{\prime}(x)|\geq M$, για κάθε $x\in\mathbb{R}$. Αποδείξτε ότι $f(\beta)\geq f(\alpha)+M(\beta-\alpha)$, για κάθε $\alpha,\beta\in\mathbb{R}$ με $\beta\geq\alpha$.
+</div>
+
+<div class="exercise">
+H συνάρτηση $f$ είναι παραγωγίσιμη στο $\mathbb{R}$ και η $f^{\prime}(x)$ είναι γνησίως φθίνουσα.
+<ol class="vertical-list">
+<li>Αποδείξτε ότι $(\beta-\alpha)f^{\prime}(\beta)+f(\alpha)\leq f(\beta)\leq(\beta-\alpha)f^{\prime}(\alpha)+f(\alpha)$, για κάθε $\alpha,\beta\in\mathbb{R}$ με $\beta\geq\alpha$.</li>
+<li>Αποδείξτε ότι $f(x+2)-f(x)\lt 2f^{\prime}(x)\lt f(x)-f(x-2)$, για κάθε $x\in\mathbb{R}$</li>
+</ol>
+</div>
+
+<div class="exercise">
+Αν η συνάρτηση $f$ είναι συνεχής στο $[0,3]$, με $f(0)=2$ και $3\leq f^{\prime}(x)\leq 6$, για κάθε $x\in(0,3)$, αποδείξτε ότι $11\leq f(3)\leq 20$.
+</div>
+
+<div class="exercise">
+Δίνεται η συνεχής συνάρτηση $f:[2,6]\to\mathbb{R}$ η οποία είναι παραγωγίσιμη στο $(2,6)$ με $f(2)=-6$ και $1\lt f^{\prime}(x)\lt 2$, για κάθε $x\in(2,6)$. Να αποδείξετε ότι $|f(6)|\lt 2$.
+</div>
+
+<div class="exercise">
+Η συνάρτηση $f$ είναι παραγωγίσιμη στο $\mathbb{R}$ με $f(0)=0$ και $f^{\prime}(x)\gt M\gt 0$, για κάθε $x\in[0,4]$. Αποδείξτε ότι $f(x)\geq M$, για κάθε $x\geq 1$. 
+</div>
+
+<div class="exercise">
+Έστω $\alpha,\beta\in\mathbb{R}$ με $\alpha\lt \beta$. Θεωρούμε συνάρτηση $f$, παραγωγίσιμη με συνεχή παράγωγο στο διάστημα $[\alpha,\beta]$. Αν η $f$ είναι δύο φορές παραγωγίσιμη στο $(\alpha,\beta)$ με $f^{\prime}(\alpha)\leq 0$ και  $f^{\prime\prime}(x)\lt 0$, για κάθε $x\in(\alpha,\beta)$, αποδείξτε ότι $f(\beta)\lt f(\alpha)$.
+</div>
+
+<div class="exercise">
+Έστω παραγωγίσιµη στο $\mathbb{R}$ συνάρτηση $f$ με $-2\leq f^{\prime}(x)\leq 1$, για κάθε $x\in\mathbb{R}$. Αποδείξτε ότι $|f (x + 1) - f (x)| \leq 2$, για κάθε $x\in\mathbb{R}$.
+</div>
+
+<div class="exercise">
+Έστω συνάρτηση $f$, συνεχής στο $[4, 6]$ και παραγωγίσιµη στο $(4, 6)$, τέτοια ώστε
+$f (4) = 8$ και $|f^\prime (x)|\leq 2$, για κάθε $x\in(4, 6)$. Αποδείξτε ότι:
+<ol class="array-list">
+<li>$4\leq f(6)\leq 12$</li>
+<li>$4\lt f(t)\lt 12$, για κάθε $t\in(4, 6)$</li>
+</ol>
+</div>
+
+<div class="exercise">
+Θεωρούµε τις παραγωγίσιµες συναρτήσεις $f,g: [0,+\infty)\to\mathbb{R}$, για τις οποίες ισχύει η σχέση
+\[ f^{\prime}(x) = g^{\prime}(x) + \gsin^2 x + e^x,\tag{$\ast$}\]
+για κάθε $x\in[0, +\infty)$. Αποδείξτε ότι $f (0) + g(x) \lt  g(0) + f (x)$, για κάθε $x \gt  0$.
+</div>
+
+<div class="exercise">
+∆ίνεται παραγωγίσιµη στο $[0, +\infty)$ συνάρτηση $f$ με $f (0) = 0$. Υποθέτουμε ότι η συνάρτηση $f^\prime$ είναι γνησίως αύξουσα στο $(0, +\infty)$. Αποδείξτε ότι $f^{\prime}(x)\gt  \dfrac{f(x)}{x}$, για κάθε $x\in(0, +\infty)$.
+</div>
+
+<div class="exercise">
+Θεωρούµε συνάρτηση $f$ τέτοια ώστε η $f^\prime$ να είναι γνησίως αύξουσα στο $\mathbb{R}$. Αποδείξτε ότι:
+<ol class="array-list">
+<li>$f (3)\lt \dfrac{f (1) + f (5)}{2}$</li>
+<li>$f (2) \lt  \dfrac{3f (1) + f (5)}{4}$</li>
+</ol>
+</div>
+
+<div class="exercise">
+Θεωρούµε συνάρτηση $f$ τέτοια ώστε η $f^\prime$ να είναι γνησίως φθίνουσα στο $\mathbb{R}$. Για κάθε $x\in\mathbb{R}$ αποδείξτε ότι:
+<ol class="vertical-list">
+<li>$f^\prime(x+1)\lt f(x+1)-f(x)\lt f^\prime(x+1)$, για κάθε $x\in\mathbb{R}$.</li>
+<li>$f (2x)\geq\dfrac{f(x)+f(3x)}{2}$, για κάθε $x\in\mathbb{R}$.</li>
+</ol>
+</div>
+
+<div class="exercise">
+Δίνεται παραγωγίσιμη συνάρτηση $f: \mathbb{R}\to\mathbb{R}$ με $f(1)-f(0)=e$. Αποδείξτε ότι η εξίσωση $f^\prime(x)-2x=e^x$ διαθέτει μία τουλάχιστον λύση στο διάστημα $(0,1)$.
+</div>
+
+<div class="exercise">παραγ
+Δίνεται η παραγωγίσιμη συνάρτηση $f:\left[0, \frac{\pi}{4}\right]\to\mathbb{R}$ με $f\left(\frac{\pi}{4}\right)-f(0)=1$. Να αποδείξετε ότι υπάρχει ένα τουλάχιστον $\xi\in\left(0, \frac{\pi}{4}\right)$ τέτοιο ώστε $f^\prime(\xi)\gcos^2 \xi=1$.
+</div>
+
+<div class="exercise">παραγ
+Δίνεται η δύο φορές παραγωγίσιμη συνάρτηση $f:[1,3]\to\mathbb{R}$, με $f(1)=2$, $f(2)=\ln(2e^3)$ και $f(3)=ln(3e^4)$.
+<ol class="vertical-list">
+<li>Αποδείξτε ότι η γραφική παράσταση της $g(x)=f(x)-\ln x-x$ διαθέτει δύο οριζόντιες εφαπτομένες στο διάστημα $[1,3]$.</li>
+<li>Αποδείξτε ότι υπάρχει ένα τουλάχιστον $\xi\in(1,3)$ τέτοιο ώστε $\xi^2 f^{\prime\prime}(\xi)=-1$.</li>
+</ol>
+</div>
+
+    </section>
+
+    </main>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+
+
+html {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  ---theme-color : #0f5a96;
+  ---theme-color-transparent: rgba(15, 90, 150, 0.8);
+}
+
+body {
+  margin: 0;
+  background-color: whitesmoke;
+  background-image: url("math2-25.png");
+  background-size: cover;
+  display: grid;
+  grid-template-rows: 60vh 40vh;
+}
+
+main {
+  display: grid;
+  align-content: space-between;
+}
+
+footer {
+  align-self: end;
+}
+
+h1 {
+  background-color: var(---theme-color-transparent);
+  background: linear-gradient(90deg, rgba(0,0,0,0) 0%, var(---theme-color-transparent) 15%, var(---theme-color-transparent) 85%, rgba(0,0,0,0) 100%);
+  color: rgb(230, 230, 230);
+  text-align: center;
+  padding: 0.5em;
+  box-shadow: 5px 5px 10px 4px rgb(0, 0, 0);
+  font-variant: small-caps;
+  margin: 0;
+}
+
+h2 {
+  background-color: rgba(200, 200, 200, 0.8);
+  background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(200, 200, 200, 0.8) 35%, rgba(200, 200, 200, 0.8) 65%, rgba(0,0,0,0) 100%);
+  color: var(---theme-color);
+  text-align: center;
+  padding: 0.5em;
+  box-shadow: 5px 5px 10px 4px rgb(0, 0, 0);
+  font-variant: small-caps;
+  margin: 0;
+}
+
+nav {
+  background-color: var(---theme-color-transparent);
+  background: linear-gradient(90deg, rgba(0,0,0,0) 0%, var(---theme-color-transparent) 15%, var(---theme-color-transparent) 85%, rgba(0,0,0,0) 100%);
+  padding: 0.1em;
+  box-shadow: 5px 5px 10px 4px rgb(140, 140, 140);
+
+  display: flex;
+  justify-content: center;
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+  gap: 1em;
+  justify-content: center;
+  flex-direction: column;
+}
+
+nav ul a {
+  color: rgb(230, 230, 230);
+  font-weight: 600;
+  font-variant: small-caps;
+}
+
+@media (1000px <= width) {
+
+  nav ul {
+    flex-direction: row;
+  }
+  
+}
