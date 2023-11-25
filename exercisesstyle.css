@@ -23,6 +23,10 @@ body {
   border-radius: 50px;
 }
 
+#home-button::before {
+  content: 	"\2B89";
+}
+
 header>div {
   text-align: center;
   margin: 1em 0 0 0;
