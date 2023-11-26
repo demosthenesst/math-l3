@@ -14,13 +14,13 @@ body {
 
 #home-button {
   position: fixed;
-  right: 0rem;
-  bottom: 0em;
+  right: 1em;
+  bottom: 1em;
   color: var(---theme-color);
   text-decoration: none;
-  font-size: 4rem;
+  font-size: 3em;
   z-index: 1;
-  border-radius: 50px;
+  /* border-radius: 50px; */
 }
 
 /* #home-button::before {
