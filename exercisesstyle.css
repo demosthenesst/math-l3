@@ -9,6 +9,7 @@ body {
   background-color: rgb(230, 230, 230);
   padding-bottom: 4em;
   margin: 0;
+  text-size-adjust: none;
 }
 
 #home-button {
