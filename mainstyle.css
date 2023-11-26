@@ -12,7 +12,7 @@ body {
   background-image: url("math2-25.png");
   background-size: cover;
   display: grid;
-  grid-template-rows: 60dvh 40dvh;
+  grid-template-rows: 55dvh 35dvh;
   height: 100dvh;
 }
 
