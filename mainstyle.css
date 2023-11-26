@@ -13,6 +13,7 @@ body {
   background-size: cover;
   display: grid;
   grid-template-rows: 60vh 40vh;
+  height: 100dvh;
 }
 
 main {
