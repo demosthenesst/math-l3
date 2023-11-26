@@ -146,8 +146,19 @@ nav a {
   font-variant: small-caps;
 }
 
+.scale-08 {
+  margin:0;
+  padding: 0;
+  transform: scale(0.8);
+}
+
 
 @media (1000px <= width) {
+
+  .scale-08 {
+    transform: scale(1);
+  }
+
 
   nav ul {
     display: flex;
