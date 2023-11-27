@@ -166,7 +166,16 @@ nav a {
   display: none;
 }
 
+.whitespace-pre-wrap {
+  overflow-wrap: break-word;
+}
+
 @media (1000px <= width) {
+
+  .whitespace-pre-wrap {
+    overflow-wrap: normal;
+  }
+
 
   .scale-08, .scale-09 {
     transform: scale(1);
