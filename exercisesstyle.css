@@ -166,17 +166,8 @@ nav a {
   display: none;
 }
 
-/* .whitespace-pre-wrap {
-  white-space: pre;
-  background-color: rgb(28, 188, 135);
-} */
 
 @media (1000px <= width) {
-
-  /* .whitespace-pre-wrap {
-    white-space: normal;
-  } */
-
 
   .scale-08, .scale-09 {
     transform: scale(1);
