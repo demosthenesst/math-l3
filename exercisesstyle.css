@@ -167,8 +167,8 @@ nav a {
 }
 
 .whitespace-pre-wrap {
-  white-space: pre-wrap;
-  background-color: aquamarine;
+  white-space: pre;
+  background-color: rgb(28, 188, 135);
 }
 
 @media (1000px <= width) {
