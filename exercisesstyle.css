@@ -167,13 +167,14 @@ nav a {
 }
 
 .whitespace-pre-wrap {
-  overflow-wrap: break-word;
+  white-space: pre-wrap;
+  background-color: aquamarine;
 }
 
 @media (1000px <= width) {
 
   .whitespace-pre-wrap {
-    overflow-wrap: normal;
+    white-space: normal;
   }
 
 
