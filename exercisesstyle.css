@@ -12,10 +12,6 @@ body {
   text-size-adjust: none;
 }
 
-.exercise {
-  overflow-x: scroll;
-  background-color: bisque;
-}
 
 #home-button {
   position: fixed;
@@ -93,7 +89,13 @@ h3 {
   box-shadow: 5px -5px 10px 4px rgb(140, 140, 140);
   margin-inline: auto;
   line-height: 1.5;
+
+
+  overflow-x: scroll;
+  background-color: bisque;
 }
+
+
 
 .exercise::before {
   background-color: white;
