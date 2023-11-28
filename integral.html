@@ -1,0 +1,1587 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ολοκλήρωμα</title>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+            }
+        };
+    </script>
+
+    <style>  
+    /* for differents files */
+        html {
+            ---theme-color : rgb(70, 0, 70);
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" type="text/css" href="exercisesstyle.css">
+
+</head>
+<body>
+
+
+<div style="display: none;">
+    $\DeclareMathOperator{\gsin}{ημ}$
+    $\DeclareMathOperator{\gcos}{συν}$
+    $\DeclareMathOperator{\gtan}{εφ}$
+    $\DeclareMathOperator{\gctan}{σφ}$
+    $\renewcommand{\dint}{\displaystyle\int}$
+</div>
+
+<a id="home-button" href="#">
+    <i class="fa-solid fa-circle-up"></i>
+</a>
+
+<header>
+    <nav>
+        <ul>
+            <li><a href="functions.html">Συναρτησεις</a></li> 
+            <li><a href="limits.html">Ορια</a></li>  
+            <li><a href="continuity.html">Συνεχεια</a></li>
+            <li><a href="derivative_1.html">Παραγωγος I</a></li>
+            <li><a href="derivative_2.html">Παραγωγος ΙΙ</a></li>
+            <li><a href="integral.html">Ολοκληρωμα</a></li>
+            <li><a href="followup.html">Ανακεφαλαιωτικες Ασκησεις</a></li>
+        </ul>
+    </nav>
+
+    <div>
+        Δημοσθένης Σταλίδης,
+        Γυμνάσιο ΛΤ Άρνισσας,
+        2023
+    </div>
+</header>
+
+  <h1>Ολοκληρωμα</h1>
+
+  <div id="contents-container">
+      <ul id="contents">
+        <li><a href="#antiderivative">Παράγουσα συνάρτησης</a>
+            <ul>
+                <li><a href="#antiderivative-calculation">Υπολογισμός παράγουσας</a></li>
+                <li><a href="#antiderivative-general">Γενικές ασκήσεις</a></li>
+                <li><a href="#antiderivative-problems">Προβλήματα</a></li>            
+            </ul>
+        </li>
+        <li><a href="#integral-basic-properties">Βασικές ιδιότητες ολοκληρώματος</a></li>
+        <li><a href="#integration">Τεχνικές ολοκλήρωσης</a>
+            <ul>
+                <li><a href="#integration-straightforward">Άμεση ολοκλήρωση</a></li>
+                <li><a href="#integration-by-parts">Ολοκλήρωση κατά παράγοντες</a></li>
+                <li><a href="#integration-substitution">Μέθοδος αντικατάστασης</a></li>
+            </ul>
+        </li>
+
+
+
+
+        
+        <li><a href="#integration-more">Επιπλέον ασκήσεις υπολογισμού ολοκληρωμάτων</a></li>
+        <li><a href="#area">Εμβαδά επιπέδων χωρίων</a></li>
+      </ul>
+  </div>
+
+  <main>
+
+  <section id="antiderivative">
+
+    <h2>Παράγουσα συνάρτησης</h2>
+
+    <h3 id="antiderivative-calculation">Υπολογισμός παράγουσας</h3>
+
+    
+    <div class="exercise">
+    Να προσδιοριστεί παράγουσα της συνάρτησης $f$, όταν:
+    <ol class="array-list">
+    <li>$f(x)=5x^2-6x+1$</li>
+    <li>$f(x)=(5-3x)^{14}$</li>
+    <li>$f(x)=(x+5)^{12}$</li>
+    <li>$f(x)=x(2x^{2}+3)^{4}$</li>
+    <li>$f(x)=\sqrt[4]{x^{7}}$</li>
+    <li>$f(x)=3x\sqrt{x}$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Να προσδιοριστεί παράγουσα της συνάρτησης $f$, όταν:
+    <ol class="array-list">
+    <li>$f(x)=\dfrac{x^{2}-6x+4}{x^{2}}$</li>
+    <li>$f(x)=\dfrac{x^2-3x+1}{\sqrt{x}}$</li>
+    <li>$f(x)=\dfrac{1}{x-3}$</li>
+    <li>$f(x)=\dfrac{10}{2-x}$</li>
+    <li>$f(x)=\dfrac{2}{3x-6}$</li>
+    <li>$f(x)=\dfrac{1}{9x^2-6x+1}$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Να προσδιοριστεί παράγουσα της συνάρτησης $f$, όταν:
+    <ol class="array-list">
+    <li>$f(x)=\dfrac{x}{(x^{2}+1)^{3}}$</li>
+    <li>$f(x)=\dfrac{5}{(1-3x)^{10}}$</li>
+    <li>$f(x)=\dfrac{x^{3}}{x^{4}+1}$</li>
+    <li>$f(x)=\dfrac{2x+3}{x-1}$</li>
+    <li>$f(x)=\dfrac{x+2}{x^{2}-1}$</li>
+    <li>$f(x)=\dfrac{x^{2}}{x+1}$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Να προσδιοριστεί παράγουσα της συνάρτησης $f$, όταν:
+    <ol class="array-list">
+    <li>$f(x)=\sqrt{7x+1}$</li>
+    <li>$f(x)=\sqrt[3]{2x+2}$</li>
+    <li>$f(x)=\dfrac{4}{\sqrt{1-x}}$</li>
+    <li>$f(x)=\dfrac{1}{\sqrt[3]{5x-1}}$</li>
+    <li>$f(x)=\dfrac{5x-10}{\sqrt[3]{x^{2}+4x+5}}$</li>
+    <li>$f(x)=\dfrac{1}{\sqrt{x+4}+\sqrt{x}}$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Να προσδιοριστεί παράγουσα της συνάρτησης $f$, όταν:
+    <ol class="array-list">
+    <li>$f(x)=e^{2-3x}$</li>
+    <li>$f(x)=2^{3x+1}$</li>
+    <li>$f(x)=10^{1-3x}$</li>
+    <li>$f(x)=\dfrac{5}{2^{x+1}}$</li>
+    <li>$f(x)=3^{2x}\cdot 2^{3x}$</li>
+    <li>$f(x)=xe^{x^{2}}$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Να προσδιοριστεί παράγουσα της συνάρτησης $f$, όταν:
+    <ol class="array-list">
+    <li>$f(x)=\dfrac{\ln x}{x}$</li>
+    <li>$f(x)=(2\ln x+1)x$</li>
+    <li>$f(x)=\ln\left(\sqrt{1+x}\right)$</li>
+    <li>$f(x)=\dfrac{\ln^2 x}{x}$</li>
+    <li>$f(x)=\dfrac{1}{x\ln x}$</li>
+    <li>$f(x)=\dfrac{1}{x+x\ln x}$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Να προσδιοριστεί παράγουσα της συνάρτησης $f$, όταν:
+    <ol class="array-list">
+    <li>$f(x)=3\gsin 5x$</li>
+    <li>$f(x)=\gcos(5x-1)$</li>
+    <li>$f(x)=\gtan 2x$</li>
+    <li>$f(x)=\gctan (3x+2)$</li>
+    <li>$f(x)=x\gcos x^2$</li>
+    <li>$f(x)=\gtan^3 x$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Να προσδιοριστεί παράγουσα της συνάρτησης $f$, όταν:
+    <ol class="array-list">
+    <li>$f(x)=\dfrac{e^x}{e^{x+1} +1}$</li>
+    <li>$f(x)=2x\gsin x+ x^2\gcos x$</li>
+    <li>$f(x)=\dfrac{1+\ln x}{x\ln x}$</li>
+    <li>$f(x)=\gcos x-x\gsin x$</li>
+    <li>$f(x)=e^x (\gsin x-\gcos x)$</li>
+    <li>$f(x)=x^{2}e^{x}+2xe^{x}$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Να προσδιοριστεί παράγουσα της συνάρτησης $f$, όταν:
+    <ol class="array-list">
+    <li>$f(x)=(2x+1)\gsin(x^{2}+x)$</li>
+    <li>$f(x)=\dfrac{1}{\gcos^{2}x}-\dfrac{1}{\gsin^{2}x}$</li>
+    <li>$f(x)=\dfrac{1}{\gsin^{2}x\gcos^{2}x}$</li>
+    <li>$f(x)=\dfrac{e^x -e^{-x}}{e^x +e^{-x}}$</li>
+    <li>$f(x)=\dfrac{\gcos x-\gsin x}{e^x}$</li>
+    <li>$f(x)=e^x\left(\ln x +\dfrac{1}{x}\right)$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Να προσδιοριστεί παράγουσα της συνάρτησης $f$, όταν:
+    <ol class="array-list">
+    <li>$f(x)=\dfrac{xe^{x}-e^{x}}{x^2}$</li>
+    <li>$f(x)=\dfrac{\gtan x-1}{\gtan x+1}$</li>
+    <li>$f(x)=3\sqrt{\gsin x}\gcos x$</li>
+    <li>$f(x)=\dfrac{1}{x\ln^{2}x}$</li>
+    <li>$f(x)=x^{-2}\gsin\left(\dfrac{\pi}{x}\right)$</li>
+    <li>$f(x)=\dfrac{1}{2x\sqrt{\ln x}}$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Να προσδιοριστεί παράγουσα της συνάρτησης $f$, όταν:
+    <ol class="array-list">
+    <li>$f(x)=\dfrac{\gsin 2x}{1+\gcos 2x}$</li>
+    <li>$f(x)=\dfrac{1}{x\ln^3 x}$</li>
+    <li>$f(x)=\dfrac{e^x}{e^{2x}+e^{x}+1}$</li>
+    <li>$f(x)=\dfrac{\ln x}{x\ln^2 x+x}$</li>
+    <li>$f(x)=\dfrac{\gsin x\gcos x}{\sqrt{1+\gsin^2 x}}$</li>
+    <li>$f(x)=\dfrac{2xe^x -e^x}{2x\sqrt{x}}$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Να προσδιοριστεί παράγουσα της συνάρτησης $f$, όταν:
+    <ol class="array-list">
+    <li>$f(x)=\dfrac{1-\ln x}{x^2}$</li>
+    <li>$f(x)=-\dfrac{1+e^x}{e^{2x}}$</li>
+    <li>$f(x)=x\cdot 5^{x^2 +\pi}$</li>
+    <li>$f(x)=(1-x)^{100}x$</li>
+    <li>$f(x)=\dfrac{x^3-x^2-x-2}{x-2}$</li>
+    <li>$f(x)=e^{x+1+\ln(x+1)}$</li>
+    </ol>
+    </div>
+    
+    <h3 id="antiderivative-general">Γενικές ασκήσεις</h3>
+    
+    <div class="exercise">
+    Η συνάρτηση $F$ με τύπο $F(x)=\dfrac{x}{e^x}+(x+1)^2$ είναι παράγουσα της συνάρτησης $f$ στο $\mathbb{R}$. Να προσδιοριστεί η $f$ και παράγουσα $G$ της $f$ με $G(\ln 2)=1$. 
+    </div>
+    
+    <div class="exercise">
+    Να αποδειχθεί ότι η συνάρτηση  $F:\mathbb{R}\to\mathbb{R}$ με
+    \[F(x)=\begin{cases}2x\gsin\dfrac{1}{x}-\gcos\dfrac{1}{x},& x\neq 0\\ 0,&x=0 \end{cases}\]
+    είναι παράγουσα της συνάρτησης $f:\mathbb{R}\to\mathbb{R}$ με
+    \[f(x)=\begin{cases}x^2 \gsin\dfrac{1}{x},& x\neq 0\\ 0,&x=0 \end{cases}.\]
+    </div>
+    
+    <div class="exercise">
+    Να αποδειχθεί ότι η συνάρτηση $f:\mathbb{R}\to\mathbb{R}$ με τύπο
+    \[f(x)=\begin{cases}x,& x \lt 0\\ x+1,&x\geq 0 \end{cases}\]
+    δεν διαθέτει παράγουσα.
+    </div>
+    
+    <div class="exercise">
+    Έστω η συνάρτηση $f(x)= \dfrac{1}{\sqrt{2x-x^2}}$ και $F$ παράγουσα της συνάρτησης $f$. Αποδείξτε ότι η $F$ δεν διαθέτει ακρότατα.
+    </div>
+    
+    <div class="exercise">
+    Να προσδιορίσετε παράγουσα της συνάρτησης $f(x)= 3x^2-6x$ ώστε να διαθέτει τοπικό ακρότατο επί του άξονα $x^{\prime}x$.
+    </div>
+    
+    <div class="exercise">
+    Να προσδιορίσετε τη συνάρτηση $f:\mathbb{R}\to\mathbb{R}$ όταν $f^{\prime\prime}(x)=e^x$, για κάθε $x\in\mathbb R$, στις παρακάτω περιπτώσεις:
+    <ol class="vertical-list">
+    <li>Η εξίσωση εφαπτομένης της $C_f$ στο σημείο επαφής $\mathrm{A}(0,f(0))$ είναι η $y=2x+1$.</li>
+    <li>Η $f$ διαθέτει στο $x_0=0$ τοπικό ακρότατο το 2.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Θεωρούμε τη συνάρτηση $f(x)=\dfrac{1}{x^2 -4x+3}$, $x\in\mathbb{R}\setminus\{1,3\}$.
+    <ol class="vertical-list">
+    <li>Να προσδιοριστούν $\mathrm{A},\mathrm{B}\in\mathbb{R}$ με $f(x)=\dfrac{\mathrm{A}}{x-1}+\dfrac{\mathrm{B}}{x-3}$, για $x\in\mathbb{R}\setminus\{1,3\}$.</li>
+    <li>Να προσδιοριστεί παράγουσα $F$ της $f$ με $F(2)=0$.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Να προσδιορίσετε τη συνάρτηση $f:(0,+\infty)\to\mathbb{R}$, αν $f^{\prime\prime}(x)=\dfrac{1}{\sqrt[5]{x}}$, για κάθε $x \gt 0$, και η ευθεία με εξίσωση $y=2x-3$ είναι ασύμπτωτη της $C_f$ στο $+\infty$.
+    </div>
+    
+    <div class="exercise">
+    Έστω συνάρτηση $f:(0,+\infty)\to\mathbb{R}$, για την οποία ισχύει
+    \[2f(x)+xf\left(\dfrac{1}{x}\right)=\dfrac{x^{12}+2}{x^{10}+x},\tag{$\ast$}\]
+    για κάθε $x \gt 0$.
+    <ol class="vertical-list">
+    <li>Να αποδείξετε ότι $f(x)=\dfrac{1}{x^{10}+x}$, για κάθε $x \gt 0$.</li>
+    <li>Να προσδιορίσετε παράγουσα της $f$.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Έστω η συνάρτηση $f:\mathbb{R}\to\mathbb{R}$ με $f\left(\frac{1}{2}\right)=1$. Έστω επίσης $F$ παράγουσα της $f$ με
+    \[f(x)F(1-x)=1,\tag{$\ast$}\]
+    για κάθε $x\in\mathbb{R}$.
+    <ol class="vertical-list">
+    <li>Αποδείξτε ότι $F\left(\frac{1}{2}\right)=1$.</li>
+    <li>Αποδείξτε ότι $F(x)F(1-x)=1$, για κάθε $x\in\mathbb{R}$.</li>
+    <li>Αποδείξτε ότι $f(x)=F(x)$, για κάθε $x\in\mathbb{R}$.</li>
+    <li>Προσδιορίστε τον τύπο της $f$.</li>
+    </ol> 
+    </div>
+    
+    <div class="exercise">
+    Έστω συνάρτηση $f:\mathbb{R}\to\mathbb{R}$ και $F$ παράγουσά της. Για την $F$ υποθέτουμε ότι είναι δύο φορές παραγωγίσιμη με $F^{\prime\prime}(x)\neq 0$ και
+    \[F(x)=F(x-2),\tag{$\ast$}\]
+    για κάθε $x\in\mathbb{R}$. 
+    <ol class="vertical-list">
+    <li>Να αποδείξετε ότι η $f$ είναι $1-1$.</li>
+    <li>Να επιλύσετε την εξίσωση $f(x)=0$.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Έστω συνάρτηση $f:\mathbb{R}\to\mathbb{R}$ με $f(0)=1$ και $F$ παράγουσα της $f$, με
+    \[f(x)F(x)=-e^{-2x},\tag{$\ast$}\]
+    για κάθε $x\in\mathbb{R}$. Να προσδιοριστεί ο τύπος της $f$.
+    </div>
+    
+    <div class="exercise">
+    Έστω συνάρτηση $f:\mathbb{R}\to\mathbb{R}$ με $f(1)=1$ και $F$ παράγουσα της $f$, με
+    \[f(x)=e^{x-F(x)},\tag{$\ast$}\]
+    για κάθε $x\in\mathbb{R}$. Να προσδιοριστεί ο τύπος της $f$.
+    </div>
+    
+    <div class="exercise">
+    Έστω η συνάρτηση $f(x)=\sqrt{1+x^2}$ και $F$ παράγουσά της. Να προσδιορίσετε τα διαστήματα στα οποία η $F$ είναι κυρτή ή κοίλη και τις θέσεις των σημείων καμπής της $C_f$.
+    </div>
+    
+    <h3 id="antiderivative-problems">Προβλήματα</h3>
+    
+    <div class="exercise">
+    Ένα σώμα κινείται πάνω σε άξονα και η ταχύτητα του κάθε χρονική στιγμή $t$ σε $\mathrm{s}$ είναι $v(t)=t^2-t-2$, σε $\mathrm{m}/\mathrm{s}$. Να προσδιορίσετε τη θέση του σώματος $x(t)$, τη χρονική στιγμή $t=3\,\mathrm{s}$, αν τη χρονική στιγμή $t=0\,\mathrm{s}$ ήταν στην αρχή των αξόνων.
+    </div>
+    
+    <div class="exercise">
+    Μια πέτρα ρίχνεται κατακόρυφα προς τα κάτω από γέφυρα, τη στιγμή $t=0\,\mathrm{s}$, με ταχύτητα $v(t)=9,8t+8$, σε $\mathrm{m}/\mathrm{s}$. Σε πόσο βάθος θα πέσει στα πρώτα $4\,\mathrm{s}$;
+    </div>
+    
+    <div class="exercise">
+    Ο ρυθμός αύξησης ενός πληθυσμού μικροοργανισμών κατά την χρονική στιγμή $t$ σε $\mathrm{s}$ ισούται με $N_0 3^t$, όπου $N_0$ ο πληθυσμός κατά την χρονική στιγμή $t=0\,\mathrm{s}$. Να προσδιοριστεί ο πληθυσμός $N(t)$ σε οποιαδήποτε χρονική στιγμή $t$. 
+    </div>
+    
+    <div class="exercise">
+    O ρυθμός μεταβολής του όγκου εισπνεομένου αέρα (σε $\mathrm{l}$) μίας πλήρους εισπνοής δίνεται από τον τύπο
+    \[V^{\prime}(t)=\dfrac{1}{2}\gsin\left(\dfrac{2\pi t}{5}\right),\]
+    όπου $t\in [0,2]$ (σε $\mathrm{s}$). Να υπολογιστεί ο όγκος του εισπνεομένου αέρα σε μία πλήρη εισπνοή.
+    </div>
+    
+    <div class="exercise">
+    Σε μια γεώτρηση, ο ρυθµός άντλησης πετρελαίου δίνεται από τον τύπο
+    \[R^{\prime}(t)=20+10t-\dfrac{3}{4}t^2,\]
+    όπου $R(t)$ είναι το πλήθος, σε χιλιάδες, βαρελιών που αντλήθηκαν στους $t$ πρώτους µήνες λειτουργίας. Να προσδιορίσετε πόσα βαρέλια θα έχουν αντληθεί τους 8 πρώτους µήνες λειτουργίας.
+    </div>
+    
+    <div class="exercise">
+    Η θερµοκρασία $T$ ενός σώµατος ελαττώνεται µε ρυθµό $-\kappa\alpha e^{-\kappa t}$, όπου $\alpha,\kappa$ θετικές σταθερές και $t$ ο χρόνος. Η αρχική θερµοκρασία $T(0)$ του σώµατος είναι $T_0 +\alpha$. Να προσδιοριστεί η θερµοκρασία του σώµατος τη χρονική στιγµή $t$.
+    </div>
+    
+    <div class="exercise">
+    Η είσπραξη $E(x)$, από πώληση $x$ µονάδων ενός προϊόντος ($0\leq x\leq 100$) µιας βιοµηχανίας, µεταβάλλεται µε ρυθµό $E^{\prime}(x)=100-x$ (σε χιλιάδες &euro; ανά µονάδα προϊόντος), ενώ ο ρυθµός µεταβολής του κόστους παραγωγής είναι σταθερός και ισούται µε 2 (σε χιλιάδες &euro; ανά µονάδα προϊόντος). Να προσδιοριστεί το κέρδος της βιοµηχανίας από την παραγωγή $100$ µονάδων προϊόντος, υποθέτοντας ότι το κέρδος είναι µηδενικό όταν η βιοµηχανία δεν παράγει προϊόντα.
+    </div>
+    
+    <div class="exercise">
+    Από την πώληση ενός νέου προϊόντος µιας εταιρείας διαπιστώθηκε ότι ο ρυθµός µεταβολής του κόστους $K(t)$ εκφράζεται από τον τύπο $K^{\prime}(t)=800-0,6t$ (σε εκατοντάδες &euro; ανά ηµέρα), ενώ ο ρυθµός µεταβολής της είσπραξης $E(t)$ στο τέλος $t$ ηµερών εκφράζεται από τον τύπο $E^{\prime}(t)=1000+0,3t$ (σε εκατοντάδες &euro; ανά ηµέρα). Να προσδιορίσετε το συνολικό κέρδος της εταιρείας από την τρίτη έως και την έκτη ηµέρα παραγωγής. 
+    </div>
+
+  </section>
+
+  <section id="integral-basic-properties">
+
+    <h2>Βασικές ιδιότητες ολοκληρώματος</h2>
+
+    <div class="exercise">
+    Να σχεδιάσετε τις γραφικές παραστάσεις των συναρτήσεων $f(x) = 2x + 4$, $g(x) = 2$, και µε τη βοήθεια αυτών να υπολογίσετε τα ολοκληρώµατα:
+    <ol class="array-list-3">
+    <li>$\dint_{-2}^{1}f (x)dx$</li>
+    <li>$\dint_{-2}^{1}g (x)dx$</li>
+    <li>$\dint_{-2}^{1}2f (x) − 5g(x)dx$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Να σχεδιάσετε τις γραφικές παραστάσεις των συναρτήσεων $f(x) = x + 1$, $g(x) =-x+2$, και µε τη βοήθεια αυτών να υπολογίσετε τα ολοκληρώµατα:
+    <ol class="array-list-3">
+    <li>$\dint_{0}^{2}f (x)dx$</li>
+    <li>$\dint_{0}^{2}g (x)dx$</li>
+    <li>$\dint_{-2}^{1}2g (x) − 3f(x)dx$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    ∆ίνεται η συνάρτηση $f (x) =\sqrt{4-x^2}$. Να σχεδιάσετε τη γραφική παράσταση της $f$ και στη συνέχεια να υπολογίσετε τα ολοκληρώµατα:
+    <ol class="array-list-3">
+    <li>$\dint_{0}^{2}f (x)dx$</li>
+    <li>$\dint_{-2}^{2}f (x)dx$</li>
+    <li>$\dint_{\sqrt{3}}^{2}f(x)dx$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Με τη βοήθεια των γραφικών παραστάσεων των αντίστοιχων συναρτήσεων, να υπολογίσετε τα ολοκληρώµατα:
+    <ol class="array-list-3">
+    <li>$\dint_{0}^{2\pi}\gsin x\, dx$</li>
+    <li>$\dint_{0}^{3}-x+1\,dx$</li>
+    <li>$\dint_{0}^{3}x-2\,dx$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Αν για τη συνεχή στο $\mathbb R$ συνάρτηση είναι γνωστό ότι
+    \[\dint_{1}^{5}f(x)dx=2,\ \ \ \dint_{7}^{10}f(x)dx=3,\ \ \ \dint_{10}^{1}f(x)dx=-4,\]
+    να υπολογιστούν τα ολοκληρώματα:
+    <ol class="array-list-3">
+    <li>$\dint_{5}^{10}f(x)dx$</li>
+    <li>$\dint_{1}^{7}f(x)dx$</li>
+    <li>$\dint_{5}^{7}f(x)dx$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Αν για τη συνεχή στο $\mathbb R$ συνάρτηση είναι γνωστό ότι
+    \[\dint_{7}^{4}f(x)dx=-2,\ \ \ \dint_{0}^{9}f(x)dx=6,\ \ \ \dint_{0}^{10}f(x)dx=8,\ \ \ \dint_{4}^{10}f(x)dx=5,\]
+    να υπολογιστούν τα ολοκληρώματα:
+    <ol class="array-list-3">
+    <li>$\dint_{0}^{4}f(x)dx$</li>
+    <li>$\dint_{9}^{10}f(x)dx$</li>
+    <li>$\dint_{7}^{9}f(x)dx$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Αν για τη συνεχή στο $\mathbb R$ συνάρτηση είναι γνωστό ότι
+    \[\dint_{1}^{4}f(x)dx=9,\ \ \ \dint_{3}^{4}f(x)dx=11,\ \ \ \dint_{1}^{8}f(x)dx=13,\]
+    να υπολογιστούν τα ολοκληρώματα:
+    
+    <ol class="array-list">
+    <li>$\dint_{4}^{3}f(x)dx$</li>
+    <li>$\dint_{4}^{8}f(x)dx$</li>
+    <li>$\dint_{1}^{3}f(x)dx$</li>
+    <li>$\dint_{3}^{8}f(x)dx$.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise"> 
+    Για τυχούσα συνεχή στο $\mathbb R$ συνάρτηση αποδείξτε ότι
+    \[\dint_{3}^{4}f(x)dx-\dint_{3}^{2}f(x)dx=\dint_{2}^{5}f(x)dx+\dint_{5}^{4}f(x)dx.\]
+    </div>
+    
+    <div class="exercise">
+    Αποδείξτε ότι:
+    <ol class="array-list">
+    <li>$\dint_{1}^{4}\dfrac{3x^2+10}{x^2+2}dx-\dint_{1}^{4}\dfrac{4}{x^2+2}dx=9$</li>
+    <li>$\dint_{0}^{3}\dfrac{2x^3-1}{x^2+1}dx-\dint_{3}^{0}\dfrac{2x-x^2}{x^2+1}dx=6$</li>
+    <li>$\dint_{0}^{1}\dfrac{x^2+2}{x^2+1}dx+\dint_{1}^{0}\dfrac{1}{x^2+1}dx=1$</li>
+    <li>$\dint_{-1}^{1}\dfrac{x^2-3}{2x^2-8}dx+\dfrac{1}{2}\dint_{1}^{-1}\dfrac{1}{x^2-4}dx=1$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Αν $\dint_1^3 f (x)dx=5$  και  $\dint_1^3 g(x)dx=-2$, να υπολογίσετε τα ολοκληρώµατα:
+    <ol class="array-list">
+    <li>$\dint_1^3 2f (x)-6g(x)dx$</li>
+    <li>$\dint_3^1 4f (x)-g(x)dx$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Η συνάρτηση $f$ είναι συνεχής στο διάστημα $[2,5]$ και ισχύει $\dint_{2}^{5}f(x)dx =-1$. Να υπολογίσετε το ολοκλήρωμα $\dint_{2}^{5}g(x)dx$ όπου $g(x)= f(x)-6x+10$.
+    </div>
+    
+    
+    <div class="exercise">
+    Η συνάρτηση $f$ είναι συνεχής και μη αρνητική στο $\mathbb{R}$. Αποδείξτε ότι:
+    <ol class="array-list">
+    <li>$\dint_{-1}^9 f (x)dx\geq\dint_0^8 f (x)dx$</li>
+    <li>$\dint_3^1 f (x)dx\leq\dint_2^1 f (x)dx$</li>
+    </ol>
+    </div>
+    
+    
+    <div class="exercise">
+    Η συνάρτηση $f$ είναι συνεχής στο $\mathbb{R}$ με
+    \[\dint_\alpha^\beta f (x)dx =\dint_\gamma^\delta f (x)dx,\tag{$\ast$}\]
+    όπου $\alpha,\beta,\gamma,\delta\in\mathbb{R}$. Αποδείξτε ότι $\dint_\alpha^\gamma f (x)dx =\dint_\beta^\delta f (x)dx$.
+    </div>
+    
+    <div class="exercise">
+    Αν η συνάρτηση $f$ είναι συνεχής και γνησίως αύξουσα στο $[0,13]$, να αποδείξετε τις ανισότητες:
+    <ol class="array-list">
+    <li>$\dint_0^4 f(x)dx \lt \dint_9^{13} f(x)dx$</li>
+    <li>$\dint_0^4 f(x)dx \lt \dint_1^5 f(x)dx$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Αν η συνάρτηση $f$ είναι συνεχής και γνησίως φθίνουσα στο $\mathbb R$, να αποδείξετε τις ανισότητες, για κάθε $\alpha\in\mathbb R$:
+    <ol class="array-list">
+    <li>$\dint_{\alpha}^{\alpha+2} f(x)dx \gt \dint_{\alpha+2}^{\alpha+4} f(x)dx$</li>
+    <li>$\dint_{\alpha-1}^{\alpha} f(x)dx \lt \dint_{\alpha-4}^{\alpha-3} f(x)dx$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Αποδείξτε ότι $\dint_{2}^{5}\dfrac{1}{x^2 +1}dx\leq\dint_{2}^{5}\dfrac{x}{10}dx$. 
+    </div>
+    
+    <div class="exercise">
+    Αν  $-1\leq\alpha\leq \beta$, να αποδείξετε ότι $\dint_{\alpha}^{\beta}\sqrt{1+x}\,dx\leq\dint_{\alpha}^{\beta}\dfrac{x}{2}+1\,dx$. 
+    </div>
+    
+    <div class="exercise"> 
+    Για κάθε $\alpha\in [1,+\infty)$ αποδείξτε ότι
+    \[\dint_{\alpha-1}^{\alpha} \sqrt{x}\,dx\leq\sqrt{\alpha}\leq\dint_{\alpha}^{\alpha+1}\sqrt{x}\,dx.\]
+    </div>
+    
+    <div class="exercise">
+    Έστω $\alpha,\beta\in\mathbb{R}$ με $\alpha \lt \beta$. Αν $f:[\alpha,\beta]\to\mathbb{R}$ είναι συνεχής συνάρτηση με $\dint_{\alpha}^{\beta}f(x)dx=0$, να αποδειχθεί ότι η $f$ διαθέτει ρίζα στο $[\alpha,\beta]$.
+    </div>
+    
+  </section>
+
+  <section id="integration">
+
+    <h2>Τεχνικές ολοκλήρωσης</h2>
+
+    <h3 id="integration-straightforward">Άμεση ολοκλήρωση</h3>
+
+    <div class="exercise">
+    <p class="exercise-note">(Άμεση Ολοκλήρωση)</p>
+    Να υπολογιστούν τα ολοκληρώματα:
+    <ol class="array-list">
+    <li>$\dint_{1}^{2}3x^{2}+6x-7\,dx$</li>
+    <li>$\dint_{1}^{2}\dfrac{x^{3}+2x^{2}-x+1}{x}dx$</li>
+    <li>$\dint_{0}^{1}2x-\gcos\pi x+e^{x}dx$</li>
+    <li>$\dint_{-1}^{0}\dfrac{2x+5}{2x+3}dx$</li>
+    <li>$\dint_{0}^{1}(2x+1)(\sqrt{x}-1)dx$</li>
+    <li>$\dint_{0}^{2}e^{-2x+5}dx$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    <p class="exercise-note">(Άμεση Ολοκλήρωση)</p>
+    Να υπολογιστούν τα ολοκληρώματα:
+    <ol class="array-list">
+    <li>$\dint_{\frac{\pi}{4}}^{\frac{\pi}{3}}\gtan x\,dx$</li>
+    <li>$\dint_{1}^{2}-\dfrac{2}{x^{3}}+6x\,dx$</li>
+    <li>$\dint_{0}^{2}\frac{x+3}{x+1}dx$</li>
+    <li>$\dint_{0}^{1}(x+\sqrt{x})^{2}dx$</li>
+    <li>$\dint_{0}^{\frac{\pi}{2}}\gsin x+x\gcos x\,dx$</li>
+    <li>$\dint_{-1}^{0}\dfrac{3x}{x^{2}+1}dx$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    <p class="exercise-note">(Άμεση Ολοκλήρωση)</p>
+    Να υπολογιστούν τα ολοκληρώματα:
+    <ol class="array-list">
+    <li>$\dint_{0}^{1}x\sqrt{x^{2}+1}\,dx$</li>
+    <li>$\dint_{0}^{1}x\sqrt[3]{x^{2}+4}\,dx$</li>
+    <li>$\dint_{0}^{2}|x-1|\,dx$</li>
+    <li>$\dint_{-2}^{2}|1-x^{2}|\,dx$</li>
+    <li>$\dint_{0}^{1}\dfrac{3x-2}{x^{2}+5x+6}dx$</li>
+    <li>$\dint_{0}^{1}\frac{x+2}{x^{2}+4x+3}dx$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    <p class="exercise-note">(Άμεση Ολοκλήρωση)</p>
+    Να υπολογιστούν τα ολοκληρώματα:
+    <ol class="array-list">
+    <li>$\dint_{1}^{2}(3x^2+1)(x^3+x+1)^3 dx$</li>
+    <li>$\dint_{-2}^{0}x(2x^2 -1)^3 dx$</li>
+    <li>$\dint_{0}^{2} \dfrac{4x+2}{x^2 +x+8}dx$</li>
+    <li>$\dint_{\frac{\pi}{4}}^{\frac{\pi}{2}}\dfrac{\gsin x-x\gcos x}{\gsin^2 x}dx$</li>
+    <li>$\dint_{0}^{\frac{\pi}{4}}\dfrac{\gsin x}{\sqrt{\gcos x}}dx$</li>
+    <li>$\dint_{0}^{\frac{\pi}{4}}\gtan 2x\,dx$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Αφού αποδειχθεί ότι είναι συνεχείς (όταν χρειάζεται), να υπολογιστούν τα ολοκληρώματα των παρακάτω συναρτήσεων $f$ στα αντίστοιχα διαστήματα:
+    <ol class="array-list">
+    <li>$f(x)=\begin{cases}3x^2-16,& x \lt 3\\ 4x-1, &x\geq 3\end{cases}$, $[0,4]$</li>
+    <li>$f(x)=\begin{cases}4x^3 +1,& x\leq 1\\ 6-x, &x \gt  1\end{cases}$, $[-1,2]$</li>
+    <li>$f(x)=\begin{cases}x^3,& x\leq 1\\ 2-x, &x \gt  1\end{cases}$, $[0,2]$</li>
+    <li>$f(x)=\begin{cases}e^x -ex,& x\leq 1\\ x\ln x, &x \gt  1\end{cases}$, $[0,2]$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Αφού αποδειχθεί ότι είναι συνεχείς (όταν χρειάζεται), να υπολογιστούν τα ολοκληρώματα των παρακάτω συναρτήσεων $f$ στα αντίστοιχα διαστήματα:
+    <ol class="array-list">
+    <li>$f(x)=\begin{cases}x + e^x,& x\leq 0\\ \gcos x,& x \gt 0\end{cases}$, $[-1,\pi]$</li>
+    <li>$f(x)=\begin{cases}xe^x + e^x, & x\leq -1\\ e^{x+1}-1, & x \gt -1\end{cases}$, $[-2,0]$</li>
+    <li>$f(x)=|x^2-x-2|$, $[-2,2]$</li>
+    <li>$f(x)=|x^3-2x^2|$, $[-1,3]$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Θεωρούμε τη συνάρτηση $f(x)=\dfrac{2x+1}{x^2 (x+1)}$, $x\in\mathbb{R}\setminus\{-1,0\}$.
+    <ol class="vertical-list">
+    <li>Να προσδιοριστούν $\text{A},\text{B},\Gamma\in \mathbb{R}$ ώστε $f(x)=\dfrac{\text{A}}{x}+\dfrac{\text{B}}{x^2}+\dfrac{\Gamma}{x+1}$, για κάθε $x\in\mathbb{R}\setminus\{-1,0\}$.</li>
+    <li>Να υπολογίσετε το ολοκλήρωμα $\dint_{1}^{2}f(x)dx$.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Θεωρούμε τη συνάρτηση $f$ με τύπο $f(x)=\dfrac{5x^2+6x+7}{x^3+x^2+x-3}$.
+    <ol class="vertical-list">
+    <li>Να προσδιοριστεί το πεδίο ορισμού της.</li>
+    <li>Να προσδιοριστούν $\text{A},\text{B},\Gamma\in \mathbb{R}$ ώστε $f(x)=\dfrac{\text{A}}{x-1}+\dfrac{\text{B}x+\Gamma}{x^2+2x+3}$, για κάθε 
+     $x\in\mathbb{R}\setminus\{1\}$.</li>
+    <li>Να υπολογίσετε το ολοκλήρωμα $\dint_{-1}^{0}f(x)dx$.</li>
+    <li>Να υπολογίσετε το ολοκλήρωμα $\dint_{-1}^{0}\dfrac{x^4 +3x^2-2x+4}{x^3+x^2+x-3}dx$.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Δίνονται οι συναρτήσεις $f(x)=6x^2 -20x+5$ και $g(x)=3x^2-x+1$.
+    <ol class="vertical-list">
+    <li>Να προσδιοριστούν $\text{A},\text{B}\in\mathbb{R}$ με $f(x)=\text{A} g(x)+\text{B}g^{\prime}(x)$, για κάθε $x\in \mathbb{R}$.</li>
+    <li>Να υπολογιστεί το $\dint_0^1 \dfrac{f(x)}{g(x)}dx$.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Έστω η συνάρτηση $f(x)=\ln\big(x+\sqrt{x^2+1}\,\big)$.
+    <ol class="vertical-list">
+    <li>Να προσδιοριστεί το πεδίο ορισμού.</li>
+    <li>Να υπολογιστεί η παράγωγος της $f$.</li>
+    <li>Να υπολογιστεί το ολοκλήρωμα $\dint_{0}^{1}\dfrac{1}{\sqrt{x^2+1}}dx$.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Να υπολογίσετε το ολοκλήρωμα  $\dint_{3}^{5}|\alpha-x|\,dx$ στις περιπτώσεις:
+    <ol class="array-list-3">
+    <li>$\alpha\geq 5$,</li>
+    <li>$\alpha\leq 3$,</li>
+    <li>$\alpha\in (3,5)$.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Να προσδιορίσετε την παράγωγο της συνάρτησης  $f(x)=\dfrac{x^3}{(x^2+1)^2}$ και στην συνέχεια το ολοκλήρωμα $\dint_{0}^{1}\dfrac{x^4+3x^2}{(x^2+1)^2}dx$.
+    </div>
+    
+    <div class="exercise">
+    Έστω τα ολοκληρώματα $I=\dint_{0}^{\frac{\pi}{2}}\dfrac{\gsin x}{\gsin x+\gcos x}dx$, $J=\dint_{0}^{\frac{\pi}{2}}\dfrac{\gcos x}{\gsin x+\gcos x}dx$. Να υπολογίσετε τα $I+J$, $I-J$, $I$, $J$.
+    </div>
+    
+    <div class="exercise">
+    Αν $\alpha \gt 0$, να αποδείξετε ότι $\dint_{0}^{1}x^{\alpha}+x^{\frac{1}{\alpha}}\,dx=1$.
+    </div>
+    
+    <div class="exercise">
+    Να αποδείξετε ότι $e+\dint_1^2\dfrac{e^x}{x}dx=\dfrac{1}{2}e^2 +\dint_1^2\dfrac{e^x}{x^2}dx$.
+    </div>
+    
+    <div class="exercise">
+    Για $\nu\in\mathbb{N}$ θεωρούμε το ολοκλήρωμα $I_{\nu}=\dint_{0}^{1}\dfrac{x^{2\nu+1}}{1+x^2}dx$.
+    <ol class="vertical-list">
+    <li>Να υπολογίσετε το άθροισμα $I_{\nu}+I_{\nu+1}$, $\nu\in\mathbb{N}$.</li>
+    <li>Να υπολογίσετε τα $I_0$, $I_1$, $I_2$.</li>
+    </ol> 
+    </div>
+    
+    <div class="exercise">
+    Να προσδιοριστεί η συνεχής στο $\mathbb R$ συνάρτηση $f$, όταν, για κάθε $x\in\mathbb R$, ισχύει:
+    <ol class="array-list">
+    <li>$f(x)=x^2 +x^3\cdot\dint_{0}^{1}f(t)\,dt$</li>
+    <li>$\dint_{0}^{1}e^{1-t}f(t)\,dt=f(x)+e^x$</li>
+    <li>$f(x)=-6x+\dint_0^4 f(t)\,dt$</li>
+    <li>$f(x)=3x^2 -6x\cdot\dint_0^1 f(t)\,dt$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise"> Θεωρούμε τη συνεχή στο $[0,1]$ συνάρτηση $f$. Να προσδιοριστεί ο τύπος της, όταν:
+    <ol class="array-list">
+    <li>$\dint_{0}^{1}f^2(x)dx+\dfrac{1}{3}=2\dint_{0}^{1}xf(x)dx$</li>
+    <li>$\dint_{0}^{1}f^2(x)dx+\dfrac{e^2 -1}{2}=2\dint_{0}^{1}e^x f(x)dx$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Έστω η συνάρτηση $f(x)=e^x$. Να επιλυθούν ως προς $t$ οι εξισώσεις:
+    <ol class="array-list-3">
+    <li>$\dint_{0}^{1+t}f(x)\,dx=3$</li>
+    <li>$\dint_{0}^{1}f(x+t)\,dx=3$</li>
+    <li>$\dint_{0}^{1}tf(x)\,dx=3$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Αν $f$ είναι παραγωγίσιμη συνάρτηση με συνεχή παράγωγο στο $\mathbb{R}$ και $\alpha,\beta\in\mathbb{R}$ με $f(\alpha)=2$ και $f(\beta)=0$, να υπολογίσετε το ολοκλήρωμα $\dint_{\alpha}^{\beta}f(x)f^{\prime}(x)dx$.
+    </div>
+    
+    <div class="exercise">
+    Αν η μη μηδενική συνάρτηση $f$ διαθέτει συνεχή παράγωγο στο $[-1,5]$ και $f(-1)=1$, $f(5)=\frac{1}{2}$, να υπολογίσετε το ολοκλήρωμα $\dint_{-1}^5\dfrac{f^{\prime}(x)}{f^{2}(x)}dx$.
+    </div>
+    
+    <div class="exercise">
+    Για συνεχή στο $[-1,1]$ συνάρτηση $f$, υπολογίστε το ολοκλήρωμα 
+    \[\dint_{0}^{\pi} f(\gsin x) \gcos x\,dx.\]
+    </div>
+    
+    <div class="exercise">
+    Έστω συνεχής συνάρτηση $f$, με $f(x)\leq 6$, για κάθε $x\in[1,4]$. Αποδείξτε ότι: 
+    \[\dint_1^4 xf(x)dx\leq 45.\]
+    </div>
+    
+    <div class="exercise">
+    Να επιλυθεί ως προς $\alpha\in\mathbb{R}$ η ανίσωση $\dint_{1}^{\alpha}\alpha-4x\,dx\geq 6-5\alpha$.
+    </div>
+    
+    <div class="exercise">
+    Να προσδιορίσετε τις τιμές του $\alpha \gt 0$ για τις οποίες ισχύει $\dint_{0}^{\alpha}2-4x+3x^2 \,dx\leq\alpha$.
+    </div>
+    
+    <div class="exercise">
+    Έστω η συνάρτηση $f(x)=\dfrac{x^2 +5}{x^2 +2}$, ορισµένη στο διάστημα $[0,2]$.
+    <ol class="vertical-list">
+    <li>Να µελετήσετε τη συνάρτηση $f$ ως προς µονοτονία και ακρότατα.</li>
+    <li>Να αποδείξετε ότι $3 \lt \dint_0^2 \dfrac{x^2 +5}{x^2 +2}dx \lt 5$.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Έστω $\alpha \gt 0$.
+    <ol class="vertical-list">
+    <li>Αποδείξτε ότι $1-x^\alpha\leq\sqrt{1-x^\alpha}\leq 1-\dfrac{1}{2}x^\alpha$, για κάθε $x\in[0,1]$.</li>
+    <li>Αποδείξτε ότι $\dfrac{\alpha}{\alpha+1}\leq\dint_0^1 \sqrt{1-x^\alpha}\,dx\leq\dfrac{2\alpha+1}{2\alpha+2}$.</li>
+    <li>Να προσδιορίσετε το $\lim\limits_{a\to +\infty}\dint_0^1 \sqrt{1-x^\alpha}\,dx$.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Αποδείξτε τις ανισότητες:
+    <ol class="array-list-3">
+    <li>$\dint_{-1}^{0}\sqrt{x^2-4x}\,dx\leq\sqrt{5}$</li>
+    <li>$\dint_{-1}^{2}\ln(x^2+e^2)dx\geq 6$</li>
+    <li>$\dint_{0}^{3}e^{x^2-2x}dx\leq 3e^3$</li>
+    <li>$\dint_{0}^{\pi}\dfrac{1}{1+\gcos^4 x}dx\leq\pi$</li>
+    <li>$\dint_{1}^{2}e^{\gcos x}dx\leq e$</li>
+    <li>$\dfrac{3}{2}\leq\dint_{1}^{2}\dfrac{2x}{1+\gsin^6 x}dx\leq 3$</li>
+    <li>$\dint_{-1}^{2}\dfrac{x}{e^x}dx\leq\dfrac{3}{e}$</li>
+    <li>$\dfrac{1}{4}\leq\dint_{\frac{\pi}{6}}^{\frac{\pi}{3}}\dfrac{\gcos x}{x}dx\leq\dfrac{\sqrt{3}}{2}$</li>
+    <li>$\dint_{0}^{3\pi}\dfrac{1}{2+\gcos^2 x}dx\geq\pi$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Έστω συνάρτηση $f$ με συνεχή παράγωγο στο $[0,1]$ και $f(0)=0$, $f(1)=1$. Αποδείξτε ότι $$\dint_{0}^{1}\left|f^{\prime}(x)-f(x)\right|dx\geq\dfrac{1}{e}.$$
+    </div>
+    
+    <div class="exercise">
+    Θεωρούμε τη συνάρτηση $f(x)=\ln(1+x)$, $x\in[0,1]$.
+    <ol class="vertical-list">
+    <li>Αποδείξτε ότι $x-x^2\leq f(x)\leq x$, για κάθε $x\in[0,1]$.</li>
+    <li>Αποδείξτε ότι $\dfrac{1}{6}\leq\dint_0^1 f(x)dx\leq\dfrac{1}{2}$.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Θεωρούμε τη συνάρτηση $f(x)=e^{x^2-x}$.
+    <ol class="vertical-list">
+    <li>Προσδιορίστε το σύνολο $f([0,2])$.</li>
+    <li>Αποδείξτε ότι $\dfrac{2}{\sqrt[4]{e}}\leq\dint_0^2 e^{x^2-x}\,dx\leq 2e^2$.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Η συνάρτηση $f$ διαθέτει συνεχή παράγωγο στο διάστηµα $[0, \pi]$, $f(\pi)=e^{−\pi}$ και
+    \[\dint_{0}^{\pi}\left(f(x)+f^{\prime}(x)\right)e^x dx=2.\tag{$\ast$}\]
+    Να αποδείξετε ότι η γραφική παράσταση της συνάρτησης $f$ διέρχεται από το σηµείο $\mathrm{A}(0,−1)$.
+    </div>
+    
+    <div class="exercise">
+    Η συνάρτηση $f$ διαθέτει συνεχή παράγωγο στο $[\alpha, \beta]$ και ικανοποιεί την ισότητα
+    \[\dint_{\alpha}^{\beta}f^{\prime}(x)e^{f(x)} dx=0.\tag{$\ast$}\]
+    Αποδείξτε ότι η γραφική παράσταση της $f$ διαθέτει παράλληλη στον άξονα $x^{\prime}x$ εφαπτoµένη.
+    </div>
+    
+    <div class="exercise">
+    Έστω $\alpha,\beta\in\mathbb{R}$ με $\alpha \lt \beta$ και $f$ συνεχής στο $[\alpha,\beta]$ συνάρτηση. Θεωρούμε το ολοκλήρωμα $$I=\dint_{\alpha}^{\beta}f^2 (x)-2xf(x)\,dx.$$ Να προσδιοριστεί η $f$ ώστε το $I$ να λαμβάνει την ελάχιστη δυνατή τιμή.
+    </div>
+    
+    <div class="exercise">
+    Θεωρούμε τη συνεχή στο $[0,1]$ συνάρτηση $f$ για την οποία ισχύει
+    \[\dint_0^1 f(x)dx=\dint_0^1 f^2(x)dx=1.\tag{$\ast$}\]
+    Αποδείξτε ότι $f(x)=1$, για κάθε $x\in[0,1]$.
+    </div>
+    
+    <div class="exercise">
+    Θεωρούμε τη συνεχή στο $[1,2]$ συνάρτηση $f$ για την οποία ισχύει
+    \[\dint_1^2 xf(x)dx=\dint_1^2 x^2 f^2(x)dx=1.\tag{$\ast$}\]
+    Να προσδιοριστεί ο τύπος της $f$.
+    </div>
+    
+    <div class="exercise">
+    Αν η συνάρτηση $f$ είναι συνεχής στο διάστημα $[0,\pi]$ με $\dint_{0}^{\pi}f(x)dx=2$, να αποδειχθεί ότι υπάρχει $\xi\in[0,\pi]$ με $f(\xi)=\gsin\xi$.
+    </div>
+    
+    
+
+    <h3 id="integration-by-parts">Ολοκλήρωση κατά παράγοντες</h3>
+
+    <div class="exercise">
+      <p class="exercise-note">(Κατά παράγοντες)</p>
+      Να υπολογιστούν τα ολοκληρώματα:
+    <ol class="array-list">
+    <li>$\dint_{0}^{1} xe^x dx$</li>
+    <li>$\dint_{0}^{1}xe^{2x}dx$</li>
+    <li>$\dint_{-1}^{1}(x+1)e^{-x}dx$</li>
+    <li>$\dint_{0}^{1}x^{2}e^{x}dx$</li>
+    <li>$\dint_{0}^{1}(xe^x)^2 dx$</li>
+    <li>$\dint_{0}^{1}x^{3}e^{4x}dx$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+      <p class="exercise-note">(Κατά παράγοντες)</p>
+      Να υπολογιστούν τα ολοκληρώματα:
+    <ol class="array-list">
+    <li>$\dint_{0}^{1}x^{2}e^{-x}dx$</li>
+    <li>$\dint_{1}^{2}(x-1)^{2}e^{3x}dx$</li>
+    <li>$\dint_{-1}^{1}(3x^{2}-2x)e^{2x}dx$</li>
+    <li>$\dint_{\frac{1}{2}}^{0}2xe^{2x+1}dx$</li>
+    <li>$\dint_{0}^{2}(2x+5)e^{\frac{1}{2}x}\,dx$</li>
+    <li>$\dint_{0}^{1}(2x+1)e^{x+1}dx$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+      <p class="exercise-note">(Κατά παράγοντες)</p>
+      Να υπολογιστούν τα ολοκληρώματα:
+    <ol class="array-list">
+    <li>$\dint_{1}^{e}\ln x\,dx$</li>
+    <li>$\dint_{1}^{2}x\ln x\,dx$</li>
+    <li>$\dint_{1}^{e}x^{2}\ln x\,dx$</li>
+    <li>$\dint_{1}^{2}(3x^{2}+4x+2)\ln x\,dx$</li>
+    <li>$\dint_{1}^{2}\dfrac{\ln x}{x^{2}}dx$</li>
+    <li>$\dint_{1}^{2}\frac{\ln x}{2\sqrt{x}}dx$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+      <p class="exercise-note">(Κατά παράγοντες)</p>
+      Να υπολογιστούν τα ολοκληρώματα:
+    <ol class="array-list">
+    <li>$\dint_{0}^{\pi}x\gsin\,x dx$</li>
+    <li>$\dint_{0}^{\frac{\pi}{4}}2x\gcos 2x\,dx$</li>
+    <li>$\dint_{0}^{\frac{\pi}{2}}2x^{2}\gsin 2x\,dx$</li>
+    <li>$\dint_{0}^{\frac{\pi}{4}}x\gsin 2x\,dx$</li>
+    <li>$\dint_{0}^{\frac{\pi}{2}}(2x+1)\gsin x\,dx$</li>
+    <li>$\dint_{0}^{\pi}(x+2)\gcos\dfrac{x}{2}dx$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+      <p class="exercise-note">(Κατά παράγοντες)</p>
+      Να υπολογιστούν τα ολοκληρώματα:
+    <ol class="array-list">
+    <li>$\dint_{0}^{\frac{\pi}{2}}e^{x}\gsin x\,dx$</li>
+    <li>$\dint_{0}^{\frac{\pi}{2}}e^{x}\gcos x\,dx$</li>
+    <li>$\dint_{0}^{\frac{\pi}{4}}e^{x}\gsin 2x\,dx$</li>
+    <li>$\dint_{0}^{\frac{\pi}{4}}e^{x}\gcos 2x\,dx$</li>
+    <li>$\dint_{0}^{\frac{\pi}{6}}e^{-x}\gsin 3x\,dx$</li>
+    <li>$\dint_{0}^{\frac{\pi}{4}}e^{3x}\gsin 2x\,dx$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Έστω συνάρτηση $f$, με συνεχή στο διάστημα $[0,1]$ παράγωγο. Αν ισχύει
+    \[\dint_0^1 xf^{\prime}(x)dx=8 -3 \dint_0^1 f(x)\,dx =-1,\tag{$\ast$}\]
+    να υπολογίσετε το  $f(1)$.
+    </div>
+    
+    <div class="exercise">
+    Έστω συνάρτηση $f$, με συνεχή στο διάστημα $[0,1]$ δεύτερη παράγωγο. Αποδείξτε ότι 
+    \[\dint_0^1 f^{\prime}(1)-f^{\prime}(x)\,dx=\dint_0^1 xf^{\prime\prime}(x)\,dx.\]
+    </div>
+    
+    <div class="exercise">
+    Θεωρούμε συνάρτηση $f$ με συνεχή δεύτερη παράγωγο στο $\mathbb R$. Αν η $f$ διαθέτει ως τοπικό ακρότατο το $f(1)=0$, αποδείξτε ότι 
+    \[\dint_0^1 x^2 f^{\prime\prime}(x)\,dx=2\dint_0^1 f(x)\,dx.\]
+    </div>
+    
+    <div class="exercise">
+    Αν η συνάρτηση $f$ διαθέτει συνεχή παράγωγο στο διάστηµα $[0,1]$ και
+    \[\dint_0^1 x^2 f^\prime (x)\,dx=1-2\dint_0^1 x f(x)\,dx,\tag{$\ast$}\]
+    να υπολογίσετε το $f(1)$.
+    </div>
+    
+    <div class="exercise">
+    Έστω συνάρτηση $f$ με συνεχή δεύτερη παράγωγο στο $\mathbb R$. Αν $\dint_1^e \dfrac{f(x)}{x^2}\,dx=\dfrac{1}{2}$ και $f(1)=f(e)=f^{\prime}(e)=1$, να υπολογίσετε το $\dint_1^e f^{\prime\prime}(x)\ln x\,dx$.
+    </div>
+    
+    <div class="exercise">
+    Έστω παραγωγίσιμη στο $\mathbb R$ συνάρτηση $f$. Αν είναι γνωστό ότι
+    \[\dint_0^1 f(x)f^{\prime}(x)\,dx=0,\ \ \ \ \ \dint_0^1 f^2 (x)f^{\prime}(x)\,dx=18,\tag{$\ast$}\]
+    να υπολογίσετε το $\dint_0^1 f^4 (x)f^{\prime}(x)dx$.
+    </div>
+    
+    <div class="exercise">
+    Αν η συνάρτηση $f$ διαθέτει συνεχή δεύτερη παράγωγο στο διάστημα $[0,\pi]$ και ισχύουν $f(\pi)=5$,
+    \[\dint_{0}^{\pi}\big(f(x)+f^{\prime\prime}(x)\big)\gsin x\,dx =2,\tag{$\ast$}\]
+    να υπολογιστεί το $f(0)$. 
+    </div>
+    
+    <div class="exercise"> 
+    Η συνάρτηση $f$ διαθέτει συνεχή δεύτερη παράγωγο στο διάστημα $[0,1]$ και ισχύουν $f(0)=f^{\prime}(0)$ και $f(1)=f^{\prime}(1)$. Αποδείξτε ότι
+    \[\dint_{0}^{1}e^{-x}\left(f^{\prime\prime}(x)-2f^{\prime}(x)+f(x)\right)\,dx =0.\] 
+    </div>
+    
+    <div class="exercise">
+    Έστω συνάρτηση $f$ ορισµένη στο $\mathbb{R}$ για την οποία ισχύουν τα εξής:
+    <ul>
+    <li>η $f$ διαθέτει συνεχή δεύτερη παράγωγο στο $\mathbb{R}$,</li>
+    <li>η $f$ παρουσιάζει τοπικό ακρότατο στο σηµείο $x_0=2$,</li>
+    <li>η γραφική παράσταση της $f$ διέρχεται από το σηµείο $\mathrm{A}(0,1)$.</li>
+    </ul>
+    Αν
+    \[\dint_{0}^{2}x f^{\prime\prime}(x)+3 f(x)\,dx=-\dfrac{8}{3},\tag{$\ast$}\]
+    να υπολογίσετε το $f(2)$.
+    </div>
+    
+    <div class="exercise">
+    Να προσδιοριστεί η συνεχής συνάρτηση $f$ για την οποία ισχύει η σχέση
+    \[\dint_{0}^{1}e^{1-t}f(t)\,dt=f(x)+e^x,\tag{$\ast$}\]
+    για κάθε $x\in\mathbb{R}$
+    </div>
+    
+    <div class="exercise">
+    Αν η συνάρτηση $f$ διαθέτει συνεχή δεύτερη παράγωγο στο διάστημα $\left[0,\frac{\pi}{2}\right]$ με $f\left(\frac{\pi}{2}\right)=3$ και
+    \[\dint_{0}^{\frac{\pi}{2}}\left(f(x)+f^{\prime\prime}(x)\right)\gcos x\,dx=2,\tag{$\ast$}\]
+    να υπολογίσετε το $f^\prime(0)$.
+    </div>
+    
+    <div class="exercise">
+     Αν για τη συνάρτηση $f$ με συνεχή παράγωγο στο $[0,+\infty)$ ισχύει
+    \[\dfrac{x}{2}\leq f(x)\leq xf^{\prime}(x),\tag{$\ast$}\]
+    για κάθε $x\geq 0$, αποδείξτε ότι $\dfrac{1}{4}\leq\dint_{0}^{1}f(x)\,dx\leq\dfrac{f(1)}{2}$.
+    </div>
+     
+    <div class="exercise">
+    Έστω συνάρτηση  $f$, με συνεχή δεύτερη παράγωγο στο διάστημα $[0,3]$. Θεωρούμε τη συνάρτηση $g$ με τύπο
+    \[g(x)=x^2f^{\prime\prime}(x)+2f(3)-3f^{\prime}(3)-\dfrac{2}{3}\dint_0^3 f(t)\,dt.\]
+    Αποδείξτε ότι $\dint_0^3 g(x)\,dx=0$.
+    </div>
+    
+    <div class="exercise">
+    Έστω συνάρτηση $f:\mathbb{R}\to\mathbb{R}$ με συνεχή δεύτερη παράγωγο. Αν η συνάρτηση $f$ διαθέτει τοπικά ακρότατα στο $0$ το $1$ και στο $1$ το $0$, αποδείξτε ότι $\dint_0^1 \dfrac{f^{\prime\prime}(x)-f(x)}{e^x}\, dx=-1$.
+    </div>
+    
+    <div class="exercise">
+    Για $\nu\in\mathbb{N}$ θεωρούμε το ολοκλήρωμα $I_\nu=\dint_{0}^{1} x^\nu e^x dx$.
+    <ol class="vertical-list">
+    <li>Αποδείξτε ότι $I_\nu=e-(\nu-1)I_{\nu-1}$, για κάθε $\nu\in\mathbb{N}^{\ast}$.</li>
+    <li>Υπολογίστε το $I_3$.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Για $\nu\in\mathbb{N}$ θεωρούμε το ολοκλήρωμα $I_\nu=\dint_{0}^{\frac{\pi}{2}} \gsin^\nu x\,dx$.
+    <ol class="vertical-list">
+    <li>Αποδείξτε ότι $I_\nu=\dfrac{\nu-1}{\nu}I_{\nu-2}$, για κάθε $\nu\in\mathbb{N}$ με $\nu\geq 2$.</li>
+    <li>Υπολογίστε το $I_4$.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Για $\nu\in\mathbb{N}$ θεωρούμε το ολοκλήρωμα $I_\nu=\dint_{1}^{e} x\ln^\nu x\,dx$.
+    <ol class="vertical-list">
+    <li> Να προσδιορίσετε αναδρομική σχέση υπολογισμού για το $I_\nu$, $\nu\in\mathbb{N}$.</li>
+    <li>Υπολογίστε το $I_3$.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Αν η συνάρτηση $f$ διαθέτει συνεχή  παράγωγο στο $[0,\alpha]$, όπου $\alpha \gt 0$, και $f(\alpha)=2$, να υπολογίσετε το ολοκλήρωμα $I=\dint_0^\alpha x\left(x f^{\prime}(x)+2f(x)\right)dx$.
+    </div>
+    
+    <div class="exercise">
+    Έστω $f$ παραγωγίσιμη στο $\mathbb{R}$ συνάρτηση με $f(0)=0$ και
+    \[4f(x)+f^{\prime}(x)=\dint_0^1 f(t)\,dt,\tag{$\ast$}\]
+    για κάθε $x\in\mathbb{R}$. Να προσδιοριστεί ο τύπος της $f$.
+    </div>
+    
+    <div class="exercise">
+    Έστω $f$ συνεχής στο $[0,+\infty)$ και παραγωγίσιμη στο $(0,+\infty)$ συνάρτηση με $f(1)=3$ και
+    \[xf^{\prime}(x)=f(x)+\dint_0^1 f(t)\,dt,\tag{$\ast$}\]
+    για κάθε $x \gt 0$. Να προσδιοριστεί ο τύπος της $f$.
+    </div>
+    
+    <h3  id="integration-substitution">Μέθοδος αντικατάστασης</h3>
+
+    <div class="exercise">
+      <p class="exercise-note">(Αντικατάσταση)</p> 
+      Να υπολογιστούν τα ολοκληρώματα:
+    <ol class="array-list">
+    <li>$\dint_{0}^{1}(x+2)(x-1)^{5}dx$</li>
+    <li>$\dint_{0}^{1}\dfrac{x}{(x+1)^{3}}dx$</li>
+    <li>$\dint_{-1}^{2}\dfrac{x}{\sqrt{x+2}}dx$</li>
+    <li>$\dint_{9}^{16}\dfrac{\sqrt{x}}{x-4}dx$</li>
+    <li>$\dint_{0}^{1}\dfrac{x}{\sqrt{x^{2}+1}}dx$</li>
+    <li>$\dint_{2}^{5}\dfrac{x^{2}+1}{\sqrt{x-1}}dx$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+      <p class="exercise-note">(Αντικατάσταση)</p>
+      Να υπολογιστούν τα ολοκληρώματα:
+    <ol class="array-list">
+    <li>$\dint_{1}^{2}\dfrac{1}{x^{4}}\sqrt{1+\dfrac{1}{x^{3}}}\,dx$</li>
+    <li>$\dint_{0}^{1}\dfrac{1}{e^{x}+1}dx$</li>
+    <li>$\dint_{-1}^{1}\dfrac{x^{2}}{e^{x}+1}dx$</li>
+    <li>$\dint_{0}^{\ln 2}e^{x}\sqrt{e^{x}+2}\,dx$</li>
+    <li>$\dint_{1}^{e^{5}}\dfrac{1}{\sqrt{4+\ln x}}dx$</li>
+    <li>$\dint_{1}^{e}\dfrac{\ln x}{x}dx$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+      <p class="exercise-note">(Αντικατάσταση)</p>
+      Να υπολογιστούν τα ολοκληρώματα:
+    <ol class="array-list">
+    <li>$\dint_{0}^{1}2x\ln(x^{2}+1)dx$</li>
+    <li>$\dint_{1}^{e^{\pi}}\dfrac{\gsin(\ln x)}{x}dx$</li>
+    <li>$\dint_{0}^{\sqrt{\frac{\pi}{2}}}x^{3}\gcos(x^{2})dx$</li>
+    <li>$\dint_{0}^{1}\dfrac{1}{1+e^x}dx$</li>
+    <li>$\dint_{0}^{1}\dfrac{1}{\sqrt{1+\sqrt{x}}}dx$</li>
+    <li>$\dint_{2}^{7}\dfrac{x^2}{3\sqrt{x+2}}dx$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Υπολογίστε το ολοκλήρωμα $I=\dint_{-\rho}^{\rho}\sqrt{\rho^2 -x^2}\,dx$, με χρήση της αλλαγής μεταβλητής $x=\rho\gsin t$.
+    </div>
+    
+    <div class="exercise">
+    Έστω το ολοκλήρωμα $I=\dint_{1}^{\alpha}\sqrt{x^2-1}\,dx$.
+    <ol class="vertical-list">
+    <li>Θέτοντας $u=x+\sqrt{x^2-1}$, $x\geq 1$, αποδείξτε ότι $x=\dfrac{u^2 +1}{2u}$.</li>
+    <li>Με χρήση της παραπάνω αλλαγής μεταβλητής, υπολογίστε το $I$.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Υπολογίστε το ολοκλήρωμα $I=\dint_{0}^{1}\frac{1}{1+x^2}dx$, με χρήση της αλλαγής μεταβλητής $x=\gtan t$.
+    </div>
+    
+    <div class="exercise">
+    Υπολογίστε το ολοκλήρωμα $I=\dint_{-1}^{1}\frac{x^2}{e^x +1}dx$, με χρήση της αλλαγής μεταβλητής $u=-x$.
+    </div>
+    
+    <div class="exercise">
+    Υπολογίστε το ολοκλήρωμα $I=\dint_{0}^{1}\frac{\ln(x+1)}{x^2+1}dx$, με χρήση της αλλαγής μεταβλητής $x=\dfrac{1-u}{1+u}$.
+    </div>
+    
+    <div class="exercise"> Για κάθε $\alpha\in(0,+\infty)$ αποδείξτε ότι:
+    <ol class="vertical-list">
+    <li>$\dint_{0}^{\alpha}\sqrt{1+e^{2t}}\,dt=\dint_{1}^{e^\alpha}\dfrac{1}{t}\sqrt{1+t^2}\,dt$</li>
+    <li>$\dint_{-\alpha}^{\alpha}\dfrac{t^2}{e^{t}+1}dt=\dint_{e^{-\alpha}}^{e^\alpha}\dfrac{\ln^2 t}{t^2+t}dt$</li>
+    <li>$\dint_{\alpha}^{1}\dfrac{1}{1+x^2}dx=\dint_{1}^{\frac{1}{\alpha}}\dfrac{1}{1+x^2}dx$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Δίνεται η συνάρτηση $f(x)=x^5 +x$. Να αποδείξετε ότι ορίζεται η αντίστροφη της $f$ και υπολογίσετε το ολοκλήρωμα $\dint_{0}^{2}f^{-1}(x)dx$.
+    </div>
+    
+    <div class="exercise">
+    Αν η συνάρτηση $f$ είναι συνεχής στο διάστημα $[3,7]$, αποδείξτε ότι 
+    \[\dint_{3}^{7}f(x)\,dx=4\dint_{0}^{1}f(3+4x)\,dx.\]
+    </div>
+    
+    <div class="exercise">
+    Θεωρούμε τις συνεχείς στο $\mathbb{R}$ συναρτήσεις $f,g$, για τις οποίες είναι γνωστά τα παρακάτω:
+    <ul>
+    <li>η $g$ είναι άρτια,</li>
+    <li>$f(x) \gt -1$, για κάθε $x\in\mathbb{R}$,</li>
+    <li>$f(x)f(-x)=1$, για κάθε $x\in\mathbb{R}$.</li>
+    </ul>
+    Αν $\alpha \gt 0$, αποδείξτε ότι $\dint_{-\alpha}^{\alpha}\dfrac{g(x)}{1+f(x)}\,dx=\dint_{0}^{\alpha}g(x)\,dx$.
+    </div>
+    
+    
+    <div class="exercise">
+    Έστω $f:[-\alpha,\alpha]\to\mathbb{R}$ συνεχής συνάρτηση, όπου $\alpha \gt 0$.
+    <ol class="vertical-list">
+    <li>Αν η $f$ είναι άρτια, αποδείξτε ότι $\dint_{-\alpha}^{\alpha}f(x)\,dx=2\dint_{0}^{\alpha}f(x)\,dx$.</li>
+    <li>Αν η $f$ είναι περιττή, αποδείξτε ότι $\dint_{-\alpha}^{\alpha}f(x)\,dx=0$.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Αν η συνάρτηση $f$ είναι συνεχής στο $[0,2\alpha]$, όπου $\alpha \gt 0$, και
+    \[f(2\alpha-x)=f(x),\tag{$\ast$}\]
+    για κάθε $x\in[0,2\alpha]$, αποδείξτε ότι $\dint_0^{2\alpha}f(x)\,dx =2\dint_0^{\alpha}f(x)\,dx$.
+    </div>
+    
+    <div class="exercise">
+    Δίνεται η συνεχής στο $\mathbb R$ συνάρτηση $f$ για την οποία ισχύει
+    \[f(x^5 +x^3)=2x,\tag{$\ast$}\] για κάθε $x\in\mathbb R$. Να υπολογίσετε το ολοκλήρωμα $\dint_{0}^{2}f(x)\,dx$.
+    </div>
+    
+    <div class="exercise">
+    Για τη συνεχή στο $\mathbb{R}$ συνάρτηση $f$ είναι γνωστό ότι
+    \[f(-x)+f(x)=x^2,\tag{$\ast$}\]
+    για κάθε $x\in\mathbb R$. Να υπολογίσετε το ολοκλήρωμα  $\dint_{-1}^{1}f(x)\,dx$.
+    </div>
+    
+    <div class="exercise">
+    Για τη συνεχή στο $\mathbb{R}$ συνάρτηση $f$ είναι γνωστό ότι $\dint_{0}^{1}f(x)dx=1$ και
+    \[f(2x)=3f(x),\tag{$\ast$}\]
+    για κάθε $x\in\mathbb R$. Να υπολογίσετε το ολοκλήρωμα  $\dint_{0}^{2}f(x)\,dx$.
+    </div>
+    
+    <div class="exercise">
+    Έστω $\alpha \gt 0$ και συνεχής συνάρτηση $f$ στο $[0,\alpha]$ με
+    \[f(x)+f(\alpha-x)\neq 0,\tag{$\ast$}\]
+    για $x\in [0,\alpha]$.
+    <ol class="vertical-list">
+    <li>Να αποδειχθεί ότι $\dint_{0}^{\alpha}\dfrac{f(x)}{f(x)+f(\alpha-x)}dx=\dint_{0}^{\alpha}\dfrac{f(\alpha-x)}{f(x)+f(\alpha-x)}dx$.</li>
+    <li>Να προσδιοριστεί το $\dint_{0}^{\alpha}\dfrac{f(x)}{f(x)+f(\alpha-x)}dx$.</li>
+    <li>Να προσδιοριστεί το $\dint_{0}^{1}\dfrac{x^4}{x^4+(1-x)^4}dx$.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Έστω $f$ συνεχής στο $\mathbb{R}$ συνάρτηση και $\alpha,\beta\in\mathbb{R}$ με $\alpha \lt \beta$. Με χρήση της αλλαγής μεταβλητής $x=\alpha+\beta-t$, αποδείξτε ότι $$\dint_\alpha^\beta \dfrac{f(\beta-t)}{f(\beta-t)+f(t-\alpha)}dx=\dfrac{\beta-\alpha}{2}.$$
+    </div>
+    
+    <div class="exercise">
+    Αποδείξτε ότι $\dint_{0}^{\frac{\pi}{2}} \dfrac{\gsin^3 x}{\gsin^3 x +\gcos^3 x}dx=\dint_{0}^{\frac{\pi}{2}} \dfrac{\gcos^3 x}{\gsin^3 x +\gcos^3 x}dx=\dfrac{\pi}{4}$.
+    </div>
+    
+    <div class="exercise">
+    Έστω $f$ αύξουσα, συνεχής στο $\mathbb{R}$ συνάρτηση και $\alpha\in[0,1]$. Αποδείξτε ότι 
+    \[\dint_0^\alpha f(x)\,dx\leq \alpha \dint_0^1 f(x)\,dx.\]
+    </div>
+    
+    <div class="exercise">
+    Έστω $f$ συνεχής στο $[0,1]$. Αποδείξτε ότι 
+    \[\dint_0^\pi xf(\gsin x)\,dx=\dfrac{\pi}{2}\dint_0^\pi f(\gsin x)\,dx.\]
+    Έπειτα, υπολογίστε το ολοκλήρωμα $\dint_{0}^{\pi}\dfrac{x\gsin^6 x}{\gsin^6 x +\gcos^6 x}dx$.
+    </div>
+    
+    <div class="exercise">
+    Αν  η  $f$ είναι συνεχής στο $[0,1]$ συνάρτηση με
+    \[f(x)+ f(1-x)=x-x^2,\tag{$\ast$}\]
+    για κάθε  $x\in[0,1]$, αποδείξτε ότι $\dint_0^1 f(x)\,dx=\dfrac{1}{12}$.
+    </div>
+    
+    <div class="exercise">
+    Έστω $f$ συνεχής συνάρτηση στο $[-\alpha,\alpha]$, όπου $\alpha \gt 0$, με
+    \[f(x)+ f(-x)=1,\tag{$\ast$}\]
+    για κάθε  $x\in[0,\alpha]$. Αποδείξτε ότι $\dint_{-\alpha}^\alpha f(x)\,dx=\alpha$.
+    </div>
+    
+    <div class="exercise">
+    Έστω $f$ συνεχής συνάρτηση στο $[-\alpha,\alpha]$, όπου $\alpha \gt 0$, με
+    \[f(x)+ f(-x)=|x|,\tag{$\ast$}\]
+    για κάθε  $x\in[-\alpha,\alpha]$. Αποδείξτε ότι $\dint_{-\alpha}^\alpha f(x)\,dx=\dfrac{\alpha^2}{2}$.
+    </div>
+    
+    <div class="exercise">
+    Έστω $f$ συνεχής στο $[0,1]$ συνάρτηση.
+    <ol class="vertical-list">
+    <li>Αποδείξτε ότι $\dint_{0}^1 x^{4\nu-1} f\left(x^{2\nu}\right)dx=\dfrac{1}{2\nu}\dint_{0}^1 xf(x)\,dx$, όπου $\nu\in\mathbb{N}^{\ast}$.</li>
+    <li>Υπολογίστε το ολοκλήρωμα $\dint_{0}^1 x^{11} e^{x^6}dx$.</li>
+    </ol>
+    </div>
+    
+  </section>
+
+  <section id="integration-more">
+
+    <h2>Επιπλέον ασκήσεις υπολογισμού ολοκληρωμάτων</h2>
+
+    <div class="exercise"> Να υπολογιστούν τα παρακάτω ολοκληρώματα:
+    <ol class="array-list">
+    <li>$\dint_{-9}^{-12}\dfrac{x+1}{x+2} dx$</li>
+    <li>$\dint_{0}^{1}\dfrac{1}{e^x+1} dx$</li>
+    <li>$\dint_{0}^{1}\left|x-\dfrac{1}{2}\right| dx$</li>
+    <li>$\dint_{-\frac{\pi}{4}}^{\frac{\pi}{4}}\dfrac{1}{\gcos^2 x} dx$</li>
+    <li>$\dint_{0}^{4}\left(\dfrac{3}{2}\right)^{x-4} dx$</li>
+    <li>$\dint_{2}^{8}x\ln x\,dx$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise"> Να υπολογιστούν τα παρακάτω ολοκληρώματα:
+    <ol class="array-list">
+    <li>$\dint_{\frac{\pi}{4}}^{\frac{\pi}{3}}\dfrac{x}{\gsin^2 x} dx$</li>
+    <li>$\dint_{2}^{3}\dfrac{x^2}{x-1} dx$</li>
+    <li>$\dint_{1}^{e}\dfrac{\ln^2 x}{x} dx$</li>
+    <li>$\dint_{1}^{e}\dfrac{\ln^2 x}{x^2} dx$</li>
+    <li>$\dint_{1}^{e}x^3 \ln x\,dx$</li>
+    <li>$\dint_{0}^{1}x e^{-x} dx$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise"> Να υπολογιστούν τα παρακάτω ολοκληρώματα:
+    <ol class="array-list">
+    <li>$\dint_{1}^{5}|x-3|+|x^2 -4|\,dx$</li>
+    <li>$\dint_{0}^{16}\dfrac{1}{\sqrt{x+9}-\sqrt{x}} dx$</li>
+    <li>$\dint_{-1}^{10}\dfrac{x}{1+|x|} dx$</li>
+    <li>$\dint_{0}^{1}x^2 e^{-x} dx$</li>
+    <li>$\dint_{0}^{\pi}\gcos^4 x\,dx$</li>
+    <li>$\dint_{0}^{\pi}\gcos^5 x\,dx$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise"> Να υπολογιστούν τα παρακάτω ολοκληρώματα:
+    <ol class="array-list">
+    <li>$\dint_{0}^{2}|x-1|+x+1\,dx$</li>
+    <li>$\dint_{1}^{e}\ln^3 x\,dx$</li>
+    <li>$\dint_{e}^{e^2}\dfrac{1+\ln x}{3+x\ln x} dx$</li>
+    <li>$\dint_{0}^{2}x(2-x)^{10} dx$</li>
+    <li>$\dint_{1}^{e}\dfrac{(1+\ln x)^2}{x} dx$</li>
+    <li>$\dint_{1}^{e^8}\sqrt[3]{\ln x}\,dx$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise"> Να υπολογιστούν τα παρακάτω ολοκληρώματα:
+    <ol class="array-list">
+    <li>$\dint_{1}^{8}\sqrt[3]{x}\ln x\,dx$</li>
+    <li>$\dint_{\frac{1}{e}}^{e}x|\ln x| dx$</li>
+    <li>$\dint_{\pi}^{2\pi}x\gcos\dfrac{x}{2} dx$</li>
+    <li>$\dint_{0}^{\pi}(x^2-5x)\gcos x\,dx$</li>
+    <li>$\dint_{0}^{1}x^2 (1-x)^{20} dx$</li>
+    <li>$\dint_{\frac{\pi}{4}}^{\frac{\pi}{2}}\dfrac{1+x}{\gsin^2 x} dx$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise"> Να υπολογιστούν τα παρακάτω ολοκληρώματα:
+    <ol class="array-list">
+    <li>$\dint_{0}^{\frac{\pi}{2}}\dfrac{x}{\gcos^2 x} dx$</li>
+    <li>$\dint_{1}^{e}x\gsin(\ln x)\,dx$</li>
+    <li>$\dint_{1}^{3}\dfrac{\ln x}{x\sqrt{1+\ln x}} dx$</li>
+    <li>$\dint_{0}^{1}\dfrac{x^5}{\sqrt{x^2+1}} dx$</li>
+    <li>$\dint_{0}^{1}\dfrac{x}{1+x^4} dx$</li>
+    <li>$\dint_{0}^{1}x^3\sqrt{1+x^2}\,dx$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise"> Να υπολογιστούν τα παρακάτω ολοκληρώματα:
+    <ol class="array-list">
+    <li>$\dint_{4}^{8}x\sqrt{x^2 -16}\,dx$</li>
+    <li>$\dint_{4}^{9}\dfrac{1}{x-\sqrt{x}} dx$</li>
+    <li>$\dint_{e}^{e^2}\dfrac{\ln\ln x}{x\ln x} dx$</li>
+    <li>$\dint_{2}^{4}\dfrac{x^3}{x^2 -x} dx$</li>
+    <li>$\dint_{1}^{e^2}x\ln\left(1+\dfrac{1}{\sqrt{x}}\right) dx$</li>
+    <li>$\dint_{0}^{1}\dfrac{e^{2x}}{2^x} dx$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise"> Να υπολογιστούν τα παρακάτω ολοκληρώματα:
+    <ol class="array-list">
+    <li>$\dint_{0}^{\pi}\dfrac{x+\gsin x}{e^x} dx$</li>
+    <li>$\dint_{0}^{\frac{\pi}{4}}\dfrac{\ln(\gtan x)}{\gcos^2 x} dx$</li>
+    <li>$\dint_{0}^{1}\dfrac{4x-5}{(x+2)^4} dx$</li>
+    <li>$\dint_{1}^{e}\dfrac{e^x}{e^{2x}+3e^x +2} dx$</li>
+    <li>$\dint_{2}^{9}\dfrac{1}{2-\sqrt[3]{x-1}} dx$</li>
+    <li>$\dint_{0}^{\ln 3}\dfrac{e^{2x}}{e^x+1} dx$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise"> Να υπολογιστούν τα παρακάτω ολοκληρώματα:
+    <ol class="array-list">
+    <li>$\dint_{1}^{4}\dfrac{\sqrt{x}}{1+x\sqrt{x}} dx$</li>
+    <li>$\dint_{0}^{1}\dfrac{x}{\sqrt{x+5}-\sqrt{x+3}} dx$</li>
+    <li>$\dint_{0}^{1}\dfrac{x}{\sqrt{x+5}+\sqrt{x+3}} dx$</li>
+    <li>$\dint_{0}^{63}\dfrac{1}{\sqrt{x+1}+\sqrt[3]{x+1}} dx$</li>
+    <li>$\dint_{0}^{1}\dfrac{xe^x}{\sqrt{1+e^x}} dx$</li>
+    <li>$\dint_{0}^{1}e^{\sqrt{x}} dx$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise"> Να υπολογιστούν τα παρακάτω ολοκληρώματα:
+    <ol class="array-list">
+    <li>$\dint_{1}^{\sqrt{2}}\dfrac{1}{x\sqrt{x+1}}dx$</li>
+    <li>$\dint_{1}^{3}\dfrac{x^3}{\sqrt{x^2+1}}dx$</li>
+    <li>$\dint_{1}^{3}\dfrac{x}{\sqrt[3]{x}+\sqrt{x}}dx$</li>
+    <li>$\dint_{4}^{1}\dfrac{\sqrt{1+\sqrt{x}}}{\sqrt{x}} dx$</li>
+    <li>$\dint_{1}^{e}(\ln x^2-2)(\ln x^3 -3)\,dx$</li>
+    <li>$\dint_{0}^{1}\dfrac{e^x -1}{e^x +1} dx$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise"> Να υπολογιστούν τα παρακάτω ολοκληρώματα:
+    <ol class="array-list">
+    <li>$\dint_{0}^{3}\dfrac{x^3 +2x+4}{x^2 -1}dx$</li>
+    <li>$\dint_{-1}^{2}\dfrac{3x}{\sqrt{x^2+3x+10}}dx$</li>
+    <li>$\dint_{\frac{\pi}{4}}^{\frac{\pi}{2}}xe^x \gsin x\,dx$</li>
+    <li>$\dint_{-1}^{0}\dfrac{x^2 +1}{x^2 -3x+2} dx$</li>
+    <li>$\dint_{1}^{\sqrt{3}}x\sqrt[3]{1+x^2}\,dx$</li>
+    <li>$\dint_{0}^{1}\dfrac{4x^2}{x^3 +1} dx$</li>
+    </ol>
+    </div>
+    
+  </section>
+
+  <section id="area">
+
+    <h3>Εμβαδά επιπέδων χωρίων</h3>
+
+    <div class="exercise">
+    Να υπολογιστεί το εμβαδό του χωρίου που περικλείεται από τη γραφική παράσταση της συνάρτησης $f$, τον άξονα $x^{\prime}x$ και τις αντίστοιχες ευθείες, όταν:
+    <ol class="array-list">
+    <li>$f(x)= 10x^4+1$, $x= -1$, $x=0$</li>
+    <li>$f(x)= 6x^2-5$, $x=0$, $x=1$</li>
+    <li>$f(x)=3x^2-10x$, $x=1$, $x=3$</li>
+    <li>$f(x)= 3x^2-9$, $x=0$, $x=4$</li>
+    <li>$f(x)= e^{-x}$, $x=-1$, $x=1$</li>
+    <li>$f(x)=\gsin x$, $x=0$, $x=2\pi$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Να υπολογιστεί το εμβαδό του χωρίου που περικλείεται από τη γραφική παράσταση της συνάρτησης $f$, τον άξονα $x^{\prime}x$ και τις αντίστοιχες ευθείες, όταν:
+    <ol class="array-list">
+    <li>$f(x)= \sqrt[3]{x}$, $x=0$, $x=27$</li>
+    <li>$f(x)=\dfrac{1}{\gcos^2 x}$, $x=0$, $x=\dfrac{\pi}{3}$</li>
+    <li>$f(x)= \dfrac{2\ln x -1}{x^2}$, $x=\dfrac{1}{2}$, $x=2$</li>
+    <li>$f(x)=x+\dfrac{4}{(1+x)^2}$, $x=-\dfrac{1}{2}$, $x=\dfrac{1}{2}$</li>
+    <li>$f(x)= \dfrac{2x^2}{x-1}$, $x=2$, $x=4$</li>
+    <li>$f(x)=\dfrac{x}{\sqrt{x^2+1}}$, $x=-1$, $x=1$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Να υπολογιστεί το εμβαδό του χωρίου που περικλείεται από τη γραφική παράσταση της συνάρτησης $f$, τον άξονα $x^{\prime}x$ και τις αντίστοιχες ευθείες, όταν:
+    <ol class="array-list">
+    <li>$f(x)=\dfrac{x^2}{\sqrt[3]{x^3+1}}$, $x=0$, $x=1$</li>
+    <li>$f(x)=x-e\ln x$, $x=1$, $x=e$</li>
+    <li>$f(x)= \dfrac{\ln x}{x}$, $x=\dfrac{1}{e}$, $x=e$</li>
+    <li>$f(x)=5|x|-x^2$, $x=-1$, $x=1$</li>
+    <li>$f(x)=x(x-1)(x-2)$, $x=0$, $x=2$</li>
+    <li>$f(x)=x+1-2\sqrt{x}$, $x=0$, $x=1$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Να υπολογιστεί το εμβαδό του χωρίου που περικλείεται από τη γραφική παράσταση της συνάρτησης $f$ και τον άξονα $x^{\prime}x$, όταν:
+    <ol class="array-list">
+    <li>$f(x)= x^2-4x+3$</li>
+    <li>$f(x)= x^3-x$</li>
+    <li>$f(x)= 2x-x^2$</li>
+    <li>$f(x)= 9x-x^3$</li>
+    <li>$f(x)=3-x^3-(2-x)^3$</li>
+    <li>$3\sqrt{x-1}-x-1$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Να υπολογιστεί το εμβαδό του χωρίου που περικλείεται από τις γραφικές παραστάσεις των συναρτήσεων $f$, $g$, τον άξονα $x^{\prime}x$  και τις αντίστοιχες ευθείες, όταν:
+    <ol class="array-list">
+    <li>$f(x)=4x$, $g(x)=x^2$, $x=1$, $x=3$</li>
+    <li>$f(x)=x^3$, $g(x)=x$, $x=-2$, $x=1$</li>
+    <li>$f(x)=\gsin x$, $g(x)=\gcos x$, $x=0$, $x=2\pi$</li>
+    <li>$f(x)=2^x$, $g(x)=2x-x^2$, $x=0$, $x=2$</li>
+    <li>$f(x)=\ln x-1$, $g(x)=2x+1$, $x=1$, $x=e$</li>
+    <li>$f(x)=e^x$, $g(x)=1-x$, $x=-1$, $x=1$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Να υπολογιστεί το εμβαδό του χωρίου που περικλείεται από τις γραφικές παραστάσεις των συναρτήσεων $f$, $g$, όταν:
+    <ol class="array-list">
+    <li>$f(x)= x^2+3$, $g(x)= 4x$</li>
+    <li>$f(x)=9x$, $g(x)=x^3$</li>
+    <li>$f(x)= 4-x^2$, $g(x)= x-2$</li>
+    <li>$f(x)=x^3$, $g(x)=2x-x^2$</li>
+    <li>$f(x)=2x^2+5x$, $g(x)= x^2+8x-2$</li>
+    <li>$f(x)=x^2$, $g(x)=x^3$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Να υπολογιστεί το εμβαδό του χωρίου που περικλείεται από τις γραφικές παραστάσεις των συναρτήσεων $f$, $g$, όταν:
+    <ol class="array-list">
+    <li>$f(x)= x^2-1$, $g(x)=-x^2+1$</li>
+    <li>$f(x)=\ln x$, $g(x)=\ln^2 x$</li>
+    <li>$f(x)=x^2$, $g(x)=\sqrt{|x|}$</li>
+    <li>$f(x)=\sqrt{x-1}$, $g(x)=\dfrac{x+1}{3}$</li>
+    <li>$f(x)=(x^2+x+1)e^x$, $g(x)=e^x$</li>
+    <li>$f(x)=3x^4+x^2$, $g(x)=2(x^4+x^2)$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Για καθεμία από τις παρακάτω περιπτώσεις, να αποδείξετε ότι η συνάρτηση $f$ είναι συνεχής και να υπολογίσετε το εμβαδό του χωρίου που περικλείεται από τη γραφική παράσταση της συνάρτησης $f$, τον άξονα $x^\prime x$ και τις ευθείες με αντίστοιχες εξισώσεις.
+    <ol class="array-list">
+    <li>$f(x)=\begin{cases} e^x-e, &x \lt 1\\[1.5ex] \dfrac{\sqrt{\ln x}}{x}, &x\geq 1\end{cases}$, $x=0$, $x=e$</li>
+    <li>$f(x)=\begin{cases} -x^2 +3, &x \lt 1\\ 2\sqrt{x}, &x\geq 1\end{cases}$, $x=-1$, $x=2$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Να υπολογιστεί το εμβαδό του χωρίου που περικλείεται από τη γραφική παράσταση της συνάρτησης $f(x)=|x^2-4x|$, τον άξονα $x^\prime x$ και τις ευθείες με εξισώσεις:
+    <ol class="array-list">
+    <li>$x=0$  και $x=3$</li>
+    <li>$x=0$  και $x=5$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Έστω η συνάρτηση  
+    \[f(x)=\begin{cases}-\dfrac{6}{x}, &x \lt -1\\[2ex]
+    6x^2, &x\geq -1
+    \end{cases}.\]
+    Να αποδειχθεί ότι η $f$ είναι συνεχής και να υπολογιστεί το εμβαδό του χωρίου που περικλείεται από τη γραφική παράσταση της $f$, τον άξονα $x^\prime x$ και την ευθεία με εξίσωση $x=-2$.
+    </div>
+    
+    <div class="exercise">
+    Έστω η συνάρτηση  
+    \[f(x)=\begin{cases}-x^2+4x-3, &x \lt 2\\ -2x+5, &x\geq 2 \end{cases}.\]
+    Να αποδειχθεί ότι η $f$ είναι συνεχής και να υπολογιστεί το εμβαδό του χωρίου που περικλείεται από τη γραφική παράσταση της $f$ και τον άξονα $x^\prime x$.
+    </div>
+    
+    <div class="exercise">
+    Να υπολογιστεί το εμβαδό του χωρίου που περικλείεται από τη γραφική παράσταση της συνάρτησης $f(x)=2-|3-x|$, τον άξονα $x^\prime x$ και τις ευθείες με εξισώσεις $x=0$  και $y=0$.
+    </div>
+    
+    <div class="exercise">
+    Να υπολογιστεί το εμβαδό του χωρίου που περικλείεται από τη γραφική παράσταση της συνάρτησης $f(x)=x^2-4x$ και από την ευθεία με εξίσωση $y=-3$.
+    </div>
+    
+    <div class="exercise">
+    ∆ίνονται οι συναρτήσεις $f (x) = \sqrt{x}$ και $g(x) = 2x-1$. Να υπολογίσετε το εµβαδό του χωρίου που περικλείεται από τις $C_f$, $C_g$ και την ευθεία $x = 0$.
+    </div>
+    
+    <div class="exercise">
+    Να υπολογιστεί το εμβαδό του χωρίου που περικλείεται από τη γραφική παράσταση της συνάρτησης $f(x)=2^x$ και τις ευθείες με εξισώσεις $x=0$, $y=8$.
+    </div>
+    
+    <div class="exercise">
+    Να υπολογιστεί το εμβαδό του χωρίου που περικλείεται από τις γραφικές παραστάσεις των συναρτήσεων $f(x)=\ln x$, $g(x)=\ln\dfrac{1}{x}$ και την ευθεία με εξίσωση:
+    <ol class="array-list">
+    <li>$y=-1$</li>
+    <li>$y=\ln 2$</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Να υπολογιστεί το εμβαδό του χωρίου που περικλείεται από τη γραφική παράσταση της συνάρτησης $f(x)=\dfrac{6}{x}$ και τις ευθείες με εξισώσεις $x=0$, $y=1$, $y=3$.
+    </div>
+    
+    <div class="exercise">
+    Να υπολογιστεί το εµβαδό του χωρίου που περικλείεται από τη γραφική παράσταση της $f (x)=\ln x$, τον άξονα $x^\prime x$ και την εφαπτοµένη της $C_f$ στο σηµείο $\mathrm{A}(e,1)$. 
+    </div>
+    
+    <div class="exercise">
+    Να υπολογιστεί το εμβαδό του χωρίου που περικλείεται από τη γραφική παράσταση της συνάρτησης $f(x)=-\ln x$, τον άξονα $x^\prime x$ και την εφαπτομένη της $C_f$ στο $\mathrm{M}\left(\frac{1}{e},1\right)$.
+    </div>
+    
+    <div class="exercise">
+    Έστω η συνάρτηση $f(x)=e^x$.
+    <ol class="vertical-list">
+    <li>Να προσδιορίσετε τις εξισώσεις των εφαπτομένων της $C_f$  στα σημεία $\text{Α}(0,1)$ και $\text{Β}(1,e)$.</li>
+    <li>Να υπολογίσετε το εμβαδό του χωρίου που περικλείεται από τη $C_f$ και τις εφαπτομένες.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Για τις συναρτήσεις $f,g$ ισχύουν $f(0)=g(0)$, $f^{\prime}(3)=4+g^{\prime}(3)$ και
+    \[f^{\prime\prime}(x)=2+g^{\prime\prime}(x),\tag{$\ast$}\]
+    για κάθε $x\in [0,3]$. Να υπολογίσετε το εμβαδό του χωρίου που περικλείεται από τις γραφικές παραστάσεις των $f,g$ και τις ευθείες με εξισώσεις $x=0$, $x=3$.
+    </div>
+    
+    <div class="exercise">
+    ∆ίνεται η συνάρτηση $f$ µε $f(x)=(x+4)e^x$. Να υπολογίσετε το εµβαδό του χωρίου που περικλείεται από τη γραφική παράσταση της $f$, τον άξονα $x^{\prime}x$ και τις ευθείες µε εξισώσεις $x=-1$ και $x=1$.
+    </div>
+    
+    <div class="exercise">
+    Έστω η συνάρτηση $f(x)=x^2-4x+3$.
+    <ol class="vertical-list">
+    <li>Να προσδιοριστούν οι εξισώσεις των εφαπτοµένων της $C_f$ στα σηµεία $\mathrm{A},\mathrm{B}$ όπου η $C_f$ τέμνει τον άξονα $x^{\prime}x$.</li>
+    <li> Αν $\Gamma$ είναι το σηµείο τοµής των εφαπτοµένων, να αποδείξετε ότι η $C_f$ διαμερίζει το τρίγωνο $\mathrm{AB}\Gamma$ σε δύο χωρία, των οποίων ο λόγος  
+    εµβαδών τους είναι $2:1$.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Έστω η συνάρτηση $f(x)=\gsin x$.
+    <ol class="vertical-list">
+    <li>Να προσδιορίσετε τις εξισώσεις των εφαπτοµένων της τη γραφικής παράστασης της $f$ στα σηµεία $\mathrm{O}(0,0)$ και $\mathrm{A}(\pi,0)$.</li>
+    <li>Να υπολογίσετε το εµβαδό του χωρίου που περικλείεται από τη γραφική παράσταση της $f$ και τις εφαπτόµενες στα σηµεία $\mathrm{O}$ και $\mathrm{A}$.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Έστω η συνάρτηση $f (x)=3x^2$.
+     <ol class="vertical-list">
+    <li>Να προσδιορίσετε την εξίσωση της εφαπτοµένης της $C_f$ στο σηµείο της $\mathrm{A}(1,3)$.</li>
+    <li>Να υπολογίσετε το εµβαδό του χωρίου που περικλείεται από τη γραφική παράσταση της συνάρτησης $f$, την εφαπτοµένη της στο $\mathrm{A}$ και τον άξονα $x^{\prime}x$.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Θεωρούµε τις συναρτήσεις $f(x)=\sqrt{x}$ και $g(x)=\ln x$.
+    <ol class="vertical-list">
+    <li>Αποδείξτε ότι $f(x) \gt g(x)$, για κάθε $x \gt 0$.</li>
+    <li>Να υπολογίσετε το εµβαδό του µεικτόγραµµου τετραπλεύρου που οριοθετείται από τις $C_f$, $C_g$, την ευθεία µε εξίσωση $y=\frac{1}{2}$ και τον άξονα $x^{\prime}x$.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Να αποδειχθεί ότι οι συναρτήσεις $f (x)=x^2-x$ και $g(x)=\ln x$ διαθέτουν κοινή εφαπτομένη. Έπειτα, να υπολογιστεί το εμβαδό του χωρίου που περικλείεται από τις
+    $C_f,C_g$ και την ευθεία $y=2$.
+    </div>
+    
+    <div class="exercise">
+    Υπολογίστε το εμβαδό του χωρίου που περικλείεται από τις γραφικές παραστάσεις των συναρτήσεων $f(x)=e^{x}$, $g(x)=x^2 +1$ και την ευθεία $x=1$.
+    </div>
+    
+    <div class="exercise">
+    Υπολογίστε το εμβαδό του χωρίου που περικλείεται από τις γραφικές παραστάσεις των συναρτήσεων $f(x)=e^{|x|}$ και $g(x)=|ex|$.
+    </div>
+    
+    <div class="exercise">
+    Έστω $\alpha,\beta\in\mathbb{R}$ με $0 \lt \alpha \lt \beta$. Θεωρούμε το χωρίο $\Omega$ που περικλείεται από τη γραφική παράσταση της συνάρτησης $f(x)=(x-\alpha)(x-\beta)$ και τον άξονα $x^\prime x$. Να προσδιοριστεί ευθεία που διέρχεται από το σημείο $\mathrm{A}(\alpha,0)$ και διαμερίζει το $\Omega$ σε δύο ισεμβαδικά χωρία.
+    </div>
+    
+    <div class="exercise">
+    Έστω $\alpha\in\mathbb{R}$. Το χωρίο που περικλείεται από τη γραφική παράσταση της συνάρτησης $f(x)=x^2$ και την ευθεία $y=9$ διαμερίζεται από την ευθεία $y=\alpha$ σε δύο ισεμβαδικά χωρία. Να προσδιοριστεί η τιμή του $\alpha$.
+    </div>
+    
+    <div class="exercise">
+    Έστω η συνάρτηση $f(x)=e^x$.
+    <ol class="vertical-list">
+    <li>Να υπολογιστεί το εµβαδό του χωρίου που περικλείεται από τη γραφική παράσταση της συνάρτησης $f$, τον άξονα $x^\prime x$ και τις ευθείες $x = 0$, $x = \ln(2e-1)$.</li>
+    <li>Να προσδιοριστεί ο πραγματικός αριθμός $\lambda$ ώστε η ευθεία $x=\lambda$ να διαμερίζει το παραπάνω χωρίο σε δύο ισεµβαδικά χωρία.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise">
+    Έστω $\Omega$ το χωρίο που περικλείεται από την γραφική παράσταση της συνάρτησης $f(x)=x^3-x$ και τις ευθείες με εξισώσεις $x=0$, $x=1$, $y=0$. Να προσδιοριστεί η τιμή του $\alpha\in\mathbb{R}$ για την οποία η ευθεία $y=\alpha x$ διαμερίζει το $\Omega$ σε δύο ισεμβαδικά χωρία. 
+    </div>
+    
+    <div class="exercise">
+    Έστω $E(\alpha)$ το εµβαδό του χωρίου που περικλείεται από τη γραφική παράσταση της συνάρτησης $f (x)=\dfrac{1}{x^2}$, τον άξονα $x^{\prime}x$ και τις ευθείες $x = 1$, $x =\alpha$, όπου $\alpha \gt 0$. 
+    <ol class="vertical-list">
+    <li>Να προσδιοριστούν οι τιμές του $\alpha \gt 0$ με $E(\alpha)=\frac{1}{2}$.</li>
+    <li>Να υπολογίσετε τα όρια $\lim\limits_{\alpha\to +\infty}E(\alpha)$ και $\lim\limits_{\alpha\to 0^{+}}E(\alpha)$.</li>
+    </ol>
+    </div>
+    
+    <div class="exercise"> Έστω η συνάρτηση $f(x)=x^2 +1$. Το χωρίο που περικλείεται από τη $C_f$ και την ευθεία $y=5$ διαμερίζεται από την ευθεία $y=\alpha^2 +1$, $\alpha \gt 0$, σε δύο ισεµβαδικά χωρία. Να προσδιορίσετε την τιµή του $\alpha$.
+    </div>
+    
+    <div class="exercise">
+    Θεωρούµε συναρτήσεις $f, g:\mathbb{R}\to\mathbb{R}$, όπου η $f$ είναι άρτια, η $g$ περιττή, και
+    \[f (x) + g(x) = e^x,\tag{$\ast$}\]
+    για κάθε $x\in\mathbb{R}$.
+    <ol class="vertical-list">
+    <li>Να υπολογίσετε το εµβαδό $E(\alpha)$ του χωρίου που περικλείεται από τις γραφικές παραστάσεις των συναρτήσεων $f,g$ και τις ευθείες $x = 0$, $x = \alpha$, όπου $\alpha  \gt  0$.</li>
+    <li>Να υπολογίσετε το όριο $\lim\limits_{\alpha\to +\infty}E(\alpha)$.</li>
+    </ol>
+    </div>
+    
+    
+  </section>
+
+  </main>
+
+</body>
+</html>
