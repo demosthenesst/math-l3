@@ -12,6 +12,11 @@ body {
   text-size-adjust: none;
 }
 
+main >* {
+  overflow-x: scroll;
+  background-color: bisque;
+}
+
 #home-button {
   position: fixed;
   right: 1rem;
