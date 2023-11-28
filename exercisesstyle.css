@@ -12,7 +12,6 @@ body {
   text-size-adjust: none;
 }
 
-
 #home-button {
   position: fixed;
   right: 1rem;
@@ -89,13 +88,7 @@ h3 {
   box-shadow: 5px -5px 10px 4px rgb(140, 140, 140);
   margin-inline: auto;
   line-height: 1.5;
-
-
-  overflow-x: scroll;
-  background-color: bisque;
 }
-
-
 
 .exercise::before {
   background-color: white;
