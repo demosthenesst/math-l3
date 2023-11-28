@@ -105,7 +105,17 @@ h3 {
   padding-inline: 0.5em;
 }
 
-.array-list, .vertical-list  {
+.exercise-note {
+  color: var(---theme-color);
+  font-weight: 600;
+  margin: 0 0 1em 0;
+  padding: 0;
+}
+
+
+.array-list,
+.vertical-list,
+.array-list-3  {
   counter-reset: list;
   padding-left: 0;
   padding-top: 0;
@@ -116,7 +126,9 @@ h3 {
   margin-top: 1em;
 }
 
-.array-list > li, .vertical-list > li {
+.array-list > li,
+.vertical-list > li,
+.array-list-3 > li {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -201,4 +213,7 @@ nav a {
     grid-template-columns: 1fr 1fr;
   }
 
+  .array-list-3 {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
