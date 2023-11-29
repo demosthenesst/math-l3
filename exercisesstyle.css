@@ -132,7 +132,9 @@ h3 {
   padding: 0;
   margin: 0;
 }
-.array-list > li::before, .vertical-list > li::before {
+.array-list > li::before,
+.vertical-list > li::before,
+.array-list-3 > li::before {
   content: "("counter(list) ")   ";
   counter-increment: list;
   white-space: pre;
