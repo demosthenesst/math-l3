@@ -33,7 +33,7 @@ header>div {
 h1 {
   color: var(---theme-color);
   letter-spacing: 3px;
-  font-size: 3em;
+  /* font-size: 3em; */
   font-variant: small-caps;
   text-align: center;
   font-weight: 900;
