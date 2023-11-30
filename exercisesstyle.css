@@ -140,6 +140,14 @@ h3 {
   white-space: pre;
 }
 
+.bullet-list {
+  padding-left: 0;
+  list-style-position: inside;
+  display: grid;
+  align-items: center;
+  row-gap: 0.5em;
+}
+
 nav {
   background-color: var(---theme-color);
   display: flex;
