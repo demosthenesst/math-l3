@@ -1374,22 +1374,21 @@
 
 
     <div class="exercise">
-      Έστω $\alpha,\beta\in\mathbb{R}$ με $\alpha\lt \beta$. Θεωρούμε συνάρτηση $f$ που στρέφει τα κοίλα άνω στο $[\alpha,\beta]$. Αποδείξτε ότι:
+      Έστω $\alpha,\beta\in\mathbb{R}$ με $\alpha\lt \beta$. Θεωρούμε συνάρτηση $f$ που στρέφει τα κοίλα άνω στο $[\alpha,\beta]$. 
       <ol class="vertical-list">
-      <li>$f(x)\leq\dfrac{x-\alpha}{\beta-\alpha}f(\beta)+\dfrac{x-\beta}{\alpha-\beta}f(\alpha)$, για κάθε $x\in[\alpha,\beta]$.</li>
-      <li>$f\left(\dfrac{\alpha+\beta}{2}\right)\leq\dfrac{1}{2}\big(f(x)+f(\alpha+\beta-x)\big)$, για κάθε $x\in[\alpha,\beta]$.</li>
+      <li>Για κάθε $x\in[\alpha,\beta]$ αποδείξτε ότι 
+        $$f(x)\leq\dfrac{x-\alpha}{\beta-\alpha}f(\beta)+\dfrac{x-\beta}{\alpha-\beta}f(\alpha).$$</li>
+      <li>Για κάθε $x\in[\alpha,\beta]$ αποδείξτε ότι
+        $$f\left(\dfrac{\alpha+\beta}{2}\right)\leq\dfrac{1}{2}\big(f(x)+f(\alpha+\beta-x)\big).$$</li>
       
-      <li class="mobile-display" style="align-self: start;">
-          $\begin{align}
-          f\left(\dfrac{\alpha+\beta}{2}\right) &\leq\dfrac{1}{\beta-\alpha}\dint_\alpha^\beta f(x)dx\leq\\[1ex]
-                                                &\leq\dfrac{1}{2}\left(f(\alpha)+f(\beta)\right)
-          \end{align}\ .$</li>
-
-          <li class="desktop-display">
-            $f\left(\dfrac{\alpha+\beta}{2}\right)\leq\dfrac{1}{\beta-\alpha}\dint_\alpha^\beta f(x)dx\leq\dfrac{1}{2}\left(f(\alpha)+f(\beta)\right)$.</li>
-        <span class="desktop-display">
-
-        </span>
+      <li class="mobile-display">Αποδείξτε ότι
+          $$\begin{array}{l}
+          f\left(\dfrac{\alpha+\beta}{2}\right) \leq\\[1ex]
+          \leq\dfrac{1}{\beta-\alpha}\dint_\alpha^\beta f(x)dx\leq\\[1ex]
+          \leq\dfrac{1}{2}\left(f(\alpha)+f(\beta)\right).
+          \end{array}$$</li>
+          <li class="desktop-display">Αποδείξτε ότι
+            $$f\left(\dfrac{\alpha+\beta}{2}\right)\leq\dfrac{1}{\beta-\alpha}\dint_\alpha^\beta f(x)dx\leq\dfrac{1}{2}\left(f(\alpha)+f(\beta)\right).$$</li>
       </ol>
       </div>
 
