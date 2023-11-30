@@ -928,7 +928,18 @@
     
     <div class="exercise">
     Έστω συνάρτηση $f$, με συνεχή στο διάστημα $[0,1]$ παράγωγο. Αν ισχύει
-    \[\dint_0^1 xf^{\prime}(x)dx=8 -3 \dint_0^1 f(x)\,dx =-1,\tag{$\ast$}\]
+    <div class="mobile-display">
+      \[\begin{array}{l}
+      \dint_0^1 xf^{\prime}(x)dx=\\[1ex]
+      =8 -3 \dint_0^1 f(x)\,dx =\\[1ex]
+      =-1
+      \end{array}
+      \tag{$\ast$}
+      \]
+    </div>
+    <div class="desktop-display">
+      \[\dint_0^1 xf^{\prime}(x)dx=8 -3 \dint_0^1 f(x)\,dx =-1,\tag{$\ast$}\]
+    </div>
     να υπολογίσετε το  $f(1)$.
     </div>
     
@@ -944,7 +955,17 @@
     
     <div class="exercise">
     Αν η συνάρτηση $f$ διαθέτει συνεχή παράγωγο στο διάστηµα $[0,1]$ και
-    \[\dint_0^1 x^2 f^\prime (x)\,dx=1-2\dint_0^1 x f(x)\,dx,\tag{$\ast$}\]
+    <div class="mobile-display">
+      \[\begin{array}{l}
+      \dint_0^1 x^2 f^\prime (x)\,dx=\\[1ex]
+      =1-2\dint_0^1 x f(x)\,dx,
+      \end{array}
+      \tag{$\ast$}
+      \]
+    </div>
+    <div class="desktop-display">
+      \[\dint_0^1 x^2 f^\prime (x)\,dx=1-2\dint_0^1 x f(x)\,dx,\tag{$\ast$}\]
+    </div>
     να υπολογίσετε το $f(1)$.
     </div>
     
@@ -954,7 +975,10 @@
     
     <div class="exercise">
     Έστω παραγωγίσιμη στο $\mathbb R$ συνάρτηση $f$. Αν είναι γνωστό ότι
-    \[\dint_0^1 f(x)f^{\prime}(x)\,dx=0,\ \ \ \ \ \dint_0^1 f^2 (x)f^{\prime}(x)\,dx=18,\tag{$\ast$}\]
+    \[\begin{align}
+    \dint_0^1 f(x)f^{\prime}(x)\,dx&=0,\\[1ex]
+    \dint_0^1 f^2 (x)f^{\prime}(x)\,dx&=18,
+    \end{align}\tag{$\ast$}\]
     να υπολογίσετε το $\dint_0^1 f^4 (x)f^{\prime}(x)dx$.
     </div>
     
@@ -989,7 +1013,9 @@
     
     <div class="exercise">
     Αν η συνάρτηση $f$ διαθέτει συνεχή δεύτερη παράγωγο στο διάστημα $\left[0,\frac{\pi}{2}\right]$ με $f\left(\frac{\pi}{2}\right)=3$ και
-    \[\dint_{0}^{\frac{\pi}{2}}\left(f(x)+f^{\prime\prime}(x)\right)\gcos x\,dx=2,\tag{$\ast$}\]
+    <div class="scale-09">
+      \[\dint_{0}^{\frac{\pi}{2}}\left(f(x)+f^{\prime\prime}(x)\right)\gcos x\,dx=2,\tag{$\ast$}\]
+    </div>
     να υπολογίσετε το $f^\prime(0)$.
     </div>
     
@@ -1001,7 +1027,15 @@
      
     <div class="exercise">
     Έστω συνάρτηση  $f$, με συνεχή δεύτερη παράγωγο στο διάστημα $[0,3]$. Θεωρούμε τη συνάρτηση $g$ με τύπο
-    \[g(x)=x^2f^{\prime\prime}(x)+2f(3)-3f^{\prime}(3)-\dfrac{2}{3}\dint_0^3 f(t)\,dt.\]
+    <div class="mobile-display">
+      \begin{align}
+      g(x)&=x^2f^{\prime\prime}(x)+2f(3)-\\[1ex]
+          &-3f^{\prime}(3)-\dfrac{2}{3}\dint_0^3 f(t)\,dt.
+      \end{align}
+    </div>
+    <div class="desktop-display">
+      \[g(x)=x^2f^{\prime\prime}(x)+2f(3)-3f^{\prime}(3)-\dfrac{2}{3}\dint_0^3 f(t)\,dt.\]
+    </div>
     Αποδείξτε ότι $\dint_0^3 g(x)\,dx=0$.
     </div>
     
@@ -1116,9 +1150,9 @@
     
     <div class="exercise"> Για κάθε $\alpha\in(0,+\infty)$ αποδείξτε ότι:
     <ol class="vertical-list">
-    <li>$\dint_{0}^{\alpha}\sqrt{1+e^{2t}}\,dt=\dint_{1}^{e^\alpha}\dfrac{1}{t}\sqrt{1+t^2}\,dt$</li>
-    <li>$\dint_{-\alpha}^{\alpha}\dfrac{t^2}{e^{t}+1}dt=\dint_{e^{-\alpha}}^{e^\alpha}\dfrac{\ln^2 t}{t^2+t}dt$</li>
-    <li>$\dint_{\alpha}^{1}\dfrac{1}{1+x^2}dx=\dint_{1}^{\frac{1}{\alpha}}\dfrac{1}{1+x^2}dx$</li>
+    <li>$\dint_{0}^{\alpha}\!\!\sqrt{1+e^{2t}}\,dt=\!\!\dint_{1}^{e^\alpha}\dfrac{1}{t}\sqrt{1+t^2}\,dt$</li>
+    <li>$\dint_{-\alpha}^{\alpha}\!\dfrac{t^2}{e^{t}+1}dt=\dint_{e^{-\alpha}}^{e^\alpha}\dfrac{\ln^2 t}{t^2+t}dt$</li>
+    <li>$\dint_{\alpha}^{1}\!\!\dfrac{1}{1+x^2}dx=\dint_{1}^{\frac{1}{\alpha}}\!\!\dfrac{1}{1+x^2}dx$</li>
     </ol>
     </div>
     
@@ -1140,7 +1174,6 @@
     </ul>
     Αν $\alpha \gt 0$, αποδείξτε ότι $\dint_{-\alpha}^{\alpha}\dfrac{g(x)}{1+f(x)}\,dx=\dint_{0}^{\alpha}g(x)\,dx$.
     </div>
-    
     
     <div class="exercise">
     Έστω $f:[-\alpha,\alpha]\to\mathbb{R}$ συνεχής συνάρτηση, όπου $\alpha \gt 0$.
@@ -1176,11 +1209,17 @@
     <div class="exercise">
     Έστω $\alpha \gt 0$ και συνεχής συνάρτηση $f$ στο $[0,\alpha]$ με
     \[f(x)+f(\alpha-x)\neq 0,\tag{$\ast$}\]
-    για $x\in [0,\alpha]$.
+    για $x\in [0,\alpha]$. Θεωρούμε τα ολοκληρώματα
+      \[
+      \begin{align}
+      I&=\dint_{0}^{\alpha}\dfrac{f(x)}{f(x)+f(\alpha-x)}dx,\\[1ex]
+      J&=\dint_{0}^{\alpha}\dfrac{f(\alpha-x)}{f(x)+f(\alpha-x)}dx.
+      \end{align}
+      \]
     <ol class="vertical-list">
-    <li>Να αποδειχθεί ότι $\dint_{0}^{\alpha}\dfrac{f(x)}{f(x)+f(\alpha-x)}dx=\dint_{0}^{\alpha}\dfrac{f(\alpha-x)}{f(x)+f(\alpha-x)}dx$.</li>
-    <li>Να προσδιοριστεί το $\dint_{0}^{\alpha}\dfrac{f(x)}{f(x)+f(\alpha-x)}dx$.</li>
-    <li>Να προσδιοριστεί το $\dint_{0}^{1}\dfrac{x^4}{x^4+(1-x)^4}dx$.</li>
+    <li>Να αποδειχθεί ότι $I=J$.</li>
+    <li>Να προσδιοριστεί το $I$.</li>
+    <li>Να προσδιοριστεί το $K=\dint_{0}^{1}\dfrac{x^4}{x^4+(1-x)^4}dx$.</li>
     </ol>
     </div>
     
@@ -1189,7 +1228,14 @@
     </div>
     
     <div class="exercise">
-    Αποδείξτε ότι $\dint_{0}^{\frac{\pi}{2}} \dfrac{\gsin^3 x}{\gsin^3 x +\gcos^3 x}dx=\dint_{0}^{\frac{\pi}{2}} \dfrac{\gcos^3 x}{\gsin^3 x +\gcos^3 x}dx=\dfrac{\pi}{4}$.
+      Θεωρούμε τα ολοκληρώματα
+      \[
+      \begin{align}
+      I&=\dint_{0}^{\frac{\pi}{2}} \dfrac{\gsin^3 x}{\gsin^3 x +\gcos^3 x}dx,\\[1ex]
+      J&=\dint_{0}^{\frac{\pi}{2}} \dfrac{\gcos^3 x}{\gsin^3 x +\gcos^3 x}dx.
+      \end{align}
+      \]
+      Αποδείξτε ότι $I=J=\dfrac{\pi}{4}$.
     </div>
     
     <div class="exercise">
