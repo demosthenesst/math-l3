@@ -37,6 +37,7 @@ h1 {
   font-variant: small-caps;
   text-align: center;
   font-weight: 900;
+  text-size-adjust: auto;
 }
 
 h2 {
