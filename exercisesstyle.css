@@ -10,6 +10,7 @@ body {
   padding-bottom: 4em;
   margin: 0;
   text-size-adjust: none;
+  min-width: 100vw;
 }
 
 #home-button {
