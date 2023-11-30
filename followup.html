@@ -1353,26 +1353,6 @@
     <li>Να αποδείξετε ότι υπάρχει $\xi\in(0,1)$ με $f(\xi)=f^\prime(\xi)$.</li>
     </ol>
     </div>
-
-    <!-- <div class="exercise">
-    Έστω $\alpha,\beta\in\mathbb{R}$ με $\alpha\lt \beta$. Θεωρούμε συνάρτηση $f$ που στρέφει τα κοίλα άνω στο $[\alpha,\beta]$. Αποδείξτε ότι:
-    <ol class="vertical-list">
-    <li>$f(x)\leq\dfrac{x-\alpha}{\beta-\alpha}f(\beta)+\dfrac{x-\beta}{\alpha-\beta}f(\alpha)$, για κάθε $x\in[\alpha,\beta]$.</li>
-    <li>$f\left(\dfrac{\alpha+\beta}{2}\right)\leq\dfrac{1}{2}\big(f(x)+f(\alpha+\beta-x)\big)$, για κάθε $x\in[\alpha,\beta]$.</li>
-    
-    <li><span class="mobile-display">
-        $\begin{align}
-        f\left(\dfrac{\alpha+\beta}{2}\right) &\leq\dfrac{1}{\beta-\alpha}\dint_\alpha^\beta f(x)dx\\[1ex]
-                                              &\leq\dfrac{1}{2}\left(f(\alpha)+f(\beta)\right)
-        \end{align}\ .$
-      </span>
-      <span class="desktop-display">
-        $f\left(\dfrac{\alpha+\beta}{2}\right)\leq\dfrac{1}{\beta-\alpha}\dint_\alpha^\beta f(x)dx\leq\dfrac{1}{2}\left(f(\alpha)+f(\beta)\right)$.</li>
-      </span>
-    </ol>
-    </div> -->
-
-
     <div class="exercise">
       Έστω $\alpha,\beta\in\mathbb{R}$ με $\alpha\lt \beta$. Θεωρούμε συνάρτηση $f$ που στρέφει τα κοίλα άνω στο $[\alpha,\beta]$. 
       <ol class="vertical-list">
@@ -1391,20 +1371,6 @@
             $$f\left(\dfrac{\alpha+\beta}{2}\right)\leq\dfrac{1}{\beta-\alpha}\dint_\alpha^\beta f(x)dx\leq\dfrac{1}{2}\left(f(\alpha)+f(\beta)\right).$$</li>
       </ol>
       </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <div class="exercise">
     Έστω συνάρτηση $f$, με συνεχή δεύτερη παράγωγο στο $\mathbb{R}$, για την οποία ισχύει:
@@ -1456,8 +1422,15 @@
     <div class="exercise">
     Θεωρούµε συνάρτηση $f:\mathbb{R}\to\mathbb{R}$ με θετική δεύτερη παράγωγο σε όλο το $\mathbb{R}$. Έστω $\alpha,\beta\in\mathbb{R}$ με $\alpha\lt \beta$.
     <ol class="vertical-list">
-    <li>Αποδείξτε ότι για κάθε $x\in[\alpha,\beta]$ ισχύει η σχέση $f(x)-f(\alpha)\leq f^\prime(\beta)(x-\alpha)$.</li>
-    <li>Αποδείξτε ότι $2\dint_{\alpha}^{\beta}f(x)dx\leq f^\prime(\beta)(\beta-\alpha)^2+2f(\alpha)(\beta-\alpha)$.</li>
+    <li>Αποδείξτε ότι
+      $$f(x)-f(\alpha)\leq f^\prime(\beta)(x-\alpha),$$
+      για κάθε $x\in[\alpha,\beta]$.</li>
+    <li class="mobile-display">Αποδείξτε ότι
+      $$\begin{array}{l}
+      2\dint_{\alpha}^{\beta}f(x)dx\leq\\[1ex]
+      \leq f^\prime(\beta)(\beta-\alpha)^2+2f(\alpha)(\beta-\alpha).
+      \end{array}$$</li>
+    <li class="desktop-display">Αποδείξτε ότι $$2\dint_{\alpha}^{\beta}f(x)dx\leq f^\prime(\beta)(\beta-\alpha)^2+2f(\alpha)(\beta-\alpha).$$</li>
     </ol>
     </div>
 
