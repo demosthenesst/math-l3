@@ -155,9 +155,13 @@ nav {
 
 nav ul {
   list-style-type: none;
-  gap: 1em;
+  /* gap: 1em; */
   padding: 1em;
   margin: 0;
+}
+
+nav ul li {
+  margin-block: 0.5em;
 }
 
 nav a {
