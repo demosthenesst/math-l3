@@ -15,23 +15,12 @@ body {
 
 #home-button {
   position: fixed;
-  right: 1rem;
-  bottom: 1rem;
+  right: 0rem;
+  bottom: 0rem;
   color: var(---theme-color);
   text-decoration: none;
   font-size: 3em;
   z-index: 1;
-}
-
-body,
-header,
-h1,
-h2,
-h3,
-main,
-section,
-nav {
-  width: 100vw;
 }
 
 header>div {
