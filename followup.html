@@ -84,7 +84,9 @@
 
   <div class="exercise">
   Δίνεται 1-1 συνάρτηση $f: \mathbb{R}\to\mathbb{R}$, καθώς και συνάρτηση $g: \mathbb{R}\to\mathbb{R}$, για τις οποίες ισχύει  
-  \[g(x)+ f(x-2) =(g\circ g)(x)+f(0), \tag{$\ast$}\]
+  <div class="scale-09">
+    \[g(x)+ f(x-2) =(g\circ g)(x)+f(0), \tag{$\ast$}\]
+  </div>
   για κάθε $x\in\mathbb{R}$.
   <ol class="vertical-list">
   <li>Αποδείξτε ότι η $g$ είναι 1-1.</li>
@@ -187,7 +189,9 @@
   
   <div class="exercise">
   Δίνεται συνάρτηση $f:(0,+\infty)\to\mathbb{R}$, με $f(1)+f(e)=2e+3$ και
-  \[f(x)-f(y)=\ln\left(\dfrac{x}{y}\right)+2(x-y),\tag{$\ast$}\]
+  <div class="scale-09">
+    \[f(x)-f(y)=\ln\left(\dfrac{x}{y}\right)+2(x-y),\tag{$\ast$}\]
+  </div>
   για κάθε $x,y\in(0,+\infty)$.
   <ol class="vertical-list">
   <li>Να προσδιορίσετε τα $f(1)$ και $f(e)$.</li>
@@ -230,7 +234,7 @@
   \[(f\circ f)(x)+f^3(x)=2x+3,\tag{$\ast$}\]
   για κάθε $x\in\mathbb{R}$.
   Δίνεται επίσης συνάρτηση $g:(0,+\infty)\to\mathbb{R}$, για την οποία ισχύει
-  \[f(g(x)-x)-f(\ln x+1)=0,\tag{$\ast\ast$}\]
+  \[f(g(x)-x)-f(\ln x+1)=0,\!\!\tag{$\ast\ast$}\]
   για κάθε $x \gt 0$.
   <ol class="vertical-list">
   <li>Να αποδείξετε ότι η $f$ είναι $1-1$.</li>
@@ -289,8 +293,20 @@
       <li>Να εξετάσετε την $f$ ως προς τη μονοτονία της.</li>
       <li>Να υπολογίσετε τα όρια $\lim\limits_{x\to 0}f(x)$ και $\lim\limits_{x\to +\infty}f(x)$.</li>
       <li>Να επιλύσετε η εξίσωση $f(x)=e^{3/2}$.</li>
-      <li>Να προσδιορίσετε τον πραγματικό θετικό αριθμό $\mu$, για τον οποίο ισχύει 
-      \[3\ln(4\mu)-3\ln(2\mu^{2}+2)-4(\mu^{2}+1)=e^{3(\mu^{2}+1)}-e^{6\mu}-8\mu.\tag{$\ast$}\]</li>
+      <li>Να προσδιορίσετε τον πραγματικό θετικό αριθμό $\mu$, για τον οποίο ισχύει
+        <div class="mobile-display">
+          \[
+          \begin{array}{l}
+          3\ln(4\mu)-3\ln(2\mu^{2}+2)-4(\mu^{2}+1)=\\[1ex]
+          =e^{3(\mu^{2}+1)}-e^{6\mu}-8\mu.
+          \end{array}
+          \tag{$\ast$}
+          \]
+        </div>
+        <div class="desktop-display">
+          \[3\ln(4\mu)-3\ln(2\mu^{2}+2)-4(\mu^{2}+1)=e^{3(\mu^{2}+1)}-e^{6\mu}-8\mu.\tag{$\ast$}\]
+        </div> 
+        </li>
       </ol>
       </div>
       
@@ -327,8 +343,19 @@
       </div>
       
       <div class="exercise">
-      Δίνεται συνάρτηση $f: \mathbb{R}\to\mathbb{R}$, για την οποία ισχύει $\lim\limits_{x\to 0}\dfrac{f(x)}{x}=\lambda\in\mathbb{R}$ και 
-      \[f^3(x)+4xf(x)\gsin x=f^2(x)\gsin 3x+4x^3,\tag{$\ast$}\]
+      Δίνεται συνάρτηση $f: \mathbb{R}\to\mathbb{R}$, για την οποία ισχύει $\lim\limits_{x\to 0}\dfrac{f(x)}{x}=\lambda\in\mathbb{R}$ και
+      <div class="mobile-display">
+        \[
+        \begin{array}{l}
+        f^3(x)+4xf(x)\gsin x=\\[1ex]
+        =f^2(x)\gsin 3x+4x^3,
+        \end{array}
+        \tag{$\ast$}
+        \]
+      </div>
+      <div class="desktop-display">
+        \[f^3(x)+4xf(x)\gsin x=f^2(x)\gsin 3x+4x^3,\tag{$\ast$}\]
+      </div>
       για κάθε $x\in\mathbb{R}$.
       <ol class="vertical-list">
       <li>Να προσδιορίσετε τον αριθμό $\lambda$.</li>
@@ -423,8 +450,21 @@
       </ol>
       </div>
       
-      <div class="exercise">ορια
-      Δίνεται η συνάρτηση $f(x)=\sqrt{(2x+\alpha)^2+1-\alpha^2}+\sqrt{(x+\alpha)^2+1-\alpha^2}$, όπου $\alpha$ πραγματικός αριθμός.
+      <div class="exercise">
+      Δίνεται η συνάρτηση
+      <div class="mobile-display">
+        \[
+        \begin{align}
+        f(x)&=\sqrt{(2x+\alpha)^2+1-\alpha^2}\,+\\[1ex]
+        &+\sqrt{(x+\alpha)^2+1-\alpha^2},
+        \end{align}
+        \tag{$\ast$}
+        \]
+      </div>
+      <div class="desktop-display">
+        $$f(x)=\sqrt{(2x+\alpha)^2+1-\alpha^2}+\sqrt{(x+\alpha)^2+1-\alpha^2},$$
+      </div>
+      όπου $\alpha$ πραγματικός αριθμός.
       <ol class="vertical-list">
       <li>Να προσδιορίσετε το όριο $\lim\limits_{x\to +\infty}\dfrac{f(x)}{x}$.</li>
       <li>Αν ισχύει $\lim\limits_{x\to +\infty}(f(x)-3x)=6$, να προσδιορίσετε τον $\alpha$.</li>
@@ -449,7 +489,7 @@
       
       <div class="exercise">
       Δίνεται συνεχής συνάρτηση $f:\mathbb{R}\to\mathbb{R}$, για την οποία ισχύει 
-      \[xf(x)+\gsin 3x=4x-5x^2\gsin\dfrac{1}{x},\tag{$\ast$}\]
+      \[xf(x)+\gsin 3x=4x-5x^2\gsin\dfrac{1}{x},\!\!\tag{$\ast$}\]
       για κάθε $x\in\mathbb{R}$.
       <ol class="vertical-list">
       <li>Να προσδιορίσετε τον τύπο της $f$.</li>
@@ -486,8 +526,8 @@
       <div class="exercise">
       Δίνεται η συνάρτηση $f$ με
       \[f(x)=\begin{cases}
-      \dfrac{x^2 -5x+6}{4(x^3 -2x^2)},& x\in (-\infty,0)\cup(0,2)\\[2ex]
-      \dfrac{\kappa x+1}{2(x^2 -4)}, & x\in (2,+\infty)
+      \dfrac{x^2 -5x+6}{4(x^3 -2x^2)},& x\lt 2, x\neq 0,\\[2ex]
+      \dfrac{\kappa x+1}{2(x^2 -4)}, & x\gt 2
       \end{cases}\]
       και η $g:\mathbb{R}\setminus\{0,1\}\to\mathbb{R}$, για την οποία ισχύει:
       <ul>
