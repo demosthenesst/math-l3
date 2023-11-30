@@ -33,14 +33,14 @@ header>div {
 h1 {
   color: var(---theme-color);
   letter-spacing: 3px;
-  font-size: 1rem;
+  /* font-size: 1rem; */
   font-variant: small-caps;
   text-align: center;
   font-weight: 900;
   text-size-adjust: auto;
 
-  
-  background-color: aquamarine;
+
+  background-color: rgb(255, 255, 127);
 }
 
 h2 {
