@@ -1036,10 +1036,10 @@
       
       <div class="exercise">
       Έστω παραγωγίσιμη συνάρτηση $f:(0,+\infty)\to\mathbb{R}$, με $f(1)=-2-\alpha$, $f^\prime(1)=-8$ και
-      \[\begin{array}{}
+      \[\begin{align}
       f(x)&\leq \dfrac{2}{x}-\alpha-4,\\[1ex]
       f(x)&\geq -4-6x+\dfrac{1}{4x},
-      \end{array}\tag{$\ast$}\]
+      \end{align}\tag{$\ast$}\]
       <!-- \[f(x)+\alpha x+4\leq \dfrac{2}{x}, \ \ \ f(x)\geq -4-6x+\dfrac{1}{4x},\tag{$\ast$}\] -->
       για κάθε $x \gt 0$, όπου $\alpha\in\mathbb{R}$.
       <ol class="vertical-list">
@@ -1111,8 +1111,10 @@
       </div>
       
       <div class="exercise">
-      Δίνεται συνεχής και μη μηδενική συνάρτηση $f$, για την οποία ισχύει 
-      \[f(x+y)+f(x-y)=2f(x)f(y),\tag{$\ast$}\]
+      Δίνεται συνεχής και μη μηδενική συνάρτηση $f$, για την οποία ισχύει
+      <div class="scale-09">
+        \[f(x+y)+f(x-y)=2f(x)f(y),\tag{$\ast$}\]
+      </div>
       για κάθε $x\in\mathbb{R}$.
       <ol class="vertical-list">
       <li>Αποδείξτε ότι $f(0)=1$.</li>
@@ -1334,7 +1336,16 @@
 
     <div class="exercise">
     Δίνεται συνάρτηση $f: \mathbb{R}\to(0,+\infty)$, με συνεχή πρώτη παράγωγο, για την οποία ισχύει $f(0)=1$ και
-    \[\dint_0^1 xf^\prime(x)\,dx=\dint_0^1 (1-x)f^\prime(x)\,dx=1. \tag{$\ast$}\]
+    <div class="mobile-display">
+      \[\begin{array}{l}
+      \dint_0^1 xf^\prime(x)\,dx=\\[1ex]
+      =\dint_0^1 (1-x)f^\prime(x)\,dx=\\[1ex]
+      =1.
+      \end{array}\tag{$\ast$}\]
+    </div>
+    <div class="desktop-display">
+      \[\dint_0^1 xf^\prime(x)\,dx=\dint_0^1 (1-x)f^\prime(x)\,dx=1. \tag{$\ast$}\]
+    </div>
     <ol class="vertical-list">
     <li>Να προσδιορίσετε την τιμή $f(1)$.</li>
     <li>Να υπολογίσετε το ολοκλήρωμα $I=\dint_0^1 f(x)\,dx$.</li>
