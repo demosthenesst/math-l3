@@ -2,7 +2,7 @@
 html {
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   scroll-behavior: smooth;
-  width: 100vw;
+  /* width: 100vw; */
 }
 
 body {
@@ -23,9 +23,9 @@ body {
   z-index: 1;
 }
 
-/* header, h1, h2, h3 {
+header, h1, h2, h3 {
   width: 100vw;
-} */
+}
 
 header>div {
   text-align: center;
