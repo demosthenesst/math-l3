@@ -3,7 +3,7 @@
 html {
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   ---theme-color : #0f5a96;
-  ---theme-color-transparent: rgba(15, 90, 150, 0.8);
+  ---theme-color-transparent: rgba(15, 90, 150, 0.75);
 }
 
 body {
