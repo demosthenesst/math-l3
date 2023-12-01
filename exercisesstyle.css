@@ -18,9 +18,16 @@ body {
   right: 0rem;
   bottom: 0rem;
   color: var(---theme-color);
+  background-color: rgb(230, 230, 230);
   text-decoration: none;
   font-size: 3em;
+  border-radius: 50%;
+  border: 2px solid rgb(230, 230, 230);
   z-index: 1;
+  margin: 0;
+  padding:0;
+  line-height: 0;
+
 }
 
 header>div {
@@ -197,6 +204,10 @@ nav a {
 
 
 @media (1000px <= width) {
+
+  /* #home-button {
+    font-size: 3em;
+  } */
 
   .scale-08, .scale-09 {
     transform: scale(1);
