@@ -13,6 +13,10 @@ body {
   text-size-adjust: none;
 }
 
+/* li {
+  border: 2px solid red;
+} */
+
 #home-button {
   position: fixed;
   right: 0rem;
