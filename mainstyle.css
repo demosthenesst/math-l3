@@ -7,15 +7,13 @@ html {
 }
 
 body {
-  /* text-size-adjust: none; */
+  text-size-adjust: none;
   margin: 0;
   background-color: whitesmoke;
   background-image: url("math2-25.png");
   background-size: cover;
   display: grid;
   grid-template-rows: 60dvh 40dvh;
-  
-  /* grid-template-rows: 6fr 4fr; */
   height: 100dvh;
 }
 
@@ -49,7 +47,6 @@ nav {
   background: linear-gradient(90deg, rgba(0,0,0,0) 0%, var(---theme-color-transparent) 15%, var(---theme-color-transparent) 85%, rgba(0,0,0,0) 100%);
   padding: 0.1em;
   box-shadow: 5px -10px 10px -4px rgb(140, 140, 140);
-
   display: flex;
   justify-content: center;
   align-self: end;
