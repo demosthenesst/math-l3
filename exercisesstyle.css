@@ -78,8 +78,8 @@ h3 {
 #contents ul {
   list-style-type: none;
 }
+
 .exercise {
-  display: none;
   background-color: white;
   position: relative;
   margin-top: 4em;
@@ -124,6 +124,7 @@ h3 {
   align-items: center;
   row-gap: 1em;
   margin-top: 1em;
+  display: none;
 }
 
 .array-list > li,
