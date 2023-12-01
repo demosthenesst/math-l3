@@ -7,23 +7,15 @@ html {
 }
 
 body {
-  text-size-adjust: none;
+  /* text-size-adjust: none; */
   margin: 0;
   background-color: whitesmoke;
   background-image: url("math2-25.png");
   background-size: cover;
   display: grid;
-  grid-template-rows: 60dvh 40dvh;
+  /* grid-template-rows: 60dvh 40dvh; */
   height: 100dvh;
-}
-
-main {
-  display: grid;
-  align-content: space-between;
-}
-
-footer {
-  align-self: end;
+  grid-template-rows: 6fr 4fr;
 }
 
 h1 {
@@ -31,8 +23,7 @@ h1 {
   background: linear-gradient(90deg, rgba(0,0,0,0) 0%, var(---theme-color-transparent) 15%, var(---theme-color-transparent) 85%, rgba(0,0,0,0) 100%);
   color: rgb(230, 230, 230);
   text-align: center;
-  padding: 0.5em;
-  box-shadow: 5px 5px 10px 4px rgb(0, 0, 0);
+  padding-block: 0.5em;
   font-variant: small-caps;
   margin: 0;
 }
@@ -42,28 +33,34 @@ h2 {
   background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(200, 200, 200, 0.8) 35%, rgba(200, 200, 200, 0.8) 65%, rgba(0,0,0,0) 100%);
   color: var(---theme-color);
   text-align: center;
-  padding: 0.5em;
-  box-shadow: 5px 5px 10px 4px rgb(0, 0, 0);
+  padding-block: 0.5em;
   font-variant: small-caps;
   margin: 0;
 }
+
+h2:last-of-type {
+  box-shadow: 5px 10px 10px 4px rgb(140, 140, 140);
+}
+
 
 nav {
   background-color: var(---theme-color-transparent);
   background: linear-gradient(90deg, rgba(0,0,0,0) 0%, var(---theme-color-transparent) 15%, var(---theme-color-transparent) 85%, rgba(0,0,0,0) 100%);
   padding: 0.1em;
-  box-shadow: 5px 5px 10px 4px rgb(140, 140, 140);
+  box-shadow: 5px -10px 10px -4px rgb(140, 140, 140);
 
   display: flex;
   justify-content: center;
+  align-self: end;
 }
 
 nav ul {
   display: flex;
   list-style-type: none;
   gap: 1em;
-  justify-content: center;
-  flex-direction: column;
+  /* justify-content: center; */
+  /* flex-direction: column; */
+  flex-wrap: wrap;
 }
 
 nav ul a {
@@ -74,8 +71,13 @@ nav ul a {
 
 @media (1000px <= width) {
 
-  nav ul {
-    flex-direction: row;
+  h1,h2 {
+    box-shadow: 5px 5px 10px 4px rgb(140, 140, 140); 
+  }
+
+  main {
+    display: grid;
+    align-content: space-between;
   }
   
 }
