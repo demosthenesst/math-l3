@@ -13,9 +13,9 @@ body {
   background-image: url("math2-25.png");
   background-size: cover;
   display: grid;
-  /* grid-template-rows: 60dvh 40dvh; */
+  grid-template-rows: 60dvh 40dvh;
   
-  grid-template-rows: 6fr 4fr;
+  /* grid-template-rows: 6fr 4fr; */
   height: 100dvh;
 }
 
