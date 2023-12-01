@@ -14,8 +14,9 @@ body {
   background-size: cover;
   display: grid;
   /* grid-template-rows: 60dvh 40dvh; */
-  height: 100dvh;
+  
   grid-template-rows: 6fr 4fr;
+  height: 100dvh;
 }
 
 h1 {
