@@ -10,13 +10,13 @@ body {
   text-size-adjust: none;
   margin: 0;
   background-color: whitesmoke;
-  background-color: rgb(255, 206, 206);
+  /* background-color: rgb(255, 206, 206); */
   background-image: url("math2-25.png");
   background-size: cover;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 50dvh auto;
-  /* height: 100dvh; */
+  height: 100dvh;
   align-items: stretch;
 }
 
@@ -50,17 +50,15 @@ nav {
   background: linear-gradient(90deg, rgba(0,0,0,0) 0%, var(---theme-color-transparent) 15%, var(---theme-color-transparent) 85%, rgba(0,0,0,0) 100%);
   padding: 0.1em;
   box-shadow: 5px -10px 10px -4px rgb(140, 140, 140);
-  display: flex;
-  justify-content: center;
+  /* display: flex;
+  justify-content: center; */
   align-self: end;
 }
 
 nav ul {
-  display: flex;
   list-style-type: none;
+  display: flex;
   gap: 1em;
-  /* justify-content: center; */
-  /* flex-direction: column; */
   flex-wrap: wrap;
 }
 
