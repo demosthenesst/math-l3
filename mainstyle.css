@@ -16,7 +16,6 @@ body {
   grid-template-columns: 1fr;
   grid-template-rows: 50dvh 50dvh;
   height: 100dvh;
-  /* align-items: stretch; */
 }
 
 h1 {
@@ -48,8 +47,6 @@ nav {
   background: linear-gradient(90deg, rgba(0,0,0,0) 0%, var(---theme-color-transparent) 15%, var(---theme-color-transparent) 85%, rgba(0,0,0,0) 100%);
   padding: 0.1em;
   box-shadow: 5px -10px 10px -4px rgb(140, 140, 140);
-  /* display: flex;
-  justify-content: center; */
   align-self: end;
 }
 
@@ -62,7 +59,6 @@ nav ul {
 }
 
 nav ul a {
-  display: block;
   color: rgb(230, 230, 230);
   font-weight: 600;
   font-variant: small-caps;
@@ -83,9 +79,6 @@ nav ul a {
 
 @media (orientation: portrait) {
   nav ul {
-    /* flex-direction: column; */
-  /* display: grid;
-  grid-template-columns: 1fr 1fr; */
   flex-direction: column;
   }
 }
