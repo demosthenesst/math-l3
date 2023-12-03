@@ -7,7 +7,7 @@ html {
 body {
   counter-reset: exercise-counter;
   background-color: rgb(230, 230, 230);
-  background-color: rgb(199, 246, 151);
+  background-color: rgb(151, 227, 246);
   padding-bottom: 4em;
   margin: 0;
   text-size-adjust: none;
@@ -27,7 +27,10 @@ body {
   margin: 0;
   padding:0;
   line-height: 0;
+}
 
+header>* {
+  width: 100vw;
 }
 
 header>div {
@@ -94,6 +97,7 @@ section {
 }
 
 .exercise {
+  position: relative;
   background-color: white;
   padding-block: 1em;
   padding-inline: 0.5em;
