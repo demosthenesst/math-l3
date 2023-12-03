@@ -9,14 +9,14 @@ body {
   text-size-adjust: none;
   margin: 0;
   background-color: whitesmoke;
-  background-color: rgb(255, 206, 206);
+  /* background-color: rgb(255, 206, 206); */
   background-image: url("math2-25.png");
   background-size: cover;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 50dvh auto;
+  grid-template-rows: 50dvh 50dvh;
   height: 100dvh;
-  align-items: stretch;
+  /* align-items: stretch; */
 }
 
 h1 {
@@ -56,8 +56,9 @@ nav {
 nav ul {
   list-style-type: none;
   display: flex;
-  gap: 1em;
+  gap: 0.5em;
   flex-wrap: wrap;
+  justify-items: start;
 }
 
 nav ul a {
