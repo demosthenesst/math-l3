@@ -7,10 +7,13 @@ html {
 body {
   counter-reset: exercise-counter;
   background-color: rgb(230, 230, 230);
-  /* background-color: rgb(151, 227, 246); */
+  background-color: rgb(151, 227, 246);
   padding-bottom: 4em;
   margin: 0;
   text-size-adjust: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: stretch;
 }
 
 #home-button {
