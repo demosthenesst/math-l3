@@ -27,7 +27,6 @@ h1 {
   padding-block: 0.5em;
   font-variant: small-caps;
   margin: 0;
-  /* font-size: clamp(1rem, 0.438rem + 2.5vw, 2rem); */
 }
 
 h2 {
@@ -38,7 +37,6 @@ h2 {
   padding-block: 0.5em;
   font-variant: small-caps;
   margin: 0;
-  /* font-size: clamp(1rem, 0.438rem + 2.5vw, 2rem); */
 }
 
 h2:last-of-type {
@@ -60,7 +58,7 @@ ul {
   margin: 0;
 }
 
-ul a {
+a {
   color: var(---theme-color);
   font-weight: 600;
   font-variant: small-caps;
