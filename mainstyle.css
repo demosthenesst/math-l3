@@ -9,12 +9,12 @@ body {
   text-size-adjust: none;
   margin: 0;
   background-color: whitesmoke;
-  /* background-color: rgb(255, 206, 206); */
+  background-color: rgb(255, 206, 206);
   background-image: url("math2-25.png");
   background-size: cover;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 50dvh 50dvh;
+  grid-template-rows: 50svh 50svh;
   height: 100dvh;
 }
 
