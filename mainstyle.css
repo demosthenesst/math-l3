@@ -13,8 +13,10 @@ body {
   background-image: url("math2-25.png");
   background-size: cover;
   display: grid;
-  grid-template-rows: 60dvh 40dvh;
+  grid-template-columns: 1fr;
+  grid-template-rows: 60dvh auto;
   height: 100dvh;
+  align-items: stretch;
 }
 
 h1 {
