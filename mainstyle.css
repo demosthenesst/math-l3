@@ -14,8 +14,8 @@ body {
   background-size: cover;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 50svh 50svh;
-  height: 100dvh;
+  grid-template-rows: 50lvh 50lvh;
+  height: 100lvh;
 }
 
 h1 {
