@@ -1,5 +1,4 @@
 
-
 html {
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   ---theme-color : #0f5a96;
@@ -44,7 +43,6 @@ h2:last-of-type {
   box-shadow: 5px 10px 10px 4px rgb(140, 140, 140);
 }
 
-
 nav {
   background-color: var(---theme-color-transparent);
   background: linear-gradient(90deg, rgba(0,0,0,0) 0%, var(---theme-color-transparent) 15%, var(---theme-color-transparent) 85%, rgba(0,0,0,0) 100%);
@@ -79,5 +77,5 @@ nav ul a {
     display: grid;
     align-content: space-between;
   }
-  
+
 }
