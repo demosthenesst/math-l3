@@ -14,7 +14,7 @@ body {
   background-size: cover;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 60dvh auto;
+  grid-template-rows: 50dvh auto;
   height: 100dvh;
   align-items: stretch;
 }
