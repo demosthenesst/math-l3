@@ -2,7 +2,6 @@
 html {
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   scroll-behavior: smooth;
-  /* width: 100vw; */
 }
 
 body {
@@ -12,10 +11,6 @@ body {
   margin: 0;
   text-size-adjust: none;
 }
-
-/* li {
-  border: 2px solid red;
-} */
 
 #home-button {
   position: fixed;
@@ -36,7 +31,8 @@ body {
 
 header>div {
   text-align: center;
-  margin: 1em 0 0 0;
+  /* margin: 1em 0 0 0; */
+  padding: 1em 0 0 0;
   color: var(---theme-color);
   font-weight:600;
 }
@@ -57,13 +53,11 @@ h2 {
   text-align: center;
   letter-spacing: 1px;
   padding-block: 0.5em;
-  margin-top: 3em;
   justify-self: stretch;
 }
 
 h3 {
   text-align: center;
-  margin-top: 3em;
   color: var(---theme-color);
   padding-block: 0.5em;
   background-color: rgb(201, 201, 201);
@@ -95,19 +89,15 @@ h3 {
 section {
   display: grid;
   grid-template-columns: 1fr;
+  gap: 4em;
 }
 
 .exercise {
   background-color: white;
-  position: relative;
-  margin-top: 4em;
   padding-block: 1em;
   padding-inline: 0.5em;
-  box-shadow: 5px 5px 10px 4px rgb(140, 140, 140);
   box-shadow: 5px -5px 10px 4px rgb(140, 140, 140);
-  /* margin-inline: auto; */
   line-height: 1.5;
-  /* width: 100vw; */
   justify-self: stretch;
 }
 
@@ -139,11 +129,10 @@ section {
   counter-reset: list;
   padding-left: 0;
   padding-top: 0;
-  margin-top: 0;
+  margin-top: 1em;
   display: grid;
   align-items: center;
   row-gap: 1em;
-  margin-top: 1em;
 }
 
 .array-list > li,
@@ -213,10 +202,6 @@ nav a {
 
 @media (1000px <= width) {
 
-  /* #home-button {
-    font-size: 3em;
-  } */
-
   .scale-08, .scale-09 {
     transform: scale(1);
   }
@@ -237,7 +222,8 @@ nav a {
   header>div {
     white-space: pre;
     text-align: right;
-    margin: 0 1em 0 0;
+    /* margin: 0 1em 0 0; */
+    padding: 0 1em 0 0;
     font-size: 1.2em;
   }
 
