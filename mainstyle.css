@@ -9,7 +9,7 @@ body {
   text-size-adjust: none;
   margin: 0;
   background-color: whitesmoke;
-  /* background-color: rgb(255, 206, 206); */
+  background-color: rgb(255, 206, 206);
   background-image: url("math2-25.png");
   background-size: cover;
   display: grid;
@@ -82,6 +82,9 @@ nav ul a {
 
 @media (orientation: portrait) {
   nav ul {
-    flex-direction: column;
+    /* flex-direction: column; */
+  /* display: grid;
+  grid-template-columns: 1fr 1fr; */
+  flex-direction: column;
   }
 }
