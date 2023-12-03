@@ -9,7 +9,7 @@ body {
   text-size-adjust: none;
   margin: 0;
   background-color: whitesmoke;
-  /* background-color: rgb(255, 206, 206); */
+  background-color: rgb(255, 206, 206);
   background-image: url("math2-25.png");
   background-size: cover;
   display: grid;
@@ -45,7 +45,6 @@ h2:last-of-type {
   align-self: end;
   box-shadow: 5px -10px 10px -4px rgb(140, 140, 140);
   margin-block: 0;
-  /* font-size: 1em; */
 }
 
 ul {
