@@ -27,6 +27,7 @@ h1 {
   padding-block: 0.5em;
   font-variant: small-caps;
   margin: 0;
+  font-size: clamp(1rem, 0.438rem + 2.5vw, 2rem);
 }
 
 h2 {
@@ -37,27 +38,27 @@ h2 {
   padding-block: 0.5em;
   font-variant: small-caps;
   margin: 0;
+  font-size: clamp(1rem, 0.438rem + 2.5vw, 2rem);
 }
 
 h2:last-of-type {
-  box-shadow: 5px 10px 10px 4px rgb(140, 140, 140);
+  align-self: end;
+  box-shadow: 5px -10px 10px -4px rgb(140, 140, 140);
+  margin-block: 0;
+  /* font-size: 1em; */
 }
 
 ul {
   background-color: rgba(200, 200, 200, 0.8);
   background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(200, 200, 200, 0.8) 35%, rgba(200, 200, 200, 0.8) 65%, rgba(0,0,0,0) 100%);
-  box-shadow: 5px -10px 10px -4px rgb(140, 140, 140);
-  padding: 0.1em;
+  box-shadow: 5px 10px 10px 4px rgb(140, 140, 140);
   list-style-type: none;
   display: flex;
   gap: 0.5em;
   flex-wrap: wrap;
-  /* justify-items: start; */
-  align-self: end;
   justify-self: stretch;
-  margin-block: 0;
-  /* margin-inline: auto; */
   padding: 1em;
+  margin: 0;
 }
 
 ul a {
@@ -68,7 +69,7 @@ ul a {
 
 @media (1000px <= width) {
 
-  h1,h2 {
+  h1, h2:first-of-type {
     box-shadow: 5px 5px 10px 4px rgb(140, 140, 140); 
   }
 
@@ -77,10 +78,9 @@ ul a {
     align-content: space-between;
   }
 
-}
-
-/* @media (orientation: portrait) {
   ul {
-  flex-direction: column;
+    justify-content: center;
+    gap: 1em;
   }
-} */
+
+}
