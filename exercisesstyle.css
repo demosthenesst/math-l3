@@ -171,13 +171,18 @@ nav {
   justify-content: center;
 }
 
+
 nav ul {
   list-style-type: none;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 1em;
-  padding: 1em;
+  padding: 1em 0.5em 1em 0.5em;
   margin: 0;
+}
+
+nav ul li {
+  justify-self: flex-start;
 }
 
 nav a {
@@ -219,11 +224,6 @@ nav a {
   
   .desktop-display {
     display: initial;
-  }
-
-  nav ul {
-    flex-direction: row;
-    gap: 1em;
   }
 
   header>div {
