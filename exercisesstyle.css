@@ -55,6 +55,9 @@ h2 {
   letter-spacing: 1px;
   padding-block: 0.5em;
   justify-self: stretch;
+  margin: 2em 0 0 0;
+  align-self: start;
+
 }
 
 h3 {
@@ -63,6 +66,8 @@ h3 {
   padding-block: 0.5em;
   background-color: rgb(201, 201, 201);
   justify-self: stretch;
+  align-self: start;
+  margin:0;
 }
 
 #contents-container {
@@ -224,7 +229,6 @@ nav a {
   header>div {
     white-space: pre;
     text-align: right;
-    /* margin: 0 1em 0 0; */
     padding: 0 1em 0 0;
     font-size: 1.2em;
   }
