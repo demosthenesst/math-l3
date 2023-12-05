@@ -53,8 +53,8 @@ ul {
   display: flex;
   gap: 0.5em;
   flex-wrap: wrap;
-  justify-self: stretch;
-  padding: 1em;
+  /* justify-self: stretch; */
+  padding: 1em 0.5em 1em 0.5em;
   margin: 0;
 }
 
@@ -64,7 +64,26 @@ a {
   font-variant: small-caps;
 }
 
+.mobile-display {
+  display: initial;
+}
+
+.desktop-display {
+  display: none;
+}
+
+
+
 @media (1000px <= width) {
+
+  .mobile-display {
+    display: none;
+  }
+  
+  .desktop-display {
+    display: initial;
+  }
+
 
   h1, h2:first-of-type {
     box-shadow: 5px 5px 10px 4px rgb(140, 140, 140); 
