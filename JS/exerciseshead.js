@@ -70,7 +70,7 @@ document.head.appendChild(fa);
 const localCSS = document.createElement("link");
 localCSS.rel = "stylesheet";
 localCSS.type = "text/css";
-localCSS.href = "../css/exercisesstyle.css";
+localCSS.href = "/css/exercisesstyle.css";
 document.head.appendChild(localCSS);
 
 // -----------------------------
