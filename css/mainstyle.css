@@ -1,14 +1,14 @@
-
 html {
-  font-family:'Geologica', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  ---theme-color : rgb(15, 90, 150);
+  font-family: "Geologica", "Trebuchet MS", "Lucida Sans Unicode",
+    "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  ---theme-color: rgb(15, 90, 150);
   ---theme-color-transparent: rgba(15, 90, 150, 0.15);
 }
 
 body {
   text-size-adjust: none;
   margin: 0;
-  background-image: url("/icons/math2-25.png");
+  background-image: url("./icons/math2-25.png");
   background-size: cover;
   display: grid;
   grid-template-columns: 1fr;
@@ -31,7 +31,8 @@ h1 {
   gap: 1rem;
 }
 
-h2, span:last-child {
+h2,
+span:last-child {
   font-size: clamp(1rem, -0.25rem + 4vw, 2rem);
 }
 
@@ -41,7 +42,8 @@ span:last-child {
   padding: 0.5rem;
 }
 
-h1, h2 {
+h1,
+h2 {
   color: var(---theme-color);
   text-align: center;
   padding-block: 0.5em;
@@ -63,7 +65,9 @@ h2:last-of-type {
   margin-bottom: 1rem;
 }
 
-h1, h2, ul {
+h1,
+h2,
+ul {
   box-sizing: border-box;
   backdrop-filter: blur(4px);
   box-shadow: 0px 10px 30px 15px rgb(110, 110, 110);
@@ -96,13 +100,11 @@ a {
   display: none;
 }
 
-
 @media (900px <= width) {
-
   .mobile-display {
     display: none;
   }
-  
+
   .desktop-display {
     display: initial;
   }
@@ -111,5 +113,4 @@ a {
     display: flex;
     justify-content: space-around;
   }
-
 }
