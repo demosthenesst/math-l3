@@ -7,9 +7,6 @@ const nav = document.createElement("nav");
 //
 const homeAnchor = document.createElement("a");
 homeAnchor.href = "./main.html";
-
-console.log("1");
-
 homeAnchor.innerHTML = '<i class="fa-solid fa-house"></i>';
 //
 const contentsAnchor = document.createElement("a");
@@ -34,6 +31,7 @@ const container = document.createElement("div");
 container.id = "search-container";
 //
 const searchInput = document.createElement("input");
+searchInput.id = "search-input";
 searchInput.type = "number";
 searchInput.placeholder = "Εισάγετε αριθμό άσκησης...";
 //
