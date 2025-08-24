@@ -8,7 +8,7 @@ html {
 body {
   text-size-adjust: none;
   margin: 0;
-  background-image: url("../icons/math2-25.png");
+  background-image: url("./icons/math2-25.png");
   background-size: cover;
   display: grid;
   grid-template-columns: 1fr;
