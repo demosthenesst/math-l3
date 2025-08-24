@@ -73,6 +73,8 @@ localCSS.type = "text/css";
 localCSS.href = "/css/exercisesstyle.css";
 document.head.appendChild(localCSS);
 
+console.log("no dots");
+
 // -----------------------------
 // CSS page colors
 // -----------------------------
@@ -101,5 +103,3 @@ html.style.setProperty(
 );
 
 //console.log(`CSS variable --theme-color set for page: ${currentPage}`);
-
-console.log("exercises");
