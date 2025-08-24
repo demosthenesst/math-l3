@@ -101,3 +101,5 @@ html.style.setProperty(
 );
 
 //console.log(`CSS variable --theme-color set for page: ${currentPage}`);
+
+console.log("exercises");
