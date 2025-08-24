@@ -73,8 +73,6 @@ localCSS.type = "text/css";
 localCSS.href = "./css/exercisesstyle.css";
 document.head.appendChild(localCSS);
 
-console.log("one dot");
-
 // -----------------------------
 // CSS page colors
 // -----------------------------
