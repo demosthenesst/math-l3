@@ -1,1020 +1,1027 @@
 <!DOCTYPE html>
 <html lang="el">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Συνέχεια</title>
-
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async
-            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-    </script>
-
-    <script>
-        window.MathJax = {
-            tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']],
-            }
-        };
-    </script>
-
-    <style>  
-    /* for differents files */
-        html {
-            ---theme-color : rgb(110, 10, 10);
-        }
-    </style>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <link rel="stylesheet" type="text/css" href="exercisesstyle.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Συνέχεια</title>
+  <script id="exercisesheadJS" src="/JS/exerciseshead.js"></script>
+  <script id="generalJS" defer src="/JS/general.js"></script>
 </head>
+
 <body>
 
-
-<div style="display: none;">
-    $\DeclareMathOperator{\gsin}{ημ}$
-    $\DeclareMathOperator{\gcos}{συν}$
-    $\DeclareMathOperator{\gtan}{εφ}$
-    $\DeclareMathOperator{\gctan}{σφ}$
-</div>
-
-<a id="home-button" href="#">
-    <i class="fa-solid fa-circle-up"></i>
-</a>
-
-<header>
-    <nav>
-        <ul>
-            <li><a href="functions.html">Συναρτησεις</a></li> 
-            <li><a href="limits.html">Ορια</a></li>  
-            <li><a href="continuity.html" style="color:rgb(140, 140, 140)">Συνεχεια</a></li>
-            <li><a href="derivative_1.html">Παραγωγος I</a></li>
-            <li><a href="derivative_2.html">Παραγωγος ΙΙ</a></li>
-            <li><a href="integral.html">Ολοκληρωμα</a></li>
-            <li><div class="mobile-display"><a href="followup.html">Αν/κες Ασκησεις</a></div>
-              <div class="desktop-display"><a href="followup.html">Ανακεφαλαιωτικες Ασκησεις</a></div>
-              </li>
-        </ul>
-    </nav>
-
-    <div>
-        Δημοσθένης Σταλίδης,
-        Γυμνάσιο ΛΤ Άρνισσας,
-        2023
-    </div>
-</header>
-
-  <h1>Συνεχεια</h1>
+  <h1>Συνέχεια</h1>
 
   <div id="contents-container">
-      <ul id="contents">
-        <li><a href="#continuity-fundamentals">Βασικές έννοιες συνέχειας</a>
-            <ul>
-                <li><a href="#continuity-pointwise">Συνέχεια σε σημείο</a></li>
-                <li><a href="#continuity-domain">Συνέχεια στο πεδίο ορισμού</a></li>
-            </ul>
-        </li>
-        <li><a href="#continuity-theorems">Bασικά θεωρήματα συνέχειας</a></li>
-      </ul>
+    <ul id="contents">
+      <li><a href="#continuity-fundamentals">Βασικές έννοιες συνέχειας</a>
+        <ul>
+          <li><a href="#continuity-pointwise">Συνέχεια σε σημείο</a></li>
+          <li><a href="#continuity-domain">Συνέχεια στο πεδίο ορισμού</a></li>
+        </ul>
+      </li>
+      <li><a href="#continuity-theorems">Bασικά θεωρήματα συνέχειας</a></li>
+    </ul>
   </div>
 
   <main>
 
-  <section id="continuity-fundamentals">
+    <section id="continuity-fundamentals">
 
-  <h2>Βασικές έννοιες συνέχειας</h2>
+      <h2>Βασικές έννοιες συνέχειας</h2>
 
-  <h3 id="continuity-pointwise">Συνέχεια σε σημείο</h3>
+      <h3 id="continuity-pointwise">Συνέχεια σε σημείο</h3>
 
-  <div class="exercise">
-  Να μελετήσετε ως προς τη συνέχεια στο σημείο $x_0$ τη συνάρτηση $f$, όταν:
-  <ol class="array-list">
-  <li>$f(x)=\begin{cases}3x-5,& x\lt 3 \\ 3,&x=3 \end{cases}$, $x_0=3$</li>
-  <li>$f(x)=\begin{cases}4x^2-3, &x\lt 2 \\ 6x+1, &x\geq 2\end{cases}$, $x_0=2$</li>			
-  <li>$f(x)=\begin{cases}\dfrac{ x^2-x-2}{x-2},&x\neq 2 \\3,&x=2\end{cases}$, $x_0=2$</li>
-  <li>$f(x)=\begin{cases}\dfrac{x^2-1}{x+1},&x\lt -1 \\ 4,&x=-1\\ 2x, &x\gt -1\end{cases}$, $x_0=-1$</li>
-  <li>$f(x)=\begin{cases} x^2+1,& x\leq 0 \\ \dfrac{\gcos x-x^2}{x^2},&x\gt 0 \end{cases}$, $x_0=0$</li>
-  <li>$f(x)=\begin{cases}\dfrac{1-\gcos x}{x^2},&x\lt 0 \\[2ex] \gcos\dfrac{x}{2},&x\geq 0 \end{cases}$, $x_0=0$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Αν η συνάρτηση $f$ είναι συνεχής στο $2$, αποδείξτε ότι και η συνάρτηση $g$ με τύπο $g(x)= x^2+\gsin f(x)$ είναι συνεχής στο $2$.
-  </div>
-  
-  <div class="exercise">
-  Αν η συνάρτηση $f$ είναι συνεχής στο $1$, αποδείξτε ότι η συνάρτηση $g$ με τύπο $g(x)=x^2+f(\gcos x)$ είναι συνεχής στο $0$.
-  </div>
-  
-  <div class="exercise">
-  Αν οι συναρτήσεις $f,g$ είναι συνεχείς στο $x_0$ και
-  \[h(x)=\begin{cases} f(x),&x\lt x_0 \\g(x), &x\geq x_0\end{cases},\]
-  αποδείξτε ότι η $h$ είναι συνεχής στο $x_0$ αν και μόνο αν $f(x_0)=g(x_0)$. 
-  </div>
-  
-  <div class="exercise">
-  Δίνονται οι συναρτήσεις $f,g$ με πεδίο ορισμού ένα διάστημα $\Delta$ και $x_0\in \Delta$. Θεωρούμε ότι οι συναρτήσεις $F(x)= 3f(x)-g(x)$ και $G(x)= f(x)+2g(x)$ είναι συνεχείς στο $x_0$. Να αποδείξετε ότι οι $f,g$ είναι συνεχείς στο $x_0$.
-  </div>
-  
-  <div class="exercise">
-  Έστω οι συναρτήσεις $f,g: \mathbb{R}\to\mathbb{R}$, με την $g$ συνεχή στο $x_0\in\mathbb{R}$. Αποδείξτε ότι αν η $f+g$ είναι ασυνεχής στο $x_0$ τότε η f είναι επίσης ασυνεχής στο $x_0$.
-  </div>
-  
-  <div class="exercise">
-  Έστω συνάρτηση $f$, συνεχής στο $x_0=4$, με $f(x)=\dfrac{5x^2-21x+4}{x-4}$, για οποιοδήποτε $x\in\mathbb{R}\setminus\{4\}$. Να προσδιορίσετε τον τύπο της $f$. 
-  </div>
-  
-  <div class="exercise">
-  Έστω $f: \mathbb{R}\to\mathbb{R}$ συνεχής στο $2$ συνάρτηση με
-  \[(x-2)f(x)=x^2-5x+6, \tag{$\ast$}\]
-  για κάθε $x\in\mathbb{R}$.
-  <ol class="array-list">
-  <li>Να υπολογίσετε την τιμή $f(2)$.</li>
-  <li>Να προσδιορίσετε τον τύπο της $f$.</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Έστω συνάρτηση $f$, συνεχής στο $0$. Να προσδιορίσετε το $f(0)$ σε καθεµία από τις παρακάτω περιπτώσεις:
-  <ol class="array-list">
-  <li>$xf (x) + x^2=3\gsin x-5x^2$, $x\in\mathbb{R}$</li>
-  <li>$xf (x)=x^2 f (x)+2(x^3-x^2)$, $x\in\mathbb{R}$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Σε καθεµία από τις παρακάτω περιπτώσεις αποδείξτε ότι η συνάρτηση $f$ είναι συνεχής στο $0$:
-  <ol class="array-list">
-  <li>$f^2(x) + 4\leq 4\gsin^2 x-4f (x)$,  $x\in\mathbb{R}$</li>
-  <li>$4f^2(x)+9\leq 12f (x) + x^2$,  $x\in\mathbb{R}$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Σε καθεµία από τις παρακάτω περιπτώσεις αποδείξτε ότι οι συναρτήσεις $f,g$ είναι συνεχείς στο $x_0$:
-  <ol class="array-list">
-  <li>$f^2(x)+g^2(x)\leq (x-x_0)^2$,  $x\in\mathbb{R}$</li>
-  <li>$|f (x)|+|g(x)|\leq |x-x_0|$,  $x\in\mathbb{R}$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Αν η συνάρτηση $f$ είναι συνεχής στο $x_0=1$ και ισχύει
-  <div class="scale-08">\[3x^2-5x+2\leq (x-1)f(x)\leq x^2-x, \tag{$\ast$}\]</div>
-  για κάθε $x\in\mathbb{R}$, να υπολογίσετε την τιμή $f(1)$.
-  </div>
-  
-  <div class="exercise">
-  Αν η συνάρτηση $f$ είναι συνεχής στο $x_0=4$ και ισχύει
-  \[(x-4)f(x)\leq 16-x^2,\tag{$\ast$}\]
-  για κάθε $x\in\mathbb{R}$, να υπολογίσετε την τιμή $f(4)$.
-  </div>
-  
-  <div class="exercise">
-  Δίνεται συνάρτηση $f$, συνεχής στο $x_0=0$, για την οποία ισχύει
-  <div class="scale-09">
-    \[\dfrac{2x^2-\gsin^2 x}{x^2+x^4}\leq f(x)\leq 2\dfrac{e^x-e^{x^2}}{x},\tag{$\ast$}\]
-    για κάθε $x\neq 0$. Να προσδιορίσετε την τιμή $f(0)$.
-  </div>
-  </div>
-  
-  <div class="exercise">
-  Δίνεται η συνεχής στο $0$ συνάρτηση $f:[0,+\infty)\to\mathbb{R}$ για την οποία ισχύει
-  \[g(x)\leq 3+xf(x)\leq h(x),\tag{$\ast$}\] 
-  όπου
-  \[
-  \begin{align}
-    g(x)&=\sqrt{x^2 +2x+9},\\
-    h(x)&=x^8\gsin\dfrac{2}{x}+\dfrac{x}{3}+3,
-    \end{align}
-  \]
-  για κάθε $x\gt 0$. Να προσδιορίσετε:
-  <ol class="vertical-list">
-  <li>Τα όρια $\lim\limits_{x\to 0}\dfrac{\sqrt{x^2 +2x+9}-3}{x}$, $\lim\limits_{x\to 0}\left(x^7\gsin\dfrac{2}{x}\right)$ και $\lim\limits_{x\to 0}f(x)$.</li>
-  <li>Την τιμή $f(0)$.</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Έστω $f,g: \mathbb{R}\to\mathbb{R}$ συναρτήσεις τέτοιες ώστε
-  \[|f(x)-\gcos x|\leq g(x),\tag{$\ast$}\]
-  για κάθε $x\in\mathbb{R}$. Αν η $g$ είναι συνεχής στο $0$ και η $C_g$ διέρχεται από την αρχή των αξόνων, αποδείξτε ότι η $f$ είναι συνεχής στο $0$.
-  </div>
-  
-  <div class="exercise">
-  Δίνεται συνεχής στο $x_0=0$ συνάρτηση $f$ με
-  \[xf(x)+|\gsin x|\leq|x|,\tag{$\ast$}\]
-  για κάθε $x\in\mathbb{R}$. Να υπολογίσετε την τιμή $f(0)$.
-  </div>
-  
-  <div class="exercise">
-  Θεωρούμε συνάρτηση $f$, συνεχή στο $3$, για την οποία ισχύει
-  \[|f(x)|\leq x^2-6x+9, \tag{$\ast$}\]
-  για κάθε $x\in\mathbb{R}\setminus\{3\}$. Να προσδιορίσετε την τιμή $f(3)$.
-  </div>
-  
-  <div class="exercise">
-  Θεωρούμε συνάρτηση $f$, για την οποία ισχύει
-  \[|f(x)+5x|\leq (x+2)^4, \tag{$\ast$}\]
-  για κάθε $x\in\mathbb{R}$. Να αποδειχθεί ότι η $f$ είναι συνεχής στο $x_0=-2$.
-  </div>
-  
-  <div class="exercise">
-  Έστω $f$ συνάρτηση για την οποία ισχύει
-  \[(f(x)-x^2)(f(x)-x^4)\leq 0,\tag{$\ast$}\]
-  για κάθε $x\in\mathbb{R}$.
-  <ol class="array-list">
-  <li>Αποδείξτε ότι η $f$ είναι συνεχής στο $0$.</li>
-  <li>Υπολογίστε το όριο $\lim\limits_{x\to +\infty}f(x)$.</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Αν για τη συνάρτηση $f$ ισχύει ότι
-  \[|f(x)|\leq x^2-10x+25, \tag{$\ast$}\]
-  για κάθε $x\in\mathbb{R}$, 
-  αποδείξτε ότι η $f$ είναι συνεχής στο $x_0=5$ αν και μόνο αν $f(5)=0$.
-  </div>
-  
-  <div class="exercise">
-  Θεωρούµε τη συνάρτηση $f$ για την οποία ισχύει
-  <div class="scale-09">
-    \[2\Big(1+\sqrt{\gsin x}\Big)\leq f(x) \leq 3 + \gsin x, \tag{$\ast$}\]
-  </div>
-  για κάθε $x\in[0, \pi]$.
-  <ol class="vertical-list">
-  <li>Αποδείξτε ότι η $f$ είναι συνεχής στο $\dfrac{\pi}{2}$.</li>
-  <li>Αν $g(x)=\gcos^2 x$ και $h(x)=f (x) - 4$, να προσδιορίσετε το όριο $\lim\limits_{x\to\frac{\pi}{2}}\dfrac{g(x)}{h(x)}$.</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Δίνεται συνάρτηση $f$, για την οποία ισχύουν $f(0)=0$ και $\lim\limits_{x\to 0}\dfrac{f(x)}{x}=1$. Αποδείξτε ότι η $f$ είναι συνεχής στο $x_0=0$. 
-  </div>
-  
-  <div class="exercise">
-   Έστω $f:(-1,1)\to\mathbb{R}$ συνάρτηση ώστε τα όρια
-  \[\lim\limits_{x\to 0^+}\dfrac{f(x)-f(0)}{x}\ \textnormal{και}\ \lim\limits_{x\to 0^-}\dfrac{f(x)-f(0)}{x}\]
-  να είναι πραγματικοί αριθμοί. Αποδείξτε ότι η $f$ είναι συνεχής στο $0$.
-  </div>
-  
-  <div class="exercise">
-  Δίνεται συνεχής στο $1$ συνάρτηση $f$, για την οποία ισχύει ότι 
-  \[\lim\limits_{x\to 1}\dfrac{f(x)-\sqrt{x}+\gsin(x-1)}{x^2-1}=2.\]
-  <ol class="vertical-list">
-  <li>Να αποδείξετε ότι η γραφική παράσταση της $f$ διέρχεται από το σημείο $\textnormal{M}(1,1)$.</li>
-  <li>Να προσδιορίσετε το $\lim\limits_{x\to 1}\dfrac{|3f(x)-2|-1}{x^2-1}$.</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Αν για τη συνάρτηση $f:\mathbb{R}\to\mathbb{R}$ ισχύει ότι
-  $\lim\limits_{x\to 4}\dfrac{f(x)(3x^2-48)}{3x-6}=-\infty$, εξετάστε αν η $f$ είναι συνεχής στο σημείο $x_0=4$.
-  </div>
-  
-  <div class="exercise">
-  Έστω συνεχής στο $x_0=1$ συνάρτηση $f$ με $\lim\limits_{x\to 1}\dfrac{f(x)-x-3}{x-1}=\dfrac{11}{4}.$
-  <ol class="vertical-list">
-  <li>Αποδείξτε ότι το σημείο $\textnormal{Α}(1,4)$ ανήκει στην γραφική παράσταση της $f$.</li>
-  <li>Προσδιορίστε το $\lim\limits_{x\to 1}\dfrac{f(x)-f(1)}{x-1}$.</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Έστω συνάρτηση $f$, ορισμένη στο $\mathbb{R}$, με $f(0)=3$ και 
-  $\lim\limits_{x\to 0}\dfrac{f(x)-3-\gtan x}{x^2-x}=5$.
-  <ol class="vertical-list">
-  <li>Αποδείξτε ότι η $f$ είναι συνεχής στο $x_0=0$.</li>
-  <li>Υπολογίστε το όριο $\lim\limits_{x\to 0}\dfrac{f(x)-3}{x}$.</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Δίνεται περιττή και συνεχής στο $x_0=1$ συνάρτηση $f$ με $\lim\limits_{x\to 1}\dfrac{f(x)-5}{x-1}=10$.
-  <ol class="vertical-list">
-  <li>Να προσδιορίσετε την τιμή $f(1)$.</li>
-  <li>Να αποδείξετε ότι η $f$ είναι συνεχής στο $x_0=-1$.</li>
-  <li>Να προσδιορίσετε το $\lim\limits_{x\to -1}\dfrac{f(x)+5}{x+1}$.</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Έστω συνάρτηση $f:[0,+\infty) \to\mathbb{R}$, συνεχής στο $x_0=0$, με
-  \[|f(x)-x|\leq xe^{-\frac{1}{x^2}},\tag{$\ast$}\]
-  για κάθε $x\in(0,+\infty)$.
-  <ol class="vertical-list">
-  <li>Να προσδιορίσετε την τιμή $f(0)$.</li>
-  <li>Να υπολογίσετε το όριο $\lim\limits_{x\to 0}\dfrac{f(x)}{x}$.</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Δίνεται συνάρτηση $f$, συνεχής στο σημείο $x_0\in\mathbb{R}$.
-  <ol class="vertical-list">
-  <li>Αν η $f$ είναι άρτια, αποδείξτε ότι η $f$ είναι συνεχής στο σημείο $-x_0$.</li>
-  <li>Αν η $f$ είναι περιττή, αποδείξτε ότι η $f$ είναι συνεχής στο σημείο $-x_0$.</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Έστω συνάρτηση $f$, συνεχής στο $2$, με $f(3)=10$ και
-  \[f(5-x)=f(x), \tag{$\ast$}\]
-  για κάθε $x\in\mathbb{R}$.
-  <ol class="vertical-list">
-  <li>Να προσδιορίσετε την τιμή $f(2)$.</li>
-  <li>Να αποδείξετε ότι η $f$ είναι συνεχής στο $3$.</li>
-  </ol>
-  </div>
-  
-  <h3 id="continuity-domain">Συνέχεια στο πεδίο ορισμού</h3>
-  
-  <div class="exercise">
-  Να μελετήσετε ως προς τη συνέχεια τη συνάρτηση $f$, όταν:
-  <ol class="array-list">
-  <li>$f(x)=\begin{cases} x^3-5,& x\leq 2\\ \dfrac{2-x}{\sqrt{x}-\sqrt{2}},&x\gt 2\end{cases}$</li>
-  <li>$f(x)=\begin{cases}\dfrac{|x^2-1|}{x+1},&x\neq -1 \\ -2,&x=-1\end{cases}$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Να προσδιορίσετε την τιμή του $\alpha\in\mathbb{R}$ ώστε η συνάρτηση $f$ να είναι συνεχής, όταν:
-  <ol class="array-list">
-  <li>$f(x)=\begin{cases}\dfrac{3x^2-2x-1}{x-1},&x\neq 1\\ \alpha,&x=1\end{cases}$</li>
-  <li>$f(x)=\begin{cases}\alpha x+1,&x\leq 1\\ \dfrac{1-x\sqrt{x}}{x-1},&x\gt 1\end{cases}$</li>
-  <li>$f(x)=\begin{cases}\dfrac{1+\gcos x}{x-\pi},&x\lt \pi \\ \alpha x+2,&x\geq\pi\end{cases}$</li>
-  <li>$f(x)=\begin{cases}\dfrac{3\ln x-2}{2-\ln x},&x \gt 0 \\ \alpha,&x\geq 2\end{cases}$</li>
-  <li>$f(x)=\begin{cases}\dfrac{3\alpha}{x^3}+1,&0\lt x\leq 2 \\[1ex] \dfrac{1-\sqrt{x-1}}{x^2-4},&x \gt 2\end{cases}$</li>
-  <li>$f(x)=\begin{cases}3\alpha e^{x+1}+x,&\lt x\leq -1 \\ 2x^2-\alpha x,&x \gt -1\end{cases}$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Θεωρούμε τις συναρτήσεις 
-  \[f(x)=\begin{cases} 3, & x\neq 1\\ 0,&x=1\end{cases}\ \ \textnormal{και}\ \ g(x)= 3x-2.\]
-  Να εξετάσετε ως προς τη συνέχεια τις συναρτήσεις $g\circ f$ και $f\circ g$.
-  </div>
-  
-  <div class="exercise">
-  Δίνονται συνεχείς συναρτήσεις $f,g:\mathbb{R}\to\mathbb{R}$ για τις οποίες ισχύουν
-    \[
-    \begin{align}
-    \lim\limits_{x \to 6}\dfrac{f(x)}{x - 6}&=1,\\[1ex]
-    \lim\limits_{x \to 6}\left(g(x)\cdot\left(\sqrt{x-2}-2\right)\right)&=2.
-    \end{align}
-    \]
-  Να εξετάσετε τη συνάρτηση
-  \[h(x)=\begin{cases}f(x)\cdot g(x),& x\neq 6\\ 8,&x=6\end{cases}\]
-  ως προς τη συνέχεια.
-  </div>
-  
-  <div class="exercise">
-  Να προσδιορίσετε τις τιμές των $\lambda , \mu\in\mathbb{R}$ ώστε η συνάρτηση
-  <div class="scale-09">
-    \[f(x)=\begin{cases} 2x^2+(\lambda^3+1)x-2,&\!\! x\lt 1\\
-    x^4-(\lambda^2+\mu+1)x^2-3\lambda, &\!\! x\geq 1\end{cases}\]
-  </div>
-  να είναι συνεχής και η γραφική της παράσταση να διέρχεται από το σημείο $\textnormal{Α}(2,3)$.
-  </div>
-  
-  <div class="exercise">
-  Να προσδιορίσετε τις τιμές των $\alpha, \beta\in\mathbb{R}$ ώστε η συνάρτηση
-  \[f(x)=\begin{cases}\alpha^2 \gsin x-\beta,&x\lt 0\\ 2x+\alpha,& 0\leq x\leq\frac{\pi}{2}\\ 2\alpha\gsin x,&x\geq\frac{\pi}{2} \end{cases}\]
-  να είναι συνεχής.
-  </div>
-  
-  <div class="exercise">
-  Να προσδιορίσετε τις τιμές των $\alpha,\beta\in\mathbb{R}$ ώστε η συνάρτηση 
-  \[f(x)=\begin{cases}\alpha x+\beta,&x\lt 2\\
-  2x,&2\leq x\lt 3\\
-  \dfrac{4\alpha x^2}{9}+\beta x,&x\geq 3\end{cases}\]
-  να είναι συνεχής. 
-  </div>
-  
-  <div class="exercise">
-  Δίνεται συνεχής συνάρτηση $f:[a,b] \to\mathbb{R}$, όπου $\alpha,\beta\in\mathbb{R}$ με $\alpha\lt \beta$. Αποδείξτε ότι η συνάρτηση
-  \[g(x)=\begin{cases} f(\alpha),&x\leq\alpha \\
-  f(x), &\alpha\lt x\lt \beta\\
-  f(\beta), &x\geq\beta \end{cases}\]
-  είναι συνεχής.</div>
-  
-  <div class="exercise">
-  Δίνεται συνεχής στο διάστημα $[0,2]$ συνάρτηση $f$ με $f(0)=f(1)$. Να μελετήσετε ως προς τη συνέχεια τις παρακάτω συναρτήσεις: 
-  <ol class="array-list">
-  <li>$g(x)=\begin{cases} f(3x), & 0\leq x\lt \frac{1}{3}\\ f(3x-1), & \frac{1}{3}\leq x\leq 1\end{cases}$</li>
-  <li>$h(x)=\begin{cases} f(3x), & 0\leq x\leq\frac{1}{3}\\ f(3x-1), & \frac{1}{3}\lt x\leq \frac{2}{3}\\ f(3x-2),& \frac{2}{3}\lt x\leq\frac{4}{3}\end{cases}$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Για τη συνάρτηση $f$ ισχύει 
-  \[f(x+y)=f(x)+f(y), \tag{$\ast$}\]
-  για κάθε $x,y\in\mathbb{R}$.
-  <ol class="vertical-list">
-  <li>Αποδείξτε ότι αν η $f$ είναι συνεχής στο $0$, τότε η $f$ είναι συνεχής στο $\mathbb{R}$.</li>
-  <li>Αποδείξτε ότι αν η $f$ είναι συνεχής σε ένα σημείο $\alpha\in\mathbb{R}$, τότε η $f$ είναι συνεχής στο $\mathbb{R}$.</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Για τη συνάρτηση $f$ ισχύει 
-  \[f(x-y)=f(x)-f(y), \tag{$\ast$}\]
-  για κάθε $x,y\in\mathbb{R}$.
-  <ol class="vertical-list">
-  <li>Αποδείξτε ότι αν η $f$ είναι συνεχής στο $0$, τότε η $f$ είναι συνεχής στο $\mathbb{R}$.</li>
-  <li>Αποδείξτε ότι αν η $f$ είναι συνεχής σε ένα σημείο $\alpha\in\mathbb{R}$, τότε η $f$ είναι συνεχής στο $\mathbb{R}$.</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Για τη συνάρτηση $f$ ισχύει 
-  \[f(xy)=f(x)+f(y), \tag{$\ast$}\]
-  για κάθε $x,y\in\mathbb{R}^{\ast}$.
-  <ol class="vertical-list">
-  <li>Αποδείξτε ότι αν η $f$ είναι συνεχής στο $1$, τότε η $f$ είναι συνεχής στο $\mathbb{R}^{\ast}$.</li>
-  <li>Αποδείξτε ότι αν η $f$ είναι συνεχής σε ένα σημείο $\alpha\in\mathbb{R}^{\ast}$, τότε η $f$ είναι συνεχής στο $\mathbb{R}^{\ast}$.</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Για τη συνάρτηση $f$ ισχύει 
-  \[f\left(\dfrac{x}{y}\right)=f(x)-f(y), \tag{$\ast$}\]
-  για κάθε $x,y\in\mathbb{R}^{\ast}$.
-  <ol class="vertical-list">
-  <li>Αποδείξτε ότι αν η $f$ είναι συνεχής στο $1$, τότε η $f$ είναι συνεχής στο $\mathbb{R}^{\ast}$.</li>
-  <li>Αποδείξτε ότι αν η $f$ είναι συνεχής σε ένα σημείο $\alpha\in\mathbb{R}^{\ast}$, τότε η $f$ είναι συνεχής στο $\mathbb{R}^{\ast}$.</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Για τη συνάρτηση $f$ ισχύει 
-  \[|f(x)-f(y)|\leq \alpha |x-y|, \tag{$\ast$}\]
-  για κάθε $x,y\in\mathbb{R}$, όπου $\alpha\in\mathbb{R}$.
-  <ol class="vertical-list">
-  <li>Αποδείξτε ότι η $f$ είναι συνεχής στο $\mathbb{R}$.</li>
-  <li>Αν $\beta \gt \alpha$, αποδείξτε ότι η εξίσωση $f(x)=\beta x$ διαθέτει το πολύ μία πραγματική λύση.</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Θεωρούμε τη συνάρτηση $f(x)=\dfrac{x(1+x^2)}{|x|}$, $x\neq 0$.
-  <ol class="vertical-list">
-  <li>Αποδείξτε ότι η $f$ δεν είναι συνεχής στο $0$.</li>
-  <li>Αποδείξτε ότι η $f$ είναι αντιστρέψιμη.</li>
-  <li>Να προσδιορίσετε την αντίστροφη της $f$ και να αποδείξετε ότι είναι συνεχής.</li>
-  </ol>
-  </div>
-  
-  </section>
+      <div class="exercise">
+        Να μελετήσετε ως προς τη συνέχεια στο σημείο $x_0$ τη συνάρτηση $f$ όταν:
+        <ol class="array-list">
+          <li>$f(x)=\begin{cases}3x-5,& x\lt 3 \\ 3,&x=3 \end{cases},\quad$ $x_0=3$</li>
+          <li>$f(x)=\begin{cases}4x^2-3, &x\lt 2 \\ 6x+1, &x\geq 2\end{cases},\quad$ $x_0=2$</li>
+          <li>$f(x)=\begin{cases}\dfrac{ x^2-x-2}{x-2},&x\neq 2 \\3,&x=2\end{cases},\quad$ $x_0=2$</li>
+          <li>$f(x)=\begin{cases}\dfrac{x^2-1}{x+1},&x\lt -1 \\ 4,&x=-1\\ 2x, &x\gt -1\end{cases},\quad$ $x_0=-1$</li>
+          <li>$f(x)=\begin{cases} x^2+1,& x\leq 0 \\ \dfrac{\gcos x-x^2}{x^2},&x\gt 0 \end{cases},\quad$ $x_0=0$</li>
+          <li>$f(x)=\begin{cases}\dfrac{1-\gcos x}{x^2},&x\lt 0 \\[2ex] \gcos\dfrac{x}{2},&x\geq 0 \end{cases},\quad$
+            $x_0=0$</li>
+        </ol>
+      </div>
 
-  <section id="continuity-theorems">
+      <div class="exercise">
+        Αν η συνάρτηση $f$ είναι συνεχής στο $2,$ αποδείξτε ότι και η συνάρτηση $g$ με τύπο $g(x)= x^2+\gsin f(x)$ είναι
+        συνεχής στο $2.$
+      </div>
 
-    <h2>Bασικά θεωρήματα συνέχειας</h2>
+      <div class="exercise">
+        Αν η συνάρτηση $f$ είναι συνεχής στο $1,$ αποδείξτε ότι η συνάρτηση $g$ με τύπο $g(x)=x^2+f(\gcos x)$ είναι
+        συνεχής στο $0.$
+      </div>
 
-  
-  <div class="exercise">
-  Αποδείξτε ότι η συνάρτηση $f$ διαθέτει μία τουλάχιστον ρίζα στο διάστημα $\Delta$, όταν:
-  <ol class="array-list">
-  <li>$f(x)=x^3+x-3$, $\Delta=(0,2)$</li>
-  <li>$f(x)=x^3+\gsin x-3$, $\Delta=(0,\pi)$</li>
-  <li>$f(x)=x^5+\ln x+1$, $\Delta=\left(\frac{1}{e^2},1\right)$</li>
-  <li>$f(x)=x+\ln x-\sqrt{x}$, $\Delta=\left(\frac{1}{2},2\right)$</li>
-  <li>$f(x)=x-\gcos x$, $\Delta=\left(0,\frac{\pi}{2}\right)$</li>
-  <li>$f(x)=2^x+x$, $\Delta=(-1,1)$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Αποδείξτε ότι η συνάρτηση $f$ διαθέτει μία τουλάχιστον ρίζα στο διάστημα $\Delta$, όταν:
-  <ol class="array-list">
-  <li>$f(x)=x+\gsin x+e^x$, $\Delta=(-\pi,\pi)$</li>
-  <li>$f(x)=x^2(3^{-x}-x^3)$, $\Delta=(-1,1)$</li>
-  <li>$f(x)=(x^3-1)\ln(x^2+1)$, $\Delta=(-1,2)$</li>
-  <li>$f(x)=\sqrt[3]{x^2+1}-e^x$, $\Delta=(-1,1)$</li>
-  <li>$f(x)=17x^2-\dfrac{1}{x^5}-19$, $\Delta=(-1,0)$</li>
-  <li>$f(x)=x^2-e^x+11$, $\Delta=(0,3)$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Αποδείξτε ότι καθεµία από τις παρακάτω εξισώσεις διαθέτει µία τουλάχιστον λύση στο αντίστοιχο διάστηµα $\Delta$:
-  <ol class="array-list">
-  <li>$(x+1)2^{x+1}=1$, $\Delta=(-1,0)$</li>
-  <li>$ex^3=x^2 + 2$, $\Delta=(0,2)$</li>
-  <li>$x^4 + 3x + 1=0$, $\Delta=(-2,2)$</li>
-  <li>$x^6=-4x^3-1$, $\Delta=(-2,1)$</li>
-  <li>$\dfrac{x^5}{x-1}+\dfrac{e^x}{x-2}=0$, $\Delta=(1,2)$</li>
-  <li>$\dfrac{x^2+5}{x-2}+\dfrac{\ln x}{x-3}=0$, $\Delta=(2,3)$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Σε καθεµία από τις παρακάτω περιπτώσεις να λυθεί η εξίσωση $f (x) = 0$ και να προσδιοριστεί το πρόσηµο της συνάρτησης $f$ στο διάστημα $\Delta$:
-  <ol class="array-list">
-  <li>$f(x)=(\pi-x)\ln x$, $\Delta=(0,+\infty)$</li>
-  <li>$f(x)=\ln(\gsin x)$, $\Delta=(0,\pi)$</li>
-  <li>$f(x)=e^x+x-1$, $\Delta=\mathbb{R}$</li>
-  <li>$f(x)=2\ln x+x^3-1$, $\Delta=(0,+\infty)$</li>
-  <li>$f(x)=\sqrt{x^2+16}-\dfrac{x}{3}-4$, $\Delta=\mathbb{R}$</li>
-  <li>$f(x)=|x-4|-\dfrac{6}{\sqrt{x+3}}$, $\Delta=\mathbb{R}$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">Να προσδιορίσετε το σύνολο τιµών της συνάρτησης $f$, όταν:
-  <ol class="array-list">
-  <li>$f (x)=e^x+x$</li>
-  <li>$f(x)=\sqrt{x}-\sqrt{4-x}$</li>
-  <li>$f(x)=\ln x-\sqrt{e-x}$</li>
-  <li>$f(x)= \dfrac{4}{\sqrt{x}}$</li>
-  <li>$f(x)=4e^{-x}-\sqrt{x}$</li>
-  <li>$f(x) = -2\ln x+\sqrt{1 - x}$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Αποδείξτε ότι καθεµία από τις παρακάτω εξισώσεις διαθέτει ακριβώς µία λύση στο αντίστοιχο διάστηµα $\Delta$:
-  <ol class="array-list">
-  <li>$x^5 + 25x = 11$, $\Delta=(0, 1)$</li>
-  <li>$e^x=-x^9$, $\Delta=(−1, 0)$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Αποδείξτε ότι καθεµία από τις παρακάτω εξισώσεις διαθέτει δύο τουλάχιστον λύσεις στο αντίστοιχο διάστηµα $\Delta$:
-  <ol class="array-list">
-  <li>$x^3 + 3=6x^2$, $\Delta=(−1, 1)$</li>
-  <li>$\dfrac{1}{x-2}+\dfrac{2}{x-3}=\dfrac{3}{4-x}$, $\Delta=(2, 4)$</li>
-  </ol> 
-  </div>
-  
-  <div class="exercise">
-  Δίνεται η συνάρτηση $f(x)=(x-1)^4+3$. Να προσδιορίσετε τα διαστήματα μονοτονίας της $f$, καθώς και το σύνολο $f(\Delta)$, όταν:
-  <ol class="array-list">
-  <li>$\Delta=[2,3]$</li>
-  <li>$\Delta=(-4,1]$</li>
-  <li>$\Delta=(-2,2)$</li>
-  <li>$\Delta=(5,+\infty)$</li>
-  <li>$\Delta=[0,+\infty)$</li>
-  <li>$\Delta=\left(-\infty, \frac{1}{2}\right)$</li>
-  <li>$\Delta=\left(-\infty, \frac{3}{2}\right]$</li>
-  <li>$\Delta=\mathbb{R}$</li></li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Αποδείξτε ότι η συνάρτηση $f(x)= x^2+\gsin^2 \pi x +\gcos 3\pi x +3$, με πεδίο ορισμού το $[-2,1]$, λαμβάνει την τιμή $4$.
-  </div>
-  
-  <div class="exercise">
-  Έστω η συνάρτηση $f(x)= x^3+\gcos\pi x +2$. Αποδείξτε ότι για κάθε $\alpha\in[2,3]$ υπάρχει $x_0\in[0,1]$ ώστε $f(x_0)=\alpha$.
-  </div>
-  
-  <div class="exercise">
-  Αποδείξτε ότι η εξίσωση $\gcos x=3-2x$ διαθέτει λύση στο διάστημα $\left(\frac{\pi}{4},\frac{\pi}{2}\right)$.
-  </div>
-  
-  <div class="exercise">
-  Αποδείξτε ότι η εξίσωση $x^8-16x-5=0$ διαθέτει λύση.
-  </div>
-  
-  <div class="exercise">
-  Αποδείξτε ότι η εξίσωση $\gsin x+x^2-2=0$ διαθέτει μοναδική λύση στο $\left(0,\frac{\pi}{2}\right)$.
-  </div>
-  
-  <div class="exercise">
-  Αποδείξτε ότι η εξίσωση $\dfrac{x^{10}+1}{x+1}+\dfrac{x^{20}+2}{x-1}=0$ διαθέτει μοναδική λύση στο διάστημα $(-1,1)$.
-  </div>
-  
-  <div class="exercise">
-  Θεωρούμε συνάρτηση $f$, συνεχή στο $[1,2]$, με $f(1)\lt 1$ και $f(2) \gt 4$. Αποδείξτε ότι η εξίσωση $f(x)=3x-2$ διαθέτει λύση στο διάστημα $(1,2)$. 
-  </div>
-  
-  <div class="exercise">
-  Αποδείξτε ότι η εξίσωση $x^5+5x=\kappa$ διαθέτει μοναδική λύση στο διάστημα $[0,1]$, για κάθε $\kappa\in[0,6]$.
-  </div>
-  
-  <div class="exercise">
-  Έστω $\alpha,\beta,\gamma\in\mathbb{R}$ με $\alpha\lt \beta\lt \gamma$. Αποδείξτε ότι η εξίσωση
-  <div class="desktop-display">
-    \[f(x)= 3(x-\alpha)(x-\beta)+4(x-\beta)(x-\gamma)+9(x-\alpha)(x-\gamma),\tag{$\ast$}\]
-  </div>
-  <div class="mobile-display">
-    \[\begin{align}
-    f(x)&=3(x-\alpha)(x-\beta)+\\
-        &+4(x-\beta)(x-\gamma)+\\
-        &+9(x-\alpha)(x-\gamma)
-    \end{align}\tag{$\ast$}\]
-  </div>
+      <div class="exercise">
+        Αν οι συναρτήσεις $f,g$ είναι συνεχείς στο $x_0$ και
+        \[h(x)=\begin{cases} f(x),&x\lt x_0 \\g(x), &x\geq x_0\end{cases}\]
+        αποδείξτε ότι η $h$ είναι συνεχής στο $x_0$ αν και μόνο αν $f(x_0)=g(x_0).$
+      </div>
 
-  
-  διαθέτει δύο τουλάχιστον λύσεις.
-  </div>
-  
-  <div class="exercise">
-  Αποδείξτε ότι για κάθε $\alpha\in\mathbb{R}$, η εξίσωση $x+\gcos\alpha=\gcos x+\pi$ διαθέτει λύση στο διάστημα $\left(\frac{\pi}{2}, \pi\right]$.
-  </div>
-  
-  <div class="exercise">
-  Αν $\alpha,\beta \gt 0$, αποδείξτε ότι η εξίσωση $\alpha\gcos x+\beta=x$ διαθέτει θετική λύση που δεν υπερβαίνει τον $\alpha+\beta$.
-  </div>
-  
-  <div class="exercise">
-  Έστω $\alpha,\beta,\gamma \gt 0$. Αποδείξτε ότι η εξίσωση $\dfrac{\alpha}{x+1}+\dfrac{\beta}{x}+\dfrac{\gamma}{x-1}=0$ διαθέτει ακριβώς δύο λύσεις. 
-  </div>
-  
-  <div class="exercise">
-  Έστω συνεχής συνάρτηση $f: \mathbb{R}\to\mathbb{R}$, τέτοια ώστε $f (0) = f (4)$. Αποδείξτε ότι υπάρχει ένας τουλάχιστον πραγµατικός αριθµός $\xi$ τέτοιος ώστε
-  $f(\xi)=f(\xi+2)$.
-  </div>
-  
-  <div class="exercise">
-  Έστω συνάρτηση $f$, συνεχής στο $[1, 3]$, µε $f (1)f (3)+3\lt 3f (1)+f (3)$. Αποδείξτε ότι υπάρχει ένας τουλάχιστον $\xi\in(1, 3)$ τέτοιος ώστε $f (\xi)=\xi$.
-  </div>
-  
-  <div class="exercise">
-  Έστω συνάρτηση $f$, συνεχής στο $[0, 5]$, τέτοια ώστε $0\lt f (x)\lt 1$ για κάθε $x\in[0, 5]$. Αποδείξτε ότι η γραφική παράσταση της συνάρτησης $g(x)=f(5x)- x$ διαθέτει ένα τουλάχιστον κοινό σηµείο µε τον άξονα $x^\prime x$.
-  </div>
-  
-  <div class="exercise">
-  Έστω συνάρτηση $f$, συνεχής και γνησίως αύξουσα στο $[0, 1]$ με $f (1) = \dfrac{1}{2}$. Αποδείξτε ότι οι γραφικές παραστάσεις των $g(x)=2f(x)$ και $h(x)=(1-x)\gcos^2 x$ διαθέτουν κοινό σηµείο µε τετµηµένη $x_0\in(0, 1)$.
-  </div>
-  
-  <div class="exercise">
-  Θεωρούµε συνάρτηση $f$, συνεχή στο $R$, της οποίας η γραφική παράσταση διέρχεται από το σηµείο $\mathrm{A}(3, 1)$ και δεν διαθέτει κοινό σηµείο µε τον άξονα $x^\prime x$. Αποδείξτε ότι η εξίσωση $f(x)=(2-x)(x-5)$ διαθέτει δύο τουλάχιστον λύσεις στο $(2, 5)$.
-  </div>
-  
-  <div class="exercise">
-  Θεωρούµε συνάρτηση $f$, συνεχή στο $\mathbb{R}$, με $f(0)=-1$ και
-  \[f^2(x)=x^4 + 1, \tag{$\ast$}\]
-  για κάθε $x\in\mathbb{R}$. Να προσδιορίσετε τον τύπο της $f$.
-  </div>
-  
-  <div class="exercise">
-  Θεωρούµε συνάρτηση $f$, συνεχή στο $\mathbb{R}$, με $f(-2) \gt 0$, $f(3) \gt 0$ και
-  \[f^2(x)=(e^x -e)^2, \tag{$\ast$}\]
-  για κάθε $x\in\mathbb{R}$. Να προσδιορίσετε τον τύπο της $f$.
-  </div>
-  
-  <div class="exercise">
-  Θεωρούµε συνάρτηση $f$, συνεχή στο $\mathbb{R}$, με $ f (1) \gt 0$ και
-  \[f^2(x)+2f (x)=x^2 + x + 1, \tag{$\ast$}\]
-  για κάθε $x\in\mathbb{R}$. Να προσδιορίσετε τον τύπο της $f$.
-  </div>
-  
-  <div class="exercise">
-  Έστω συνεχής στο $[-2,2]$ συνάρτηση $f$ με
-  \[ x^2+f^2(x)=4, \tag{$\ast$}\] 
-  για κάθε $x\in[-2,2]$.
-  <ol class="vertical-list">
-  <li>Αποδείξτε ότι η $f$ διατηρεί σταθερό πρόσημο στο διάστημα $(-2,2)$.</li>
-  <li>Αν επιπλέον $f(0)=2$, να προσδιοριστεί ο τύπος της $f$.</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Να προσδιοριστούν όλες οι συνεχείς συναρτήσεις $f$ με
-  \[f^2(x)=3+5x^4, \tag{$\ast$}\]
-  για κάθε $x\in\mathbb{R}$.
-  </div>
-  
-  <div class="exercise">
-  Δινεται η συνάρτηση $f:[0,2]\to\mathbb{R}$ με $f(x)=x^2 \cdot 2^x$.
-  <ol class="vertical-list">
-  <li>Να προσδιορίσετε το σύνολο $f([0,2])$.</li>
-  <li>Να αποδείξετε ότι η εξίσωση $f(x)-1=\alpha$ διαθέτει μοναδική λύση, για κάθε $\alpha\in[-1,15]$.</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Δίνεται η συνάρτηση $f(x)=|x^2-6x|$, με πεδίο ορισμού το διάστημα $[0,8]$.
-  <ol class="vertical-list">
-  <li>Να προσδιορίσετε το σύνολο τιμών της $f$.</li>
-  <li>Να προσδιορίσετε το πλήθος των λύσεων της εξίσωσης $f(x)=\alpha$, για τις διάφορες τιμές του πραγματικού αριθμού $\alpha$.</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Έστω $\alpha,\beta\in\mathbb{R}$ με $\alpha\lt \beta$. Αποδείξτε ότι η γραφική παράσταση της συνάρτησης
-  <div class="scale-09">
-    $$f(x)=(x^2+1)(x-\alpha) +(2-\gsin x)(x-\beta)$$
-  </div>
-  τέμνει τον άξονα $x^{\prime}x$ σε ένα τουλάχιστον σημείο.
-  </div>
-  
-  <div class="exercise">
-  Δίνεται συνεχής και γνησίως μονότονη συνάρτηση $f:[1,5]\to\mathbb{R}$, της οποίας η γραφική παράσταση διέρχεται από τα σημεία $\textnormal{A}(1,8)$ και $\textnormal{B}(5,12)$.
-  <ol class="vertical-list">
-  <li>Αποδείξτε ότι η $f$ είναι γνησίως αύξουσα.</li>
-  <li>Αποδείξτε ότι η συνάρτηση $f$ λαμβάνει την τιμή $29/3$.</li>
-  <li>Αποδείξτε ότι υπάρχει μοναδικό $x_0\in(1,5)$ ώστε $f(x_0)=\dfrac{2f(2)+3f(3)+4f(4)}{9}$.</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Δίνεται συνεχής συνάρτηση $f:[1,5]\to\mathbb{R}$. Να αποδείξετε ότι υπάρχει $\xi\in[1,5]$ τέτοιο ώστε \[f(\xi ) = \dfrac{3f(2) + 5f(3) + 7f(4)}{15}.\]
-  </div>
-  
-  <div class="exercise">
-  Έστω $f:[-1,1]\to\mathbb{R}$ συνεχής συνάρτηση με $\alpha f(-1)+\beta f(0)+\gamma f(1)=0$, όπου $\alpha,\beta,\gamma \gt 0$. Αποδείξτε ότι η $f$ διαθέτει ρίζα στο $[-1,1]$.
-  </div>
-  
-  <div class="exercise">
-  Δίνεται η συνάρτηση $f(x)= \sqrt{4-x}-\sqrt{2-x}$. 
-  <ol class="vertical-list">
-  <li>Να αποδείξετε ότι η $f$ είναι συνεχής και γνησίως μονότονη.</li>
-  <li>Να προσδιορίσετε το σύνολο τιμών της $f$.</li>
-  <li>Να επιλύσετε την ανίσωση $f(x)\lt 1$.</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Δίνεται η συνάρτηση $f(x)= \sqrt{x^2+1}$. 
-  <ol class="vertical-list">
-  <li>Να προσδιορίσετε τα διαστήματα μονοτονίας της $f$.</li>
-  <li>Να προσδιορίσετε το σύνολο τιμών της $f$.</li>
-  <li>Να προσδιορίσετε τα σύνολα $f\Big((1,3]\Big)$, $f\Big((-1,1)\Big)$, $f\Big([-\sqrt{3},+\infty)\Big)$ και $f(\mathbb{R}^\ast)$.</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Έστω η συνάρτηση 
-  \[f(x)=\begin{cases} \alpha^3 x^3+\alpha x+1,&x\lt 1 \\ -2\alpha x^2 +3, &x\geq 1\end{cases}.\]
-  Αποδείξτε ότι υπάρχει τουλάχιστον μία τιμή του $\alpha\in\mathbb{R}$ για την οποία η $f$ είναι συνεχής. 
-  </div>
-  
-  <div class="exercise">
-  Αποδείξτε ότι η συνάρτηση $f(x)=\ln(x-1)+\ln(2-x)-\ln 2$ είναι αρνητική.
-  </div>
-  
-  <div class="exercise">
-  Έστω συνάρτηση $f$, συνεχής και γνησίως αύξουσα στο διάστημα $[\alpha,\beta]$. Αποδείξτε ότι υπάρχει $\xi\in(\alpha,\beta)$ τέτοιος ώστε 
-  $3f(\xi)=f(\alpha)+f(\beta)+f\left(\dfrac{\alpha+\beta}{2}\right)$.
-  </div>
-  
-  <div class="exercise">
-  Έστω $\alpha,\beta\in\mathbb{R}$ με $\alpha\lt \beta$. Θεωρούμε συναρτήσεις $f,g$ συνεχείς στο $[\alpha,\beta]$ με $f(\alpha) \gt g(\alpha)$ , $f(\beta)\lt g(\beta)$. Αποδείξτε ότι υπάρχει $x_0\in(\alpha,\beta)$ τέτοιο ώστε $f(x_0)=g(x_0)$. 
-  </div>
-  
-  <div class="exercise">
-  Έστω $\alpha,\beta\in\mathbb{R}$ με $\alpha\lt \beta$. Θεωρούμε συναρτήσεις $f,g$ συνεχείς στο $[\alpha,\beta]$ με $f(\alpha)+ f(\beta)=g(\alpha)+g(\beta)$. Αποδείξτε ότι υπάρχει ένα τουλάχιστον $x_0\in[\alpha,\beta]$ τέτοιο ώστε $f(x_0)=g(x_0)$. 
-  </div>
-  
-  <div class="exercise">
-  Έστω $\alpha,\beta\in\mathbb{R}$ με $\alpha\lt \beta$. Θεωρούμε συνάρτηση $f$ συνεχή στο $[\alpha,\beta]$ με $\kappa f(\alpha)+\lambda f(\beta)=0$, όπου $\kappa,
-  \lambda \gt 0$. Αποδείξτε ότι υπάρχει $x_0\in[\alpha,\beta]$ τέτοιο ώστε $f(x_0)=0$. 
-  </div>
-  
-  <div class="exercise">
-  Έστω $\alpha,\beta\in\mathbb{R}$ με $\alpha\lt \beta$. Θεωρούμε συνεχή συνάρτηση $f:[\alpha,\beta]\to\mathbb{R}$ με $f(\alpha)=f(\beta) $. Αποδείξτε ότι υπάρχει $x_0\in\left[\alpha,\frac{\alpha+\beta}{2}\right]$ τέτοιο ώστε
-  \[f(x_0)=f\left(x_0+\frac{\beta -\alpha}{2}\right).\] 
-  </div>
-  
-  <div class="exercise">
-  Έστω $\alpha,\beta\in\mathbb{R}$ με $\alpha\lt \beta$. Θεωρούμε συνεχή συνάρτηση $f:[\alpha,\beta]\to\mathbb{R}$ με $f(\alpha)\neq f(\beta) $. Αν $\kappa, \lambda \gt 0$, αποδείξτε ότι υπάρχει $x_0\in(\alpha,\beta)$ τέτοιο ώστε
-  \[f(x_0)=\dfrac{\kappa f(\alpha)+\lambda f(\beta)}{\kappa+\lambda}.\] 
-  </div>
-  
-  <div class="exercise">
-  Έστω $\alpha,\beta\in\mathbb{R}$ με $\alpha\lt \beta$. Θεωρούμε συνεχείς συναρτήσεις $f,g:[\alpha,\beta]\to\mathbb{R}$ με $f(\alpha)= \alpha$ και $f(\beta)= \beta$. Υποθέτουμε επιπλέον ότι $g([\alpha,\beta])\subseteq [\alpha,\beta]$. Αποδείξτε ότι υπάρχει $x_0\in[\alpha,\beta]$ τέτοιο ώστε $2f(x_0)=(g\circ f)(x_0)+g(x_0)$. 
-  </div>
-  
-  <div class="exercise">
-  Έστω $\alpha,\beta\in\mathbb{R}$ με $\alpha\lt \beta$. Θεωρούμε συνεχή συνάρτηση $f:[\alpha,\beta]\to\mathbb{R}$. Αποδείξτε ότι υπάρχει $x_0\in(\alpha,\beta)$ τέτοιο ώστε $f(x_0)=\dfrac{1}{x_0-\alpha}+\dfrac{1}{x_0-\beta}$. 
-  </div>
-  
-  <div class="exercise">
-  Έστω $\alpha \gt 0$ και συναρτήσεις $f,g$, για τις οποίες υποθέτουμε ότι:
-  <ul class="bullet-list">
-  <li>οι $f,g$ είναι συνεχείς στο $[-\alpha, \alpha]$,</li>
-  <li>η $f$ είναι περιττή,</li>
-  <li>$g(\alpha)=- \alpha$ και $g(-\alpha)=\alpha$.</li>
-  </ul>
-  Αποδείξτε ότι υπάρχει $x_0\in(-\alpha, \alpha)$ τέτοιο ώστε $f(g(x_0))+f(x_0)+g(x_0)=0$.
-  </div>
-  
-  <div class="exercise">
-  Έστω $\alpha,\beta\in\mathbb{R}$ με $\alpha\lt \beta$. Θεωρούμε συνεχή συνάρτηση $f:[\alpha,\beta]\to\mathbb{R}$ με $f(\alpha),f(\beta)\in(\alpha, \beta)$. Αποδείξτε ότι η $C_f$ διαθέτει κοινό σημείο με την ευθεία $y=x$.
-  </div>
-  
-  <div class="exercise">
-  Έστω $\alpha,\beta\in\mathbb{R}$ με $\alpha\lt \beta$. Θεωρούμε συνεχείς συναρτήσεις $f:[\alpha,\beta]\to\mathbb{R}$ για τις οποίες υποθέτουμε ότι:
-  <ul class="bullet-list">
-  <li>$f([\alpha,\beta])=g([\alpha,\beta])=[\alpha,\beta]$,</li>
-  <li>η $f$ είναι γνησίως φθίνουσα,</li>
-  <li>η $g$ είναι γνησίως αύξουσα.</li>
-  </ul>
-  Αποδείξτε ότι οι $C_f$, $C_g$ διαθέτουν μοναδικό κοινό σημείο.
-  </div>
-  
-  <div class="exercise">
-  Έστω $f:\mathbb{R}\to\mathbb{R}$ συνεχής συνάρτηση με μοναδική ρίζα $\alpha$. Αν
-  \[f\left(\dfrac{\alpha^2+1}{2}\right) \gt 0,\]
-  να αποδείξετε ότι $f(\alpha+1) \gt 0$.
-  </div>
-  
-  <div class="exercise">
-  Έστω $f:[\alpha,\beta]\to\mathbb{R}$ συνεχής συνάρτηση, με $f(\alpha)=f(\beta)$. Αν $\gamma$ και $\delta$ είναι το μέσο και το μήκος του διαστήματος $[\alpha,\beta]$ αντιστοίχως, να αποδείξετε ότι υπάρχει $x_0\in \left[0,\frac{\delta}{2}\right]$ τέτοιος ώστε $f(x_0+\alpha)=f(x_0+\gamma)$.
-  </div>
-  
-  <div class="exercise">
-  Έστω $\alpha,\beta\in\mathbb{R}$ με $\alpha\lt \beta$. Θεωρούμε συνεχή και $1-1$ συνάρτηση $f$ στο διάστημα $[\alpha,\beta]$ με $f(\alpha)f(\beta) \gt 0$. Αποδείξτε ότι $f(x)f(\alpha)\geq 0$ για κάθε $x\in[\alpha,\beta]$. 
-  </div>
-  
-  <div class="exercise">
-  Έστω $P$ ένα μη σταθερό πολυώνυμο. Αν $f$ είναι συνεχής στο $\mathbb{R}$ συνάρτηση με $P\circ f=0$, αποδείξτε ότι η $f$ είναι σταθερή.
-  </div>
-  
-  <div class="exercise">
-  Αν η συνάρτηση $f$ είναι συνεχής στο $[0,1]$ και ισχύει $0\lt f(x)\lt 1$, για κάθε $x\in\mathbb{R}$, αποδείξτε ότι υπάρχει $x_0\in(0,1)$ τέτοιο ώστε $f(x_0)=x_0^2$.
-  </div>
-  
-  <div class="exercise">
-  Αν η συνάρτηση $f$ είναι συνεχής στο $[0,1]$ και ισχύει $0\lt f(x)\lt 1$, για κάθε $x\in\mathbb{R}$, αποδείξτε ότι υπάρχει $x_0\in(0,1)$ τέτοιο ώστε $f^2(x_0)+ f(x_0)=x_0^2+x_0$.
-  </div>
-  
-  <div class="exercise">
-  Έστω $f$ συνεχής στο $[0,1]$ συνάρτηση, με σύνολο τιμών το $[0,1]$. Αποδείξτε ότι υπάρχει ένα τουλάχιστον $x_0\in\left[0,\frac{\pi}{2}\right]$ με $f(\gcos x_0)=\gcos x_0$.
-  </div>
-  
-  <div class="exercise">
-  Έστω $f$ συνεχής στο $[1,3]$ συνάρτηση με $f([1,3])\subseteq(1,3)$. Αποδείξτε ότι υπάρχει $x_0\in(1,3)$ τέτοιο ώστε $f(x_0)=\dfrac{3}{x_0}$.
-  </div>
-  
-  <div class="exercise">
-  Θεωρούμε συνεχείς στο $[0,1]$ συναρτήσεις $f,g$ με$f([0,1])=g([0,1])=[0,1]$. Αποδείξτε ότι υπάρχει $x_0\in[0,1]$ τέτοιο ώστε $f(f(x_0))=2x_0-g(x_0)$.
-  </div>
-  
-  <div class="exercise">
-  Αν η συνάρτηση $f$ είναι συνεχής στο $[0,2]$ με $f(0)=f(2)$, αποδείξτε ότι υπάρχει $x_0\in[0,1]$ ώστε $f(x_0)=f(x_0+1)$.
-  </div>
-  
-  <div class="exercise">
-  Αν για την ορισμένη στο $[0,1]$ συνάρτηση $f$ ισχύουν $f([0,1])=[0,1]$ και
-  \[|f(x)-f(y)|\leq |x-y|,\tag{$\ast$}\]
-  για κάθε $x,y\in[0,1]$, αποδείξτε ότι η εξίσωση $f(x)=x$ διαθέτει λύση στο διάστημα $[0,1]$. 
-  </div>
-  
-  <div class="exercise">
-  Δίνεται η συνάρτηση $f(x)= 3x^2-1+\gsin x$.
-  <ol class="vertical-list">
-  <li>Να αποδείξετε ότι η $f$ είναι γνησίως αύξουσα στο διάστημα $\left[0,\frac{\pi}{2}\right]$.</li>
-  <li>Να προσδιορίσετε το $f\left(\left[0,\frac{\pi}{2}\right]\right)$.</li>
-  <li>Να αποδείξετε ότι η εξίσωση $f(x)=0$ διαθέτει μοναδική λύση στο $\left(0,\frac{\pi}{2}\right)$.</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Δίνεται η συνάρτηση $f:(0,+\infty)\to\mathbb{R}$ με τύπο $f(x)=2x^4+3\ln x+1$.
-  <ol class="vertical-list">
-  <li>Να εξετάσετε ως προς τη μονοτονία τη συνάρτηση $f$.</li>
-  <li>Να προσδιορίσετε το σύνολο τιμών της συνάρτησης $f$.</li>
-  <li>Να αποδείξετε ότι για κάθε $\alpha\in\mathbb{R}$, η εξίσωση $f(x)=\alpha$ διαθέτει μοναδική λύση.</li>
-  <li>Να αποδείξετε ότι υπάρχει μοναδικός $\lambda \gt 0$ με $\lambda^4+\dfrac{1}{2}=\dfrac{3}{2}\ln\dfrac{1}{\lambda}$.</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Δίνονται οι συναρτήσεις $f(x)=e^{x-\alpha}-1$ και $g(x)=ln(\alpha x+1)+ \alpha$, όπου $\alpha\in\left(0,\frac{3}{4}\right)$.
-  <ol class="vertical-list">
-  <li>Αποδείξτε ότι η εξίσωση $f(x)= \alpha x$ διαθέτει λύση στο διάστημα $[\alpha, \alpha+1]$.</li>
-  <li>Έστω ότι $\rho$ είναι λύση της εξίσωσης $f(x)=\alpha x$ στο $[\alpha, \alpha+1]$. Αποδείξτε ότι $\lim\limits_{x\to\rho}g(x)=\rho$.</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Δίνεται συνάρτηση $f:\mathbb{R}\to\mathbb{R}$, συνεχής και γνησίως αύξουσα, με $f(1) = 2$. Θεωρούμε τη συνάρτηση $g$ με τύπο 
-  $g(x)=f({e^{-x}}) - {e^x}$, όπου $x\in\mathbb{R}$.
-  <ol class="vertical-list">
-  <li>Να αποδείξετε ότι η $g$ είναι γνησίως φθίνουσα.</li>
-  <li>Να αποδείξετε ότι η γραφική παράσταση της $g$ τέμνει τον άξονα $x^{\prime}x$ σε ένα ακριβώς σημείο, με τετμημένη στο διάστημα $(0,1)$.</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Δίνεται συνάρτηση $f$, συνεχής στο $[-3,3]$, για την οποία ισχύει
-  \[3x^2 +4f^{2}(x)=27,\tag{$\ast$}\]
-  για κάθε $x\in [-3,3]$.
-  <ol class="vertical-list">
-  <li>Να προσδιορίσετε τις λύσεις της εξίσωσης $f(x)=0$.</li>
-  <li>Να αποδείξετε ότι η $f$ διατηρεί πρόσημο στο διάστημα $(-3,3)$.</li>
-  <li>Να προσδιοριστεί ο τύπος της $f$.</li>
-  <li>Αν επιπλέον $f(1)=\sqrt{6}$ να προσδιορίσετε το όριο $\lim\limits_{x\to 0}\dfrac{f(x)-\frac{3\sqrt{3}}{2}}{x}$.</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Δίνεται συνεχής συνάρτηση $f:\mathbb{R}\to\mathbb{R}$, η οποία είναι γνησίως μονότονη στο $\mathbb{R}$ και η γραφική της παράσταση διέρχεται από τα σημεία 
-  $\textnormal{A}(-1,0)$ και $\textnormal{B}(2,3)$.
-  <ol class="vertical-list">
-  <li>Να αποδείξετε ότι η $f$ είναι γνησίως αύξουσα.</li>
-  <li>Να προσδιορίσετε το πρόσημο της $f$.</li>
-  <li>Να επιλύσετε την εξίσωση $f(2e^x +1)=3$.</li>
-  <li>Να επιλύσετε την ανίσωση $f(3x+5)\leq 0$.</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Δίνεται συνεχής συνάρτηση $f:\mathbb{R}\to\mathbb{R}$, για την οποία ισχύει
-  \[f^{2}(x)=\alpha^{2x}+2\alpha^{x}+1,\tag{$\ast$}\]
-  για κάθε $x\in\mathbb{R}$, όπου $\alpha\in\mathbb{R}^{\ast}$.
-  <ol class="vertical-list">
-  <li>Να αποδείξετε ότι η $f$ διατηρεί σταθερό πρόσημο στο $\mathbb{R}$.</li>
-  <li>Αν $f(0)=-2$, να προσδιορίσετε τον τύπο της $f$.</li>
-  <li>Να υπολογίσετε το όριο $\lim\limits_{x\to +\infty}\dfrac{2f(x)-3^x}{3\cdot 2^x+4\cdot 3^x}$, όπου $\alpha\lt 2$.</li>
-  <li>Να υπολογίσετε το όριο $\lim\limits_{x\to +\infty}\dfrac{2f(x)-3^x}{3\cdot 2^x+4\cdot 3^x}$, όπου $\alpha\gt 3$.</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Θεωρούμε συνεχή συνάρτηση $f:\mathbb{R}\to\mathbb{R}$, για την οποία ισχύει
-  <div class="scale-09">
-    \[\left(x^2 - 4x + 2\right) f(x) \leq f(0) + f(4),\tag{$\ast$}\] 
-  </div>
-  για κάθε $x\in\mathbb{R}$.
-  <ol class="vertical-list">
-  <li>Να αποδείξετε ότι $f(0) = f(4)$.</li>
-  <li>Να αποδείξετε ότι υπάρχει ένα τουλάχιστον $\xi\in[0,2]$ με $f({\xi ^2}) = \xi \cdot f(2\xi)$.</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Δίνεται συνεχής συνάρτηση $f:\mathbb{R}\to\mathbb{R}$, για την οποία ισχύει
-  \[x^4 +1\leq 4f(x)\leq x^4 +2\tag{$\ast$}\]
-  για κάθε $x\in\mathbb{R}$.
-  <ol class="vertical-list">
-  <li>Να αποδείξετε ότι $\dfrac{1}{4}\leq f(0)\leq \dfrac{1}{2}$ και $\dfrac{1}{2}\leq f(1)\leq \dfrac{3}{4}$.</li>
-  <li>Να προσδιορίσετε το όριο $\lim\limits_{x\to 0}\left(x^4 f\left(\frac{1}{x}\right)\right)$.</li>
-  <li>Να προσδιορίσετε το όριο $\lim\limits_{x\to 0}\dfrac{x^5 f\left(\frac{1}{x}\right)+4\gsin 3x}{2x^2 +3\gsin x}$.</li>
-  <li>Να αποδείξετε ότι υπάρχει $\xi\in(0,1)$ τέτοιο ώστε $f(\xi)=\xi$.</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Δίνεται συνεχής συνάρτηση $f:\mathbb{R}\to\mathbb{R}$, για την οποία ισχύουν οι συνθήκες:
-  <ul class="bullet-list">
-  <li>$|3\gsin x-2xf(x)|\leq\dfrac{1}{2}x^2$, για κάθε $x\in\mathbb{R}$.</li>
-  <li>$4f(x)+3f(x+1)=2x^{2}-1905$, για κάθε $x\in\mathbb{R}$.</li>
-  </ul>
-  <ol class="vertical-list">
-  <li>Να προσδιορίσετε το όριο $\lim\limits_{x\to 0}f(x)$</li>
-  <li>Να προσδιορίσετε το $f(1)$.</li>
-  <li>Να αποδείξετε ότι η γραφική παράσταση της $f$ τέμνει τη γραφική παράσταση της συνάρτησης $g(x)=x-1$ σε ένα τουλάχιστον σημείο με τετμημένη $x_0\in(0,1)$.</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Δίνεται συνεχής συνάρτηση $f:\mathbb{R}\to\mathbb{R}$, τέτοια ώστε
-  <div class="scale-08">
-    \[\kappa{\gsin}^{2}x=x^{2}f(x)+\sqrt{1+{\gsin}^{2}x}-\lambda,\tag{$\ast$}\]
-  </div>
-  για κάθε $x\in\mathbb{R}$, όπου $\kappa,\lambda\in\mathbb{R}$. Επίσης, γνωρίζουμε ότι η γραφική της παράσταση διέρχεται από το σημείο $\textnormal{A}\left(0,\frac{1}{2}\right)$.
-  <ol class="vertical-list">
-  <li>Να προσδιορίσετε τους $\kappa,\lambda$.</li>
-  <li>Αν $\kappa=1$ και $\lambda=1$, να προσδιορίσετε την $f$.</li>
-  <li>Να προσδιορίσετε το όριο $\lim\limits_{x\to 0}\dfrac{f(x)}{\gcos x}$.</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Θεωρούμε συνεχή συνάρτηση $f:\mathbb{R}\to\mathbb{R}$ με $f(-1)\neq 0$ και $f(1)\neq 0$, για την οποία επίσης ισχύει ότι
-  \[f^2(x) - 6f(x) + 5 = x^4 + 4x^2.\tag{$\ast$}\]
-  <ol class="vertical-list">
-  <li>Να αποδείξετε ότι η $f$ δεν διαθέτει ρίζες.</li>
-  <li>Να προσδιορίσετε την τιμή $f(1)$.</li>
-  <li>Να προσδιορίσετε τον τύπο της $f$.</li>
-  <li>Να προσδιορίσετε το όριο $\lim\limits_{x\to+\infty}\dfrac{\gsin x}{f(x)}$.</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Δίνεται συνεχής συνάρτηση $f: \mathbb{R}\to\mathbb{R}$, για την οποία ισχύει
-  <div class="scale-09">
-    \[x^2 f(x) +\gsin x =xf(x) +\sqrt{x}\gsin x,\tag{$\ast$}\]
-  </div>
-  για κάθε $x\in\mathbb{R}$.
-  <ol class="vertical-list">
-  <li>Να προσδιορίσετε τις τιμές $f(0)$ και $f(1)$.</li>
-  <li>Να αποδείξετε ότι υπάρχει ένα τουλάχιστον $\xi\in(0,1)$ τέτοιο ώστε $4f(\xi)=3\xi$.</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Δίνεται συνεχής συνάρτηση $f: \mathbb{R}\to\mathbb{R}$, για την οποία ισχύει $f(0)+f(1)=2$. Αποδείξτε ότι υπάρχει ένα τουλάχιστον $\xi\in[0,1]$ τέτοιο ώστε $2f(\xi^2)=\xi(f(\xi)+2)$. 
-  </div>
-  
-  <div class="exercise">
-  Δίνεται συνεχής και γνησίως μονότονη συνάρτηση $f:\mathbb{R}\to\mathbb{R}$, για την οποία ισχύει $f^2(2)+f^2(3)-2f(2)+4f(3)+5=0$.
-  <ol class="vertical-list">
-  <li>Να προσδιορίσετε τις τιμές $f(2)$ και $f(3)$.</li>
-  <li>Να προσδιορίσετε το είδος της μονοτονίας της $f$.</li>
-  <li>Να αποδείξετε ότι η εξίσωση $f(x)=0$ διαθέτει μοναδική ρίζα στο $\mathbb{R}$.</li>
-  </ol>
-  </div>
-  
-  </section>
+      <div class="exercise">
+        Δίνονται οι συναρτήσεις $f,g$ με πεδίο ορισμού ένα διάστημα $\Delta$ και $x_0\in \Delta.$ Θεωρούμε ότι οι
+        συναρτήσεις $F(x)= 3f(x)-g(x)$ και $G(x)= f(x)+2g(x)$ είναι συνεχείς στο $x_0.$ Να αποδείξετε ότι οι $f,g$ είναι
+        συνεχείς στο $x_0.$
+      </div>
+
+      <div class="exercise">
+        Έστω οι συναρτήσεις $f,g: \mathbb{R}\to\mathbb{R},$ με την $g$ συνεχή στο $x_0\in\mathbb{R}.$ Αποδείξτε ότι αν η
+        $f+g$ είναι ασυνεχής στο $x_0$ τότε η f είναι επίσης ασυνεχής στο $x_0.$
+      </div>
+
+      <div class="exercise">
+        Έστω συνάρτηση $f,$ συνεχής στο $x_0=4,$ με $f(x)=\dfrac{5x^2-21x+4}{x-4},$ για οποιοδήποτε
+        $x\in\mathbb{R}\setminus\{4\}.$ Να προσδιορίσετε τον τύπο της $f.$
+      </div>
+
+      <div class="exercise">
+        Έστω $f: \mathbb{R}\to\mathbb{R}$ συνεχής στο $2$ συνάρτηση με
+        \[(x-2)f(x)=x^2-5x+6, \tag{$\ast$}\]
+        για κάθε $x\in\mathbb{R}.$
+        <ol class="array-list">
+          <li>Να υπολογίσετε την τιμή $f(2).$</li>
+          <li>Να προσδιορίσετε τον τύπο της $f.$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Έστω συνάρτηση $f,$ συνεχής στο $0.$ Να προσδιορίσετε το $f(0)$ σε καθεµία από τις παρακάτω περιπτώσεις:
+        <ol class="array-list">
+          <li>$xf (x) + x^2=3\gsin x-5x^2,\quad$ $x\in\mathbb{R}$</li>
+          <li>$xf (x)=x^2 f (x)+2(x^3-x^2),\quad$ $x\in\mathbb{R}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Σε καθεµία από τις παρακάτω περιπτώσεις αποδείξτε ότι η συνάρτηση $f$ είναι συνεχής στο $0$:
+        <ol class="array-list">
+          <li>$f^2(x) + 4\leq 4\gsin^2 x-4f (x),\quad$ $x\in\mathbb{R}$</li>
+          <li>$4f^2(x)+9\leq 12f (x) + x^2,\quad$ $x\in\mathbb{R}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Σε καθεµία από τις παρακάτω περιπτώσεις αποδείξτε ότι οι συναρτήσεις $f,g$ είναι συνεχείς στο $x_0$:
+        <ol class="array-list">
+          <li>$f^2(x)+g^2(x)\leq (x-x_0)^2,\quad$ $x\in\mathbb{R}$</li>
+          <li>$|f (x)|+|g(x)|\leq |x-x_0|,\quad$ $x\in\mathbb{R}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Αν η συνάρτηση $f$ είναι συνεχής στο $x_0=1$ και ισχύει
+        \[3x^2-5x+2\leq (x-1)f(x)\leq x^2-x, \tag{$\ast$}\]
+        για κάθε $x\in\mathbb{R},$ να υπολογίσετε την τιμή $f(1).$
+      </div>
+
+      <div class="exercise">
+        Αν η συνάρτηση $f$ είναι συνεχής στο $x_0=4$ και ισχύει
+        \[(x-4)f(x)\leq 16-x^2,\tag{$\ast$}\]
+        για κάθε $x\in\mathbb{R},$ να υπολογίσετε την τιμή $f(4).$
+      </div>
+
+      <div class="exercise">
+        Δίνεται συνάρτηση $f,$ συνεχής στο $x_0=0,$ για την οποία ισχύει
+        \[\dfrac{2x^2-\gsin^2 x}{x^2+x^4}\leq f(x)\leq 2\dfrac{e^x-e^{x^2}}{x},\tag{$\ast$}\]
+        για κάθε $x\neq 0.$ Να προσδιορίσετε την τιμή $f(0).$
+      </div>
+
+      <div class="exercise">
+        Δίνεται η συνεχής στο $0$ συνάρτηση $f:[0,+\infty)\to\mathbb{R}$ για την οποία ισχύει
+        \[g(x)\leq 3+xf(x)\leq h(x),\tag{$\ast$}\]
+        όπου
+        \[
+        \begin{align}
+        g(x)&=\sqrt{x^2 +2x+9},\\
+        h(x)&=x^8\gsin\dfrac{2}{x}+\dfrac{x}{3}+3,
+        \end{align}
+        \]
+        για κάθε $x\gt 0.$ Να προσδιορίσετε:
+        <ol class="vertical-list">
+          <li>Τα όρια $\lim\limits_{x\to 0}\dfrac{\sqrt{x^2 +2x+9}-3}{x},$ $\lim\limits_{x\to
+            0}\left(x^7\gsin\dfrac{2}{x}\right)$ και $\lim\limits_{x\to 0}f(x).$</li>
+          <li>Την τιμή $f(0).$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Έστω $f,g: \mathbb{R}\to\mathbb{R}$ συναρτήσεις τέτοιες ώστε
+        \[|f(x)-\gcos x|\leq g(x),\tag{$\ast$}\]
+        για κάθε $x\in\mathbb{R}.$ Αν η $g$ είναι συνεχής στο $0$ και η $C_g$ διέρχεται από την αρχή των αξόνων,
+        αποδείξτε ότι η $f$ είναι συνεχής στο $0.$
+      </div>
+
+      <div class="exercise">
+        Δίνεται συνεχής στο $x_0=0$ συνάρτηση $f$ με
+        \[xf(x)+|\gsin x|\leq|x|,\tag{$\ast$}\]
+        για κάθε $x\in\mathbb{R}.$ Να υπολογίσετε την τιμή $f(0).$
+      </div>
+
+      <div class="exercise">
+        Θεωρούμε συνάρτηση $f,$ συνεχή στο $3,$ για την οποία ισχύει
+        \[|f(x)|\leq x^2-6x+9, \tag{$\ast$}\]
+        για κάθε $x\in\mathbb{R}\setminus\{3\}.$ Να προσδιορίσετε την τιμή $f(3).$
+      </div>
+
+      <div class="exercise">
+        Θεωρούμε συνάρτηση $f,$ για την οποία ισχύει
+        \[|f(x)+5x|\leq (x+2)^4, \tag{$\ast$}\]
+        για κάθε $x\in\mathbb{R}.$ Να αποδειχθεί ότι η $f$ είναι συνεχής στο $x_0=-2.$
+      </div>
+
+      <div class="exercise">
+        Έστω $f$ συνάρτηση για την οποία ισχύει
+        \[(f(x)-x^2)(f(x)-x^4)\leq 0,\tag{$\ast$}\]
+        για κάθε $x\in\mathbb{R}.$
+        <ol class="array-list">
+          <li>Αποδείξτε ότι η $f$ είναι συνεχής στο $0.$</li>
+          <li>Υπολογίστε το όριο $\lim\limits_{x\to +\infty}f(x).$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Αν για τη συνάρτηση $f$ ισχύει ότι
+        \[|f(x)|\leq x^2-10x+25, \tag{$\ast$}\]
+        για κάθε $x\in\mathbb{R},$
+        αποδείξτε ότι η $f$ είναι συνεχής στο $x_0=5$ αν και μόνο αν $f(5)=0.$
+      </div>
+
+      <div class="exercise">
+        Θεωρούµε τη συνάρτηση $f$ για την οποία ισχύει
+        \[2\Big(1+\sqrt{\gsin x}\Big)\leq f(x) \leq 3 + \gsin x, \tag{$\ast$}\]
+        για κάθε $x\in[0, \pi].$
+        <ol class="vertical-list">
+          <li>Αποδείξτε ότι η $f$ είναι συνεχής στο $\dfrac{\pi}{2}.$</li>
+          <li>Αν $g(x)=\gcos^2 x$ και $h(x)=f (x) - 4,$ να προσδιορίσετε το όριο
+            $\lim\limits_{x\to\frac{\pi}{2}}\dfrac{g(x)}{h(x)}.$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Δίνεται συνάρτηση $f,$ για την οποία ισχύουν $f(0)=0$ και $\lim\limits_{x\to 0}\dfrac{f(x)}{x}=1.$ Αποδείξτε ότι
+        η $f$ είναι συνεχής στο $x_0=0.$
+      </div>
+
+      <div class="exercise">
+        Έστω $f:(-1,1)\to\mathbb{R}$ συνάρτηση ώστε τα όρια
+        \[\lim\limits_{x\to 0^+}\dfrac{f(x)-f(0)}{x}\ \textnormal{και}\ \lim\limits_{x\to 0^-}\dfrac{f(x)-f(0)}{x}\]
+        να είναι πραγματικοί αριθμοί. Αποδείξτε ότι η $f$ είναι συνεχής στο $0.$
+      </div>
+
+      <div class="exercise">
+        Δίνεται συνεχής στο $1$ συνάρτηση $f,$ για την οποία ισχύει ότι
+        \[\lim\limits_{x\to 1}\dfrac{f(x)-\sqrt{x}+\gsin(x-1)}{x^2-1}=2.\]
+        <ol class="vertical-list">
+          <li>Να αποδείξετε ότι η γραφική παράσταση της $f$ διέρχεται από το σημείο $\textnormal{M}(1,1).$</li>
+          <li>Να προσδιορίσετε το $\lim\limits_{x\to 1}\dfrac{|3f(x)-2|-1}{x^2-1}.$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Αν για τη συνάρτηση $f:\mathbb{R}\to\mathbb{R}$ ισχύει ότι
+        $\lim\limits_{x\to 4}\dfrac{f(x)(3x^2-48)}{3x-6}=-\infty,$ εξετάστε αν η $f$ είναι συνεχής στο σημείο $x_0=4.$
+      </div>
+
+      <div class="exercise">
+        Έστω συνεχής στο $x_0=1$ συνάρτηση $f$ με $\lim\limits_{x\to 1}\dfrac{f(x)-x-3}{x-1}=\dfrac{11}{4}.$
+        <ol class="vertical-list">
+          <li>Αποδείξτε ότι το σημείο $\textnormal{Α}(1,4)$ ανήκει στην γραφική παράσταση της $f.$</li>
+          <li>Προσδιορίστε το $\lim\limits_{x\to 1}\dfrac{f(x)-f(1)}{x-1}.$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Έστω συνάρτηση $f,$ ορισμένη στο $\mathbb{R},$ με $f(0)=3$ και
+        $\lim\limits_{x\to 0}\dfrac{f(x)-3-\gtan x}{x^2-x}=5.$
+        <ol class="vertical-list">
+          <li>Αποδείξτε ότι η $f$ είναι συνεχής στο $x_0=0.$</li>
+          <li>Υπολογίστε το όριο $\lim\limits_{x\to 0}\dfrac{f(x)-3}{x}.$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Δίνεται περιττή και συνεχής στο $x_0=1$ συνάρτηση $f$ με $\lim\limits_{x\to 1}\dfrac{f(x)-5}{x-1}=10.$
+        <ol class="vertical-list">
+          <li>Να προσδιορίσετε την τιμή $f(1).$</li>
+          <li>Να αποδείξετε ότι η $f$ είναι συνεχής στο $x_0=-1.$</li>
+          <li>Να προσδιορίσετε το $\lim\limits_{x\to -1}\dfrac{f(x)+5}{x+1}.$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Έστω συνάρτηση $f:[0,+\infty) \to\mathbb{R},$ συνεχής στο $x_0=0,$ με
+        \[|f(x)-x|\leq xe^{-\frac{1}{x^2}},\tag{$\ast$}\]
+        για κάθε $x\in(0,+\infty).$
+        <ol class="vertical-list">
+          <li>Να προσδιορίσετε την τιμή $f(0).$</li>
+          <li>Να υπολογίσετε το όριο $\lim\limits_{x\to 0}\dfrac{f(x)}{x}.$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Δίνεται συνάρτηση $f,$ συνεχής στο σημείο $x_0\in\mathbb{R}.$
+        <ol class="vertical-list">
+          <li>Αν η $f$ είναι άρτια, αποδείξτε ότι η $f$ είναι συνεχής στο σημείο $-x_0.$</li>
+          <li>Αν η $f$ είναι περιττή, αποδείξτε ότι η $f$ είναι συνεχής στο σημείο $-x_0.$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Έστω συνάρτηση $f,$ συνεχής στο $2,$ με $f(3)=10$ και
+        \[f(5-x)=f(x), \tag{$\ast$}\]
+        για κάθε $x\in\mathbb{R}.$
+        <ol class="vertical-list">
+          <li>Να προσδιορίσετε την τιμή $f(2).$</li>
+          <li>Να αποδείξετε ότι η $f$ είναι συνεχής στο $3.$</li>
+        </ol>
+      </div>
+
+      <h3 id="continuity-domain">Συνέχεια στο πεδίο ορισμού</h3>
+
+      <div class="exercise">
+        Να μελετήσετε ως προς τη συνέχεια τη συνάρτηση $f$ όταν:
+        <ol class="array-list">
+          <li>$f(x)=\begin{cases} x^3-5,& x\leq 2\\ \dfrac{2-x}{\sqrt{x}-\sqrt{2}},&x\gt 2\end{cases}$</li>
+          <li>$f(x)=\begin{cases}\dfrac{|x^2-1|}{x+1},&x\neq -1 \\ -2,&x=-1\end{cases}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να προσδιορίσετε την τιμή του $\alpha\in\mathbb{R}$ ώστε η συνάρτηση $f$ να είναι συνεχής, όταν:
+        <ol class="array-list">
+          <li>$f(x)=\begin{cases}\dfrac{3x^2-2x-1}{x-1},&x\neq 1\\ \alpha,&x=1\end{cases}$</li>
+          <li>$f(x)=\begin{cases}\alpha x+1,&x\leq 1\\ \dfrac{1-x\sqrt{x}}{x-1},&x\gt 1\end{cases}$</li>
+          <li>$f(x)=\begin{cases}\dfrac{1+\gcos x}{x-\pi},&x\lt \pi \\ \alpha x+2,&x\geq\pi\end{cases}$</li>
+          <li>$f(x)=\begin{cases}\dfrac{3\ln x-2}{2-\ln x},&x \gt 0 \\ \alpha,&x\geq 2\end{cases}$</li>
+          <li>$f(x)=\begin{cases}\dfrac{3\alpha}{x^3}+1,&0\lt x\leq 2 \\[1ex] \dfrac{1-\sqrt{x-1}}{x^2-4},&x \gt
+            2\end{cases}$</li>
+          <li>$f(x)=\begin{cases}3\alpha e^{x+1}+x,&\lt x\leq -1 \\ 2x^2-\alpha x,&x \gt -1\end{cases}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Θεωρούμε τις συναρτήσεις
+        \[f(x)=\begin{cases} 3, & x\neq 1\\ 0,&x=1\end{cases}\ \ \textnormal{και}\ \ g(x)= 3x-2.\]
+        Να εξετάσετε ως προς τη συνέχεια τις συναρτήσεις $g\circ f$ και $f\circ g.$
+      </div>
+
+      <div class="exercise">
+        Δίνονται συνεχείς συναρτήσεις $f,g:\mathbb{R}\to\mathbb{R}$ για τις οποίες ισχύουν
+        \[
+        \begin{align}
+        \lim\limits_{x \to 6}\dfrac{f(x)}{x - 6}&=1,\\[1ex]
+        \lim\limits_{x \to 6}\left(g(x)\cdot\left(\sqrt{x-2}-2\right)\right)&=2.
+        \end{align}
+        \]
+        Να εξετάσετε τη συνάρτηση
+        \[h(x)=\begin{cases}f(x)\cdot g(x),& x\neq 6\\ 8,&x=6\end{cases}\]
+        ως προς τη συνέχεια.
+      </div>
+
+      <div class="exercise">
+        Να προσδιορίσετε τις τιμές των $\lambda , \mu\in\mathbb{R}$ ώστε η συνάρτηση
+        \[f(x)=\begin{cases} 2x^2+(\lambda^3+1)x-2,&\!\! x\lt 1\\
+        x^4-(\lambda^2+\mu+1)x^2-3\lambda, &\!\! x\geq 1\end{cases}\]
+        να είναι συνεχής και η γραφική της παράσταση να διέρχεται από το σημείο $\textnormal{Α}(2,3).$
+      </div>
+
+      <div class="exercise">
+        Να προσδιορίσετε τις τιμές των $\alpha, \beta\in\mathbb{R}$ ώστε η συνάρτηση
+        \[f(x)=\begin{cases}\alpha^2 \gsin x-\beta,&x\lt 0\\ 2x+\alpha,& 0\leq x\leq\frac{\pi}{2}\\ 2\alpha\gsin
+        x,&x\geq\frac{\pi}{2} \end{cases}\]
+        να είναι συνεχής.
+      </div>
+
+      <div class="exercise">
+        Να προσδιορίσετε τις τιμές των $\alpha,\beta\in\mathbb{R}$ ώστε η συνάρτηση
+        \[f(x)=\begin{cases}\alpha x+\beta,&x\lt 2\\
+        2x,&2\leq x\lt 3\\
+        \dfrac{4\alpha x^2}{9}+\beta x,&x\geq 3\end{cases}\]
+        να είναι συνεχής.
+      </div>
+
+      <div class="exercise">
+        Δίνεται συνεχής συνάρτηση $f:[a,b] \to\mathbb{R},$ όπου $\alpha,\beta\in\mathbb{R}$ με $\alpha\lt \beta.$
+        Αποδείξτε ότι η συνάρτηση
+        \[g(x)=\begin{cases} f(\alpha),&x\leq\alpha \\
+        f(x), &\alpha\lt x\lt \beta\\
+        f(\beta), &x\geq\beta \end{cases}\]
+        είναι συνεχής.</div>
+
+      <div class="exercise">
+        Δίνεται συνεχής στο διάστημα $[0,2]$ συνάρτηση $f$ με $f(0)=f(1).$ Να μελετήσετε ως προς τη συνέχεια τις
+        παρακάτω συναρτήσεις:
+        <ol class="array-list">
+          <li>$g(x)=\begin{cases} f(3x), & 0\leq x\lt \frac{1}{3}\\ f(3x-1), & \frac{1}{3}\leq x\leq 1\end{cases}$</li>
+          <li>$h(x)=\begin{cases} f(3x), & 0\leq x\leq\frac{1}{3}\\ f(3x-1), & \frac{1}{3}\lt x\leq \frac{2}{3}\\
+            f(3x-2),& \frac{2}{3}\lt x\leq\frac{4}{3}\end{cases}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Για τη συνάρτηση $f$ ισχύει
+        \[f(x+y)=f(x)+f(y), \tag{$\ast$}\]
+        για κάθε $x,y\in\mathbb{R}.$
+        <ol class="vertical-list">
+          <li>Αποδείξτε ότι αν η $f$ είναι συνεχής στο $0,$ τότε η $f$ είναι συνεχής στο $\mathbb{R}.$</li>
+          <li>Αποδείξτε ότι αν η $f$ είναι συνεχής σε ένα σημείο $\alpha\in\mathbb{R},$ τότε η $f$ είναι συνεχής στο
+            $\mathbb{R}.$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Για τη συνάρτηση $f$ ισχύει
+        \[f(x-y)=f(x)-f(y), \tag{$\ast$}\]
+        για κάθε $x,y\in\mathbb{R}.$
+        <ol class="vertical-list">
+          <li>Αποδείξτε ότι αν η $f$ είναι συνεχής στο $0,$ τότε η $f$ είναι συνεχής στο $\mathbb{R}.$</li>
+          <li>Αποδείξτε ότι αν η $f$ είναι συνεχής σε ένα σημείο $\alpha\in\mathbb{R},$ τότε η $f$ είναι συνεχής στο
+            $\mathbb{R}.$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Για τη συνάρτηση $f$ ισχύει
+        \[f(xy)=f(x)+f(y), \tag{$\ast$}\]
+        για κάθε $x,y\in\mathbb{R}^{\ast}.$
+        <ol class="vertical-list">
+          <li>Αποδείξτε ότι αν η $f$ είναι συνεχής στο $1,$ τότε η $f$ είναι συνεχής στο $\mathbb{R}^{\ast}.$</li>
+          <li>Αποδείξτε ότι αν η $f$ είναι συνεχής σε ένα σημείο $\alpha\in\mathbb{R}^{\ast},$ τότε η $f$ είναι συνεχής
+            στο $\mathbb{R}^{\ast}.$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Για τη συνάρτηση $f$ ισχύει
+        \[f\left(\dfrac{x}{y}\right)=f(x)-f(y), \tag{$\ast$}\]
+        για κάθε $x,y\in\mathbb{R}^{\ast}.$
+        <ol class="vertical-list">
+          <li>Αποδείξτε ότι αν η $f$ είναι συνεχής στο $1,$ τότε η $f$ είναι συνεχής στο $\mathbb{R}^{\ast}.$</li>
+          <li>Αποδείξτε ότι αν η $f$ είναι συνεχής σε ένα σημείο $\alpha\in\mathbb{R}^{\ast},$ τότε η $f$ είναι συνεχής
+            στο $\mathbb{R}^{\ast}.$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Για τη συνάρτηση $f$ ισχύει
+        \[|f(x)-f(y)|\leq \alpha |x-y|, \tag{$\ast$}\]
+        για κάθε $x,y\in\mathbb{R},$ όπου $\alpha\in\mathbb{R}.$
+        <ol class="vertical-list">
+          <li>Αποδείξτε ότι η $f$ είναι συνεχής στο $\mathbb{R}.$</li>
+          <li>Αν $\beta \gt \alpha,$ αποδείξτε ότι η εξίσωση $f(x)=\beta x$ διαθέτει το πολύ μία πραγματική λύση.</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Θεωρούμε τη συνάρτηση $f(x)=\dfrac{x(1+x^2)}{|x|},$ $x\neq 0.$
+        <ol class="vertical-list">
+          <li>Αποδείξτε ότι η $f$ δεν είναι συνεχής στο $0.$</li>
+          <li>Αποδείξτε ότι η $f$ είναι αντιστρέψιμη.</li>
+          <li>Να προσδιορίσετε την αντίστροφη της $f$ και να αποδείξετε ότι είναι συνεχής.</li>
+        </ol>
+      </div>
+
+    </section>
+
+    <section id="continuity-theorems">
+
+      <h2>Bασικά θεωρήματα συνέχειας</h2>
+
+      <div class="exercise">
+        Αποδείξτε ότι η συνάρτηση $f$ διαθέτει μία τουλάχιστον ρίζα στο διάστημα $\Delta$ όταν:
+        <ol class="array-list">
+          <li>$f(x)=x^3+x-3,\quad$ $\Delta=(0,2)$</li>
+          <li>$f(x)=x^3+\gsin x-3,\quad$ $\Delta=(0,\pi)$</li>
+          <li>$f(x)=x^5+\ln x+1,\quad$ $\Delta=\left(\frac{1}{e^2},1\right)$</li>
+          <li>$f(x)=x+\ln x-\sqrt{x},\quad$ $\Delta=\left(\frac{1}{2},2\right)$</li>
+          <li>$f(x)=x-\gcos x,\quad$ $\Delta=\left(0,\frac{\pi}{2}\right)$</li>
+          <li>$f(x)=2^x+x,\quad$ $\Delta=(-1,1)$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Αποδείξτε ότι η συνάρτηση $f$ διαθέτει μία τουλάχιστον ρίζα στο διάστημα $\Delta$ όταν:
+        <ol class="array-list">
+          <li>$f(x)=x+\gsin x+e^x,\quad$ $\Delta=(-\pi,\pi)$</li>
+          <li>$f(x)=x^2(3^{-x}-x^3),\quad$ $\Delta=(-1,1)$</li>
+          <li>$f(x)=(x^3-1)\ln(x^2+1),\quad$ $\Delta=(-1,2)$</li>
+          <li>$f(x)=\sqrt[3]{x^2+1}-e^x,\quad$ $\Delta=(-1,1)$</li>
+          <li>$f(x)=17x^2-\dfrac{1}{x^5}-19,\quad$ $\Delta=(-1,0)$</li>
+          <li>$f(x)=x^2-e^x+11,\quad$ $\Delta=(0,3)$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Αποδείξτε ότι καθεµία από τις παρακάτω εξισώσεις διαθέτει µία τουλάχιστον λύση στο αντίστοιχο διάστηµα $\Delta$:
+        <ol class="array-list">
+          <li>$(x+1)2^{x+1}=1,\quad$ $\Delta=(-1,0)$</li>
+          <li>$ex^3=x^2 + 2,\quad$ $\Delta=(0,2)$</li>
+          <li>$x^4 + 3x + 1=0,\quad$ $\Delta=(-2,2)$</li>
+          <li>$x^6=-4x^3-1,\quad$ $\Delta=(-2,1)$</li>
+          <li>$\dfrac{x^5}{x-1}+\dfrac{e^x}{x-2}=0,\quad$ $\Delta=(1,2)$</li>
+          <li>$\dfrac{x^2+5}{x-2}+\dfrac{\ln x}{x-3}=0,\quad$ $\Delta=(2,3)$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Σε καθεµία από τις παρακάτω περιπτώσεις να λυθεί η εξίσωση $f (x) = 0$ και να προσδιοριστεί το πρόσηµο της
+        συνάρτησης $f$ στο διάστημα $\Delta$:
+        <ol class="array-list">
+          <li>$f(x)=(\pi-x)\ln x,\quad$ $\Delta=(0,+\infty)$</li>
+          <li>$f(x)=\ln(\gsin x),\quad$ $\Delta=(0,\pi)$</li>
+          <li>$f(x)=e^x+x-1,\quad$ $\Delta=\mathbb{R}$</li>
+          <li>$f(x)=2\ln x+x^3-1,\quad$ $\Delta=(0,+\infty)$</li>
+          <li>$f(x)=\sqrt{x^2+16}-\dfrac{x}{3}-4,\quad$ $\Delta=\mathbb{R}$</li>
+          <li>$f(x)=|x-4|-\dfrac{6}{\sqrt{x+3}},\quad$ $\Delta=\mathbb{R}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">Να προσδιορίσετε το σύνολο τιµών της συνάρτησης $f$ όταν:
+        <ol class="array-list">
+          <li>$f (x)=e^x+x$</li>
+          <li>$f(x)=\sqrt{x}-\sqrt{4-x}$</li>
+          <li>$f(x)=\ln x-\sqrt{e-x}$</li>
+          <li>$f(x)= \dfrac{4}{\sqrt{x}}$</li>
+          <li>$f(x)=4e^{-x}-\sqrt{x}$</li>
+          <li>$f(x) = -2\ln x+\sqrt{1 - x}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Αποδείξτε ότι καθεµία από τις παρακάτω εξισώσεις διαθέτει ακριβώς µία λύση στο αντίστοιχο διάστηµα $\Delta$:
+        <ol class="array-list">
+          <li>$x^5 + 25x = 11,\quad$ $\Delta=(0, 1)$</li>
+          <li>$e^x=-x^9,\quad$ $\Delta=(−1, 0)$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Αποδείξτε ότι καθεµία από τις παρακάτω εξισώσεις διαθέτει δύο τουλάχιστον λύσεις στο αντίστοιχο διάστηµα
+        $\Delta$:
+        <ol class="array-list">
+          <li>$x^3 + 3=6x^2,\quad$ $\Delta=(−1, 1)$</li>
+          <li>$\dfrac{1}{x-2}+\dfrac{2}{x-3}=\dfrac{3}{4-x},\quad$ $\Delta=(2, 4)$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Δίνεται η συνάρτηση $f(x)=(x-1)^4+3.$ Να προσδιορίσετε τα διαστήματα μονοτονίας της $f,$ καθώς και το σύνολο
+        $f(\Delta)$ όταν:
+        <ol class="array-list">
+          <li>$\Delta=[2,3]$</li>
+          <li>$\Delta=(-4,1]$</li>
+          <li>$\Delta=(-2,2)$</li>
+          <li>$\Delta=(5,+\infty)$</li>
+          <li>$\Delta=[0,+\infty)$</li>
+          <li>$\Delta=\left(-\infty, \frac{1}{2}\right)$</li>
+          <li>$\Delta=\left(-\infty, \frac{3}{2}\right]$</li>
+          <li>$\Delta=\mathbb{R}$</li>
+          </li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Αποδείξτε ότι η συνάρτηση $f(x)= x^2+\gsin^2 \pi x +\gcos 3\pi x +3,$ με πεδίο ορισμού το $[-2,1],$ λαμβάνει την
+        τιμή $4.$
+      </div>
+
+      <div class="exercise">
+        Έστω η συνάρτηση $f(x)= x^3+\gcos\pi x +2.$ Αποδείξτε ότι για κάθε $\alpha\in[2,3]$ υπάρχει $x_0\in[0,1]$ ώστε
+        $f(x_0)=\alpha.$
+      </div>
+
+      <div class="exercise">
+        Αποδείξτε ότι η εξίσωση \[\gcos x=3-2x\] διαθέτει λύση στο διάστημα $\left(\frac{\pi}{4},\frac{\pi}{2}\right).$
+      </div>
+
+      <div class="exercise">
+        Αποδείξτε ότι η εξίσωση \[x^8-16x-5=0\] διαθέτει λύση.
+      </div>
+
+      <div class="exercise">
+        Αποδείξτε ότι η εξίσωση \[\gsin x+x^2-2=0\] διαθέτει μοναδική λύση στο $\left(0,\frac{\pi}{2}\right).$
+      </div>
+
+      <div class="exercise">
+        Αποδείξτε ότι η εξίσωση \[\dfrac{x^{10}+1}{x+1}+\dfrac{x^{20}+2}{x-1}=0\] διαθέτει μοναδική λύση στο διάστημα
+        $(-1,1).$
+      </div>
+
+      <div class="exercise">
+        Θεωρούμε συνάρτηση $f,$ συνεχή στο $[1,2],$ με $f(1)\lt 1$ και $f(2) \gt 4.$ Αποδείξτε ότι η εξίσωση $f(x)=3x-2$
+        διαθέτει λύση στο διάστημα $(1,2).$
+      </div>
+
+      <div class="exercise">
+        Αποδείξτε ότι η εξίσωση $x^5+5x=\kappa$ διαθέτει μοναδική λύση στο διάστημα $[0,1],$ για κάθε $\kappa\in[0,6].$
+      </div>
+
+      <div class="exercise">
+        Έστω $\alpha,\beta,\gamma\in\mathbb{R}$ με $\alpha\lt \beta\lt \gamma.$ Αποδείξτε ότι η εξίσωση
+        \[f(x)= 3(x-\alpha)(x-\beta)+4(x-\beta)(x-\gamma)+9(x-\alpha)(x-\gamma),\tag{$\ast$}\]
+        διαθέτει δύο τουλάχιστον λύσεις.
+      </div>
+
+      <div class="exercise">
+        Αποδείξτε ότι για κάθε $\alpha\in\mathbb{R},$ η εξίσωση $x+\gcos\alpha=\gcos x+\pi$ διαθέτει λύση στο διάστημα
+        $\left(\frac{\pi}{2}, \pi\right].$
+      </div>
+
+      <div class="exercise">
+        Αν $\alpha,\beta \gt 0,$ αποδείξτε ότι η εξίσωση $\alpha\gcos x+\beta=x$ διαθέτει θετική λύση που δεν υπερβαίνει
+        τον $\alpha+\beta.$
+      </div>
+
+      <div class="exercise">
+        Έστω $\alpha,\beta,\gamma \gt 0.$ Αποδείξτε ότι η εξίσωση
+        $\dfrac{\alpha}{x+1}+\dfrac{\beta}{x}+\dfrac{\gamma}{x-1}=0$ διαθέτει ακριβώς δύο λύσεις.
+      </div>
+
+      <div class="exercise">
+        Έστω συνεχής συνάρτηση $f: \mathbb{R}\to\mathbb{R},$ τέτοια ώστε $f (0) = f (4).$ Αποδείξτε ότι υπάρχει ένας
+        τουλάχιστον πραγµατικός αριθµός $\xi$ τέτοιος ώστε
+        $f(\xi)=f(\xi+2).$
+      </div>
+
+      <div class="exercise">
+        Έστω συνάρτηση $f,$ συνεχής στο $[1, 3],$ µε $f (1)f (3)+3\lt 3f (1)+f (3).$ Αποδείξτε ότι υπάρχει ένας
+        τουλάχιστον $\xi\in(1, 3)$ τέτοιος ώστε $f (\xi)=\xi.$
+      </div>
+
+      <div class="exercise">
+        Έστω συνάρτηση $f,$ συνεχής στο $[0, 5],$ τέτοια ώστε $0\lt f (x)\lt 1$ για κάθε $x\in[0, 5].$ Αποδείξτε ότι η
+        γραφική παράσταση της συνάρτησης $g(x)=f(5x)- x$ διαθέτει ένα τουλάχιστον κοινό σηµείο µε τον άξονα $x^\prime
+        x.$
+      </div>
+
+      <div class="exercise">
+        Έστω συνάρτηση $f,$ συνεχής και γνησίως αύξουσα στο $[0, 1]$ με $f (1) = \dfrac{1}{2}.$ Αποδείξτε ότι οι
+        γραφικές παραστάσεις των $g(x)=2f(x)$ και $h(x)=(1-x)\gcos^2 x$ διαθέτουν κοινό σηµείο µε τετµηµένη $x_0\in(0,
+        1).$
+      </div>
+
+      <div class="exercise">
+        Θεωρούµε συνάρτηση $f,$ συνεχή στο $R,$ της οποίας η γραφική παράσταση διέρχεται από το σηµείο $\mathrm{A}(3,
+        1)$ και δεν διαθέτει κοινό σηµείο µε τον άξονα $x^\prime x.$ Αποδείξτε ότι η εξίσωση $f(x)=(2-x)(x-5)$ διαθέτει
+        δύο τουλάχιστον λύσεις στο $(2, 5).$
+      </div>
+
+      <div class="exercise">
+        Θεωρούµε συνάρτηση $f,$ συνεχή στο $\mathbb{R},$ με $f(0)=-1$ και
+        \[f^2(x)=x^4 + 1, \tag{$\ast$}\]
+        για κάθε $x\in\mathbb{R}.$ Να προσδιορίσετε τον τύπο της $f.$
+      </div>
+
+      <div class="exercise">
+        Θεωρούµε συνάρτηση $f,$ συνεχή στο $\mathbb{R},$ με $f(-2) \gt 0,$ $f(3) \gt 0$ και
+        \[f^2(x)=(e^x -e)^2, \tag{$\ast$}\]
+        για κάθε $x\in\mathbb{R}.$ Να προσδιορίσετε τον τύπο της $f.$
+      </div>
+
+      <div class="exercise">
+        Θεωρούµε συνάρτηση $f,$ συνεχή στο $\mathbb{R},$ με $ f (1) \gt 0$ και
+        \[f^2(x)+2f (x)=x^2 + x + 1, \tag{$\ast$}\]
+        για κάθε $x\in\mathbb{R}.$ Να προσδιορίσετε τον τύπο της $f.$
+      </div>
+
+      <div class="exercise">
+        Έστω συνεχής στο $[-2,2]$ συνάρτηση $f$ με
+        \[ x^2+f^2(x)=4, \tag{$\ast$}\]
+        για κάθε $x\in[-2,2].$
+        <ol class="vertical-list">
+          <li>Αποδείξτε ότι η $f$ διατηρεί σταθερό πρόσημο στο διάστημα $(-2,2).$</li>
+          <li>Αν επιπλέον $f(0)=2,$ να προσδιοριστεί ο τύπος της $f.$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να προσδιοριστούν όλες οι συνεχείς συναρτήσεις $f$ με
+        \[f^2(x)=3+5x^4, \tag{$\ast$}\]
+        για κάθε $x\in\mathbb{R}.$
+      </div>
+
+      <div class="exercise">
+        Δινεται η συνάρτηση $f:[0,2]\to\mathbb{R}$ με $f(x)=x^2 \cdot 2^x.$
+        <ol class="vertical-list">
+          <li>Να προσδιορίσετε το σύνολο $f([0,2]).$</li>
+          <li>Να αποδείξετε ότι η εξίσωση $f(x)-1=\alpha$ διαθέτει μοναδική λύση, για κάθε $\alpha\in[-1,15].$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Δίνεται η συνάρτηση $f(x)=|x^2-6x|,$ με πεδίο ορισμού το διάστημα $[0,8].$
+        <ol class="vertical-list">
+          <li>Να προσδιορίσετε το σύνολο τιμών της $f.$</li>
+          <li>Να προσδιορίσετε το πλήθος των λύσεων της εξίσωσης $f(x)=\alpha,$ για τις διάφορες τιμές του πραγματικού
+            αριθμού $\alpha.$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Έστω $\alpha,\beta\in\mathbb{R}$ με $\alpha\lt \beta.$ Αποδείξτε ότι η γραφική παράσταση της συνάρτησης
+        \[f(x)=(x^2+1)(x-\alpha) +(2-\gsin x)(x-\beta)\]
+        τέμνει τον άξονα $x^{\prime}x$ σε ένα τουλάχιστον σημείο.
+      </div>
+
+      <div class="exercise">
+        Δίνεται συνεχής και γνησίως μονότονη συνάρτηση $f:[1,5]\to\mathbb{R},$ της οποίας η γραφική παράσταση διέρχεται
+        από τα σημεία $\textnormal{A}(1,8)$ και $\textnormal{B}(5,12).$
+        <ol class="vertical-list">
+          <li>Αποδείξτε ότι η $f$ είναι γνησίως αύξουσα.</li>
+          <li>Αποδείξτε ότι η συνάρτηση $f$ λαμβάνει την τιμή $29/3.$</li>
+          <li>Αποδείξτε ότι υπάρχει μοναδικό $x_0\in(1,5)$ ώστε $f(x_0)=\dfrac{2f(2)+3f(3)+4f(4)}{9}.$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Δίνεται συνεχής συνάρτηση $f:[1,5]\to\mathbb{R}.$ Να αποδείξετε ότι υπάρχει $\xi\in[1,5]$ τέτοιο ώστε \[f(\xi )
+        = \dfrac{3f(2) + 5f(3) + 7f(4)}{15}.\]
+      </div>
+
+      <div class="exercise">
+        Έστω $f:[-1,1]\to\mathbb{R}$ συνεχής συνάρτηση με $\alpha f(-1)+\beta f(0)+\gamma f(1)=0,$ όπου
+        $\alpha,\beta,\gamma \gt 0.$ Αποδείξτε ότι η $f$ διαθέτει ρίζα στο $[-1,1].$
+      </div>
+
+      <div class="exercise">
+        Δίνεται η συνάρτηση $f(x)= \sqrt{4-x}-\sqrt{2-x}.$
+        <ol class="vertical-list">
+          <li>Να αποδείξετε ότι η $f$ είναι συνεχής και γνησίως μονότονη.</li>
+          <li>Να προσδιορίσετε το σύνολο τιμών της $f.$</li>
+          <li>Να επιλύσετε την ανίσωση $f(x)\lt 1.$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Δίνεται η συνάρτηση $f(x)= \sqrt{x^2+1}.$
+        <ol class="vertical-list">
+          <li>Να προσδιορίσετε τα διαστήματα μονοτονίας της $f.$</li>
+          <li>Να προσδιορίσετε το σύνολο τιμών της $f.$</li>
+          <li>Να προσδιορίσετε τα σύνολα $f\Big((1,3]\Big),$ $f\Big((-1,1)\Big),$ $f\Big([-\sqrt{3},+\infty)\Big)$ και
+            $f(\mathbb{R}^\ast).$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Έστω η συνάρτηση
+        \[f(x)=\begin{cases} \alpha^3 x^3+\alpha x+1,&x\lt 1 \\ -2\alpha x^2 +3, &x\geq 1\end{cases}\]
+        Αποδείξτε ότι υπάρχει τουλάχιστον μία τιμή του $\alpha\in\mathbb{R}$ για την οποία η $f$ είναι συνεχής.
+      </div>
+
+      <div class="exercise">
+        Αποδείξτε ότι η συνάρτηση $f(x)=\ln(x-1)+\ln(2-x)-\ln 2$ είναι αρνητική.
+      </div>
+
+      <div class="exercise">
+        Έστω συνάρτηση $f,$ συνεχής και γνησίως αύξουσα στο διάστημα $[\alpha,\beta].$ Αποδείξτε ότι υπάρχει
+        $\xi\in(\alpha,\beta)$ τέτοιος ώστε
+        $3f(\xi)=f(\alpha)+f(\beta)+f\left(\dfrac{\alpha+\beta}{2}\right).$
+      </div>
+
+      <div class="exercise">
+        Έστω $\alpha,\beta\in\mathbb{R}$ με $\alpha\lt \beta.$ Θεωρούμε συναρτήσεις $f,g$ συνεχείς στο $[\alpha,\beta]$
+        με $f(\alpha) \gt g(\alpha)$ , $f(\beta)\lt g(\beta).$ Αποδείξτε ότι υπάρχει $x_0\in(\alpha,\beta)$ τέτοιο ώστε
+        $f(x_0)=g(x_0).$
+      </div>
+
+      <div class="exercise">
+        Έστω $\alpha,\beta\in\mathbb{R}$ με $\alpha\lt \beta.$ Θεωρούμε συναρτήσεις $f,g$ συνεχείς στο $[\alpha,\beta]$
+        με $f(\alpha)+ f(\beta)=g(\alpha)+g(\beta).$ Αποδείξτε ότι υπάρχει ένα τουλάχιστον $x_0\in[\alpha,\beta]$ τέτοιο
+        ώστε $f(x_0)=g(x_0).$
+      </div>
+
+      <div class="exercise">
+        Έστω $\alpha,\beta\in\mathbb{R}$ με $\alpha\lt \beta.$ Θεωρούμε συνάρτηση $f$ συνεχή στο $[\alpha,\beta]$ με
+        $\kappa f(\alpha)+\lambda f(\beta)=0,$ όπου $\kappa,
+        \lambda \gt 0.$ Αποδείξτε ότι υπάρχει $x_0\in[\alpha,\beta]$ τέτοιο ώστε $f(x_0)=0.$
+      </div>
+
+      <div class="exercise">
+        Έστω $\alpha,\beta\in\mathbb{R}$ με $\alpha\lt \beta.$ Θεωρούμε συνεχή συνάρτηση $f:[\alpha,\beta]\to\mathbb{R}$
+        με $f(\alpha)=f(\beta) .$ Αποδείξτε ότι υπάρχει $x_0\in\left[\alpha,\frac{\alpha+\beta}{2}\right]$ τέτοιο ώστε
+        \[f(x_0)=f\left(x_0+\frac{\beta -\alpha}{2}\right).\]
+      </div>
+
+      <div class="exercise">
+        Έστω $\alpha,\beta\in\mathbb{R}$ με $\alpha\lt \beta.$ Θεωρούμε συνεχή συνάρτηση $f:[\alpha,\beta]\to\mathbb{R}$
+        με $f(\alpha)\neq f(\beta) .$ Αν $\kappa, \lambda \gt 0,$ αποδείξτε ότι υπάρχει $x_0\in(\alpha,\beta)$ τέτοιο
+        ώστε
+        \[f(x_0)=\dfrac{\kappa f(\alpha)+\lambda f(\beta)}{\kappa+\lambda}.\]
+      </div>
+
+      <div class="exercise">
+        Έστω $\alpha,\beta\in\mathbb{R}$ με $\alpha\lt \beta.$ Θεωρούμε συνεχείς συναρτήσεις
+        $f,g:[\alpha,\beta]\to\mathbb{R}$ με $f(\alpha)= \alpha$ και $f(\beta)= \beta.$ Υποθέτουμε επιπλέον ότι
+        $g([\alpha,\beta])\subseteq [\alpha,\beta].$ Αποδείξτε ότι υπάρχει $x_0\in[\alpha,\beta]$ τέτοιο ώστε
+        $2f(x_0)=(g\circ f)(x_0)+g(x_0).$
+      </div>
+
+      <div class="exercise">
+        Έστω $\alpha,\beta\in\mathbb{R}$ με $\alpha\lt \beta.$ Θεωρούμε συνεχή συνάρτηση
+        $f:[\alpha,\beta]\to\mathbb{R}.$ Αποδείξτε ότι υπάρχει $x_0\in(\alpha,\beta)$ τέτοιο ώστε
+        $f(x_0)=\dfrac{1}{x_0-\alpha}+\dfrac{1}{x_0-\beta}.$
+      </div>
+
+      <div class="exercise">
+        Έστω $\alpha \gt 0$ και συναρτήσεις $f,g,$ για τις οποίες υποθέτουμε ότι:
+        <ul class="bullet-list">
+          <li>οι $f,g$ είναι συνεχείς στο $[-\alpha, \alpha],$</li>
+          <li>η $f$ είναι περιττή,</li>
+          <li>$g(\alpha)=- \alpha$ και $g(-\alpha)=\alpha.$</li>
+        </ul>
+        Αποδείξτε ότι υπάρχει $x_0\in(-\alpha, \alpha)$ τέτοιο ώστε $f(g(x_0))+f(x_0)+g(x_0)=0.$
+      </div>
+
+      <div class="exercise">
+        Έστω $\alpha,\beta\in\mathbb{R}$ με $\alpha\lt \beta.$ Θεωρούμε συνεχή συνάρτηση $f:[\alpha,\beta]\to\mathbb{R}$
+        με $f(\alpha),f(\beta)\in(\alpha, \beta).$ Αποδείξτε ότι η $C_f$ διαθέτει κοινό σημείο με την ευθεία $y=x.$
+      </div>
+
+      <div class="exercise">
+        Έστω $\alpha,\beta\in\mathbb{R}$ με $\alpha\lt \beta.$ Θεωρούμε συνεχείς συναρτήσεις
+        $f:[\alpha,\beta]\to\mathbb{R}$ για τις οποίες υποθέτουμε ότι:
+        <ul class="bullet-list">
+          <li>$f([\alpha,\beta])=g([\alpha,\beta])=[\alpha,\beta],$</li>
+          <li>η $f$ είναι γνησίως φθίνουσα,</li>
+          <li>η $g$ είναι γνησίως αύξουσα.</li>
+        </ul>
+        Αποδείξτε ότι οι $C_f,$ $C_g$ διαθέτουν μοναδικό κοινό σημείο.
+      </div>
+
+      <div class="exercise">
+        Έστω $f:\mathbb{R}\to\mathbb{R}$ συνεχής συνάρτηση με μοναδική ρίζα $\alpha.$ Αν
+        \[f\left(\dfrac{\alpha^2+1}{2}\right) \gt 0,\]
+        να αποδείξετε ότι $f(\alpha+1) \gt 0.$
+      </div>
+
+      <div class="exercise">
+        Έστω $f:[\alpha,\beta]\to\mathbb{R}$ συνεχής συνάρτηση, με $f(\alpha)=f(\beta).$ Αν $\gamma$ και $\delta$ είναι
+        το μέσο και το μήκος του διαστήματος $[\alpha,\beta]$ αντιστοίχως, να αποδείξετε ότι υπάρχει $x_0\in
+        \left[0,\frac{\delta}{2}\right]$ τέτοιος ώστε $f(x_0+\alpha)=f(x_0+\gamma).$
+      </div>
+
+      <div class="exercise">
+        Έστω $\alpha,\beta\in\mathbb{R}$ με $\alpha\lt \beta.$ Θεωρούμε συνεχή και $1-1$ συνάρτηση $f$ στο διάστημα
+        $[\alpha,\beta]$ με $f(\alpha)f(\beta) \gt 0.$ Αποδείξτε ότι $f(x)f(\alpha)\geq 0$ για κάθε
+        $x\in[\alpha,\beta].$
+      </div>
+
+      <div class="exercise">
+        Έστω $P$ ένα μη σταθερό πολυώνυμο. Αν $f$ είναι συνεχής στο $\mathbb{R}$ συνάρτηση με $P\circ f=0,$ αποδείξτε
+        ότι η $f$ είναι σταθερή.
+      </div>
+
+      <div class="exercise">
+        Αν η συνάρτηση $f$ είναι συνεχής στο $[0,1]$ και ισχύει $0\lt f(x)\lt 1,$ για κάθε $x\in\mathbb{R},$ αποδείξτε
+        ότι υπάρχει $x_0\in(0,1)$ τέτοιο ώστε $f(x_0)=x_0^2.$
+      </div>
+
+      <div class="exercise">
+        Αν η συνάρτηση $f$ είναι συνεχής στο $[0,1]$ και ισχύει $0\lt f(x)\lt 1,$ για κάθε $x\in\mathbb{R},$ αποδείξτε
+        ότι υπάρχει $x_0\in(0,1)$ τέτοιο ώστε $f^2(x_0)+ f(x_0)=x_0^2+x_0.$
+      </div>
+
+      <div class="exercise">
+        Έστω $f$ συνεχής στο $[0,1]$ συνάρτηση, με σύνολο τιμών το $[0,1].$ Αποδείξτε ότι υπάρχει ένα τουλάχιστον
+        $x_0\in\left[0,\frac{\pi}{2}\right]$ με $f(\gcos x_0)=\gcos x_0.$
+      </div>
+
+      <div class="exercise">
+        Έστω $f$ συνεχής στο $[1,3]$ συνάρτηση με $f([1,3])\subseteq(1,3).$ Αποδείξτε ότι υπάρχει $x_0\in(1,3)$ τέτοιο
+        ώστε $f(x_0)=\dfrac{3}{x_0}.$
+      </div>
+
+      <div class="exercise">
+        Θεωρούμε συνεχείς στο $[0,1]$ συναρτήσεις $f,g$ με$f([0,1])=g([0,1])=[0,1].$ Αποδείξτε ότι υπάρχει $x_0\in[0,1]$
+        τέτοιο ώστε $f(f(x_0))=2x_0-g(x_0).$
+      </div>
+
+      <div class="exercise">
+        Αν η συνάρτηση $f$ είναι συνεχής στο $[0,2]$ με $f(0)=f(2),$ αποδείξτε ότι υπάρχει $x_0\in[0,1]$ ώστε
+        $f(x_0)=f(x_0+1).$
+      </div>
+
+      <div class="exercise">
+        Αν για την ορισμένη στο $[0,1]$ συνάρτηση $f$ ισχύουν $f([0,1])=[0,1]$ και
+        \[|f(x)-f(y)|\leq |x-y|,\tag{$\ast$}\]
+        για κάθε $x,y\in[0,1],$ αποδείξτε ότι η εξίσωση $f(x)=x$ διαθέτει λύση στο διάστημα $[0,1].$
+      </div>
+
+      <div class="exercise">
+        Δίνεται η συνάρτηση $f(x)= 3x^2-1+\gsin x.$
+        <ol class="vertical-list">
+          <li>Να αποδείξετε ότι η $f$ είναι γνησίως αύξουσα στο διάστημα $\left[0,\frac{\pi}{2}\right].$</li>
+          <li>Να προσδιορίσετε το $f\left(\left[0,\frac{\pi}{2}\right]\right).$</li>
+          <li>Να αποδείξετε ότι η εξίσωση $f(x)=0$ διαθέτει μοναδική λύση στο $\left(0,\frac{\pi}{2}\right).$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Δίνεται η συνάρτηση $f:(0,+\infty)\to\mathbb{R}$ με τύπο $f(x)=2x^4+3\ln x+1.$
+        <ol class="vertical-list">
+          <li>Να εξετάσετε ως προς τη μονοτονία τη συνάρτηση $f.$</li>
+          <li>Να προσδιορίσετε το σύνολο τιμών της συνάρτησης $f.$</li>
+          <li>Να αποδείξετε ότι για κάθε $\alpha\in\mathbb{R},$ η εξίσωση $f(x)=\alpha$ διαθέτει μοναδική λύση.</li>
+          <li>Να αποδείξετε ότι υπάρχει μοναδικός $\lambda \gt 0$ με
+            $\lambda^4+\dfrac{1}{2}=\dfrac{3}{2}\ln\dfrac{1}{\lambda}.$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Δίνονται οι συναρτήσεις $f(x)=e^{x-\alpha}-1$ και $g(x)=ln(\alpha x+1)+ \alpha,$ όπου
+        $\alpha\in\left(0,\frac{3}{4}\right).$
+        <ol class="vertical-list">
+          <li>Αποδείξτε ότι η εξίσωση $f(x)= \alpha x$ διαθέτει λύση στο διάστημα $[\alpha, \alpha+1].$</li>
+          <li>Έστω ότι $\rho$ είναι λύση της εξίσωσης $f(x)=\alpha x$ στο $[\alpha, \alpha+1].$ Αποδείξτε ότι
+            $\lim\limits_{x\to\rho}g(x)=\rho.$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Δίνεται συνάρτηση $f:\mathbb{R}\to\mathbb{R},$ συνεχής και γνησίως αύξουσα, με $f(1) = 2.$ Θεωρούμε τη συνάρτηση
+        $g$ με τύπο
+        $g(x)=f({e^{-x}}) - {e^x},$ όπου $x\in\mathbb{R}.$
+        <ol class="vertical-list">
+          <li>Να αποδείξετε ότι η $g$ είναι γνησίως φθίνουσα.</li>
+          <li>Να αποδείξετε ότι η γραφική παράσταση της $g$ τέμνει τον άξονα $x^{\prime}x$ σε ένα ακριβώς σημείο, με
+            τετμημένη στο διάστημα $(0,1).$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Δίνεται συνάρτηση $f,$ συνεχής στο $[-3,3],$ για την οποία ισχύει
+        \[3x^2 +4f^{2}(x)=27,\tag{$\ast$}\]
+        για κάθε $x\in [-3,3].$
+        <ol class="vertical-list">
+          <li>Να προσδιορίσετε τις λύσεις της εξίσωσης $f(x)=0.$</li>
+          <li>Να αποδείξετε ότι η $f$ διατηρεί πρόσημο στο διάστημα $(-3,3).$</li>
+          <li>Να προσδιοριστεί ο τύπος της $f.$</li>
+          <li>Αν επιπλέον $f(1)=\sqrt{6}$ να προσδιορίσετε το όριο $\lim\limits_{x\to
+            0}\dfrac{f(x)-\frac{3\sqrt{3}}{2}}{x}.$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Δίνεται συνεχής συνάρτηση $f:\mathbb{R}\to\mathbb{R},$ η οποία είναι γνησίως μονότονη στο $\mathbb{R}$ και η
+        γραφική της παράσταση διέρχεται από τα σημεία
+        $\textnormal{A}(-1,0)$ και $\textnormal{B}(2,3).$
+        <ol class="vertical-list">
+          <li>Να αποδείξετε ότι η $f$ είναι γνησίως αύξουσα.</li>
+          <li>Να προσδιορίσετε το πρόσημο της $f.$</li>
+          <li>Να επιλύσετε την εξίσωση $f(2e^x +1)=3.$</li>
+          <li>Να επιλύσετε την ανίσωση $f(3x+5)\leq 0.$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Δίνεται συνεχής συνάρτηση $f:\mathbb{R}\to\mathbb{R},$ για την οποία ισχύει
+        \[f^{2}(x)=\alpha^{2x}+2\alpha^{x}+1,\tag{$\ast$}\]
+        για κάθε $x\in\mathbb{R},$ όπου $\alpha\in\mathbb{R}^{\ast}.$
+        <ol class="vertical-list">
+          <li>Να αποδείξετε ότι η $f$ διατηρεί σταθερό πρόσημο στο $\mathbb{R}.$</li>
+          <li>Αν $f(0)=-2,$ να προσδιορίσετε τον τύπο της $f.$</li>
+          <li>Να υπολογίσετε το όριο $\lim\limits_{x\to +\infty}\dfrac{2f(x)-3^x}{3\cdot 2^x+4\cdot 3^x},$ όπου
+            $\alpha\lt 2.$</li>
+          <li>Να υπολογίσετε το όριο $\lim\limits_{x\to +\infty}\dfrac{2f(x)-3^x}{3\cdot 2^x+4\cdot 3^x},$ όπου
+            $\alpha\gt 3.$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Θεωρούμε συνεχή συνάρτηση $f:\mathbb{R}\to\mathbb{R},$ για την οποία ισχύει
+        \[\left(x^2 - 4x + 2\right) f(x) \leq f(0) + f(4),\tag{$\ast$}\]
+        για κάθε $x\in\mathbb{R}.$
+        <ol class="vertical-list">
+          <li>Να αποδείξετε ότι $f(0) = f(4).$</li>
+          <li>Να αποδείξετε ότι υπάρχει ένα τουλάχιστον $\xi\in[0,2]$ με $f({\xi ^2}) = \xi \cdot f(2\xi).$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Δίνεται συνεχής συνάρτηση $f:\mathbb{R}\to\mathbb{R},$ για την οποία ισχύει
+        \[x^4 +1\leq 4f(x)\leq x^4 +2\tag{$\ast$}\]
+        για κάθε $x\in\mathbb{R}.$
+        <ol class="vertical-list">
+          <li>Να αποδείξετε ότι $\dfrac{1}{4}\leq f(0)\leq \dfrac{1}{2}$ και $\dfrac{1}{2}\leq f(1)\leq \dfrac{3}{4}.$
+          </li>
+          <li>Να προσδιορίσετε το όριο $\lim\limits_{x\to 0}\left(x^4 f\left(\frac{1}{x}\right)\right).$</li>
+          <li>Να προσδιορίσετε το όριο $\lim\limits_{x\to 0}\dfrac{x^5 f\left(\frac{1}{x}\right)+4\gsin 3x}{2x^2 +3\gsin
+            x}.$</li>
+          <li>Να αποδείξετε ότι υπάρχει $\xi\in(0,1)$ τέτοιο ώστε $f(\xi)=\xi.$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Δίνεται συνεχής συνάρτηση $f:\mathbb{R}\to\mathbb{R},$ για την οποία ισχύουν οι συνθήκες:
+        <ul class="bullet-list">
+          <li>$|3\gsin x-2xf(x)|\leq\dfrac{1}{2}x^2,$ για κάθε $x\in\mathbb{R}.$</li>
+          <li>$4f(x)+3f(x+1)=2x^{2}-1905,$ για κάθε $x\in\mathbb{R}.$</li>
+        </ul>
+        <ol class="vertical-list">
+          <li>Να προσδιορίσετε το όριο $\lim\limits_{x\to 0}f(x)$</li>
+          <li>Να προσδιορίσετε το $f(1).$</li>
+          <li>Να αποδείξετε ότι η γραφική παράσταση της $f$ τέμνει τη γραφική παράσταση της συνάρτησης $g(x)=x-1$ σε ένα
+            τουλάχιστον σημείο με τετμημένη $x_0\in(0,1).$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Δίνεται συνεχής συνάρτηση $f:\mathbb{R}\to\mathbb{R},$ τέτοια ώστε
+        \[\kappa{\gsin}^{2}x=x^{2}f(x)+\sqrt{1+{\gsin}^{2}x}-\lambda,\tag{$\ast$}\]
+        για κάθε $x\in\mathbb{R},$ όπου $\kappa,\lambda\in\mathbb{R}.$ Επίσης, γνωρίζουμε ότι η γραφική της παράσταση
+        διέρχεται από το σημείο $\textnormal{A}\left(0,\frac{1}{2}\right).$
+        <ol class="vertical-list">
+          <li>Να προσδιορίσετε τους $\kappa,\lambda.$</li>
+          <li>Αν $\kappa=1$ και $\lambda=1,$ να προσδιορίσετε την $f.$</li>
+          <li>Να προσδιορίσετε το όριο $\lim\limits_{x\to 0}\dfrac{f(x)}{\gcos x}.$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Θεωρούμε συνεχή συνάρτηση $f:\mathbb{R}\to\mathbb{R}$ με $f(-1)\neq 0$ και $f(1)\neq 0,$ για την οποία επίσης
+        ισχύει ότι
+        \[f^2(x) - 6f(x) + 5 = x^4 + 4x^2.\tag{$\ast$}\]
+        <ol class="vertical-list">
+          <li>Να αποδείξετε ότι η $f$ δεν διαθέτει ρίζες.</li>
+          <li>Να προσδιορίσετε την τιμή $f(1).$</li>
+          <li>Να προσδιορίσετε τον τύπο της $f.$</li>
+          <li>Να προσδιορίσετε το όριο $\lim\limits_{x\to+\infty}\dfrac{\gsin x}{f(x)}.$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Δίνεται συνεχής συνάρτηση $f: \mathbb{R}\to\mathbb{R},$ για την οποία ισχύει
+        \[x^2 f(x) +\gsin x =xf(x) +\sqrt{x}\gsin x,\tag{$\ast$}\]
+        για κάθε $x\in\mathbb{R}.$
+        <ol class="vertical-list">
+          <li>Να προσδιορίσετε τις τιμές $f(0)$ και $f(1).$</li>
+          <li>Να αποδείξετε ότι υπάρχει ένα τουλάχιστον $\xi\in(0,1)$ τέτοιο ώστε $4f(\xi)=3\xi.$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Δίνεται συνεχής συνάρτηση $f: \mathbb{R}\to\mathbb{R},$ για την οποία ισχύει $f(0)+f(1)=2.$ Αποδείξτε ότι
+        υπάρχει ένα τουλάχιστον $\xi\in[0,1]$ τέτοιο ώστε $2f(\xi^2)=\xi(f(\xi)+2).$
+      </div>
+
+      <div class="exercise">
+        Δίνεται συνεχής και γνησίως μονότονη συνάρτηση $f:\mathbb{R}\to\mathbb{R},$ για την οποία ισχύει
+        $f^2(2)+f^2(3)-2f(2)+4f(3)+5=0.$
+        <ol class="vertical-list">
+          <li>Να προσδιορίσετε τις τιμές $f(2)$ και $f(3).$</li>
+          <li>Να προσδιορίσετε το είδος της μονοτονίας της $f.$</li>
+          <li>Να αποδείξετε ότι η εξίσωση $f(x)=0$ διαθέτει μοναδική ρίζα στο $\mathbb{R}.$</li>
+        </ol>
+      </div>
+
+    </section>
 
   </main>
 
 </body>
+
 </html>

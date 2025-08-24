@@ -1,1192 +1,1165 @@
 <!DOCTYPE html>
 <html lang="el">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Όρια</title>
-
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async
-            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-    </script>
-
-    <script>
-        window.MathJax = {
-            tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']],
-            }
-        };
-    </script>
-
-    <style>  
-    /* for differents files */
-        html {
-            ---theme-color : rgb(16, 65, 65);
-        }
-    </style>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <link rel="stylesheet" type="text/css" href="exercisesstyle.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Όρια</title>
+  <script id="exercisesheadJS" src="/JS/exerciseshead.js"></script>
+  <script id="generalJS" defer src="/JS/general.js"></script>
 </head>
+
 <body>
-
-
-<div style="display: none;">
-    $\DeclareMathOperator{\gsin}{ημ}$
-    $\DeclareMathOperator{\gcos}{συν}$
-    $\DeclareMathOperator{\gtan}{εφ}$
-    $\DeclareMathOperator{\gctan}{σφ}$
-</div>
-
-<a id="home-button" href="#">
-    <i class="fa-solid fa-circle-up"></i>
-</a>
-
-<header>
-    <nav>
-        <ul>
-          <li><a href="functions.html">Συναρτησεις</a></li> 
-          <li><a href="limits.html" style="color:rgb(140, 140, 140);">Ορια</a></li>  
-          <li><a href="continuity.html">Συνεχεια</a></li>
-          <li><a href="derivative_1.html">Παραγωγος I</a></li>
-          <li><a href="derivative_2.html">Παραγωγος ΙΙ</a></li>
-          <li><a href="integral.html">Ολοκληρωμα</a></li>
-          <li><div class="mobile-display"><a href="followup.html">Αν/κες Ασκησεις</a></div>
-            <div class="desktop-display"><a href="followup.html">Ανακεφαλαιωτικες Ασκησεις</a></div>
-            </li>
-        </ul>
-    </nav>
-
-    <div>
-        Δημοσθένης Σταλίδης,
-        Γυμνάσιο ΛΤ Άρνισσας,
-        2023
-    </div>
-</header>
-
-  <h1>Ορια</h1>
+  <h1>Όρια</h1>
 
   <div id="contents-container">
-      <ul id="contents">
-        <li><a href="#limits-real-point">Όρια σε πραγματικό αριθμό</a>
-          <ul>
-            <li><a href="#limits-real-point-calculation">Υπολογισμός ορίων</a></li>
-            <li><a href="#limits-real-point-general">Γενικές ασκήσεις</a></li>
-          </ul>
-        </li>
+    <ul id="contents">
+      <li><a href="#limits-real-point">Όρια σε πραγματικό αριθμό</a>
+        <ul>
+          <li><a href="#limits-real-point-calculation">Υπολογισμός ορίων</a></li>
+          <li><a href="#limits-real-point-general">Γενικές ασκήσεις</a></li>
+        </ul>
+      </li>
 
-        <li><a href="#limits-non-finite">Μη πεπερασμένα όρια</a>
-          <ul>
-            <li><a href="#limits-non-finite-calculation">Υπολογισμός ορίων</a></li>
-            <li><a href="#limits-non-finite-general">Γενικές ασκήσεις</a></li>
-          </ul>
-        </li>
+      <li><a href="#limits-non-finite">Μη πεπερασμένα όρια</a>
+        <ul>
+          <li><a href="#limits-non-finite-calculation">Υπολογισμός ορίων</a></li>
+          <li><a href="#limits-non-finite-general">Γενικές ασκήσεις</a></li>
+        </ul>
+      </li>
 
-        <li><a href="#limits-at-infinity">Όρια στο άπειρο</a>
-          <ul>
-            <li><a href="#limits-at-infinity-calculation">Υπολογισμός ορίων</a></li>
-            <li><a href="#limits-at-infinity-general">Γενικές ασκήσεις</a></li>
-          </ul>
-        </li>
-      </ul>
+      <li><a href="#limits-at-infinity">Όρια στο άπειρο</a>
+        <ul>
+          <li><a href="#limits-at-infinity-calculation">Υπολογισμός ορίων</a></li>
+          <li><a href="#limits-at-infinity-general">Γενικές ασκήσεις</a></li>
+        </ul>
+      </li>
+    </ul>
   </div>
 
   <main>
 
-  <section id="limits-real-point">
+    <section id="limits-real-point">
 
-  <h2>Όρια σε πραγματικό αριθμό</h2>
+      <h2>Όρια σε πραγματικό αριθμό</h2>
 
-  <h3 id="limits-real-point-calculation">Υπολογισμός ορίων</h3>
+      <h3 id="limits-real-point-calculation">Υπολογισμός ορίων</h3>
 
-  <div class="exercise">
-  Να υπολογιστούν τα όρια:
-  <ol class="array-list">
-  <li>$\lim\limits_{x\to 1}\dfrac{x^2-1}{x-1}$</li>
-  <li>$\lim\limits_{x\to 1}\dfrac{x^2-3x+2}{x-1}$</li>
-  <li>$\lim\limits_{x\to 1}\dfrac{x^2-3x+2}{x^2-4x+3}$</li>
-  <li>$\lim\limits_{x\to -2}\dfrac{x^3-4x^2+x+2}{x-2}$</li>
-  <li>$\lim\limits_{x\to -2}\dfrac{x^3+2x^2-x-2}{x^2-4}$</li>
-  <li>$\lim\limits_{x\to -2}\dfrac{x^3+3x^2-4}{x^2-4}$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Να υπολογιστούν τα όρια:
-  <ol class="array-list">
-  <li>$\lim\limits_{x\to 3}\dfrac{x^2-5x+6}{x^2-9}$</li>
-  <li>$\lim\limits_{x\to \frac{1}{2}}\dfrac{2x^2+x-1}{8x^2-2}$</li>
-  <li>$\lim\limits_{x\to\sqrt{2}}\ \dfrac{x^4-4}{3x^2-6}$</li>
-  <li>$\lim\limits_{x\to 4}\left(\dfrac{x-20}{x^2-16}+\dfrac{2}{x-4}\right)$</li>
-  <li>$\lim\limits_{x\to -2}\dfrac{2x^3+4x^2-x-2}{\frac{x}{2}+1}$</li>
-  <li>$\lim\limits_{x\to -1}\dfrac{(x+4)^3-27}{(x+6)^2-25}$</li></li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Να υπολογιστούν τα όρια:
-  <ol class="array-list">
-  <li>$\lim\limits_{x\to 2}\dfrac{\sqrt{x}-1}{x^2-1}$</li>
-  <li>$\lim\limits_{x\to 6}\dfrac{\sqrt{x+3}-3}{x-6}$</li>
-  <li>$\lim\limits_{x\to 2}\dfrac{x-\sqrt{3x-2}}{x^2-4}$</li>
-  <li>$\lim\limits_{x\to -8}\dfrac{\sqrt{1-x}-3}{\sqrt{x+12}-2}$</li>
-  <li>$\lim\limits_{x\to 16}\dfrac{\sqrt[4]{x}-2}{\sqrt{x}-4}$</li>
-  <li>$\lim\limits_{x\to -4}\dfrac{\sqrt{5+x}-1}{x^2+4x}$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Να υπολογιστούν τα όρια:
-  <ol class="array-list">
-  <li>$\lim\limits_{x\to 16}\dfrac{\sqrt{x}-4}{16-x}$</li>
-  <li>$\lim\limits_{x\to 3}\dfrac{\sqrt{x+1}-2}{x^2-9}$</li>
-  <li>$\lim\limits_{x\to 2}\dfrac{\sqrt{x^2+5}-3}{2\sqrt{x}-\sqrt{8}}$</li>
-  <li>$\lim\limits_{x\to -1}\dfrac{2x+\sqrt{2x+6}}{1-\sqrt{x+2}}$</li>
-  <li>$\lim\limits_{x\to 9}\dfrac{3x^2-243}{x-\sqrt{x}-6}$</li>
-  <li>$\lim\limits_{x\to 4}\dfrac{x^2-16}{\sqrt{x-4}}$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Να υπολογιστούν τα όρια:
-  <ol class="array-list">
-  <li>$\lim\limits_{x\to 0}\dfrac{(x+1)^4-x-1}{x}$</li>
-  <li>$\lim\limits_{x\to 3}\dfrac{x-\frac{9}{x}}{x^2-\frac{27}{x}}$</li>
-  <li>$\lim\limits_{x\to -2}\dfrac{x^2+4x+4}{|x+2|}$</li>
-  <li>$\lim\limits_{x\to 1}\dfrac{x-4+3|x|}{x-1}$</li>
-  <li>$\lim\limits_{x\to 1}\dfrac{|4x-2|-|x+1|}{x^2-1}$</li>
-  <li>$\lim\limits_{x\to 2}\dfrac{|2x+2|-|x+4|}{|x+3|-|3x-1|}$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Να υπολογιστούν τα όρια:
-  <ol class="array-list">
-  <li>$\lim\limits_{x\to 0}\dfrac{\gsin x}{x^3+2x^2+3x}$</li>
-  <li>$\lim\limits_{x\to 0}\dfrac{\gsin 3x\gsin 5x}{(x-x^3)^2}$</li>
-  <li>$\lim\limits_{x\to 0}\dfrac{\gsin 3x}{\sqrt{x}}$</li>
-  <li>$\lim\limits_{x\to 0}\dfrac{\gcos x-\sqrt{1+x\gsin x}}{x}$</li>
-  <li>$\lim\limits_{x\to 0}\dfrac{\gtan^2 x-\gsin^2 x}{x^2}$</li>
-  <li>$\lim\limits_{x\to 0}x^2 \gctan^2 x$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Να υπολογιστούν τα όρια:
-  <ol class="array-list">
-  <li>$\lim\limits_{x\to 5}\dfrac{\gtan\pi x}{x-5}$</li>
-  <li>$\lim\limits_{x\to 1}\dfrac{\gsin 2\pi x}{\gsin 4\pi x}$</li>
-  <li>$\lim\limits_{x\to 3}\dfrac{\gsin\pi x}{\sqrt{x+1}-2}$</li>
-  <li>$\lim\limits_{x\to \frac{\pi}{6}}\dfrac{2\gsin x-1}{6x-\pi}$</li>
-  <li>$\lim\limits_{x\to 0^{+}}\dfrac{3x-\gsin x}{\sqrt{1-\gcos x}}$</li>
-  <li>$\lim\limits_{x\to \frac{\pi}{4}}\dfrac{16x^2-\pi}{1-\sqrt{2}\gcos x}$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Να υπολογιστούν, εφόσον υπάρχουν, τα όρια:
-  <ol class="array-list">
-  <li>$\lim\limits_{x\to 2}\dfrac{\sqrt{x}-\sqrt{2}}{\sqrt{|x^2-4|}}$</li>
-  <li>$\lim\limits_{x\to -1}\dfrac{ x +|x+1| +1}{x-|x+1|+1}$</li>
-  <li>$\lim\limits_{x\to 2}\dfrac{|x-2| -x+2}{x+|x-2|-2}$</li>
-  <li>$\lim\limits_{x\to -2}\dfrac{ x^2-4}{\sqrt{-x-2}}$</li>
-  <li>$\lim\limits_{x\to 1}\dfrac{\left(\sqrt[3]{x-1}\right)^2}{\sqrt[4]{x}-1}$</li>
-  <li>$\lim\limits_{x\to 3}\dfrac{ x^2-9-|3-x|+|x^2-3x|}{x-3}$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Να υπολογιστούν, εφόσον υπάρχουν, τα όρια:
-  <ol class="array-list">
-  <li>$\lim\limits_{x\to -1}\dfrac{\sqrt{x^2-1}-|x+1|}{\sqrt{-x-1}}$</li>
-  <li>$\lim\limits_{x\to 3}\dfrac{|x-2|+3|x-1|-2x-1}{2x-8}$</li>
-  <li>$\lim\limits_{x\to -2}\dfrac{5|x+2|+x^2-4}{3x+9}$</li>
-  <li>$\lim\limits_{x\to 4}\dfrac{|2-x| +2|x+3|-4x}{x-4}$</li>
-  <li>$\lim\limits_{x\to -3}\dfrac{|x-5|-|x-2|-3}{2x+6}$</li>
-  <li>$\lim\limits_{x\to -1}\dfrac{|x^2-4|-|x^2+5x|+1}{3x^2-3}$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Να υπολογιστούν, εφόσον υπάρχουν, τα όρια:
-  <ol class="array-list">
-  <li>$\lim\limits_{x\to 2}\dfrac{|x^2-3x|-2|9-x^2|+8}{6-3x}$</li>
-  <li>$\lim\limits_{x\to 0}\dfrac{x^2-4x^2+3|x|}{x^4+4x^2-3|x|}$</li>
-  <li>$\lim\limits_{x\to -1^{+}}\dfrac{|x^3-3x^2+4|}{x^3+1}$</li>
-  <li>$\lim\limits_{x\to -3}\dfrac{\sqrt{x^2-6x+9}}{2x+6}$</li>
-  <li>$\lim\limits_{x\to 2}\dfrac{x-|x|}{x+|x|}$</li>
-  <li>$\lim\limits_{x\to 0}\dfrac{|x|+\sqrt{x}}{x+\sqrt{x}}$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Να υπολογιστούν, εφόσον υπάρχουν, τα όρια:
-  <ol class="array-list">
-  <li>$\lim\limits_{x\to 0}\dfrac{\sqrt{|x|}-\sqrt{x}}{x-\sqrt{x}}$</li>
-  <li>$\lim\limits_{x\to 0}\dfrac{|x|+\sqrt{x}}{|x|-\sqrt{x}}$</li>
-  <li>$\lim\limits_{x\to 0}\dfrac{\sqrt{|x|}-|x|}{\sqrt{|x|}+x}$</li>
-  <li>$\lim\limits_{x\to 0}\dfrac{\sqrt{|x|}-x}{\sqrt{|x|}+x}$</li>
-  <li>$\lim\limits_{x\to 2}\dfrac{\sqrt{x^3-4x^2+4x}}{\sqrt{x+7}-3}$</li>
-  <li>$\lim\limits_{x\to 3}\dfrac{(x-3)\sqrt{x^2-6x+9}}{x^2-9}$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Για τις διάφορες τιμές του $\alpha\in\mathbb{R}$, να υπολογιστούν, εφόσον υπάρχουν, τα όρια:
-  <ol class="array-list">
-  <li>$\lim\limits_{x\to\alpha}\dfrac{2x^2+(1-2\alpha)x-\alpha}{x^2-\alpha^2}$</li>
-  <li>$\lim\limits_{x\to -\alpha}\dfrac{x^4-\alpha^4}{x^3+\alpha^3}$</li>
-  <li>$\lim\limits_{x\to 0}\dfrac{1-\gcos\alpha x}{x}$</li>
-  <li>$\lim\limits_{x\to \alpha}\dfrac{\gsin x-\gsin\alpha}{x-\alpha}$</li>
-  <li>$\lim\limits_{x\to\frac{\alpha}{2}}\left((2x-\alpha)\gtan\left(\dfrac{\pi x}{\alpha}\right)\right)$</li>
-  <li>$\lim\limits_{x\to\alpha}\dfrac{\alpha^2-x^2}{|x|-\alpha}$</li>
-  </ol>
-  </div>
-  
-  <h3 id="limits-real-point-general">Γενικές ασκήσεις</h3>
-  
-  <div class="exercise">
-  Να χαράξετε τη γραφική παράσταση της συνάρτησης $f(x)=\dfrac{2x^2-2x}{|x-1|}$ και, με τη βοήθεια αυτής, να προσδιορίσετε τα όρια
-  <ol class="array-list-3">
-    <li>$\lim\limits_{x\to 1^{+}}f(x)$</li>
-    <li>$\lim\limits_{x\to 1^{-}}f(x)$</li>
-    <li>$\lim\limits_{x\to 1}f(x)$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Να χαράξετε τη γραφική παράσταση της συνάρτησης $f$ και, με τη βοήθεια αυτής, να προσδιορίσετε, εφόσον υπάρχει, το $\lim\limits_{x\to x_0}f(x)$:
-  <ol class="array-list">
-  <li>$f(x)=\begin{cases}x, &x\gt 2 \\ 2, &x\leq 2\end{cases}~$, $x_0=2$</li>
-  <li>$f(x)=\begin{cases}x^2 ,&x\leq 3\\ \dfrac{9}{x}& x\gt 3\end{cases}~$, $x_0=3$</li>
-  <li>$f(x)=\dfrac{x}{|x|}~$, $x_0=0$</li>
-  <li>$f(x)=\dfrac{|2-x|}{-2+x}$, $x_0=2$</li>
-  <li>$f(x)=x-|1-x|$, $x_0=1$</li>
-  <li>$f(x)=\big|x-|x|\big|$, $x_0=0$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Να προσδιορίσετε, εφόσον υπάρχει, το όριο της $f$ στο $x_0=-2$, όταν:
-  <ol class="array-list">
-  <li>$f(x)=\begin{cases}-5x+6, &x\neq -2 \\ 16, & x=-2 \end{cases}$</li>
-  <li>$f(x)=\begin{cases} x^4+1,&x\lt -2 \\ x+19, &x\geq 2\end{cases}$</li>
-  <li>$f(x)=\begin{cases}x^2+1 &x\leq -2 \\ x+3, &x\gt -2 \end{cases}$</li>
-  <li>$f(x)=\begin{cases}3x, & x\leq -2 \\ |x|-8 & x\gt -2 \end{cases}$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Έστω η συνάρτηση
-  \[f(x)=\begin{cases}4, &x\leq -1 \\ 2x+6,& -1\lt x\leq 2\\ x^2,& 2\lt x\lt 5 \end{cases}.\]
-  Να υπολογίσετε το όριο της $f$, αν υπάρχει, στα σημεια $x_1=-3$, $x_2=-1$, $x_3=0$, $x_4=2$, $x_5=3$, $x_6=5$, $x_7=6$.
-  </div>
-  
-  <div class="exercise">
-  Έστω $f,g$ συναρτήσεις με $\lim\limits_{x\to 2}\dfrac{f(x)}{x^2+1}=3$ και $\lim\limits_{x\to 2}\dfrac{g(x)}{x+1}=15$. Να υπολογίσετε το όριο
-  $\lim\limits_{x\to 2}\dfrac{g^2(x)}{f(x)-5x}$.
-  </div>
-  
-  <div class="exercise">
-  Έστω $f,g$ συναρτήσεις με $\lim\limits_{x\to 1}\dfrac{f(x)}{x-1}=2$ και $\lim\limits_{x\to 1}\dfrac{2x^2-3x+1}{g(x)}=6$. Να υπολογίσετε το όριο
-  $\lim\limits_{x\to 1}\dfrac{f(x)}{g(x)}$.
-  </div>
-  
-  <div class="exercise">
-  Έστω $f,g$ συναρτήσεις με 
-  $\lim\limits_{x\to 0}(f^2(x)+g^2(x))=14$ και $\lim\limits_{x\to 0}(f^2(x)-g^2(x))=6$. Να υπολογίσετε το όρια:
-  <ol class="array-list">
-  <li>$\lim\limits_{x\to 0}\left(f^4(x)-g^4(x)\right)$</li>
-  <li>$\lim\limits_{x\to 0}\left(3f^6(x)+5g^4(x)\right)$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Έστω $f,g$ συναρτήσεις με
-   \[
-   \begin{align}
-   \lim\limits_{x\to 0}\dfrac{g(x)\gsin 2x-x^2f(x)}{x^2}&=5,\\[1ex]
-   \lim\limits_{x\to 0}\dfrac{g(x)\gsin 2x+x^2f(x)}{x^2}&=-1.
-    \end{align}
-   \]
-  Να υπολογίσετε τα όρια $\lim\limits_{x\to 0}f(x)$ και $\lim\limits_{x\to 0}\dfrac{g(x)}{x}$.
-  </div>
-  
-  <div class="exercise">
-  Έστω $f,g$ συναρτήσεις με
-  \[\begin{align}
-  \lim\limits_{x\to 1}\left(x^2f(x)+3g(x)\right)&=4\\[1ex]
-  \lim\limits_{x\to 1}\left(f(x)+g(x)\sqrt{x^2+3}\right)&=3.
-  \end{align}\]
-  Να υπολογίσετε τα όρια $\lim\limits_{x\to 1}f(x)$ και $\lim\limits_{x\to 1}g(x)$.
-  </div>
-  
-  <div class="exercise">
-  Έστω $f$ συνάρτηση με $\lim\limits_{x\to 0}\dfrac{f(x)}{x}=1$ και $\alpha\in\mathbb{R}$. Αποδείξτε ότι $\lim\limits_{x\to 0}\dfrac{f(\alpha x)}{x}=\alpha$.
-  </div>
-  
-  <div class="exercise">
-  Έστω $f$ περιττή συνάρτηση.
-  <ol class="array-list">
-  <li> Αν $\lim\limits_{x\to 1}f(x)=2$, υπολογίστε το $\lim\limits_{x\to 0}\left(f(x-1)-f(1-x)\right)$.</li>
-  <li> Αν $\lim\limits_{x\to 1}\dfrac{f(x)-f(1)}{x-1}$, υπολογίστε το $\lim\limits_{x\to -1}\dfrac{f(x)-f(-1)}{x+1}$.</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Έστω $\alpha,\beta\in\mathbb{Z}$. Θεωρούμε τη συνάρτηση
-  \[f(x)=\begin{cases} 4x,&x\leq\beta \\ 2(x+\alpha)+1,&x\gt \beta \end{cases}.\]
-  Να εξετάσετε αν υπάρχει το όριο της συνάρτησης $f$ στο $\beta$.
-  </div>
-  
-  <div class="exercise">
-  Για τη συνάρτηση $f$ ισχύει $\lim\limits_{x\to 2^{+}}f(x)=4$ και $\lim\limits_{x\to 2^{-}}f(x)=\lambda(3-2\lambda)$, όπου $\lambda\in\mathbb{R}$. Αποδείξτε ότι δεν υπάρχει το όριο της $f$ στο $2$.
-  </div>
-  
-  <div class="exercise">
-  Έστω συναρτήσεις $f,g$ και $x_0$ σημείο στο οποίο υπάρχει το όριο $\lim\limits_{x\to x_0}\dfrac{f(x)}{g(x)}$. Αν $\lim\limits_{x\to x_0}g(x)=0$, αποδείξτε ότι $\lim\limits_{x\to x_0}f(x)=0$.
-  </div>
-  
-  <div class="exercise">
-  Αν $f$ είναι συνάρτηση με $\lim\limits_{x\to 1}\dfrac{2f(x)-1}{5-3f(x)}=4$, να προσδιορίσετε το $\lim\limits_{x\to 1}f(x)$.
-  </div>
-  
-  <div class="exercise">
-  Έστω συνάρτηση $f$ με $\lim\limits_{x\to 3}\dfrac{f(x)-2x}{x^2-9}=5$. Να προσδιορίσετε τα όρια:
-  <ol class="array-list">
-  <li>$\lim\limits_{x\to 3}f(x)$</li>
-  <li>$\lim\limits_{x\to 3}\dfrac{f(x)-x-3}{x^2-9}$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Αν $f$ είναι συνάρτηση με $\lim\limits_{x\to -2}f(x)=4$, να προσδιορίσετε τα όρια:
-  <ol class="array-list-3">
-  <li>$\lim\limits_{x\to 2}(3f(x)+x-1)$</li>
-  <li>$\lim\limits_{x\to 2}\dfrac{2f^2(x)-7f(x)-4}{f^2(x)-16}$</li>
-  <li>$\lim\limits_{x\to 2}\,\dfrac{\sqrt{f(x)}-2}{3f(x)-12}$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Θεωρούµε συνάρτηση $f$, ορισµένη στο $\mathbb{R}$, τέτοια ώστε $\lim\limits_{x\to 3}\dfrac{f(x)-2}{x-3}=-2$. Να υπολογίσετε τα παρακάτω όρια:
-  <ol class="array-list">
-  <li>$\lim\limits_{x\to 1}f(x)$</li>
-  <li>$\lim\limits_{x\to 3}\dfrac{x^2 f(x)-18}{x-3}$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Θεωρούµε συνάρτηση $f$, ορισµένη στο $\mathbb{R}$, με 
-  $\lim\limits_{x\to 0}\dfrac{f(x)-1-\gsin x}{x^2-x}=5$. Να υπολογίσετε τα παρακάτω όρια:
-  <ol class="array-list-3">
-  <li>$\lim\limits_{x\to 0}f(x)$</li>
-  <li>$\lim\limits_{x\to 0}\dfrac{f(x)-1}{x}$</li>
-  <li>$\lim\limits_{x\to 0}\dfrac{|3-5f(x)|-2}{x^3-x} $</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Θεωρούµε συνάρτηση $f$, ορισµένη στο $\mathbb{R}$, τέτοια ώστε $\lim\limits_{x\to 2}f(x)=-3$. Να προσδιορίσετε τα παρακάτω όρια:
-  <ol class="array-list-3">
-  <li>$\lim\limits_{x\to 1}(f(5x-3)+x)$</li>
-  <li>$\lim\limits_{x\to -1}(x^2 f(-2x)+5)$</li>
-  <li>$\lim\limits_{x\to 5}(f(7-x)+f(x-3))$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Θεωρούμε συναρτήσεις $f,g$ με
-    \[
-    \begin{align}
-    \lim\limits_{x\to 1}\dfrac{f(x)}{x^2-1}&=4,\\[1ex]
-    \lim\limits_{x\to 1}\left(g(x)(x^2-3x+2)\right)&=5.
-    \end{align}
-    \]
-  Να υπολογίσετε το όριο $\lim\limits_{x\to 1}f(x)g(x)$.
-  </div>
-  
-  <div class="exercise">
-  Θεωρούµε συνάρτηση $f: \mathbb{R}\to\mathbb{R}$, για την οποία ισχύει
-  \[f^5 (x)+ x^4 f(x)=2x^5, \tag{$\ast$}\]
-  για κάθε $x\in\mathbb{R}$. Υποθέτουµε ακόµα ότι υπάρχει το όριο $\lim\limits_{x\to 0}\dfrac{f(x)}{x}$ και ισούται με $l\in\mathbb{R}$. Να προσδιορίσετε το όριο $\lim\limits_{x\to 0}f(x)$ και τον αριθµό $l$.
-  </div>
-  
-  <div class="exercise">
-  Θεωρούµε συνάρτηση $f:\mathbb{R}\to\mathbb{R}$, για την οποία ισχύει
-  \[f^3(x)+ x^6 f(x)=2x^9,\tag{$\ast$}\]
-  για κάθε $x\in\mathbb{R}$. Υποθέτουµε ακόµα ότι υπάρχει το όριο $\lim\limits_{x\to 0}\dfrac{f(x)}{x^3}$ και ισούται με $l\gt 0$. Να προσδιορίσετε το όριο $\lim\limits_{x\to 0}f(x)$ και τον αριθµό $l$.
-  </div>
-  
-  <div class="exercise">
-  Θεωρούμε τη συνάρτηση 
-  \[f(x)=\begin{cases}3x+\alpha, & x\lt 2 \\ x+\alpha^2 -2, & x\gt 2 \end{cases}.\]
-  Να προσδιοριστούν οι τιμές του $\alpha\in\mathbb{R}$ για τις οποίες ισχύει $\lim\limits_{x\to 2}f(x)=4$.
-  </div>
-  
-  <div class="exercise">
-  Θεωρούμε τη συνάρτηση 
-  \[f(x)=\begin{cases}x^2+\alpha, & x\lt -2 \\ \alpha^2 x+3, & -1\leq x\lt 0\\
-  3\alpha, &x\geq 0 \end{cases}.\]
-  Να προσδιοριστούν οι τιμές του $\alpha\in\mathbb{R}$ για τις οποίες:
-  <ol class="vertical-list">
-  <li> Η $f$ διαθέτει όριο στο $-1$. Ποιο είναι το όριο αυτό;</li>
-  <li> Η $f$ διαθέτει όριο στο $-1$, όχι όμως στο $0$.</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Δίνεται η συνάρτηση
-  \[f(x)=\begin{cases}\sqrt{x^2+x+2}, &0\leq x\leq 1 \\ 3x-1, &x\gt 1\end{cases}.\]
-  <ol class="vertical-list">
-  <li> Αποδείξτε ότι το όριο της $f$ στο $x_0=1$ είναι ίσο με $2$.</li>
-  <li> Αν $g(x)=\dfrac{f(x)-f(1)}{x-1}$, $x\neq 1$, εξετάστε αν υπάρχει το όριο της $g$ στο $x_0=1$.</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Δίνεται η συνάρτηση $f$ με
-  \[f(x)=\begin{cases} x^2+\alpha x+\beta, & x\lt 1\\ \dfrac{\sqrt{x^2+3}-\alpha+1}{x-1}, & x\geq 1
-  \end{cases}.\]
-  Να προσδιορίσετε τα $\alpha,\beta$ ώστε η $f$ να έχει όριο στο 1.
-  </div>
-  
-  <div class="exercise">
-  Προσδιορίστε τους $\alpha,\beta\in\mathbb{R}$ ώστε 
-  $\lim\limits_{x\to -1}\dfrac{x^3+\alpha x+\beta}{x+1}=4$.
-  </div>
-  
-  <div class="exercise">
-  Θεωρούµε συνάρτηση $f$, ορισµένη στο $\mathbb{R}$, τέτοια ώστε $\lim\limits_{x\to 1}f(x)=3$. Υποθέτουμε ότι 
-  \[f(x)-f(x-2)=4, \tag{$\ast$}\]
-  για κάθε $x\in\mathbb{R}$.
-  <ol class="vertical-list">
-  <li> Αποδείξτε ότι για κάθε $x\in\mathbb{R}$ ισχύει $f(x+6)-f(x)=12$.</li>
-  <li> Να προσδιορίσετε τα όρια $\lim\limits_{x\to 3}f(x)$ και $\lim\limits_{x\to 7}f(x)$.</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Θεωρούµε συνάρτηση $f$, ορισµένη στο $\mathbb{R}$, τέτοια ώστε $\lim\limits_{x\to 2}f(x)=4$. Υποθέτουμε ότι 
-  \[f(2x)=f(x)+3x,\tag{$\ast$}\]
-  για κάθε $x\in\mathbb{R}$.
-  <ol class="vertical-list">
-  <li> Αποδείξτε ότι για κάθε $x\in\mathbb{R}$ ισχύει $f(8x)=f(x)+21x$.</li>
-  <li> Να προσδιορίσετε τα όρια $\lim\limits_{x\to 4}f(x)$ και $\lim\limits_{x\to 16}f(x)$.</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Έστω $f$ συνάρτηση για την οποία ισχύει
-  \[2\sqrt{3x}\leq f(x) \leq x+3, \tag{$\ast$}\]
-   για κάθε $x \geq 0$. Να υπολογίσετε τα όρια:
-  <ol class="array-list">
-  <li>$\lim\limits_{x\to 3}f(x)$</li>
-  <li>$\lim\limits_{x\to 3}\dfrac{f(x)-6}{x-3}$</li>
-  <li>$\lim\limits_{x\to 3}\dfrac{f(x)-2x}{x-3}$</li>
-  <li>$\lim\limits_{x\to 3}\dfrac{f(x)-x^2+3}{x^2-9}$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Να προσδιορίσετε το όριο $\lim\limits_{x\to 1}f(x)$ σε καθεµία από τις παρακάτω περιπτώσεις:
-  <ol class="array-list">
-  <li>$x^2 − 2x + 3\leq f(x) \leq 2x^2-4x+4$, $x\in\mathbb{R}$</li>
-  <li>$\ln^2 x\leq f(x) \leq 3\ln^2 x$ , $x\gt 0$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Έστω $f$ συνάρτηση για την οποία ισχύει
-  \[|\gsin x-xf(x)|\leq|x-\gsin x|, \tag{$\ast$}\]
-   για κάθε $x\in\mathbb{R}$. Να υπολογίσετε το όριο της $f$στο $x_0=0$.
-  </div>
-  
-  <div class="exercise">
-  Έστω $f$ συνάρτηση για την οποία ισχύει
-  <div class="scale-08">
-  \[10x-50\leq (x-5)f(x)\leq x^2-25, \tag{$\ast$}\]
-  </div>
-  για κάθε $x\in\mathbb{R}$. Να υπολογίσετε το όριο της $f$ στο $x_0=5$.
-  </div>
-  
-  <div class="exercise">
-  Έστω $f$ συνάρτηση για την οποία ισχύει
-  \[ f^2(x)+4\lt x+4f(x), \tag{$\ast$}\]
-  για κάθε $x\gt 0$. Αποδείξτε ότι $\lim\limits_{x\to 0^{+}}f(x)=2$.
-  </div>
-  
-  <div class="exercise">
-  Υπολογίστε το όριο $\lim\limits_{x\to 0^{+}}\dfrac{\gsin\sqrt{x\sqrt{x}}}{\sqrt{x^2+\sqrt{x^3}}}$.
-  </div>
-
-  </section>
-
-  <section id="limits-non-finite">
-
-    <h2>Μη πεπερασμένα όρια</h2>
-  
-    <h3 id="limits-non-finite-calculation">Υπολογισμός ορίων</h3>
-
-
-
-<div class="exercise">
-Να υπολογιστούν τα όρια:
-<ol class="array-list">
-<li>$\lim\limits_{x\to 2^+}\dfrac{1}{x-2}$</li>
-<li>$\lim\limits_{x\to 2^+}\dfrac{1}{2x-4}$</li>
-<li>$\lim\limits_{x\to 2^+}\dfrac{1}{x^2-4}$</li>
-<li>$\lim\limits_{x\to 2^+}\dfrac{1}{x^4-16}$</li>
-<li>$\lim\limits_{x\to 2^+}\dfrac{1}{8-x^3}$</li>
-<li>$\lim\limits_{x\to 2^+}\dfrac{1}{x^2-3x+2}$</li>
-</ol>
-</div>
-
-<div class="exercise">
-Να υπολογιστούν τα όρια:
-<ol class="array-list">
-<li>$\lim\limits_{x\to -3^-}\dfrac{1}{x+3}$</li>
-<li>$\lim\limits_{x\to -3^+}\dfrac{1}{x+3}$</li>
-<li>$\lim\limits_{x\to 2^+}\dfrac{x+2}{2-x}$</li>
-<li>$\lim\limits_{x\to 2^+}\dfrac{1}{\sqrt{2}-\sqrt{x}}$</li>	
-<li>$\lim\limits_{x\to -3^+}\dfrac{1}{x^2-9}$</li>
-<li>$\lim\limits_{x\to -3^-}\dfrac{1}{x^3+27}$</li>
-</ol>
-</div>
-
-<div class="exercise">
-Να υπολογιστούν τα όρια:
-<ol class="array-list">
-<li>$\lim\limits_{x\to -3^+}\dfrac{1}{x^2+x-6}$</li>
-<li>$\lim\limits_{x\to -3^+}\dfrac{1}{-3x-x^2}$</li>
-<li>$\lim\limits_{x\to 2}\dfrac{x-3}{(x-2)^2}$</li>
-<li>$\lim\limits_{x\to 1}\dfrac{x+7}{x^3+x^2-5x+3}$</li>
-<li>$\lim\limits_{x\to -2^+}\dfrac{|x^2-3x|+x}{x+2}$</li>
-<li>$\lim\limits_{x\to -2^+}\dfrac{\sqrt{x+3}+\sqrt{x+4}}{\sqrt{x+2}}$</li>
-</ol>
-</div>
-
-<div class="exercise">
-Να υπολογιστούν, εφόσον υπάρχουν, τα όρια:
-<ol class="array-list">
-<li>$\lim\limits_{x\to 0}\dfrac{x-2}{x^4-2x^2}$</li>
-<li>$\lim\limits_{x\to 3^+}\dfrac{\sqrt{x}-\sqrt{3}}{(x-3)^2}$</li>
-<li>$\lim\limits_{x\to 8^-}\dfrac{\sqrt[3]{x}-2}{(x-8)^2}$</li>
-<li>$\lim\limits_{x\to -1}\dfrac{|x+4|}{|x+1|}$</li>
-<li>$\lim\limits_{x\to 1}\dfrac{1-\sqrt{x}}{x^3-3x^2+3x-1}$</li>
-<li>$\lim\limits_{x\to 1^-}\dfrac{3x+\sqrt{x}}{\sqrt[3]{x^2+7}-2}$</li>
-</ol>
-</div>
-
-<div class="exercise">
-Να υπολογιστούν, εφόσον υπάρχουν, τα όρια:
-<ol class="array-list">
-<li>$\lim\limits_{x\to 2}\dfrac{\sqrt{2x^2+1}-3}{(x-2)^5}$</li>
-<li>$\lim\limits_{x\to -2^+}\dfrac{x^2-3x}{|x|-2}$</li>
-<li>$\lim\limits_{x\to -1^-}\dfrac{x^3-2x^2+x}{|x|-1}$</li>
-<li>$\lim\limits_{x\to 0^+}\left(\dfrac{1}{\sqrt{x}}-\dfrac{1}{x}\right)$</li>
-<li>$\lim\limits_{x\to 0^+}\left(\dfrac{1}{|x|}-\dfrac{1}{\sqrt{x}}\right)$</li>
-<li>$\lim\limits_{x\to 2^-}\dfrac{ x^3-2x^2+x-2}{ x^3-3x^2+4}$</li>
-</ol>
-</div>
-
-<div class="exercise">
-Να υπολογιστούν, εφόσον υπάρχουν, τα όρια:
-<ol class="array-list">
-<li>$\lim\limits_{x\to 0}\dfrac{x^2-1}{\sqrt{1+x^2}-\sqrt{1-x^2}}$</li>
-<li>$\lim\limits_{x\to 3^-}\dfrac{|x^2-4x+1|+3|x-2|}{|x-1|-2}$</li>
-<li>$\lim\limits_{x\to 4}\dfrac{x-1}{x-5\sqrt{x}+6}$</li>
-<li>$\lim\limits_{x\to 0}\left(\dfrac{1}{x}-\dfrac{1}{3\sqrt{x}}\right)$</li>
-<li>$\lim\limits_{x\to 2}\dfrac{3x^2-10}{ x-2\sqrt{2x}+2}$</li>
-<li>$\lim\limits_{x\to 0}\dfrac{\sqrt[4]{x^3}}{\sqrt[5]{x^6}}$</li>
-</ol>
-</div>
-
-<div class="exercise">
-Να υπολογιστούν, εφόσον υπάρχουν, τα όρια:
-<ol class="array-list">
-<li>$\lim\limits_{x\to 0^-}\dfrac{4x-5}{\gsin x}$</li>
-<li>$\lim\limits_{x\to 1^-}\dfrac{4}{\gsin\pi x}$</li>
-<li>$\lim\limits_{x\to 0}\dfrac{2-x}{1-\gcos^3 x}$</li>
-<li>$\lim\limits_{x\to\frac{\pi}{2}}\dfrac{x-2}{1-\gsin x}$</li>
-<li>$\lim\limits_{x\to -\frac{\pi}{2}}\dfrac{2\gtan x-3\gsin x}{1+\gsin x}$</li>
-<li>$\lim\limits_{x\to \frac{\pi}{4}}\dfrac{2\gsin x+1}{2\gsin^2 x-1}$</li>
-</ol>
-</div>
-
-<h3 id="limits-non-finite-general">Γενικές ασκήσεις</h3>
-
-<div class="exercise">
-Δίνεται η συνάρτηση $f(x)=\dfrac{1}{|x+1|}$. Να σχεδιάσετε τη γραφική παράσταση της $f$ και από αυτήν να προσδιορίσετε το όριο της $f$ στο $x_0=-1$. 
-</div>
-
-<div class="exercise">
-Δίνεται η συνάρτηση
-\[f(x)=\begin{cases}\dfrac{x^2}{x^2-4}, & -2\lt x\lt 2 \\[2ex] \dfrac{\sqrt{x^2+1}-2}{x-3},& 2\leq x\lt 3 \end{cases}.\]
-Υπολογίστε τα όρια:
-<ol class="array-list-3">
-<li>$\lim\limits_{x\to 2^-}f(x)$</li>
-<li>$\lim\limits_{x\to 2^+}f(x)$</li>
-<li>$\lim\limits_{x\to 3^-}f(x)$</li>
-</ol>
-</div>
-
-<div class="exercise">
-Δίνεται η συνάρτηση
-\[f(x)=\begin{cases}-\dfrac{5}{(x+2)^3}\,, &x\lt -2\\[2ex] \dfrac{\sqrt{x+2}}{x+2}, &x\gt -2\end{cases}.\]
-Εξετάστε αν υπάρχει το όριο της $f$ στο $x_0=-2$.
-</div>
-
-<div class="exercise">
-Να προσδιορίσετε τα πλευρικά όρια της συνάρτησης $f(x)= \dfrac{1+\gsin^2 x}{\sqrt{2x^2-x+5}-\sqrt{x+9}}$ στο $x_0=-1$.
-</div>
-
-<div class="exercise">
-Να υπολογίσετε το όριο της συνάρτησης $f$ στο $1$, όταν:
-<ol class="array-list-3">
-<li>$\lim\limits_{x\to 1}\dfrac{2x-1}{f(x)}=+\infty$</li>
-<li>$\lim\limits_{x\to 1}\dfrac{f(x)}{4x+3}=-\infty$</li>
-<li>$\lim\limits_{x\to 1}((3x+4)f(x))=+\infty$</li>
-</ol>
-</div>
-
-<div class="exercise">
-Να υπολογίσετε το όριο της συνάρτησης $f$ στο $3$, όταν:
-<ol class="array-list">
-<li>$\lim\limits_{x\to 3}\dfrac{3x-2}{f(x)}=+\infty$</li>
-<li>$\lim\limits_{x\to 3}\dfrac{f(x)}{x^2+1}+\infty$</li>
-<li>$\lim\limits_{x\to 3}(f(x)(x^2-3x+1))=-\infty$</li>
-<li>$\lim\limits_{x\to 3}(x^2 f(x))=+\infty$</li>
-<li>$\lim\limits_{x\to 3}(2x-f(x))=+\infty$</li>
-<li>$\lim\limits_{x\to 3}\dfrac{\sqrt{x+1}-2}{(x-3)f(x)}=-\infty$</li>
-</ol>
-</div>
-
-<div class="exercise">
-Έστω συναρτήσεις $f,g$ με $\lim\limits_{x\to 0}\dfrac{f(x)}{g(x)-1}=+\infty$ ή $+\infty$ και 
-$\lim\limits_{x\to 0}f(x)=1$. Αποδείξτε ότι $\lim\limits_{x\to 0}g(x)=1$.
-</div>
-
-<div class="exercise">
-Έστω συναρτήσεις $f,g$ με
-\begin{align}
-\lim\limits_{x\to -3}(2f(x)-3g(x))&=-\infty\\[1ex]
-\lim\limits_{x\to -3}(3f(x)+2g(x))&=-1.
-\end{align}
-Υπολογίστε τα $\lim\limits_{x\to -3}f(x)$ και $\lim\limits_{x\to -3}g(x)$. 
-</div>
-
-<div class="exercise">
-Έστω συναρτήσεις $f,g$ με
-\[f^2(x)g(x)= -4, \tag{$\ast$}\]
-για κάθε $x\in\mathbb{R}$, και $\lim\limits_{x\to 1}f(x)=0$. Υπολογίστε το $\lim\limits_{x\to 1}g(x)$.
-</div>
-
-<div class="exercise">
-Έστω συνάρτηση $f: \mathbb{R}\to\mathbb{R}$, για την οποία η $C_f$ βρίσκεται κάτω από τον άξονα $x^{\prime}x$. Αν $\lim\limits_{x\to 2}\dfrac{x^2+3}{f(x)}=0$, υπολογίστε τα όρια $\lim\limits_{x\to 2}f(x)$ και $\lim\limits_{x\to 2}\dfrac{3f^2(x)-12}{3-f(x)}$.
-</div>
-
-<div class="exercise">
-Θεωρούµε τις συναρτήσεις $f (x) =\dfrac{1}{|x-1|}$ και $g (x) =\dfrac{1}{|x^2-1|}$. Να υπολογίσετε τα όρια:
-<ol class="array-list-3">
-<li>$\lim\limits_{x\to 1}f(x)$</li>
-<li>$\lim\limits_{x\to 1}g(x)$</li>
-<li>$\lim\limits_{x\to 1}(f (x) + g(x))$</li>
-<li>$\lim\limits_{x\to 1}(f (x)g(x))$</li>
-<li>$\lim\limits_{x\to 1}(f (x) − g(x))$</li>
-<li>$\lim\limits_{x\to 1}\dfrac{f(x)}{g(x)}$</li>
-<li>$\lim\limits_{x\to 1}\dfrac{g(x)}{f(x)}$</li>
-<li>$\lim\limits_{x\to 1}(f^2(x)+g^2(x))$</li>
-<li>$\lim\limits_{x\to 1}((x^2-3x+2)f(x))$</li>
-</ol>
-</div>
-
-<div class="exercise">
-Θεωρούµε τις συναρτήσεις $f (x) =\dfrac{x^2-1}{(x-5)^4}$ και $g (x) =\dfrac{2x}{(x-5)^4}$. Να υπολογίσετε τα όρια:
-<ol class="array-list-3">
-<li>$\lim\limits_{x\to 5}f(x)$</li>
-<li>$\lim\limits_{x\to 5}g(x)$</li>
-<li>$\lim\limits_{x\to 5}(f (x) + g(x))$</li>
-<li>$\lim\limits_{x\to 5}(f(x)g(x))$</li>
-<li>$\lim\limits_{x\to 5}(f(x)−g(x))$</li>
-<li>$\lim\limits_{x\to 5}\dfrac{f(x)}{g(x)}$</li>
-<li>$\lim\limits_{x\to 5}\dfrac{g(x)}{f(x)}$</li>
-<li>$\lim\limits_{x\to 5}(f^2(x)-g^2(x))$</li>
-<li>$\lim\limits_{x\to 1}((x^2-5x)f(x))$</li>
-</ol>
-</div>
-
-<div class="exercise">
-Έστω συνάρτηση $f$ με $\lim\limits_{x\to 3}f(x)= +\infty$. Υπολογίστε τα όρια:
-<ol class="array-list">
-<li>$\lim\limits_{x\to 3}\dfrac{x^2-9}{f(x)}$</li>
-<li>$\lim\limits_{x\to 3}\dfrac{f^2(x)-5f(x)}{3f^2(x)+10}$</li>
-</ol>
-</div>
-
-<div class="exercise">
-Αποδείξτε ότι δεν υπάρχει πραγματικός αριθμός $\lambda$ ώστε το όριο της συνάρτησης $f(x)=\dfrac{\lambda x^2+x-6}{|x-2|}$ στο $x_0=2$ να υπάρχει και να είναι πραγματικός αριθμός.
-</div>
-
-<div class="exercise">
-Να προσδιορίσετε τους $\kappa,\lambda\in\mathbb{R}$ ώστε η συνάρτηση $f(x)=\dfrac{x^2+3}{x^2-\kappa x-\lambda}$ να διαθέτει μη πεπερασμένα πλευρικά όρια στα σημεία $x_1=2$ και $x_2=-3$. 
-</div>
-
-<div class="exercise">
-Για τις διάφορες τιμές των $\alpha,\beta\in\mathbb{R}$, υπολογίστε, εφόσον υπάρχουν, τα όρια:
-<ol class="array-list">
-<li>$\lim\limits_{x\to 1}\dfrac{2x^2+\alpha}{|x-\beta|}$</li>
-<li>$\lim\limits_{x\to 0}\dfrac{x}{\alpha x^2-3x+\beta}$</li>
-<li>$\lim\limits_{x\to -1}\dfrac{x+2+\alpha}{x^2-\beta}$</li>
-<li>$\lim\limits_{x\to 2}\dfrac{ x^2-\alpha x+\beta-3}{x^2-4}$</li>
-<li>$\lim\limits_{x\to 0}\dfrac{\alpha\gcos x+3\gsin x-\beta}{x}$</li>
-<li>$\lim\limits_{x\to\alpha}\dfrac{2x-6+\alpha}{|x-\alpha|}$</li>
-</ol>
-</div>
-
-<div class="exercise">
-Για τις διάφορες τιμές του $\alpha\in\mathbb{R}$, υπολογίστε, εφόσον υπάρχουν, τα όρια:
-<ol class="array-list">
-<li>$\lim\limits_{x\to\alpha}\dfrac{\sqrt{x^2-3\alpha x+3\alpha^2-\alpha}}{|x|-\alpha}$</li>
-<li>$\lim\limits_{x\to 1}\dfrac{\alpha x^2-2}{|x-1|}$</li>
-<li>$\lim\limits_{x\to 5}\dfrac{x^2-10x+\alpha}{(x-5)^2}$</li>
-<li>$\lim\limits_{x\to 3}\dfrac{2x^2-3\alpha}{|x-3|}$</li>
-<li>$\lim\limits_{x\to 2}\dfrac{x^2-5\alpha}{x-\alpha}$</li>
-<li>$\lim\limits_{x\to \alpha}\dfrac{x^2-\alpha}{x^2+\alpha}$</li>
-</ol>
-</div>
-
-<div class="exercise">
-Σε καθεµία από τις παρακάτω περιπτώσεις, να εξετάσετε αν υπάρχει $\alpha\in\mathbb{R}$ ώστε να είναι πραγµατικός αριθµός το όριο:
-<ol class="array-list-3">
-<li>$\lim\limits_{x\to 2}\dfrac{x^2-\alpha x+2}{x-2}$</li>
-<li>$\lim\limits_{x\to 2}\dfrac{x^2-\alpha x+2}{(x-2)^2}$</li>
-<li>$\lim\limits_{x\to 2}\dfrac{x^2-\alpha x+2}{(x-2)^3}$</li>
-</ol>
-</div>
-  
-  </section>
-
-  <section id="limits-at-infinity">
-
-    <h2>Όρια στο άπειρο</h2>
-  
-    <h3 id="limits-at-infinity-calculation"></h3>
-    
-    <div class="exercise">
-    Να υπολογιστούν, εφόσον υπάρχουν, τα όρια:
-    <ol class="array-list">
-    <li>$\lim\limits_{x\to +\infty}(x+3)$</li>
-    <li>$\lim\limits_{x\to +\infty}\dfrac{1}{x+3}$</li>
-    <li>$\lim\limits_{x\to +\infty}(3-2x)$</li>
-    <li>$\lim\limits_{x\to +\infty}\dfrac{1}{3-2x}$</li>
-    <li>$\lim\limits_{x\to +\infty}(x^2-9)$</li>
-    <li>$\lim\limits_{x\to +\infty}\left(x(x-3)\right)$</li>
-    </ol>
-    </div>
-    
-    <div class="exercise">
-    Να υπολογιστούν, εφόσον υπάρχουν, τα όρια:
-    <ol class="array-list">
-    <li>$\lim\limits_{x\to +\infty}(3x^2-7x + 9)$</li>
-    <li>$\lim\limits_{x\to +\infty}\dfrac{x^2-x+1}{x^2+1}$</li>
-    <li>$\lim\limits_{x\to -\infty}(-3x^8 + 3x^2 + 6x)$</li>
-    <li>$\lim\limits_{x\to +\infty}\dfrac{x^2}{x^2-9x}$</li>
-    <li>$\lim\limits_{x\to -\infty}\dfrac{x^2-x+1}{x^2+2}$</li>
-    <li>$\lim\limits_{x\to +\infty}\dfrac{(1-x)(x^2 -3)}{2x^2-1}$</li>
-    </ol>
-    </div>
-    
-    <div class="exercise">
-    Να υπολογιστούν, εφόσον υπάρχουν, τα όρια:
-    <ol class="array-list">
-    <li>$\lim\limits_{x\to +\infty}(3x^2-4x+2)$</li>
-    <li>$\lim\limits_{x\to -\infty}(x-x^2+3-4x^3)$</li>
-    <li>$\lim\limits_{x\to +\infty}\dfrac{3x^2-x+2}{4x^2-7x}$</li>
-    <li>$\lim\limits_{x\to -\infty}\dfrac{2x-1}{3x^3+5x-2}$</li>
-    <li>$\lim\limits_{x\to +\infty}\dfrac{3x^2+x+1}{-2x^4+3x^3}$</li>
-    <li>$\lim\limits_{x\to -\infty}\dfrac{x-5x^4}{x^3 -9x}$</li>
-    </ol>
-    </div>
-    
-    <div class="exercise">
-    Να υπολογιστούν, εφόσον υπάρχουν, τα όρια:
-    <ol class="array-list">
-    <li>$\lim\limits_{x\to +\infty}\left(\sqrt{5x^2+3}+\sqrt{x^2-x+2}\right)$</li>
-    <li>$\lim\limits_{x\to +\infty}\sqrt{5x^2 -x + 1}$</li>
-    <li>$\lim\limits_{x\to -\infty}\sqrt{4x^4 -x^3 + 1}$</li>
-    <li>$\lim\limits_{x\to +\infty}\dfrac{\sqrt{x+1}+\sqrt{x}}{\sqrt{x+2}}$</li>
-    <li>$\lim\limits_{x\to +\infty}\left(\sqrt{x^2 -3x + 1}-x^2\right)$</li>
-    <li>$\lim\limits_{x\to +\infty}\left(\sqrt{\dfrac{x^2-1}{x-1}}-\sqrt{\dfrac{x^2+x}{x+2}}\right)$</li>
-    </ol>
-    </div>
-    
-    <div class="exercise">
-    Να υπολογιστούν, εφόσον υπάρχουν, τα όρια:
-    <ol class="array-list">
-    <li>$\lim\limits_{x\to +\infty}\left(\dfrac{\sqrt{x^2+x}}{x}-x\right)$</li>
-    <li>$\lim\limits_{x\to -\infty}\left(\sqrt{(x-1)(x-2)}+x\right)$</li>
-    <li>$\lim\limits_{x\to +\infty}\dfrac{\sqrt{16x^2+1}}{|x-3|}$</li>
-    <li>$\lim\limits_{x\to +\infty}\Big(\sqrt{x^2+1}-2x+5\Big)$</li>
-    <li>$\lim\limits_{x\to +\infty}\Big(\sqrt[3]{x^4+3}-4\sqrt{x^4+4x+2}\Big)$</li>
-    <li>$\lim\limits_{x\to -\infty}\Big(\sqrt{4x^2+x}+2x\Big)$</li>
-    </ol>
-    </div>
-    
-    <div class="exercise">
-    Να υπολογιστούν, εφόσον υπάρχουν, τα όρια:
-    <ol class="array-list">
-    <li>$\lim\limits_{x\to -\infty}\dfrac{\sqrt{2-x}+2x}{x^2-1}$</li>
-    <li>$\lim\limits_{x\to +\infty}\dfrac{\sqrt{x+3}-\sqrt{x}}{\sqrt{x+1}-\sqrt{x-2}}$</li>
-    <li>$\lim\limits_{x\to +\infty}\!\left(\!\!\sqrt{(x-1)(x-2)(x-3)}-x^2\right)$</li>
-    <li>$\lim\limits_{x\to +\infty}\dfrac{\sqrt{x^2+1}-x}{\sqrt[3]{x^3+2x}-x}$</li>
-    <li>$\lim\limits_{x\to +\infty}\dfrac{\sqrt{x^4+4x^2+5}-x^2}{x+4}$</li>
-    <li>$\lim\limits_{x\to +\infty}\dfrac{x\sqrt{x^2+5x+7}-7}{x-1}$</li>
-    </ol>
-    </div>
-    
-    <div class="exercise">
-    Να υπολογιστούν, εφόσον υπάρχουν, τα όρια:
-    <ol class="array-list">
-    <li>$\lim\limits_{x\to +\infty}\Big(\sqrt{x+1}+\sqrt{x+2}-\sqrt{x}\Big)$</li>
-    <li>$\lim\limits_{x\to +\infty}\dfrac{x+\sqrt{x^2+1}}{2x+3\sqrt{x^2+1}}$</li>
-    <li>$\lim\limits_{x\to +\infty}\dfrac{x-\sqrt{x^2+1}}{x+\sqrt{x^2+1}}$</li>
-    <li>$\lim\limits_{x\to +\infty}\left(\sqrt{x^2+x}-x\right)$</li>
-    <li>$\lim\limits_{x\to +\infty}\!\Big(\!\!\sqrt[3]{x-5}+\sqrt[3]{x-2}-\sqrt[3]{x-1}\Big)$</li>
-    <li>$\lim\limits_{x\to -\infty}\dfrac{\sqrt{x^2+1}-|x+1|}{\sqrt{1-x}}$</li>
-    </ol>
-    </div>
-    
-    <div class="exercise">
-    Να υπολογιστούν, εφόσον υπάρχουν, τα όρια:
-    <ol class="array-list">
-    <li>$\lim\limits_{x\to +\infty}\Big(\sqrt{16x^2+5x+3}-4x+1\Big)$</li>
-    <li>$\lim\limits_{x\to +\infty}\dfrac{\sqrt{9x^2+x-2}+\sqrt{9x^2+2}}{\sqrt{x^2+2x}+x-3}$</li>
-    <li>$\lim\limits_{x\to +\infty}\dfrac{\sqrt{x^2+2x}-x+3}{\sqrt{9x^2+x-2}-\sqrt{9x^2+2}}$</li>
-    <li>$\lim\limits_{x\to -\infty}\dfrac{\sqrt{x^2-1}-\sqrt{x^2+x}}{\sqrt{(x-1)(3x+2)}}$</li>
-    <li>$\lim\limits_{x\to +\infty}\sqrt[3]{\dfrac{x^2+3}{x}-\dfrac{x^2-4}{x-1}}$</li>
-    <li>$\lim\limits_{x\to +\infty}\left(\!x\!\left(\!\sqrt{\dfrac{(1-2x)^2}{x^2}+5}-3\right)\!\right)$</li>
-    </ol>
-    </div>
-    
-    <div class="exercise">
-    Να υπολογιστούν, εφόσον υπάρχουν, τα όρια:
-    <ol class="array-list">
-    <li>$\lim\limits_{x\to -\infty}(|x+1|-3)$</li>
-    <li>$\lim\limits_{x\to +\infty}(|x+1|-|x-1|)$</li>
-    <li>$\lim\limits_{x\to +\infty}(x+|-x+1|)$</li>
-    <li>$\lim\limits_{x\to +\infty}\dfrac{|x^2-3x|+x}{x+2}$</li>
-    <li>$\lim\limits_{x\to +\infty}\dfrac{|x-1|+x}{x+3}$</li>
-    <li>$\lim\limits_{x\to +\infty}\dfrac{x+|1-x|}{2x-1}$</li>
-    </ol>
-    </div>
-    
-    <div class="exercise">
-    Να υπολογιστούν, εφόσον υπάρχουν, τα όρια:
-    <ol class="array-list">
-    <li>$\lim\limits_{x\to -\infty}(x|x^3-1|+x^2+1)$</li>
-    <li>$\lim\limits_{x\to +\infty}|x^3 -3x + 2|$</li>
-    <li>$\lim\limits_{x\to +\infty}\dfrac{|x-5|-|9-x^2|+2}{3x-6}$</li>
-    <li>$\lim\limits_{x\to -\infty}\dfrac{|2x-1|-3|4-2x| +1}{5x^4+2}$</li>
-    <li>$\lim\limits_{x\to -\infty}\left|\dfrac{1}{x^2+5}+\dfrac{1}{x-2}\right|$</li>
-    <li>$\lim\limits_{x\to -\infty}\dfrac{(x+1)|x+2||x+3|+1}{x^2+1}$</li>
-    </ol>
-    </div>
-    
-    <div class="exercise">
-    Να υπολογιστούν, εφόσον υπάρχουν, τα όρια:
-    <ol class="array-list">
-    <li>$\lim\limits_{x\to +\infty}4^{x+1}$</li>
-    <li>$\lim\limits_{x\to +\infty}\left(\dfrac{3}{5}\right)^{x}$</li>
-    <li>$\lim\limits_{x\to +\infty}\sqrt{2^x+1}$</li>
-    <li>$\lim\limits_{x\to -\infty}(2^x+x)$</li>
-    <li>$\lim\limits_{x\to +\infty}(2^x+2^{-x})$</li>
-    <li>$\lim\limits_{x\to +\infty}\dfrac{2^x+3^x}{4^x+5^x}$</li>
-    <li>$\lim\limits_{x\to -\infty}\dfrac{2^x+3^x}{4^x+5^x}$</li>
-    <li>$\lim\limits_{x\to -\infty}\left(3+\dfrac{1}{x}\right)^{x-1}$</li>
-    </ol>
-    </div>
-    
-    <div class="exercise">
-    Να υπολογιστούν, εφόσον υπάρχουν, τα όρια:
-    <ol class="array-list">
-    <li>$\lim\limits_{x\to -\infty}x\cdot3^\frac{3}{x}$</li>
-    <li>$\lim\limits_{x\to +\infty}2^{\sqrt{x}-\sqrt{x+1}}$</li>
-    <li>$\lim\limits_{x\to \infty}e^{\,\frac{x^2+1}{x-2}}$</li>
-    <li>$\lim\limits_{x\to \infty}e^{\frac{2-x^3}{x^2+x}}$</li>
-    <li>$\lim\limits_{x\to +\infty}(5^x-4^x)$</li>
-    <li>$\lim\limits_{x\to -\infty}(3^x-10^x)$</li>
-    </ol>
-    </div>
-    
-    <div class="exercise">
-    Να υπολογιστούν, εφόσον υπάρχουν, τα όρια:
-    <ol class="array-list">
-    <li>$\lim\limits_{x\to -\infty}\left(\left(\dfrac{5}{4}\right)^{x}-\left (\dfrac{3}{2}\right)^{x}\,\right)$</li>
-    <li>$\lim\limits_{x\to +\infty}\left(\left(\dfrac{4}{9}\right)^{x}-\left(\dfrac{3}{4}\right)^{x}\,\right)$</li>
-    <li>$\lim\limits_{x\to -\infty}\dfrac{3^x+2}{x^5+1}$</li>
-    <li>$\lim\limits_{x\to +\infty}\dfrac{e^x+1}{e^{2x}+3}$</li>
-    <li>$\lim\limits_{x\to +\infty}\dfrac{2^x+1}{2^{x+1}+3}$</li>
-    <li>$\lim\limits_{x\to +\infty}\dfrac{e^{x+1}+2^x}{e^x+2^{x+3}}$</li>
-    </ol>
-    </div>
-    
-    <div class="exercise">
-    Να υπολογιστούν, εφόσον υπάρχουν, τα όρια:
-    <ol class="array-list">
-    <li>$\lim\limits_{x\to -\infty}\dfrac{1+\ln^2 |x|}{4-\ln^2 |x|}$</li>
-    <li>$\lim\limits_{x\to \infty}\dfrac{\ln^2 x+1}{\ln^2 x-\ln x+1}$</li>
-    <li>$\lim\limits_{x\to +\infty}(2\ln 3x-\ln(x^2+1))$</li>
-    <li>$\lim\limits_{x\to +\infty}(3\ln x-\ln(2x^2-x+1))$</li>
-    <li>$\lim\limits_{x\to +\infty}(\ln(x+\gsin x)-2\ln x)$</li>
-    <li>$\lim\limits_{x\to +\infty}(x-\ln(2+e^{x+3}))$</li>
-    </ol>
-    </div>
-    
-    <div class="exercise">
-    Να υπολογιστούν, εφόσον υπάρχουν, τα όρια:
-    <ol class="array-list">
-    <li>$\lim\limits_{x\to +\infty}\left(\ln(1+e^{-x})-\sqrt{x}\right)$</li>
-    <li>$\lim\limits_{x\to +\infty}\left(x^2-\ln\left(1+\dfrac{1}{x^2}\right)\right)$</li>
-    <li>$\lim\limits_{x\to +\infty}(x^3\ln(2x)-x^2)$</li>
-    <li>$\lim\limits_{x\to +\infty}\left(\ln(\sqrt{x^2+1})-x+1\right)$</li>
-    <li>$\lim\limits_{x\to +\infty}\dfrac{\ln(x^2+1)}{\ln(x^3+1)}$</li>
-    <li>$\lim\limits_{x\to -\infty}\left(\ln(x^3-5)(x^5+1)-8\ln|x|\right)$</li>
-    </ol>
-    </div>
-    
-    <div class="exercise">
-    Να υπολογιστούν, εφόσον υπάρχουν, τα όρια:
-    <ol class="array-list">
-    <li>$\lim\limits_{x\to +\infty}\left(e^{1-x}\gsin x\right)$</li>
-    <li>$\lim\limits_{x\to -\infty}\left((2x-3)\gcos\dfrac{1}{x}\right)$</li>
-    <li>$\lim\limits_{x\to -\infty}\left(x\gtan\left(\dfrac{1}{x}+2\right)\right)$</li>
-    <li>$\lim\limits_{x\to +\infty}\left(x^5 \gsin\dfrac{1}{x}\right)$</li>
-    <li>$\lim\limits_{x\to +\infty}\left(x^2 \gsin^4 \dfrac{1}{x}\right)$</li>
-    <li>$\lim\limits_{x\to -\infty}\left(\left(\dfrac{1}{\sqrt{|x|}}+\dfrac{1}{x}\right)\gtan\left(\dfrac{2}{x^2}\right)\right)$</li>
-    </ol>
-    </div>
-    
-
-    <h3 id="limits-at-infinity-general">Γενικές ασκήσεις</h3>
-
-    
-    <div class="exercise">
-    Έστω $f: \mathbb{R}\to\mathbb{R}$ συνάρτηση ώστε το όριο $\lim\limits_{x\to -\infty}\left(xf(x)\right)$ να είναι πραγματικός αριθμός. Αποδείξτε ότι $\lim\limits_{x\to -\infty}f(x)=0$.
-    </div>
-    
-    <div class="exercise">
-    Να υπολογίσετε το όριο $\lim\limits_{x\to +\infty}(f(x) -\lambda x)$, όπου $\lambda=\lim\limits_{x\to +\infty}f(x)$, όταν:
-    <ol class="array-list-3">
-    <li>$f(x)= \dfrac{3x^2-x+1}{x+1}$</li>
-    <li>$f(x)= \dfrac{x\sqrt{x^2+2}}{x+1}$</li>
-    <li>$f(x)=\sqrt{9x^2-x}-3x$</li>
-    </ol>
-    </div>
-    
-    <div class="exercise">
-    Έστω συνάρτηση $f$ με $\lim\limits_{x\to -\infty}\dfrac{(x^2-1)f(x)}{x+2}= \dfrac{4}{5}$. Υπολογίστε το $\lim\limits_{x\to -\infty}f(x)$.
-    </div>
-    
-    <div class="exercise">
-    Έστω συνάρτηση $f$	με $\lim\limits_{x\to -\infty}f(x)=+\infty$. Υπολογίστε το όριο
-    \[\lim\limits_{x\to -\infty}\dfrac{3f^2(x)-2f(x)}{f^2(x)+4f(x)+5}.\]
-    </div>
-    
-    <div class="exercise">Έστω συνάρτηση $f$ με $\lim\limits_{x\to +\infty}(xf(x)-5)=2$. Υπολογίστε τα όρια:
-    <ol class="array-list">
-    <li>$\lim\limits_{x\to +\infty}(f(x)-x^2)$</li>
-    <li>$\lim\limits_{x\to +\infty}\dfrac{x+f(x)}{f(x)-x^2}$</li>
-    </ol>
-    </div>
-    
-    <div class="exercise">
-    Δίνεται η συνάρτηση $f: \mathbb{R}\to\mathbb{R}$ με $\lim\limits_{x\to +\infty}f(x)=1$. Να αποδειχθεί ότι
-    \[\lim\limits_{x\to +\infty}(f(x+2)-2f(x+1)+ f(x))=0.\] 
-    </div>
-    
-    <div class="exercise">
-    Για τις διάφορες τιμές του $\alpha\in\mathbb{R}$, υπολογίστε το όριο $\lim\limits_{x\to +\infty}f(x)$, όταν:
-    <ol class="array-list">
-    <li>$f(x)=\left((\alpha-1)x^4+x^3-2x-5\right)$</li>
-    <li>$f(x)=\dfrac{(\alpha-1)x^2+2x+3}{4x+7}$</li>
-    <li>$f(x)=\dfrac{\alpha(x^2+x)-(2x^2+1)}{\alpha^2 x^2-4x(x+2) +1}$</li>
-    <li>$f(x)=\dfrac{(\alpha-2)x^3+(\alpha+3)x+5}{(\alpha-5)x^2+x+1}$</li>
-    <li>$f(x)=\alpha x+\sqrt{3+4x-x^2}$</li>
-    <li>$f(x)=\sqrt{x^2-3x+2}-\alpha x-12$</li>
-    </ol>
-    </div>
-    
-    <div class="exercise">
-    Για τις διάφορες τιμές του $\alpha\in(0,+\infty)$, υπολογίστε το όριο $\lim\limits_{x\to +\infty}f(x)$, όταν:
-    <ol class="array-list-3">
-    <li>$f(x)=\dfrac{\alpha^x +4}{2\alpha^x+3}$</li>
-    <li>$f(x)=\dfrac{\alpha^x+5\cdot 3^x}{4\alpha^x+3^{x+1}}$</li>
-    <li>$f(x)=\dfrac{2\alpha^x+3\cdot 2^x}{\alpha^x+5^x}$</li>
-    </ol>
-    </div>
-    
-    <div class="exercise">
-    Έστω η συνάρτηση $f$ με
-    <div class="mobile-display">
-      <div class="scale-08">
-        $$f(x)= \dfrac{(\alpha\!-\!1)x^4 \!+\! (\alpha^2 \!-\! 1)x^3 \!+\! (\alpha\!+\!1)x^2 \!+\!2}{(\beta\!+\!1)x^3 \!+\! 3x\!+\! 4},$$
+      <div class="exercise">
+        Να υπολογιστούν τα όρια:
+        <ol class="array-list">
+          <li>$\lim\limits_{x\to 1}\dfrac{x^2-1}{x-1}$</li>
+          <li>$\lim\limits_{x\to 1}\dfrac{x^2-3x+2}{x-1}$</li>
+          <li>$\lim\limits_{x\to 1}\dfrac{x^2-3x+2}{x^2-4x+3}$</li>
+          <li>$\lim\limits_{x\to -2}\dfrac{x^3-4x^2+x+2}{x-2}$</li>
+          <li>$\lim\limits_{x\to -2}\dfrac{x^3+2x^2-x-2}{x^2-4}$</li>
+          <li>$\lim\limits_{x\to -2}\dfrac{x^3+3x^2-4}{x^2-4}$</li>
+        </ol>
       </div>
-    </div>
-    <div class="desktop-display">
-      $$f(x)= \dfrac{(\alpha-1)x^4 + (\alpha^2 - 1)x^3 + (\alpha+1)x^2 +2}{(\beta+1)x^3 + 3x+ 4},$$
-    </div>
-    όπου $\alpha,\beta\in\mathbb{R}$.
-    <ol class="vertical-list">
-    <li> Να υπολογίσετε το όριο της $f$ στο $+\infty$, για τις διάφορες τιμές των $\alpha,\beta$.</li>
-    <li> Να υπολογίσετε τα $\alpha,\beta$ ώστε το όριο της $f$ στο $-\infty$ να ισούται με $0$.</li>
-    </ol>
-    </div>
-    
-    <div class="exercise">
-    Δίνεται η συνάρτηση με $f(x)=\dfrac{\alpha x^2+5x-2}{\beta x^2-4}$, όπου $\alpha,\beta\in\mathbb{R}$. Για τις διάφορες τιμές των $\alpha,\beta$, να υπολογίσετε τα όρια:
-    <ol class="array-list">
-    <li>$\lim\limits_{x\to 2}f(x)$</li>
-    <li>$\lim\limits_{x\to +\infty}f(x)$</li>
-    </ol>
-    </div>
-    
-    <div class="exercise">
-    Έστω οι συναρτήσεις
-    \[\begin{align}
-    f(x)&=\dfrac{x^2+4x+3}{x+1},\\[1ex]
-    g(x)&=\sqrt{4x^2+2x+3}.
-    \end{align}
-    \]
-    Να προσδιορίσετε τους αριθμούς $\alpha,\beta\in\mathbb{R}$, όταν:
-    <ol class="array-list">
-    <li>$\lim\limits_{x\to +\infty}\Big(f(x)-(\alpha x+\beta)\Big)=3$</li>
-    <li>$\lim\limits_{x\to -\infty}\Big(g(x)-(\alpha x+\beta)\Big)=2$</li>
-    </ol>
-    </div>
-    
-    <div class="exercise">
-    Έστω η συνάρτηση $f(x)=\sqrt{4x^2+1}-2x\gsin\alpha$, όπου $\alpha\in[0,2\pi]$.
-    <ol class="vertical-list">
-    <li> Υπολογίστε το $\lim\limits_{x\to +\infty}f(x)$.</li>
-    <li> Προσδιορίστε την τιμή του $\alpha$ ώστε $\lim\limits_{x\to -\infty}f(x)=0$.</li>
-    </ol>
-    </div>
-    
-    <div class="exercise">
-    Να υπολογίσετε το όριο $\lim\limits_{x\to \infty}\Big(\sqrt{4x^2+x+1}+\alpha x+1\Big)$, για τις διάφορες τιμές του $\alpha\in\mathbb{R}$. 
-    </div>
-    
-    <div class="exercise">
-    Θεωρούμε τη συνάρτηση $f(x)= \sqrt{4x^4+3x^2+2}-\kappa x^2+\lambda x-\mu$, όπου $\kappa,\lambda,\mu\in\mathbb{R}$. Προσδιορίστε τους $\kappa,\lambda,\mu$ ώστε $\lim\limits_{x\to -\infty}f(x)=\frac{11}{4}$.
-    </div>
-    
-    <div class="exercise">
-    Θεωρούμε τη συνάρτηση $f(x)=\dfrac{\sqrt{9x^2+x+1}-\kappa x}{\sqrt{x^2+2x+3}-\lambda x}$, όπου $\kappa,\lambda \in\mathbb{R}$. Προσδιορίστε τους $\kappa,\lambda $ ώστε $\lim\limits_{x\to +\infty}f(x)=\frac{1}{6}$.
-    </div>
-    
-    <div class="exercise">
-    Να προσδιορίσετε τις τιμές των $\alpha,\beta\in\mathbb{R}$ για τις οποίες
-    \[\lim\limits_{x\to +\infty}\left(\sqrt{4x^2+x+1}+\alpha x-2\beta\right)=1.\] 
-    </div>
-    
-    <div class="exercise">
-    Για τις διάφορες τιμές του $\alpha\in\mathbb{R}$, να υπολογίσετε το όριο $\lim\limits_{x\to +\infty}\dfrac{\alpha^{x+1}+e^x}{\alpha^x +e^{x+1}}$.
-    </div>
-    
-    <div class="exercise">
-    Έστω $\alpha,\beta\in\left(0,\frac{\pi}{2}\right)\cup\left (\frac{\pi}{2},\pi\right)$. Θεωρούμε τη συνάρτηση
-    \[f(x)=\sqrt{4x^2\gcos^2\alpha-4x+1}-x+\gsin\beta.\]
-    <ol class="vertical-list">
-    <li> Να προσδιορίσετε το πεδίο ορισμού της $f$.</li>
-    <li> Να προσδιορίσετε τις τιμές των $\alpha,\beta$ έτσι ώστε $\lim\limits_{x\to +\infty}f(x)=-\dfrac{3}{2}$.</li>
-    </ol>
-    </div>
-    
-    <div class="exercise">
-    Θεωρούμε τη συνάρτηση $f$ με τύπο $f(x)=\dfrac{(x^4-x^2)}{1+x^2}\gsin\dfrac{1}{x^2}$. Να υπολογίσετε τα όρια:
-    <ol class="array-list-3">
-    <li>$\lim\limits_{x\to 0}f(x)$</li>
-    <li>$\lim\limits_{x\to +\infty}f(x)$</li>
-    <li>$\lim\limits_{x\to -\infty}f(x)$</li>
-    </ol>
-    </div>
-    
-    <div class="exercise">
-    Δίνεται συνάρτηση $f$ με
-    \[\lim\limits_{x\to +\infty}\dfrac{f(x)+2x\gsin(1/x)}{\sqrt{x^2+2x+3}-x}=3.\tag{$\ast$}\]
-    Να προσδιορίσετε το $\lim\limits_{x\to +\infty}f(x)$.
-    </div>
-    
-    <div class="exercise">
-    Δίνεται συνάρτηση $f$ με
-    <div class="scale-08">
-      \[\lim\limits_{x\to +\infty}\left(\!(3x-1)f(x) +x^2\gsin\dfrac{1}{x}\!\right)=2.\tag{$\ast$}\]
-    </div>
-    Υπολογίστε το $\lim\limits_{x\to +\infty}f(x)$.
-    </div>
-    
-    <div class="exercise">
-    Θεωρούμε συνάρτηση $f: \mathbb{R}\to\mathbb{R}$. Να προσδιορίσετε το όριο $\lim\limits_{x\to +\infty}f(x)$ σε καθεµία από τις παρακάτω περιπτώσεις:
-    <ol class="array-list">
-    <li>$x^2-x+1\leq f (x)\leq 2x^2-x+1$ , $x\in\mathbb{R}$</li>
-    <li>$|(1 + x^3) f(x)-2x^2|\leq x$, $x \gt 0$</li>
-    </ol>
-    </div>
-    
-    <div class="exercise">
-    Έστω $f$ συνάρτηση με 
-    \[g(x)\leq f(x)\leq h(x),\tag{$\ast$}\]
-    όπου
-    \[
-    \begin{align}
-    g(x)&=\dfrac{x^3+x^2+x}{x^2+1},\\[1ex]
-    h(x)&=\dfrac{x^3+2x^2+x}{x^2+1}.
-    \end{align}
-    \]
-    για κάθε $x\gt 0$. Να υπολογίσετε τα όρια:
-    <ol class="array-list">
-    <li>$\lim\limits_{x\to +\infty}f(x)$</li>
-    <li>$\lim\limits_{x\to +\infty}\left(f(x)\gsin\dfrac{2}{x}\right)$</li>
-    </ol>
-    </div>
-    
-    <div class="exercise">
-    Θεωρούμε τη συνάρτηση $f(x)= \dfrac{x\gsin x-\gcos x}{1+x^2}$.
-    <ol class="vertical-list">
-    <li> Να αποδείξετε ότι $\dfrac{-|x|+1}{1+x^2}\leq f(x)\leq\dfrac{|x|+1}{1+x^2}$, για κάθε $x\in\mathbb{R}$.</li>
-    <li> Να προσδιορίσετε τα $\lim\limits_{x\to -\infty}f(x)$ και $\lim\limits_{x\to +\infty}f(x)$.</li>
-    </ol>
-    </div>
-    
-    <div class="exercise">
-    Έστω $\alpha,\beta\in\mathbb{R}$ με $\beta\neq 0$. Θεωρούμε πολυωνυμική συνάρτηση $P$ για την οποια ισχύουν
-    \[\begin{align}
-    \lim\limits_{x\to 0}P(x)&=-4,\\[1ex]
-    \lim\limits_{x\to +\infty}\dfrac{P(x)}{x+\alpha}&=2,\\[1ex]
-    \lim\limits_{x\to 2}\,\dfrac{P(x)}{x+\alpha}&=\beta.
-    \end{align}\]
-    <!-- \[\lim\limits_{x\to 0}P(x)=-4, \ \ \ \lim\limits_{x\to +\infty}\dfrac{P(x)}{x+\alpha}=2, \ \ \ \lim\limits_{x\to 2}\,\dfrac{P(x)}{x+\alpha}=\beta.\] -->
-    Να προσδιορίσετε τον τύπο της $P$ και τους $\alpha,\beta$.
-    </div>
-    
-    <div class="exercise">
-    Θεωρούμε γνησίως αύξουσα πολυωνυμική συνάρτηση $P$. Αποδείξτε ότι είναι περιττού βαθμού.
-    </div>
-    
-    <div class="exercise">
-    Θεωρούµε τη συνάρτηση $f$, τέτοια ώστε $f (x)\geq e^x$, για κάθε $x \gt 0$. Αποδείξτε ότι $\lim\limits_{x\to +\infty}f(x)= +\infty$.
-    </div>
-    
-    <div class="exercise">
-    Θεωρούµε τη συνάρτηση $f$, τέτοια ώστε $f(x)\leq -\ln x$, για κάθε $x \gt 0$. Αποδείξτε ότι $\lim\limits_{x\to +\infty}f(x)= -\infty$.
-    </div>
-  
-  </section>
-  
+
+      <div class="exercise">
+        Να υπολογιστούν τα όρια:
+        <ol class="array-list">
+          <li>$\lim\limits_{x\to 3}\dfrac{x^2-5x+6}{x^2-9}$</li>
+          <li>$\lim\limits_{x\to \frac{1}{2}}\dfrac{2x^2+x-1}{8x^2-2}$</li>
+          <li>$\lim\limits_{x\to\sqrt{2}}\ \dfrac{x^4-4}{3x^2-6}$</li>
+          <li>$\lim\limits_{x\to 4}\left(\dfrac{x-20}{x^2-16}+\dfrac{2}{x-4}\right)$</li>
+          <li>$\lim\limits_{x\to -2}\dfrac{2x^3+4x^2-x-2}{\frac{x}{2}+1}$</li>
+          <li>$\lim\limits_{x\to -1}\dfrac{(x+4)^3-27}{(x+6)^2-25}$</li>
+          </li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να υπολογιστούν τα όρια:
+        <ol class="array-list">
+          <li>$\lim\limits_{x\to 2}\dfrac{\sqrt{x}-1}{x^2-1}$</li>
+          <li>$\lim\limits_{x\to 6}\dfrac{\sqrt{x+3}-3}{x-6}$</li>
+          <li>$\lim\limits_{x\to 2}\dfrac{x-\sqrt{3x-2}}{x^2-4}$</li>
+          <li>$\lim\limits_{x\to -8}\dfrac{\sqrt{1-x}-3}{\sqrt{x+12}-2}$</li>
+          <li>$\lim\limits_{x\to 16}\dfrac{\sqrt[4]{x}-2}{\sqrt{x}-4}$</li>
+          <li>$\lim\limits_{x\to -4}\dfrac{\sqrt{5+x}-1}{x^2+4x}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να υπολογιστούν τα όρια:
+        <ol class="array-list">
+          <li>$\lim\limits_{x\to 16}\dfrac{\sqrt{x}-4}{16-x}$</li>
+          <li>$\lim\limits_{x\to 3}\dfrac{\sqrt{x+1}-2}{x^2-9}$</li>
+          <li>$\lim\limits_{x\to 2}\dfrac{\sqrt{x^2+5}-3}{2\sqrt{x}-\sqrt{8}}$</li>
+          <li>$\lim\limits_{x\to -1}\dfrac{2x+\sqrt{2x+6}}{1-\sqrt{x+2}}$</li>
+          <li>$\lim\limits_{x\to 9}\dfrac{3x^2-243}{x-\sqrt{x}-6}$</li>
+          <li>$\lim\limits_{x\to 4}\dfrac{x^2-16}{\sqrt{x-4}}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να υπολογιστούν τα όρια:
+        <ol class="array-list">
+          <li>$\lim\limits_{x\to 0}\dfrac{(x+1)^4-x-1}{x}$</li>
+          <li>$\lim\limits_{x\to 3}\dfrac{x-\frac{9}{x}}{x^2-\frac{27}{x}}$</li>
+          <li>$\lim\limits_{x\to -2}\dfrac{x^2+4x+4}{|x+2|}$</li>
+          <li>$\lim\limits_{x\to 1}\dfrac{x-4+3|x|}{x-1}$</li>
+          <li>$\lim\limits_{x\to 1}\dfrac{|4x-2|-|x+1|}{x^2-1}$</li>
+          <li>$\lim\limits_{x\to 2}\dfrac{|2x+2|-|x+4|}{|x+3|-|3x-1|}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να υπολογιστούν τα όρια:
+        <ol class="array-list">
+          <li>$\lim\limits_{x\to 0}\dfrac{\gsin x}{x^3+2x^2+3x}$</li>
+          <li>$\lim\limits_{x\to 0}\dfrac{\gsin 3x\gsin 5x}{(x-x^3)^2}$</li>
+          <li>$\lim\limits_{x\to 0}\dfrac{\gsin 3x}{\sqrt{x}}$</li>
+          <li>$\lim\limits_{x\to 0}\dfrac{\gcos x-\sqrt{1+x\gsin x}}{x}$</li>
+          <li>$\lim\limits_{x\to 0}\dfrac{\gtan^2 x-\gsin^2 x}{x^2}$</li>
+          <li>$\lim\limits_{x\to 0}x^2 \gctan^2 x$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να υπολογιστούν τα όρια:
+        <ol class="array-list">
+          <li>$\lim\limits_{x\to 5}\dfrac{\gtan\pi x}{x-5}$</li>
+          <li>$\lim\limits_{x\to 1}\dfrac{\gsin 2\pi x}{\gsin 4\pi x}$</li>
+          <li>$\lim\limits_{x\to 3}\dfrac{\gsin\pi x}{\sqrt{x+1}-2}$</li>
+          <li>$\lim\limits_{x\to \frac{\pi}{6}}\dfrac{2\gsin x-1}{6x-\pi}$</li>
+          <li>$\lim\limits_{x\to 0^{+}}\dfrac{3x-\gsin x}{\sqrt{1-\gcos x}}$</li>
+          <li>$\lim\limits_{x\to \frac{\pi}{4}}\dfrac{16x^2-\pi}{1-\sqrt{2}\gcos x}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να υπολογιστούν, εφόσον υπάρχουν, τα όρια:
+        <ol class="array-list">
+          <li>$\lim\limits_{x\to 2}\dfrac{\sqrt{x}-\sqrt{2}}{\sqrt{|x^2-4|}}$</li>
+          <li>$\lim\limits_{x\to -1}\dfrac{ x +|x+1| +1}{x-|x+1|+1}$</li>
+          <li>$\lim\limits_{x\to 2}\dfrac{|x-2| -x+2}{x+|x-2|-2}$</li>
+          <li>$\lim\limits_{x\to -2}\dfrac{ x^2-4}{\sqrt{-x-2}}$</li>
+          <li>$\lim\limits_{x\to 1}\dfrac{\left(\sqrt[3]{x-1}\right)^2}{\sqrt[4]{x}-1}$</li>
+          <li>$\lim\limits_{x\to 3}\dfrac{ x^2-9-|3-x|+|x^2-3x|}{x-3}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να υπολογιστούν, εφόσον υπάρχουν, τα όρια:
+        <ol class="array-list">
+          <li>$\lim\limits_{x\to -1}\dfrac{\sqrt{x^2-1}-|x+1|}{\sqrt{-x-1}}$</li>
+          <li>$\lim\limits_{x\to 3}\dfrac{|x-2|+3|x-1|-2x-1}{2x-8}$</li>
+          <li>$\lim\limits_{x\to -2}\dfrac{5|x+2|+x^2-4}{3x+9}$</li>
+          <li>$\lim\limits_{x\to 4}\dfrac{|2-x| +2|x+3|-4x}{x-4}$</li>
+          <li>$\lim\limits_{x\to -3}\dfrac{|x-5|-|x-2|-3}{2x+6}$</li>
+          <li>$\lim\limits_{x\to -1}\dfrac{|x^2-4|-|x^2+5x|+1}{3x^2-3}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να υπολογιστούν, εφόσον υπάρχουν, τα όρια:
+        <ol class="array-list">
+          <li>$\lim\limits_{x\to 2}\dfrac{|x^2-3x|-2|9-x^2|+8}{6-3x}$</li>
+          <li>$\lim\limits_{x\to 0}\dfrac{x^2-4x^2+3|x|}{x^4+4x^2-3|x|}$</li>
+          <li>$\lim\limits_{x\to -1^{+}}\dfrac{|x^3-3x^2+4|}{x^3+1}$</li>
+          <li>$\lim\limits_{x\to -3}\dfrac{\sqrt{x^2-6x+9}}{2x+6}$</li>
+          <li>$\lim\limits_{x\to 2}\dfrac{x-|x|}{x+|x|}$</li>
+          <li>$\lim\limits_{x\to 0}\dfrac{|x|+\sqrt{x}}{x+\sqrt{x}}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να υπολογιστούν, εφόσον υπάρχουν, τα όρια:
+        <ol class="array-list">
+          <li>$\lim\limits_{x\to 0}\dfrac{\sqrt{|x|}-\sqrt{x}}{x-\sqrt{x}}$</li>
+          <li>$\lim\limits_{x\to 0}\dfrac{|x|+\sqrt{x}}{|x|-\sqrt{x}}$</li>
+          <li>$\lim\limits_{x\to 0}\dfrac{\sqrt{|x|}-|x|}{\sqrt{|x|}+x}$</li>
+          <li>$\lim\limits_{x\to 0}\dfrac{\sqrt{|x|}-x}{\sqrt{|x|}+x}$</li>
+          <li>$\lim\limits_{x\to 2}\dfrac{\sqrt{x^3-4x^2+4x}}{\sqrt{x+7}-3}$</li>
+          <li>$\lim\limits_{x\to 3}\dfrac{(x-3)\sqrt{x^2-6x+9}}{x^2-9}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Για τις διάφορες τιμές του $\alpha\in\mathbb{R},$ να υπολογιστούν, εφόσον υπάρχουν, τα όρια:
+        <ol class="array-list">
+          <li>$\lim\limits_{x\to\alpha}\dfrac{2x^2+(1-2\alpha)x-\alpha}{x^2-\alpha^2}$</li>
+          <li>$\lim\limits_{x\to -\alpha}\dfrac{x^4-\alpha^4}{x^3+\alpha^3}$</li>
+          <li>$\lim\limits_{x\to 0}\dfrac{1-\gcos\alpha x}{x}$</li>
+          <li>$\lim\limits_{x\to \alpha}\dfrac{\gsin x-\gsin\alpha}{x-\alpha}$</li>
+          <li>$\lim\limits_{x\to\frac{\alpha}{2}}\left((2x-\alpha)\gtan\left(\dfrac{\pi x}{\alpha}\right)\right)$</li>
+          <li>$\lim\limits_{x\to\alpha}\dfrac{\alpha^2-x^2}{|x|-\alpha}$</li>
+        </ol>
+      </div>
+
+      <h3 id="limits-real-point-general">Γενικές ασκήσεις</h3>
+
+      <div class="exercise">
+        Να χαράξετε τη γραφική παράσταση της συνάρτησης $f(x)=\dfrac{2x^2-2x}{|x-1|}$ και, με τη βοήθεια αυτής, να
+        προσδιορίσετε τα όρια
+        <ol class="array-list-3">
+          <li>$\lim\limits_{x\to 1^{+}}f(x)$</li>
+          <li>$\lim\limits_{x\to 1^{-}}f(x)$</li>
+          <li>$\lim\limits_{x\to 1}f(x)$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να χαράξετε τη γραφική παράσταση της συνάρτησης $f$ και, με τη βοήθεια αυτής, να προσδιορίσετε, εφόσον υπάρχει,
+        το $\lim\limits_{x\to x_0}f(x)$:
+        <ol class="array-list">
+          <li>$f(x)=\begin{cases}x, &x\gt 2 \\ 2, &x\leq 2\end{cases},\quad$ $x_0=2$</li>
+          <li>$f(x)=\begin{cases}x^2 ,&x\leq 3\\ \dfrac{9}{x}& x\gt 3\end{cases},\quad$ $x_0=3$</li>
+          <li>$f(x)=\dfrac{x}{|x|},\quad$ $x_0=0$</li>
+          <li>$f(x)=\dfrac{|2-x|}{-2+x},\quad$ $x_0=2$</li>
+          <li>$f(x)=x-|1-x|,\quad$ $x_0=1$</li>
+          <li>$f(x)=\big|x-|x|\big|,\quad$ $x_0=0$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να προσδιορίσετε, εφόσον υπάρχει, το όριο της $f$ στο $x_0=-2$ όταν:
+        <ol class="array-list">
+          <li>$f(x)=\begin{cases}-5x+6, &x\neq -2 \\ 16, & x=-2 \end{cases}$</li>
+          <li>$f(x)=\begin{cases} x^4+1,&x\lt -2 \\ x+19, &x\geq 2\end{cases}$</li>
+          <li>$f(x)=\begin{cases}x^2+1 &x\leq -2 \\ x+3, &x\gt -2 \end{cases}$</li>
+          <li>$f(x)=\begin{cases}3x, & x\leq -2 \\ |x|-8 & x\gt -2 \end{cases}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Έστω η συνάρτηση
+        \[f(x)=\begin{cases}4, &x\leq -1 \\ 2x+6,& -1\lt x\leq 2\\ x^2,& 2\lt x\lt 5 \end{cases}\]
+        Να υπολογίσετε το όριο της $f,$ αν υπάρχει, στα σημεια $x_1=-3,$ $x_2=-1,$ $x_3=0,$ $x_4=2,$ $x_5=3,$ $x_6=5,$
+        $x_7=6.$
+      </div>
+
+      <div class="exercise">
+        Έστω $f,g$ συναρτήσεις με $\lim\limits_{x\to 2}\dfrac{f(x)}{x^2+1}=3$ και $\lim\limits_{x\to
+        2}\dfrac{g(x)}{x+1}=15.$ Να υπολογίσετε το όριο
+        $\lim\limits_{x\to 2}\dfrac{g^2(x)}{f(x)-5x}.$
+      </div>
+
+      <div class="exercise">
+        Έστω $f,g$ συναρτήσεις με $\lim\limits_{x\to 1}\dfrac{f(x)}{x-1}=2$ και $\lim\limits_{x\to
+        1}\dfrac{2x^2-3x+1}{g(x)}=6.$ Να υπολογίσετε το όριο
+        $\lim\limits_{x\to 1}\dfrac{f(x)}{g(x)}.$
+      </div>
+
+      <div class="exercise">
+        Έστω $f,g$ συναρτήσεις με
+        $\lim\limits_{x\to 0}(f^2(x)+g^2(x))=14$ και $\lim\limits_{x\to 0}(f^2(x)-g^2(x))=6.$ Να υπολογίσετε το όρια:
+        <ol class="array-list">
+          <li>$\lim\limits_{x\to 0}\left(f^4(x)-g^4(x)\right)$</li>
+          <li>$\lim\limits_{x\to 0}\left(3f^6(x)+5g^4(x)\right)$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Έστω $f,g$ συναρτήσεις με
+        \[
+        \begin{align}
+        \lim\limits_{x\to 0}\dfrac{g(x)\gsin 2x-x^2f(x)}{x^2}&=5,\\[1ex]
+        \lim\limits_{x\to 0}\dfrac{g(x)\gsin 2x+x^2f(x)}{x^2}&=-1.
+        \end{align}
+        \]
+        Να υπολογίσετε τα όρια $\lim\limits_{x\to 0}f(x)$ και $\lim\limits_{x\to 0}\dfrac{g(x)}{x}.$
+      </div>
+
+      <div class="exercise">
+        Έστω $f,g$ συναρτήσεις με
+        \[\begin{align}
+        \lim\limits_{x\to 1}\left(x^2f(x)+3g(x)\right)&=4\\[1ex]
+        \lim\limits_{x\to 1}\left(f(x)+g(x)\sqrt{x^2+3}\right)&=3.
+        \end{align}\]
+        Να υπολογίσετε τα όρια $\lim\limits_{x\to 1}f(x)$ και $\lim\limits_{x\to 1}g(x).$
+      </div>
+
+      <div class="exercise">
+        Έστω $f$ συνάρτηση με $\lim\limits_{x\to 0}\dfrac{f(x)}{x}=1$ και $\alpha\in\mathbb{R}.$ Αποδείξτε ότι
+        $\lim\limits_{x\to 0}\dfrac{f(\alpha x)}{x}=\alpha.$
+      </div>
+
+      <div class="exercise">
+        Έστω $f$ περιττή συνάρτηση.
+        <ol class="array-list">
+          <li> Αν $\lim\limits_{x\to 1}f(x)=2,$ υπολογίστε το $\lim\limits_{x\to 0}\left(f(x-1)-f(1-x)\right).$</li>
+          <li> Αν $\lim\limits_{x\to 1}\dfrac{f(x)-f(1)}{x-1},$ υπολογίστε το $\lim\limits_{x\to
+            -1}\dfrac{f(x)-f(-1)}{x+1}.$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Έστω $\alpha,\beta\in\mathbb{Z}.$ Θεωρούμε τη συνάρτηση
+        \[f(x)=\begin{cases} 4x,&x\leq\beta \\ 2(x+\alpha)+1,&x\gt \beta \end{cases}\]
+        Να εξετάσετε αν υπάρχει το όριο της συνάρτησης $f$ στο $\beta.$
+      </div>
+
+      <div class="exercise">
+        Για τη συνάρτηση $f$ ισχύει $\lim\limits_{x\to 2^{+}}f(x)=4$ και $\lim\limits_{x\to
+        2^{-}}f(x)=\lambda(3-2\lambda),$ όπου $\lambda\in\mathbb{R}.$ Αποδείξτε ότι δεν υπάρχει το όριο της $f$ στο $2.$
+      </div>
+
+      <div class="exercise">
+        Έστω συναρτήσεις $f,g$ και $x_0$ σημείο στο οποίο υπάρχει το όριο $\lim\limits_{x\to x_0}\dfrac{f(x)}{g(x)}.$ Αν
+        $\lim\limits_{x\to x_0}g(x)=0,$ αποδείξτε ότι $\lim\limits_{x\to x_0}f(x)=0.$
+      </div>
+
+      <div class="exercise">
+        Αν $f$ είναι συνάρτηση με $\lim\limits_{x\to 1}\dfrac{2f(x)-1}{5-3f(x)}=4,$ να προσδιορίσετε το
+        $\lim\limits_{x\to 1}f(x).$
+      </div>
+
+      <div class="exercise">
+        Έστω συνάρτηση $f$ με $\lim\limits_{x\to 3}\dfrac{f(x)-2x}{x^2-9}=5.$ Να προσδιορίσετε τα όρια:
+        <ol class="array-list">
+          <li>$\lim\limits_{x\to 3}f(x)$</li>
+          <li>$\lim\limits_{x\to 3}\dfrac{f(x)-x-3}{x^2-9}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Αν $f$ είναι συνάρτηση με $\lim\limits_{x\to -2}f(x)=4,$ να προσδιορίσετε τα όρια:
+        <ol class="array-list-3">
+          <li>$\lim\limits_{x\to 2}(3f(x)+x-1)$</li>
+          <li>$\lim\limits_{x\to 2}\dfrac{2f^2(x)-7f(x)-4}{f^2(x)-16}$</li>
+          <li>$\lim\limits_{x\to 2}\,\dfrac{\sqrt{f(x)}-2}{3f(x)-12}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Θεωρούµε συνάρτηση $f,$ ορισµένη στο $\mathbb{R},$ τέτοια ώστε $\lim\limits_{x\to 3}\dfrac{f(x)-2}{x-3}=-2.$ Να
+        υπολογίσετε τα παρακάτω όρια:
+        <ol class="array-list">
+          <li>$\lim\limits_{x\to 1}f(x)$</li>
+          <li>$\lim\limits_{x\to 3}\dfrac{x^2 f(x)-18}{x-3}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Θεωρούµε συνάρτηση $f,$ ορισµένη στο $\mathbb{R},$ με
+        $\lim\limits_{x\to 0}\dfrac{f(x)-1-\gsin x}{x^2-x}=5.$ Να υπολογίσετε τα παρακάτω όρια:
+        <ol class="array-list-3">
+          <li>$\lim\limits_{x\to 0}f(x)$</li>
+          <li>$\lim\limits_{x\to 0}\dfrac{f(x)-1}{x}$</li>
+          <li>$\lim\limits_{x\to 0}\dfrac{|3-5f(x)|-2}{x^3-x} $</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Θεωρούµε συνάρτηση $f,$ ορισµένη στο $\mathbb{R},$ τέτοια ώστε $\lim\limits_{x\to 2}f(x)=-3.$ Να προσδιορίσετε
+        τα παρακάτω όρια:
+        <ol class="array-list-3">
+          <li>$\lim\limits_{x\to 1}(f(5x-3)+x)$</li>
+          <li>$\lim\limits_{x\to -1}(x^2 f(-2x)+5)$</li>
+          <li>$\lim\limits_{x\to 5}(f(7-x)+f(x-3))$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Θεωρούμε συναρτήσεις $f,g$ με
+        \[
+        \begin{align}
+        \lim\limits_{x\to 1}\dfrac{f(x)}{x^2-1}&=4,\\[1ex]
+        \lim\limits_{x\to 1}\left(g(x)(x^2-3x+2)\right)&=5.
+        \end{align}
+        \]
+        Να υπολογίσετε το όριο $\lim\limits_{x\to 1}f(x)g(x).$
+      </div>
+
+      <div class="exercise">
+        Θεωρούµε συνάρτηση $f: \mathbb{R}\to\mathbb{R},$ για την οποία ισχύει
+        \[f^5 (x)+ x^4 f(x)=2x^5, \tag{$\ast$}\]
+        για κάθε $x\in\mathbb{R}.$ Υποθέτουµε ακόµα ότι υπάρχει το όριο $\lim\limits_{x\to 0}\dfrac{f(x)}{x}$ και
+        ισούται με $l\in\mathbb{R}.$ Να προσδιορίσετε το όριο $\lim\limits_{x\to 0}f(x)$ και τον αριθµό $l.$
+      </div>
+
+      <div class="exercise">
+        Θεωρούµε συνάρτηση $f:\mathbb{R}\to\mathbb{R},$ για την οποία ισχύει
+        \[f^3(x)+ x^6 f(x)=2x^9,\tag{$\ast$}\]
+        για κάθε $x\in\mathbb{R}.$ Υποθέτουµε ακόµα ότι υπάρχει το όριο $\lim\limits_{x\to 0}\dfrac{f(x)}{x^3}$ και
+        ισούται με $l\gt 0.$ Να προσδιορίσετε το όριο $\lim\limits_{x\to 0}f(x)$ και τον αριθµό $l.$
+      </div>
+
+      <div class="exercise">
+        Θεωρούμε τη συνάρτηση
+        \[f(x)=\begin{cases}3x+\alpha, & x\lt 2 \\ x+\alpha^2 -2, & x\gt 2 \end{cases}\]
+        Να προσδιοριστούν οι τιμές του $\alpha\in\mathbb{R}$ για τις οποίες ισχύει $\lim\limits_{x\to 2}f(x)=4.$
+      </div>
+
+      <div class="exercise">
+        Θεωρούμε τη συνάρτηση
+        \[f(x)=\begin{cases}x^2+\alpha, & x\lt -2 \\ \alpha^2 x+3, & -1\leq x\lt 0\\
+        3\alpha, &x\geq 0 \end{cases}\]
+        Να προσδιοριστούν οι τιμές του $\alpha\in\mathbb{R}$ για τις οποίες:
+        <ol class="vertical-list">
+          <li> Η $f$ διαθέτει όριο στο $-1.$ Ποιο είναι το όριο αυτό;</li>
+          <li> Η $f$ διαθέτει όριο στο $-1,$ όχι όμως στο $0.$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Δίνεται η συνάρτηση
+        \[f(x)=\begin{cases}\sqrt{x^2+x+2}, &0\leq x\leq 1 \\ 3x-1, &x\gt 1\end{cases}\]
+        <ol class="vertical-list">
+          <li> Αποδείξτε ότι το όριο της $f$ στο $x_0=1$ είναι ίσο με $2.$</li>
+          <li> Αν $g(x)=\dfrac{f(x)-f(1)}{x-1},$ $x\neq 1,$ εξετάστε αν υπάρχει το όριο της $g$ στο $x_0=1.$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Δίνεται η συνάρτηση $f$ με
+        \[f(x)=\begin{cases} x^2+\alpha x+\beta, & x\lt 1\\ \dfrac{\sqrt{x^2+3}-\alpha+1}{x-1}, & x\geq 1
+        \end{cases}\]
+        Να προσδιορίσετε τα $\alpha,\beta$ ώστε η $f$ να έχει όριο στο 1.
+      </div>
+
+      <div class="exercise">
+        Προσδιορίστε τους $\alpha,\beta\in\mathbb{R}$ ώστε
+        $\lim\limits_{x\to -1}\dfrac{x^3+\alpha x+\beta}{x+1}=4.$
+      </div>
+
+      <div class="exercise">
+        Θεωρούµε συνάρτηση $f,$ ορισµένη στο $\mathbb{R},$ τέτοια ώστε $\lim\limits_{x\to 1}f(x)=3.$ Υποθέτουμε ότι
+        \[f(x)-f(x-2)=4, \tag{$\ast$}\]
+        για κάθε $x\in\mathbb{R}.$
+        <ol class="vertical-list">
+          <li> Αποδείξτε ότι για κάθε $x\in\mathbb{R}$ ισχύει $f(x+6)-f(x)=12.$</li>
+          <li> Να προσδιορίσετε τα όρια $\lim\limits_{x\to 3}f(x)$ και $\lim\limits_{x\to 7}f(x).$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Θεωρούµε συνάρτηση $f,$ ορισµένη στο $\mathbb{R},$ τέτοια ώστε $\lim\limits_{x\to 2}f(x)=4.$ Υποθέτουμε ότι
+        \[f(2x)=f(x)+3x,\tag{$\ast$}\]
+        για κάθε $x\in\mathbb{R}.$
+        <ol class="vertical-list">
+          <li> Αποδείξτε ότι για κάθε $x\in\mathbb{R}$ ισχύει $f(8x)=f(x)+21x.$</li>
+          <li> Να προσδιορίσετε τα όρια $\lim\limits_{x\to 4}f(x)$ και $\lim\limits_{x\to 16}f(x).$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Έστω $f$ συνάρτηση για την οποία ισχύει
+        \[2\sqrt{3x}\leq f(x) \leq x+3, \tag{$\ast$}\]
+        για κάθε $x \geq 0.$ Να υπολογίσετε τα όρια:
+        <ol class="array-list">
+          <li>$\lim\limits_{x\to 3}f(x)$</li>
+          <li>$\lim\limits_{x\to 3}\dfrac{f(x)-6}{x-3}$</li>
+          <li>$\lim\limits_{x\to 3}\dfrac{f(x)-2x}{x-3}$</li>
+          <li>$\lim\limits_{x\to 3}\dfrac{f(x)-x^2+3}{x^2-9}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να προσδιορίσετε το όριο $\lim\limits_{x\to 1}f(x)$ σε καθεµία από τις παρακάτω περιπτώσεις:
+        <ol class="array-list">
+          <li>$x^2 − 2x + 3\leq f(x) \leq 2x^2-4x+4,\quad$ $x\in\mathbb{R}$</li>
+          <li>$\ln^2 x\leq f(x) \leq 3\ln^2 x,\quad$ $x\gt 0$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Έστω $f$ συνάρτηση για την οποία ισχύει
+        \[|\gsin x-xf(x)|\leq|x-\gsin x|, \tag{$\ast$}\]
+        για κάθε $x\in\mathbb{R}.$ Να υπολογίσετε το όριο της $f$στο $x_0=0.$
+      </div>
+
+      <div class="exercise">
+        Έστω $f$ συνάρτηση για την οποία ισχύει
+        \[10x-50\leq (x-5)f(x)\leq x^2-25, \tag{$\ast$}\]
+        για κάθε $x\in\mathbb{R}.$ Να υπολογίσετε το όριο της $f$ στο $x_0=5.$
+      </div>
+
+      <div class="exercise">
+        Έστω $f$ συνάρτηση για την οποία ισχύει
+        \[ f^2(x)+4\lt x+4f(x), \tag{$\ast$}\]
+        για κάθε $x\gt 0.$ Αποδείξτε ότι $\lim\limits_{x\to 0^{+}}f(x)=2.$
+      </div>
+
+      <div class="exercise">
+        Υπολογίστε το όριο $\lim\limits_{x\to 0^{+}}\dfrac{\gsin\sqrt{x\sqrt{x}}}{\sqrt{x^2+\sqrt{x^3}}}.$
+      </div>
+
+    </section>
+
+    <section id="limits-non-finite">
+
+      <h2>Μη πεπερασμένα όρια</h2>
+
+      <h3 id="limits-non-finite-calculation">Υπολογισμός ορίων</h3>
+
+      <div class="exercise">
+        Να υπολογιστούν τα όρια:
+        <ol class="array-list">
+          <li>$\lim\limits_{x\to 2^+}\dfrac{1}{x-2}$</li>
+          <li>$\lim\limits_{x\to 2^+}\dfrac{1}{2x-4}$</li>
+          <li>$\lim\limits_{x\to 2^+}\dfrac{1}{x^2-4}$</li>
+          <li>$\lim\limits_{x\to 2^+}\dfrac{1}{x^4-16}$</li>
+          <li>$\lim\limits_{x\to 2^+}\dfrac{1}{8-x^3}$</li>
+          <li>$\lim\limits_{x\to 2^+}\dfrac{1}{x^2-3x+2}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να υπολογιστούν τα όρια:
+        <ol class="array-list">
+          <li>$\lim\limits_{x\to -3^-}\dfrac{1}{x+3}$</li>
+          <li>$\lim\limits_{x\to -3^+}\dfrac{1}{x+3}$</li>
+          <li>$\lim\limits_{x\to 2^+}\dfrac{x+2}{2-x}$</li>
+          <li>$\lim\limits_{x\to 2^+}\dfrac{1}{\sqrt{2}-\sqrt{x}}$</li>
+          <li>$\lim\limits_{x\to -3^+}\dfrac{1}{x^2-9}$</li>
+          <li>$\lim\limits_{x\to -3^-}\dfrac{1}{x^3+27}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να υπολογιστούν τα όρια:
+        <ol class="array-list">
+          <li>$\lim\limits_{x\to -3^+}\dfrac{1}{x^2+x-6}$</li>
+          <li>$\lim\limits_{x\to -3^+}\dfrac{1}{-3x-x^2}$</li>
+          <li>$\lim\limits_{x\to 2}\dfrac{x-3}{(x-2)^2}$</li>
+          <li>$\lim\limits_{x\to 1}\dfrac{x+7}{x^3+x^2-5x+3}$</li>
+          <li>$\lim\limits_{x\to -2^+}\dfrac{|x^2-3x|+x}{x+2}$</li>
+          <li>$\lim\limits_{x\to -2^+}\dfrac{\sqrt{x+3}+\sqrt{x+4}}{\sqrt{x+2}}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να υπολογιστούν, εφόσον υπάρχουν, τα όρια:
+        <ol class="array-list">
+          <li>$\lim\limits_{x\to 0}\dfrac{x-2}{x^4-2x^2}$</li>
+          <li>$\lim\limits_{x\to 3^+}\dfrac{\sqrt{x}-\sqrt{3}}{(x-3)^2}$</li>
+          <li>$\lim\limits_{x\to 8^-}\dfrac{\sqrt[3]{x}-2}{(x-8)^2}$</li>
+          <li>$\lim\limits_{x\to -1}\dfrac{|x+4|}{|x+1|}$</li>
+          <li>$\lim\limits_{x\to 1}\dfrac{1-\sqrt{x}}{x^3-3x^2+3x-1}$</li>
+          <li>$\lim\limits_{x\to 1^-}\dfrac{3x+\sqrt{x}}{\sqrt[3]{x^2+7}-2}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να υπολογιστούν, εφόσον υπάρχουν, τα όρια:
+        <ol class="array-list">
+          <li>$\lim\limits_{x\to 2}\dfrac{\sqrt{2x^2+1}-3}{(x-2)^5}$</li>
+          <li>$\lim\limits_{x\to -2^+}\dfrac{x^2-3x}{|x|-2}$</li>
+          <li>$\lim\limits_{x\to -1^-}\dfrac{x^3-2x^2+x}{|x|-1}$</li>
+          <li>$\lim\limits_{x\to 0^+}\left(\dfrac{1}{\sqrt{x}}-\dfrac{1}{x}\right)$</li>
+          <li>$\lim\limits_{x\to 0^+}\left(\dfrac{1}{|x|}-\dfrac{1}{\sqrt{x}}\right)$</li>
+          <li>$\lim\limits_{x\to 2^-}\dfrac{ x^3-2x^2+x-2}{ x^3-3x^2+4}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να υπολογιστούν, εφόσον υπάρχουν, τα όρια:
+        <ol class="array-list">
+          <li>$\lim\limits_{x\to 0}\dfrac{x^2-1}{\sqrt{1+x^2}-\sqrt{1-x^2}}$</li>
+          <li>$\lim\limits_{x\to 3^-}\dfrac{|x^2-4x+1|+3|x-2|}{|x-1|-2}$</li>
+          <li>$\lim\limits_{x\to 4}\dfrac{x-1}{x-5\sqrt{x}+6}$</li>
+          <li>$\lim\limits_{x\to 0}\left(\dfrac{1}{x}-\dfrac{1}{3\sqrt{x}}\right)$</li>
+          <li>$\lim\limits_{x\to 2}\dfrac{3x^2-10}{ x-2\sqrt{2x}+2}$</li>
+          <li>$\lim\limits_{x\to 0}\dfrac{\sqrt[4]{x^3}}{\sqrt[5]{x^6}}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να υπολογιστούν, εφόσον υπάρχουν, τα όρια:
+        <ol class="array-list">
+          <li>$\lim\limits_{x\to 0^-}\dfrac{4x-5}{\gsin x}$</li>
+          <li>$\lim\limits_{x\to 1^-}\dfrac{4}{\gsin\pi x}$</li>
+          <li>$\lim\limits_{x\to 0}\dfrac{2-x}{1-\gcos^3 x}$</li>
+          <li>$\lim\limits_{x\to\frac{\pi}{2}}\dfrac{x-2}{1-\gsin x}$</li>
+          <li>$\lim\limits_{x\to -\frac{\pi}{2}}\dfrac{2\gtan x-3\gsin x}{1+\gsin x}$</li>
+          <li>$\lim\limits_{x\to \frac{\pi}{4}}\dfrac{2\gsin x+1}{2\gsin^2 x-1}$</li>
+        </ol>
+      </div>
+
+      <h3 id="limits-non-finite-general">Γενικές ασκήσεις</h3>
+
+      <div class="exercise">
+        Δίνεται η συνάρτηση $f(x)=\dfrac{1}{|x+1|}.$ Να σχεδιάσετε τη γραφική παράσταση της $f$ και από αυτήν να
+        προσδιορίσετε το όριο της $f$ στο $x_0=-1.$
+      </div>
+
+      <div class="exercise">
+        Δίνεται η συνάρτηση
+        \[f(x)=\begin{cases}\dfrac{x^2}{x^2-4}, & -2\lt x\lt 2 \\[2ex] \dfrac{\sqrt{x^2+1}-2}{x-3},& 2\leq x\lt 3
+        \end{cases}\]
+        Υπολογίστε τα όρια:
+        <ol class="array-list-3">
+          <li>$\lim\limits_{x\to 2^-}f(x)$</li>
+          <li>$\lim\limits_{x\to 2^+}f(x)$</li>
+          <li>$\lim\limits_{x\to 3^-}f(x)$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Δίνεται η συνάρτηση
+        \[f(x)=\begin{cases}-\dfrac{5}{(x+2)^3}\,, &x\lt -2\\[2ex] \dfrac{\sqrt{x+2}}{x+2}, &x\gt -2\end{cases}\]
+        Εξετάστε αν υπάρχει το όριο της $f$ στο $x_0=-2.$
+      </div>
+
+      <div class="exercise">
+        Να προσδιορίσετε τα πλευρικά όρια της συνάρτησης $f(x)= \dfrac{1+\gsin^2 x}{\sqrt{2x^2-x+5}-\sqrt{x+9}}$ στο
+        $x_0=-1.$
+      </div>
+
+      <div class="exercise">
+        Να υπολογίσετε το όριο της συνάρτησης $f$ στο $1$ όταν:
+        <ol class="array-list-3">
+          <li>$\lim\limits_{x\to 1}\dfrac{2x-1}{f(x)}=+\infty$</li>
+          <li>$\lim\limits_{x\to 1}\dfrac{f(x)}{4x+3}=-\infty$</li>
+          <li>$\lim\limits_{x\to 1}((3x+4)f(x))=+\infty$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να υπολογίσετε το όριο της συνάρτησης $f$ στο $3$ όταν:
+        <ol class="array-list">
+          <li>$\lim\limits_{x\to 3}\dfrac{3x-2}{f(x)}=+\infty$</li>
+          <li>$\lim\limits_{x\to 3}\dfrac{f(x)}{x^2+1}+\infty$</li>
+          <li>$\lim\limits_{x\to 3}(f(x)(x^2-3x+1))=-\infty$</li>
+          <li>$\lim\limits_{x\to 3}(x^2 f(x))=+\infty$</li>
+          <li>$\lim\limits_{x\to 3}(2x-f(x))=+\infty$</li>
+          <li>$\lim\limits_{x\to 3}\dfrac{\sqrt{x+1}-2}{(x-3)f(x)}=-\infty$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Έστω συναρτήσεις $f,g$ με $\lim\limits_{x\to 0}\dfrac{f(x)}{g(x)-1}=+\infty$ ή $+\infty$ και
+        $\lim\limits_{x\to 0}f(x)=1.$ Αποδείξτε ότι $\lim\limits_{x\to 0}g(x)=1.$
+      </div>
+
+      <div class="exercise">
+        Έστω συναρτήσεις $f,g$ με
+        \begin{align}
+        \lim\limits_{x\to -3}(2f(x)-3g(x))&=-\infty\\[1ex]
+        \lim\limits_{x\to -3}(3f(x)+2g(x))&=-1.
+        \end{align}
+        Υπολογίστε τα $\lim\limits_{x\to -3}f(x)$ και $\lim\limits_{x\to -3}g(x).$
+      </div>
+
+      <div class="exercise">
+        Έστω συναρτήσεις $f,g$ με
+        \[f^2(x)g(x)= -4, \tag{$\ast$}\]
+        για κάθε $x\in\mathbb{R},$ και $\lim\limits_{x\to 1}f(x)=0.$ Υπολογίστε το $\lim\limits_{x\to 1}g(x).$
+      </div>
+
+      <div class="exercise">
+        Έστω συνάρτηση $f: \mathbb{R}\to\mathbb{R},$ για την οποία η $C_f$ βρίσκεται κάτω από τον άξονα $x^{\prime}x.$
+        Αν $\lim\limits_{x\to 2}\dfrac{x^2+3}{f(x)}=0,$ υπολογίστε τα όρια $\lim\limits_{x\to 2}f(x)$ και
+        $\lim\limits_{x\to 2}\dfrac{3f^2(x)-12}{3-f(x)}.$
+      </div>
+
+      <div class="exercise">
+        Θεωρούµε τις συναρτήσεις $f (x) =\dfrac{1}{|x-1|}$ και $g (x) =\dfrac{1}{|x^2-1|}.$ Να υπολογίσετε τα όρια:
+        <ol class="array-list-3">
+          <li>$\lim\limits_{x\to 1}f(x)$</li>
+          <li>$\lim\limits_{x\to 1}g(x)$</li>
+          <li>$\lim\limits_{x\to 1}(f (x) + g(x))$</li>
+          <li>$\lim\limits_{x\to 1}(f (x)g(x))$</li>
+          <li>$\lim\limits_{x\to 1}(f (x) − g(x))$</li>
+          <li>$\lim\limits_{x\to 1}\dfrac{f(x)}{g(x)}$</li>
+          <li>$\lim\limits_{x\to 1}\dfrac{g(x)}{f(x)}$</li>
+          <li>$\lim\limits_{x\to 1}(f^2(x)+g^2(x))$</li>
+          <li>$\lim\limits_{x\to 1}((x^2-3x+2)f(x))$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Θεωρούµε τις συναρτήσεις $f (x) =\dfrac{x^2-1}{(x-5)^4}$ και $g (x) =\dfrac{2x}{(x-5)^4}.$ Να υπολογίσετε τα
+        όρια:
+        <ol class="array-list-3">
+          <li>$\lim\limits_{x\to 5}f(x)$</li>
+          <li>$\lim\limits_{x\to 5}g(x)$</li>
+          <li>$\lim\limits_{x\to 5}(f (x) + g(x))$</li>
+          <li>$\lim\limits_{x\to 5}(f(x)g(x))$</li>
+          <li>$\lim\limits_{x\to 5}(f(x)−g(x))$</li>
+          <li>$\lim\limits_{x\to 5}\dfrac{f(x)}{g(x)}$</li>
+          <li>$\lim\limits_{x\to 5}\dfrac{g(x)}{f(x)}$</li>
+          <li>$\lim\limits_{x\to 5}(f^2(x)-g^2(x))$</li>
+          <li>$\lim\limits_{x\to 1}((x^2-5x)f(x))$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Έστω συνάρτηση $f$ με $\lim\limits_{x\to 3}f(x)= +\infty.$ Υπολογίστε τα όρια:
+        <ol class="array-list">
+          <li>$\lim\limits_{x\to 3}\dfrac{x^2-9}{f(x)}$</li>
+          <li>$\lim\limits_{x\to 3}\dfrac{f^2(x)-5f(x)}{3f^2(x)+10}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Αποδείξτε ότι δεν υπάρχει πραγματικός αριθμός $\lambda$ ώστε το όριο της συνάρτησης $f(x)=\dfrac{\lambda
+        x^2+x-6}{|x-2|}$ στο $x_0=2$ να υπάρχει και να είναι πραγματικός αριθμός.
+      </div>
+
+      <div class="exercise">
+        Να προσδιορίσετε τους $\kappa,\lambda\in\mathbb{R}$ ώστε η συνάρτηση $f(x)=\dfrac{x^2+3}{x^2-\kappa x-\lambda}$
+        να διαθέτει μη πεπερασμένα πλευρικά όρια στα σημεία $x_1=2$ και $x_2=-3.$
+      </div>
+
+      <div class="exercise">
+        Για τις διάφορες τιμές των $\alpha,\beta\in\mathbb{R},$ υπολογίστε, εφόσον υπάρχουν, τα όρια:
+        <ol class="array-list">
+          <li>$\lim\limits_{x\to 1}\dfrac{2x^2+\alpha}{|x-\beta|}$</li>
+          <li>$\lim\limits_{x\to 0}\dfrac{x}{\alpha x^2-3x+\beta}$</li>
+          <li>$\lim\limits_{x\to -1}\dfrac{x+2+\alpha}{x^2-\beta}$</li>
+          <li>$\lim\limits_{x\to 2}\dfrac{ x^2-\alpha x+\beta-3}{x^2-4}$</li>
+          <li>$\lim\limits_{x\to 0}\dfrac{\alpha\gcos x+3\gsin x-\beta}{x}$</li>
+          <li>$\lim\limits_{x\to\alpha}\dfrac{2x-6+\alpha}{|x-\alpha|}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Για τις διάφορες τιμές του $\alpha\in\mathbb{R},$ υπολογίστε, εφόσον υπάρχουν, τα όρια:
+        <ol class="array-list">
+          <li>$\lim\limits_{x\to\alpha}\dfrac{\sqrt{x^2-3\alpha x+3\alpha^2-\alpha}}{|x|-\alpha}$</li>
+          <li>$\lim\limits_{x\to 1}\dfrac{\alpha x^2-2}{|x-1|}$</li>
+          <li>$\lim\limits_{x\to 5}\dfrac{x^2-10x+\alpha}{(x-5)^2}$</li>
+          <li>$\lim\limits_{x\to 3}\dfrac{2x^2-3\alpha}{|x-3|}$</li>
+          <li>$\lim\limits_{x\to 2}\dfrac{x^2-5\alpha}{x-\alpha}$</li>
+          <li>$\lim\limits_{x\to \alpha}\dfrac{x^2-\alpha}{x^2+\alpha}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Σε καθεµία από τις παρακάτω περιπτώσεις, να εξετάσετε αν υπάρχει $\alpha\in\mathbb{R}$ ώστε να είναι πραγµατικός
+        αριθµός το όριο:
+        <ol class="array-list-3">
+          <li>$\lim\limits_{x\to 2}\dfrac{x^2-\alpha x+2}{x-2}$</li>
+          <li>$\lim\limits_{x\to 2}\dfrac{x^2-\alpha x+2}{(x-2)^2}$</li>
+          <li>$\lim\limits_{x\to 2}\dfrac{x^2-\alpha x+2}{(x-2)^3}$</li>
+        </ol>
+      </div>
+
+    </section>
+
+    <section id="limits-at-infinity">
+
+      <h2>Όρια στο άπειρο</h2>
+
+      <h3 id="limits-at-infinity-calculation"></h3>
+
+      <div class="exercise">
+        Να υπολογιστούν, εφόσον υπάρχουν, τα όρια:
+        <ol class="array-list">
+          <li>$\lim\limits_{x\to +\infty}(x+3)$</li>
+          <li>$\lim\limits_{x\to +\infty}\dfrac{1}{x+3}$</li>
+          <li>$\lim\limits_{x\to +\infty}(3-2x)$</li>
+          <li>$\lim\limits_{x\to +\infty}\dfrac{1}{3-2x}$</li>
+          <li>$\lim\limits_{x\to +\infty}(x^2-9)$</li>
+          <li>$\lim\limits_{x\to +\infty}\left(x(x-3)\right)$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να υπολογιστούν, εφόσον υπάρχουν, τα όρια:
+        <ol class="array-list">
+          <li>$\lim\limits_{x\to +\infty}(3x^2-7x + 9)$</li>
+          <li>$\lim\limits_{x\to +\infty}\dfrac{x^2-x+1}{x^2+1}$</li>
+          <li>$\lim\limits_{x\to -\infty}(-3x^8 + 3x^2 + 6x)$</li>
+          <li>$\lim\limits_{x\to +\infty}\dfrac{x^2}{x^2-9x}$</li>
+          <li>$\lim\limits_{x\to -\infty}\dfrac{x^2-x+1}{x^2+2}$</li>
+          <li>$\lim\limits_{x\to +\infty}\dfrac{(1-x)(x^2 -3)}{2x^2-1}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να υπολογιστούν, εφόσον υπάρχουν, τα όρια:
+        <ol class="array-list">
+          <li>$\lim\limits_{x\to +\infty}(3x^2-4x+2)$</li>
+          <li>$\lim\limits_{x\to -\infty}(x-x^2+3-4x^3)$</li>
+          <li>$\lim\limits_{x\to +\infty}\dfrac{3x^2-x+2}{4x^2-7x}$</li>
+          <li>$\lim\limits_{x\to -\infty}\dfrac{2x-1}{3x^3+5x-2}$</li>
+          <li>$\lim\limits_{x\to +\infty}\dfrac{3x^2+x+1}{-2x^4+3x^3}$</li>
+          <li>$\lim\limits_{x\to -\infty}\dfrac{x-5x^4}{x^3 -9x}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να υπολογιστούν, εφόσον υπάρχουν, τα όρια:
+        <ol class="array-list">
+          <li>$\lim\limits_{x\to +\infty}\left(\sqrt{5x^2+3}+\sqrt{x^2-x+2}\right)$</li>
+          <li>$\lim\limits_{x\to +\infty}\sqrt{5x^2 -x + 1}$</li>
+          <li>$\lim\limits_{x\to -\infty}\sqrt{4x^4 -x^3 + 1}$</li>
+          <li>$\lim\limits_{x\to +\infty}\dfrac{\sqrt{x+1}+\sqrt{x}}{\sqrt{x+2}}$</li>
+          <li>$\lim\limits_{x\to +\infty}\left(\sqrt{x^2 -3x + 1}-x^2\right)$</li>
+          <li>$\lim\limits_{x\to +\infty}\left(\sqrt{\dfrac{x^2-1}{x-1}}-\sqrt{\dfrac{x^2+x}{x+2}}\right)$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να υπολογιστούν, εφόσον υπάρχουν, τα όρια:
+        <ol class="array-list">
+          <li>$\lim\limits_{x\to +\infty}\left(\dfrac{\sqrt{x^2+x}}{x}-x\right)$</li>
+          <li>$\lim\limits_{x\to -\infty}\left(\sqrt{(x-1)(x-2)}+x\right)$</li>
+          <li>$\lim\limits_{x\to +\infty}\dfrac{\sqrt{16x^2+1}}{|x-3|}$</li>
+          <li>$\lim\limits_{x\to +\infty}\Big(\sqrt{x^2+1}-2x+5\Big)$</li>
+          <li>$\lim\limits_{x\to +\infty}\Big(\sqrt[3]{x^4+3}-4\sqrt{x^4+4x+2}\Big)$</li>
+          <li>$\lim\limits_{x\to -\infty}\Big(\sqrt{4x^2+x}+2x\Big)$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να υπολογιστούν, εφόσον υπάρχουν, τα όρια:
+        <ol class="array-list">
+          <li>$\lim\limits_{x\to -\infty}\dfrac{\sqrt{2-x}+2x}{x^2-1}$</li>
+          <li>$\lim\limits_{x\to +\infty}\dfrac{\sqrt{x+3}-\sqrt{x}}{\sqrt{x+1}-\sqrt{x-2}}$</li>
+          <li>$\lim\limits_{x\to +\infty}\!\left(\!\!\sqrt{(x-1)(x-2)(x-3)}-x^2\right)$</li>
+          <li>$\lim\limits_{x\to +\infty}\dfrac{\sqrt{x^2+1}-x}{\sqrt[3]{x^3+2x}-x}$</li>
+          <li>$\lim\limits_{x\to +\infty}\dfrac{\sqrt{x^4+4x^2+5}-x^2}{x+4}$</li>
+          <li>$\lim\limits_{x\to +\infty}\dfrac{x\sqrt{x^2+5x+7}-7}{x-1}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να υπολογιστούν, εφόσον υπάρχουν, τα όρια:
+        <ol class="array-list">
+          <li>$\lim\limits_{x\to +\infty}\Big(\sqrt{x+1}+\sqrt{x+2}-\sqrt{x}\Big)$</li>
+          <li>$\lim\limits_{x\to +\infty}\dfrac{x+\sqrt{x^2+1}}{2x+3\sqrt{x^2+1}}$</li>
+          <li>$\lim\limits_{x\to +\infty}\dfrac{x-\sqrt{x^2+1}}{x+\sqrt{x^2+1}}$</li>
+          <li>$\lim\limits_{x\to +\infty}\left(\sqrt{x^2+x}-x\right)$</li>
+          <li>$\lim\limits_{x\to +\infty}\!\Big(\!\!\sqrt[3]{x-5}+\sqrt[3]{x-2}-\sqrt[3]{x-1}\Big)$</li>
+          <li>$\lim\limits_{x\to -\infty}\dfrac{\sqrt{x^2+1}-|x+1|}{\sqrt{1-x}}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να υπολογιστούν, εφόσον υπάρχουν, τα όρια:
+        <ol class="array-list">
+          <li>$\lim\limits_{x\to +\infty}\Big(\sqrt{16x^2+5x+3}-4x+1\Big)$</li>
+          <li>$\lim\limits_{x\to +\infty}\dfrac{\sqrt{9x^2+x-2}+\sqrt{9x^2+2}}{\sqrt{x^2+2x}+x-3}$</li>
+          <li>$\lim\limits_{x\to +\infty}\dfrac{\sqrt{x^2+2x}-x+3}{\sqrt{9x^2+x-2}-\sqrt{9x^2+2}}$</li>
+          <li>$\lim\limits_{x\to -\infty}\dfrac{\sqrt{x^2-1}-\sqrt{x^2+x}}{\sqrt{(x-1)(3x+2)}}$</li>
+          <li>$\lim\limits_{x\to +\infty}\sqrt[3]{\dfrac{x^2+3}{x}-\dfrac{x^2-4}{x-1}}$</li>
+          <li>$\lim\limits_{x\to +\infty}\left(\!x\!\left(\!\sqrt{\dfrac{(1-2x)^2}{x^2}+5}-3\right)\!\right)$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να υπολογιστούν, εφόσον υπάρχουν, τα όρια:
+        <ol class="array-list">
+          <li>$\lim\limits_{x\to -\infty}(|x+1|-3)$</li>
+          <li>$\lim\limits_{x\to +\infty}(|x+1|-|x-1|)$</li>
+          <li>$\lim\limits_{x\to +\infty}(x+|-x+1|)$</li>
+          <li>$\lim\limits_{x\to +\infty}\dfrac{|x^2-3x|+x}{x+2}$</li>
+          <li>$\lim\limits_{x\to +\infty}\dfrac{|x-1|+x}{x+3}$</li>
+          <li>$\lim\limits_{x\to +\infty}\dfrac{x+|1-x|}{2x-1}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να υπολογιστούν, εφόσον υπάρχουν, τα όρια:
+        <ol class="array-list">
+          <li>$\lim\limits_{x\to -\infty}(x|x^3-1|+x^2+1)$</li>
+          <li>$\lim\limits_{x\to +\infty}|x^3 -3x + 2|$</li>
+          <li>$\lim\limits_{x\to +\infty}\dfrac{|x-5|-|9-x^2|+2}{3x-6}$</li>
+          <li>$\lim\limits_{x\to -\infty}\dfrac{|2x-1|-3|4-2x| +1}{5x^4+2}$</li>
+          <li>$\lim\limits_{x\to -\infty}\left|\dfrac{1}{x^2+5}+\dfrac{1}{x-2}\right|$</li>
+          <li>$\lim\limits_{x\to -\infty}\dfrac{(x+1)|x+2||x+3|+1}{x^2+1}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να υπολογιστούν, εφόσον υπάρχουν, τα όρια:
+        <ol class="array-list">
+          <li>$\lim\limits_{x\to +\infty}4^{x+1}$</li>
+          <li>$\lim\limits_{x\to +\infty}\left(\dfrac{3}{5}\right)^{x}$</li>
+          <li>$\lim\limits_{x\to +\infty}\sqrt{2^x+1}$</li>
+          <li>$\lim\limits_{x\to -\infty}(2^x+x)$</li>
+          <li>$\lim\limits_{x\to +\infty}(2^x+2^{-x})$</li>
+          <li>$\lim\limits_{x\to +\infty}\dfrac{2^x+3^x}{4^x+5^x}$</li>
+          <li>$\lim\limits_{x\to -\infty}\dfrac{2^x+3^x}{4^x+5^x}$</li>
+          <li>$\lim\limits_{x\to -\infty}\left(3+\dfrac{1}{x}\right)^{x-1}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να υπολογιστούν, εφόσον υπάρχουν, τα όρια:
+        <ol class="array-list">
+          <li>$\lim\limits_{x\to -\infty}x\cdot3^\frac{3}{x}$</li>
+          <li>$\lim\limits_{x\to +\infty}2^{\sqrt{x}-\sqrt{x+1}}$</li>
+          <li>$\lim\limits_{x\to \infty}e^{\,\frac{x^2+1}{x-2}}$</li>
+          <li>$\lim\limits_{x\to \infty}e^{\frac{2-x^3}{x^2+x}}$</li>
+          <li>$\lim\limits_{x\to +\infty}(5^x-4^x)$</li>
+          <li>$\lim\limits_{x\to -\infty}(3^x-10^x)$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να υπολογιστούν, εφόσον υπάρχουν, τα όρια:
+        <ol class="array-list">
+          <li>$\lim\limits_{x\to -\infty}\left(\left(\dfrac{5}{4}\right)^{x}-\left (\dfrac{3}{2}\right)^{x}\,\right)$
+          </li>
+          <li>$\lim\limits_{x\to +\infty}\left(\left(\dfrac{4}{9}\right)^{x}-\left(\dfrac{3}{4}\right)^{x}\,\right)$
+          </li>
+          <li>$\lim\limits_{x\to -\infty}\dfrac{3^x+2}{x^5+1}$</li>
+          <li>$\lim\limits_{x\to +\infty}\dfrac{e^x+1}{e^{2x}+3}$</li>
+          <li>$\lim\limits_{x\to +\infty}\dfrac{2^x+1}{2^{x+1}+3}$</li>
+          <li>$\lim\limits_{x\to +\infty}\dfrac{e^{x+1}+2^x}{e^x+2^{x+3}}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να υπολογιστούν, εφόσον υπάρχουν, τα όρια:
+        <ol class="array-list">
+          <li>$\lim\limits_{x\to -\infty}\dfrac{1+\ln^2 |x|}{4-\ln^2 |x|}$</li>
+          <li>$\lim\limits_{x\to \infty}\dfrac{\ln^2 x+1}{\ln^2 x-\ln x+1}$</li>
+          <li>$\lim\limits_{x\to +\infty}(2\ln 3x-\ln(x^2+1))$</li>
+          <li>$\lim\limits_{x\to +\infty}(3\ln x-\ln(2x^2-x+1))$</li>
+          <li>$\lim\limits_{x\to +\infty}(\ln(x+\gsin x)-2\ln x)$</li>
+          <li>$\lim\limits_{x\to +\infty}(x-\ln(2+e^{x+3}))$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να υπολογιστούν, εφόσον υπάρχουν, τα όρια:
+        <ol class="array-list">
+          <li>$\lim\limits_{x\to +\infty}\left(\ln(1+e^{-x})-\sqrt{x}\right)$</li>
+          <li>$\lim\limits_{x\to +\infty}\left(x^2-\ln\left(1+\dfrac{1}{x^2}\right)\right)$</li>
+          <li>$\lim\limits_{x\to +\infty}(x^3\ln(2x)-x^2)$</li>
+          <li>$\lim\limits_{x\to +\infty}\left(\ln(\sqrt{x^2+1})-x+1\right)$</li>
+          <li>$\lim\limits_{x\to +\infty}\dfrac{\ln(x^2+1)}{\ln(x^3+1)}$</li>
+          <li>$\lim\limits_{x\to -\infty}\left(\ln(x^3-5)(x^5+1)-8\ln|x|\right)$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να υπολογιστούν, εφόσον υπάρχουν, τα όρια:
+        <ol class="array-list">
+          <li>$\lim\limits_{x\to +\infty}\left(e^{1-x}\gsin x\right)$</li>
+          <li>$\lim\limits_{x\to -\infty}\left((2x-3)\gcos\dfrac{1}{x}\right)$</li>
+          <li>$\lim\limits_{x\to -\infty}\left(x\gtan\left(\dfrac{1}{x}+2\right)\right)$</li>
+          <li>$\lim\limits_{x\to +\infty}\left(x^5 \gsin\dfrac{1}{x}\right)$</li>
+          <li>$\lim\limits_{x\to +\infty}\left(x^2 \gsin^4 \dfrac{1}{x}\right)$</li>
+          <li>$\lim\limits_{x\to
+            -\infty}\left(\left(\dfrac{1}{\sqrt{|x|}}+\dfrac{1}{x}\right)\gtan\left(\dfrac{2}{x^2}\right)\right)$</li>
+        </ol>
+      </div>
+
+
+      <h3 id="limits-at-infinity-general">Γενικές ασκήσεις</h3>
+
+
+      <div class="exercise">
+        Έστω $f: \mathbb{R}\to\mathbb{R}$ συνάρτηση ώστε το όριο $\lim\limits_{x\to -\infty}\left(xf(x)\right)$ να είναι
+        πραγματικός αριθμός. Αποδείξτε ότι $\lim\limits_{x\to -\infty}f(x)=0.$
+      </div>
+
+      <div class="exercise">
+        Να υπολογίσετε το όριο $\lim\limits_{x\to +\infty}(f(x) -\lambda x),$ όπου $\lambda=\lim\limits_{x\to
+        +\infty}f(x)$ όταν:
+        <ol class="array-list-3">
+          <li>$f(x)= \dfrac{3x^2-x+1}{x+1}$</li>
+          <li>$f(x)= \dfrac{x\sqrt{x^2+2}}{x+1}$</li>
+          <li>$f(x)=\sqrt{9x^2-x}-3x$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Έστω συνάρτηση $f$ με $\lim\limits_{x\to -\infty}\dfrac{(x^2-1)f(x)}{x+2}= \dfrac{4}{5}.$ Υπολογίστε το
+        $\lim\limits_{x\to -\infty}f(x).$
+      </div>
+
+      <div class="exercise">
+        Έστω συνάρτηση $f$ με $\lim\limits_{x\to -\infty}f(x)=+\infty.$ Υπολογίστε το όριο
+        \[\lim\limits_{x\to -\infty}\dfrac{3f^2(x)-2f(x)}{f^2(x)+4f(x)+5}.\]
+      </div>
+
+      <div class="exercise">Έστω συνάρτηση $f$ με $\lim\limits_{x\to +\infty}(xf(x)-5)=2.$ Υπολογίστε τα όρια:
+        <ol class="array-list">
+          <li>$\lim\limits_{x\to +\infty}(f(x)-x^2)$</li>
+          <li>$\lim\limits_{x\to +\infty}\dfrac{x+f(x)}{f(x)-x^2}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Δίνεται η συνάρτηση $f: \mathbb{R}\to\mathbb{R}$ με $\lim\limits_{x\to +\infty}f(x)=1.$ Να αποδειχθεί ότι
+        \[\lim\limits_{x\to +\infty}(f(x+2)-2f(x+1)+ f(x))=0.\]
+      </div>
+
+      <div class="exercise">
+        Για τις διάφορες τιμές του $\alpha\in\mathbb{R},$ υπολογίστε το όριο $\lim\limits_{x\to +\infty}f(x)$ όταν:
+        <ol class="array-list">
+          <li>$f(x)=\left((\alpha-1)x^4+x^3-2x-5\right)$</li>
+          <li>$f(x)=\dfrac{(\alpha-1)x^2+2x+3}{4x+7}$</li>
+          <li>$f(x)=\dfrac{\alpha(x^2+x)-(2x^2+1)}{\alpha^2 x^2-4x(x+2) +1}$</li>
+          <li>$f(x)=\dfrac{(\alpha-2)x^3+(\alpha+3)x+5}{(\alpha-5)x^2+x+1}$</li>
+          <li>$f(x)=\alpha x+\sqrt{3+4x-x^2}$</li>
+          <li>$f(x)=\sqrt{x^2-3x+2}-\alpha x-12$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Για τις διάφορες τιμές του $\alpha\in(0,+\infty),$ υπολογίστε το όριο $\lim\limits_{x\to +\infty}f(x)$ όταν:
+        <ol class="array-list-3">
+          <li>$f(x)=\dfrac{\alpha^x +4}{2\alpha^x+3}$</li>
+          <li>$f(x)=\dfrac{\alpha^x+5\cdot 3^x}{4\alpha^x+3^{x+1}}$</li>
+          <li>$f(x)=\dfrac{2\alpha^x+3\cdot 2^x}{\alpha^x+5^x}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Έστω η συνάρτηση $f$ με
+        \[f(x)= \dfrac{(\alpha-1)x^4 + (\alpha^2 - 1)x^3 + (\alpha+1)x^2 +2}{(\beta+1)x^3 + 3x+ 4},\]
+        όπου $\alpha,\beta\in\mathbb{R}.$
+        <ol class="vertical-list">
+          <li> Να υπολογίσετε το όριο της $f$ στο $+\infty,$ για τις διάφορες τιμές των $\alpha,\beta.$</li>
+          <li> Να υπολογίσετε τα $\alpha,\beta$ ώστε το όριο της $f$ στο $-\infty$ να ισούται με $0.$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Δίνεται η συνάρτηση με $f(x)=\dfrac{\alpha x^2+5x-2}{\beta x^2-4},$ όπου $\alpha,\beta\in\mathbb{R}.$ Για τις
+        διάφορες τιμές των $\alpha,\beta,$ να υπολογίσετε τα όρια:
+        <ol class="array-list">
+          <li>$\lim\limits_{x\to 2}f(x)$</li>
+          <li>$\lim\limits_{x\to +\infty}f(x)$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Έστω οι συναρτήσεις
+        \[\begin{align}
+        f(x)&=\dfrac{x^2+4x+3}{x+1},\\[1ex]
+        g(x)&=\sqrt{4x^2+2x+3}.
+        \end{align}
+        \]
+        Να προσδιορίσετε τους αριθμούς $\alpha,\beta\in\mathbb{R}$ όταν:
+        <ol class="array-list">
+          <li>$\lim\limits_{x\to +\infty}\Big(f(x)-(\alpha x+\beta)\Big)=3$</li>
+          <li>$\lim\limits_{x\to -\infty}\Big(g(x)-(\alpha x+\beta)\Big)=2$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Έστω η συνάρτηση $f(x)=\sqrt{4x^2+1}-2x\gsin\alpha,$ όπου $\alpha\in[0,2\pi].$
+        <ol class="vertical-list">
+          <li> Υπολογίστε το $\lim\limits_{x\to +\infty}f(x).$</li>
+          <li> Προσδιορίστε την τιμή του $\alpha$ ώστε $\lim\limits_{x\to -\infty}f(x)=0.$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να υπολογίσετε το όριο $\lim\limits_{x\to \infty}\Big(\sqrt{4x^2+x+1}+\alpha x+1\Big),$ για τις διάφορες τιμές
+        του $\alpha\in\mathbb{R}.$
+      </div>
+
+      <div class="exercise">
+        Θεωρούμε τη συνάρτηση $f(x)= \sqrt{4x^4+3x^2+2}-\kappa x^2+\lambda x-\mu,$ όπου
+        $\kappa,\lambda,\mu\in\mathbb{R}.$ Προσδιορίστε τους $\kappa,\lambda,\mu$ ώστε $\lim\limits_{x\to
+        -\infty}f(x)=\frac{11}{4}.$
+      </div>
+
+      <div class="exercise">
+        Θεωρούμε τη συνάρτηση $f(x)=\dfrac{\sqrt{9x^2+x+1}-\kappa x}{\sqrt{x^2+2x+3}-\lambda x},$ όπου $\kappa,\lambda
+        \in\mathbb{R}.$ Προσδιορίστε τους $\kappa,\lambda $ ώστε $\lim\limits_{x\to +\infty}f(x)=\frac{1}{6}.$
+      </div>
+
+      <div class="exercise">
+        Να προσδιορίσετε τις τιμές των $\alpha,\beta\in\mathbb{R}$ για τις οποίες
+        \[\lim\limits_{x\to +\infty}\left(\sqrt{4x^2+x+1}+\alpha x-2\beta\right)=1.\]
+      </div>
+
+      <div class="exercise">
+        Για τις διάφορες τιμές του $\alpha\in\mathbb{R},$ να υπολογίσετε το όριο $\lim\limits_{x\to
+        +\infty}\dfrac{\alpha^{x+1}+e^x}{\alpha^x +e^{x+1}}.$
+      </div>
+
+      <div class="exercise">
+        Έστω $\alpha,\beta\in\left(0,\frac{\pi}{2}\right)\cup\left (\frac{\pi}{2},\pi\right).$ Θεωρούμε τη συνάρτηση
+        \[f(x)=\sqrt{4x^2\gcos^2\alpha-4x+1}-x+\gsin\beta.\]
+        <ol class="vertical-list">
+          <li> Να προσδιορίσετε το πεδίο ορισμού της $f.$</li>
+          <li> Να προσδιορίσετε τις τιμές των $\alpha,\beta$ έτσι ώστε $\lim\limits_{x\to +\infty}f(x)=-\dfrac{3}{2}.$
+          </li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Θεωρούμε τη συνάρτηση $f$ με τύπο $f(x)=\dfrac{(x^4-x^2)}{1+x^2}\gsin\dfrac{1}{x^2}.$ Να υπολογίσετε τα όρια:
+        <ol class="array-list-3">
+          <li>$\lim\limits_{x\to 0}f(x)$</li>
+          <li>$\lim\limits_{x\to +\infty}f(x)$</li>
+          <li>$\lim\limits_{x\to -\infty}f(x)$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Δίνεται συνάρτηση $f$ με
+        \[\lim\limits_{x\to +\infty}\dfrac{f(x)+2x\gsin(1/x)}{\sqrt{x^2+2x+3}-x}=3.\tag{$\ast$}\]
+        Να προσδιορίσετε το $\lim\limits_{x\to +\infty}f(x).$
+      </div>
+
+      <div class="exercise">
+        Δίνεται συνάρτηση $f$ με
+        \[\lim\limits_{x\to +\infty}\left(\!(3x-1)f(x) +x^2\gsin\dfrac{1}{x}\!\right)=2.\tag{$\ast$}\]
+        Υπολογίστε το $\lim\limits_{x\to +\infty}f(x).$
+      </div>
+
+      <div class="exercise">
+        Θεωρούμε συνάρτηση $f: \mathbb{R}\to\mathbb{R}.$ Να προσδιορίσετε το όριο $\lim\limits_{x\to +\infty}f(x)$ σε
+        καθεµία από τις παρακάτω περιπτώσεις:
+        <ol class="array-list">
+          <li>$x^2-x+1\leq f (x)\leq 2x^2-x+1,\quad$ $x\in\mathbb{R}$</li>
+          <li>$|(1 + x^3) f(x)-2x^2|\leq x,\quad$ $x \gt 0$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Έστω $f$ συνάρτηση με
+        \[g(x)\leq f(x)\leq h(x),\tag{$\ast$}\]
+        όπου
+        \[
+        \begin{align}
+        g(x)&=\dfrac{x^3+x^2+x}{x^2+1},\\[1ex]
+        h(x)&=\dfrac{x^3+2x^2+x}{x^2+1}.
+        \end{align}
+        \]
+        για κάθε $x\gt 0.$ Να υπολογίσετε τα όρια:
+        <ol class="array-list">
+          <li>$\lim\limits_{x\to +\infty}f(x)$</li>
+          <li>$\lim\limits_{x\to +\infty}\left(f(x)\gsin\dfrac{2}{x}\right)$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Θεωρούμε τη συνάρτηση $f(x)= \dfrac{x\gsin x-\gcos x}{1+x^2}.$
+        <ol class="vertical-list">
+          <li> Να αποδείξετε ότι $\dfrac{-|x|+1}{1+x^2}\leq f(x)\leq\dfrac{|x|+1}{1+x^2},$ για κάθε $x\in\mathbb{R}.$
+          </li>
+          <li> Να προσδιορίσετε τα $\lim\limits_{x\to -\infty}f(x)$ και $\lim\limits_{x\to +\infty}f(x).$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Έστω $\alpha,\beta\in\mathbb{R}$ με $\beta\neq 0.$ Θεωρούμε πολυωνυμική συνάρτηση $P$ για την οποια ισχύουν
+        \[\begin{align}
+        \lim\limits_{x\to 0}P(x)&=-4,\\[1ex]
+        \lim\limits_{x\to +\infty}\dfrac{P(x)}{x+\alpha}&=2,\\[1ex]
+        \lim\limits_{x\to 2}\,\dfrac{P(x)}{x+\alpha}&=\beta.
+        \end{align}\]
+        <!-- \[\lim\limits_{x\to 0}P(x)=-4, \ \ \ \lim\limits_{x\to +\infty}\dfrac{P(x)}{x+\alpha}=2, \ \ \ \lim\limits_{x\to 2}\,\dfrac{P(x)}{x+\alpha}=\beta.\] -->
+        Να προσδιορίσετε τον τύπο της $P$ και τους $\alpha,\beta.$
+      </div>
+
+      <div class="exercise">
+        Θεωρούμε γνησίως αύξουσα πολυωνυμική συνάρτηση $P.$ Αποδείξτε ότι είναι περιττού βαθμού.
+      </div>
+
+      <div class="exercise">
+        Θεωρούµε τη συνάρτηση $f,$ τέτοια ώστε $f (x)\geq e^x,$ για κάθε $x \gt 0.$ Αποδείξτε ότι $\lim\limits_{x\to
+        +\infty}f(x)= +\infty.$
+      </div>
+
+      <div class="exercise">
+        Θεωρούµε τη συνάρτηση $f,$ τέτοια ώστε $f(x)\leq -\ln x,$ για κάθε $x \gt 0.$ Αποδείξτε ότι $\lim\limits_{x\to
+        +\infty}f(x)= -\infty.$
+      </div>
+
+    </section>
+
   </main>
 
 </body>
+
 </html>

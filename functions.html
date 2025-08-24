@@ -1,1286 +1,1289 @@
 <!DOCTYPE html>
 <html lang="el">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Συναρτήσεις</title>
-
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async
-            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-    </script>
-
-    <script>
-        window.MathJax = {
-            tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']],
-            }
-        };
-    </script>
-
-    <style>  
-    /* for differents files */
-        html {
-            ---theme-color : #105b99;
-        }
-    </style>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <link rel="stylesheet" type="text/css" href="exercisesstyle.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Συναρτήσεις</title>
+  <script id="exercisesheadJS" src="/JS/exerciseshead.js"></script>
+  <script id="generalJS" defer src="/JS/general.js"></script>
 </head>
+
 <body>
-
-
-<div style="display: none;">
-    $\DeclareMathOperator{\gsin}{ημ}$
-    $\DeclareMathOperator{\gcos}{συν}$
-    $\DeclareMathOperator{\gtan}{εφ}$
-    $\DeclareMathOperator{\gctan}{σφ}$
-</div>
-
-<a id="home-button" href="#">
-    <i class="fa-solid fa-circle-up"></i>
-</a>
-
-<header>
-    <nav>
-        <ul>
-            <li><a href="functions.html" style="color:rgb(140, 140, 140)">Συναρτησεις</a></li> 
-            <li><a href="limits.html">Ορια</a></li>  
-            <li><a href="continuity.html">Συνεχεια</a></li>
-            <li><a href="derivative_1.html">Παραγωγος I</a></li>
-            <li><a href="derivative_2.html">Παραγωγος ΙΙ</a></li>
-            <li><a href="integral.html">Ολοκληρωμα</a></li>
-            <li><div class="mobile-display"><a href="followup.html">Αν/κες Ασκησεις</a></div>
-            <div class="desktop-display"><a href="followup.html">Ανακεφαλαιωτικες Ασκησεις</a></div>
-            </li>
-        </ul>
-    </nav>
-
-    <div>
-        Δημοσθένης Σταλίδης,
-        Γυμνάσιο ΛΤ Άρνισσας,
-        2023
-    </div>
-</header>
-
-  <h1>Συναρτησεις</h1>
+  <h1>Συναρτήσεις</h1>
 
   <div id="contents-container">
     <ul id="contents">
-        <li><a href="#functions-concepts">Αρχικές έννοιες</a>
-            <ul>
-                <li>
-                    <a href="#functions-concepts-general">Γενικές ασκήσεις</a>
-                </li>
-                <li>
-                    <a href="#functions-concepts-graph">Γραφική παράσταση</a>
-                </li>
-            </ul>
-        </li>
-        <li><a href="#functions-composition">Σύνθεση συναρτήσεων</a></li>
-        <li><a href="#functions-monotonicity-extrema">Μονοτονία και ακρότατα</a></li>
-        <li><a href="#functions-one-to-one-inverse">1-1 και αντίστροφες συναρτήσεις</a></li>
+      <li><a href="#functions-concepts">Αρχικές έννοιες</a>
+        <ul>
+          <li>
+            <a href="#functions-concepts-general">Γενικές ασκήσεις</a>
+          </li>
+          <li>
+            <a href="#functions-concepts-graph">Γραφική παράσταση</a>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#functions-composition">Σύνθεση συναρτήσεων</a></li>
+      <li><a href="#functions-monotonicity-extrema">Μονοτονία και ακρότατα</a></li>
+      <li><a href="#functions-one-to-one-inverse">1-1 και αντίστροφες συναρτήσεις</a></li>
     </ul>
   </div>
 
   <main>
 
-  <section id="functions-concepts">
-
-  <h2>Αρχικές έννοιες</h2>
-
-  <h3 id="functions-concepts-general">Γενικές ασκήσεις</h3>
-
-  
-  <div class="exercise">
-  Να προσδιορίσετε το πεδίο ορισμού της συνάρτησης $f$ όταν o τύπος $f(x)$ είναι:
-  <ol class="array-list">
-  <li>$f(x)=\dfrac{x-3}{3x^2-5x+2}$</li>
-  <li>$f(x)=\sqrt{5x-30}$</li>
-  <li>$f(x)=\sqrt[5]{x-1}$</li>
-  <li>$f(x)=\dfrac{\sqrt{x-2}}{x-3}$</li>
-  <li>$f(x)=\dfrac{\sqrt{9-x^2}}{x}$</li>
-  <li>$f(x)=\dfrac{1}{\sqrt{x^2-1}}$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Να προσδιορίσετε το πεδίο ορισμού της συνάρτησης $f$ όταν o τύπος $f(x)$ είναι:
-  <ol class="array-list">
-  <li>$f(x)=\dfrac{1}{x^2-4x+3}$</li>
-  <li>$f(x)=\sqrt{x^2-4x+3}$</li>
-  <li>$f(x)=\dfrac{1}{\sqrt{x^2-4x+3}}$</li>
-  <li>$f(x)=\ln(x^2-4x+3)$</li>
-  <li>$f(x)=\dfrac{1}{\ln(x^2-4x+3)}$</li>
-  <li>$f(x)=\dfrac{1}{\sqrt{\ln(x^2-4x+3)}}$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Να προσδιορίσετε το πεδίο ορισμού της συνάρτησης $f$ όταν o τύπος $f(x)$ είναι:
-  <ol class="array-list">
-  <li>$f(x)=\sqrt{\dfrac{x-1}{x-2}}$</li>
-  <li>$f(x)=\dfrac{\sqrt{x-1}}{\sqrt{x-2}}$</li>
-  <li>$f(x)=\sqrt{x-1}\sqrt{x-2}$</li>
-  <li>$f(x)=\sqrt{(x-1)(x-2)}$</li>
-  <li>$f(x)=\sqrt{1-\sqrt{1-x^2}}$</li>
-  <li>$f(x)=\ln(e^{2x}-5e^x +6)$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Να προσδιορίσετε το πεδίο ορισμού της συνάρτησης $f$ όταν o τύπος $f(x)$ είναι:
-  <ol class="array-list">
-  <li>$f(x)=\dfrac{\sqrt{10-x^2}}{x-1}$</li>
-  <li>$f(x)=\dfrac{\sqrt{x^2+2x-15}}{x^2-16}$</li>
-  <li>$f(x)=\sqrt{x^2-9x}-\sqrt[3]{x+2}$</li>
-  <li>$f(x)=\dfrac{\sqrt{x+3}}{\sqrt{x-4}}$</li>
-  <li>$f(x)=\dfrac{\sqrt{2-x}}{\sqrt{x+3}}$</li>
-  <li>$f(x)=\sqrt{\dfrac{2-x}{x+3}}$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Να προσδιορίσετε το πεδίο ορισμού της συνάρτησης $f$ όταν o τύπος $f(x)$ είναι:
-  <ol class="array-list">
-  <li>$f(x)=\sqrt{\ln(x-1)}$</li>
-  <li>$f(x)=1-\sqrt{2-\ln x}$</li>
-  <li>$f(x)=\ln(2-\ln x)$</li>
-  <li>$f(x)=\gtan\dfrac{x}{2}$</li>
-  <li>$f(x)=\left(\gctan\dfrac{x}{2}\right)^{-1}$</li>
-  <li>$f(x)=\dfrac{|x|-x+2}{\sqrt{x}+|x|-1}$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Δίνεται η συνάρτηση $f$ με $f(x)= 2-3x$. Να προσδιορίσετε το $f((-2,4])$.
-  </div>
-  
-  <div class="exercise">
-  Δίνεται η συνάρτηση $f:[0,1]\to\mathbb{R}$ με $f(x)=\dfrac{(x+1)(x+\alpha)}{x^2+1}$. Να προσδιοριστεί ο $\alpha\in\mathbb{R}$, ώστε $f([0,1])\subseteq[0,1]$.
-  </div>
-  
-  <div class="exercise">
-  Δίνεται η συνάρτηση $f(x)= \dfrac{x^2-\alpha x+6}{x^2-\alpha x+4}$. Να προσδιοριστούν οι τιμές του $\alpha\in\mathbb{R}$ για τις οποίες το πεδίο ορισμού της $f$ είναι το $\mathbb{R}$.
-  </div>
-  
-  <div class="exercise">
-  Για τις διάφορες τιμές του πραγματικού αριθμού $\alpha$, να προσδιοριστεί το πεδίο ορισμού της συνάρτησης $f(x)=\sqrt{x^2-\alpha x+4}-x$.
-  </div>
-  
-  <div class="exercise">
-  Να εξετάσετε αν είναι ίσες οι συναρτήσεις $f,g$ στις παρακάτω περιπτώσεις. Αν $f\neq g$, να προσδιορίσετε το ευρύτερο υποσύνολο $\textnormal{A}$ του $\mathbb{R}$ στο οποίο είναι $f(x)=g(x)$, για κάθε $x\in\textnormal{A}$.
-  <ol class="array-list">
-  <li>$f(x)=\dfrac{x^3-1}{(x-1)^2}$, $g(x)=\dfrac{x^2+x+1}{x-1}$</li>
-  <li>$f(x)=2x$, $g(x)=\dfrac{2x^3+4x}{x^2+2}$</li>
-  <li>$f(x)= (2-x)^2$, $g(x)=x-2$</li>
-  <li>$f(x)=\sqrt{x^2}$, $g(x)=\left(\sqrt{x}\right)^2$</li>
-  <li>$f(x)=\ln x^2$, $g(x)=2\ln x$</li>
-  <li>$f(x)=\ln x^3$, $g(x)=3\ln x$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Δίνονται οι συναρτήσεις $f(x)= \dfrac{x-\lambda -1}{x-\lambda+1}$ και $g(x)= \dfrac{x^2-2x+\lambda -1}{(x-\lambda^2+\lambda)^2}$. Να προσδιορίσετε το $\lambda\in\mathbb{R}$ ώστε $f=g$.
-  </div>
-  
-  <div class="exercise">
-  Θεωρούμε τις συναρτήσεις $f(x)=\dfrac{(\lambda+1)x-1}{x+\lambda^2 -1}$ και $g(x)= \dfrac{(1-2\lambda)x+1-\lambda}{\lambda-x-5}$. Να εξετάσετε αν υπάρχει $\lambda\in\mathbb{R}$ ώστε να είναι ίσες.
-  </div>
-  
-  <div class="exercise">
-  Να προσδιορίσετε τις συναρτήσεις $f+g$, $fg$, $\dfrac{f}{g}$, όταν:
-  <ol class="array-list">
-  <li>$f(x)= \dfrac{ x^2+1}{x-2}$, $g(x)= \dfrac{4x-3}{2-x}$</li>
-  <li>$f(x)= \dfrac{x-4}{2-x}$, $g(x)= \dfrac{x^2-3x}{x-2}$</li>
-  <li>$f(x)= \dfrac{1}{3-|x|}$, $g(x)= \dfrac{|x|-2}{x^2-9}$</li>
-  <li>$f(x)= \dfrac{|x|}{3+|x|}$, $g(x)= \dfrac{6-2|x|}{x^2-9}$</li>
-  <li>$f(x)=\sqrt{4-x^2}$, $g(x)=\dfrac{1}{2}\sqrt{x}$</li>
-  <li>$f(x)=\dfrac{1}{x^2-9}$, $g(x)=\dfrac{x-3}{x}$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Να προσδιοριστούν τα διαστήματα στα οποία είναι ίσες οι συναρτήσεις $f,g$, όταν:
-  <ol class="array-list">
-  <li>$f(x)=|x-1|+2|x+1|+x$, 	$g(x)=2x+3$</li>
-  <li>$f(x)=|x-2|+3|x|$,			$g(x)=4x-2$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Δίνονται οι συναρτήσεις $f(x)= x^3-x^2-2x$ και $g(x)= x^2-2x$. Να ορίσετε τις συναρτήσεις $\dfrac{1}{f}$ και $\dfrac{1}{g}$.
-  </div>
-  
-  <div class="exercise">
-  Θεωρούμε τις συναρτήσεις $f(x)=\dfrac{x+2}{x^2-9}$ και $g(x)= \dfrac{x-3}{x^2+5x+6}$. Να ορίσετε τις συναρτήσεις $f-g$ και $fg$. 
-  </div>
-  
-  <div class="exercise">
-  Για τις συναρτήσεις
-  \[\begin{align}
-  f(x)&=\begin{cases} 1-x,&x\leq 0 \\ 1-2x,&0\lt x\lt 4\end{cases}\ ,\\[1ex]
-  g(x)&=\begin{cases} -2x,&-3\leq x\leq 2\\ 0, &x\gt 2 \end{cases}
-  \end{align}\]
-  <!-- \[f(x)=\begin{cases} 1-x,&x\leq 0 \\ 1-2x,&0\lt x\lt 4\end{cases},\ \ g(x)=\begin{cases} -2x,&-3\leq x\leq 2\\ 0, &x\gt 2 \end{cases}\] -->
-  να προσδιορίσετε την $f\cdot g$ και το σύνολο τιμών της.
-  </div>
-  
-  <div class="exercise">
-  Αποδείξτε ότι δεν υπάρχει συνάρτηση $f: \mathbb{R}\to\mathbb{R}$ για την οποία να ισχύει η σχέση
-  \[f(2-x)+f(x)=x^3+3,\tag{$\ast$}\]
-  Για κάθε $x\in\mathbb{R}$.
-  </div>
-  
-  <h3 id="functions-concepts-graph">Γραφική παράσταση</h3>
-  
-  <div class="exercise">
-  Να σχεδιάσετε τη γραφική παράσταση της συνάρτησης $f$, όταν:
-  <ol class="array-list">
-  <li>$f(x)= x^2-1$</li>
-  <li>$f(x)=-x^2+3$</li>
-  <li>$f(x)=(x-2)^2$</li>
-  <li>$f(x)= (x-1)^2+2$</li>
-  <li>$f(x)=x^2-6x+8$</li>
-  <li>$f(x)=-2(x-1)(x-3)$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Να σχεδιάσετε τη γραφική παράσταση της συνάρτησης $f$, όταν:
-  <ol class="array-list">
-  <li>$f(x)=1+\dfrac{3}{x}$</li>
-  <li>$f(x)=\dfrac{x-4}{x}$</li>
-  <li>$f(x)=\dfrac{1}{x+2}$</li>
-  <li>$f(x)=-1-\dfrac{2}{x-2}$</li>
-  <li>$f(x)=\dfrac{x}{x-1}$</li>
-  <li>$f(x)=\dfrac{1-2x}{x-1}$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Να σχεδιάσετε τη γραφική παράσταση της συνάρτησης $f$, όταν:
-  <ol class="array-list">
-  <li>$f (x) = |x - 2|$</li>
-  <li>$f(x) =\sqrt{9-x^2}$</li>
-  <li>$f(x) =\sqrt{1-4x^2}$</li>
-  <li>$f (x)=|\ln x|$</li>
-  <li>$f(x) = |\gsin x|$</li>
-  <li>$f(x) = |\gcos x|$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Να σχεδιάσετε στο ίδιο σύστηµα συντεταγµένων τις γραφικές παραστάσεις των συναρτήσεων $f(x)=\ln x$ και
-  \[
-  \begin{array}{ll}
-  f_1(x) = -f(x),& f_2(x)=f(-x),\\[1ex]
-  f_3(x)=f(x)-2, & f_4(x)=f(x - 2).
-\end{array}
-  \]
-  </div>
-  
-  <div class="exercise">
-  Να σχεδιάσετε στο ίδιο σύστηµα συντεταγµένων τις γραφικές παραστάσεις των συναρτήσεων $f(x)=e^{x}$ και
-  \[\begin{array}{ll}
-  f_1(x) = -f(x),& f_2(x)=f(-x),\\[1ex]
-  f_3(x) = f(x)+1,& f_4(x)=f(x+1).
-  \end{array}\]
-  </div>
-  
-  <div class="exercise">
-  Να σχεδιάσετε τη γραφική παράσταση και να προσδιορίσετε το σύνολο τιμών της συνάρτησης $f$, όταν:
-  <ol class="array-list">
-  <li>$f(x)=\begin{cases}3x, &x\lt 1\\ x^2,& x\geq 1\end{cases}$</li>
-  <li>$f(x)=\begin{cases}2x-2,& x\leq 2\\ x^2-2 , &x\gt 2\end{cases}$</li>
-  <li>$f(x)=\begin{cases}\dfrac{1}{x},& x\lt 0\\[1ex] x, &x\geq 0\end{cases}$</li>
-  <li>$f(x)=|x^2-1|+x^2$</li>	
-  <li>$f(x)=\begin{cases}-x, &x\leq e \\ \ln x,& x\gt e\end{cases}$</li>
-  <li>$f(x)=\begin{cases}\ln x,& 0\lt x\leq e\\ x-1, &x\gt e\end{cases}$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Να σχεδιάσετε τη γραφική παράσταση και να προσδιορίσετε το σύνολο τιμών της συνάρτησης $f$, όταν:
-  <ol class="array-list">
-  <li>$f(x)=\begin{cases} 2x^2, & x\lt 1 \\ -x^2,& x\geq 1\end{cases}$</li>
-  <li>$f(x)=\begin{cases}-x, &-2\pi\leq x\lt 0 \\ \gsin x,& 0\leq x\leq 2\pi \end{cases}$</li>
-  <li>$f(x)=|3x - 6| + (x+1)^2$</li>
-  <li>$f(x) =\dfrac{|x|e^x}{x}$</li>
-  <li>$f(x)=\dfrac{(x-1)^2}{|x-1|}\ln x$</li>
-  <li>$f(x)=\dfrac{|x-2|+|x|}{|x|}$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Να προσδιορίσετε, αν υπάρχουν, τα σημεία τομής της γραφικής παράστασης της συνάρτησης $f$ με τους άξονες, όταν:
-  <ol class="array-list">
-  <li>$f(x)= x^3-5x+4$</li>
-  <li>$f(x)=2x^3-7x^2+7x-2$</li>
-  <li>$f(x)= \dfrac{3}{x-2}$</li>
-  <li>$f(x)= \dfrac{x-4}{x-1}$</li>
-  <li>$f(x)= \dfrac{x^2+x-6}{x+3}$</li>
-  <li>$f(x)= \dfrac{3x^2+x-4}{3x-1}$</li>
-  </ol>
-  
-  </div>
-  
-  <div class="exercise">
-  Να προσδιορίσετε, αν υπάρχουν, τα σημεία τομής της γραφικής παράστασης της συνάρτησης $f$ με τους άξονες, όταν:
-  <ol class="array-list">
-  <li>$f(x)= x-\sqrt{x}+2$</li>
-  <li>$f(x)=x-\sqrt{x^2+4}$</li>
-  <li>$f(x)=\sqrt[4]{x-4}+7$</li>
-  <li>$f(x)= 3-\ln(x+2)$</li>
-  <li>$f(x)=\ln(x-2)-3$</li>
-  <li>$f(x)= e^x-\dfrac{1}{e^x}$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Να προσδιορίσετε, αν υπάρχουν, τα σημεία τομής της γραφικής παράστασης της συνάρτησης $f$ με τους άξονες, όταν:
-  <ol class="array-list">
-  <li>$f(x)=\ln\dfrac{1+x}{1-x}$</li>
-  <li>$f(x)= 9^x+3^x-12$</li>
-  <li>$f(x)= 25^x -15^x -10^x$</li>
-  <li>$f(x)=\sqrt{3}+2\gsin x$</li>
-  <li>$f(x)= 2\gcos 2x -\sqrt{2}$</li>
-  <li>$f(x)=\sqrt{\dfrac{2x-4}{x^2+x}}$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Να προσδιορίσετε, αν υπάρχουν, τα κοινά σημεία των γραφικών παραστάσεων των συναρτήσεων $f$, $g$, όταν:
-  <ol class="array-list">
-  <li>$f(x)=3x^2-4x$, $g(x)=2x^2-3$</li>
-  <li>$f(x)=5x^2+x+2$, $g(x)=3x^2$</li>
-  <li>$f(x)= 4x^3+5x$, $g(x)=12x^2-6$</li>
-  <li>$f(x)=8x^2+10x+4$, $g(x)=\dfrac{11}{2x}$</li>
-  <li>$f(x)= \dfrac{x+3}{x}$, $g(x)=\dfrac{2}{x-1}$</li>
-  <li>$f(x)= x^2-x$, $g(x)=\dfrac{6}{x+1}$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Να προσδιορίσετε, αν υπάρχουν, τα κοινά σημεία των γραφικών παραστάσεων των συναρτήσεων $f$, $g$, όταν:
-  <ol class="array-list">
-  <li>$f(x)=4x$, $g(x)=2\sqrt{x}$</li>
-  <li>$f(x)=\dfrac{x^2-2}{1+2x}$, $g(x)=\dfrac{1}{x(1+2x)}$</li>
-  <li>$f(x)=-\sqrt{x}$, $g(x)=x^2-2$</li>
-  <li>$f(x)=2^x-3$, $g(x)=2^{-x}$</li>
-  <li>$f(x)=x+\sqrt{x^2+9}$, $g(x)=2x+1$</li>
-  <li>$f(x)=\ln 2x$, $g(x)=\ln(3-2x^2)$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Να προσδιορίσετε τις τιμές του $x\in\mathbb{R}$ για τις οποίες η γραφική παράσταση της συνάρτησης $f$ βρίσκεται πάνω από τον άξονα $x^\prime x$, όταν:
-  <ol class="array-list-3">
-  <li>$f(x)=x^2-5x+4$</li>
-  <li>$f(x)= \dfrac{2+x}{2-x}$</li>
-  <li>$f(x)= \dfrac{1-e^x}{e^x}$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Να προσδιορίσετε τις τιμές του $x\in\mathbb{R}$ για τις οποίες η γραφική παράσταση της συνάρτησης $f$ βρίσκεται κάτω από τον άξονα $x^\prime x$, όταν:
-  <ol class="vertical-list">
-  <li> $f(x)= \dfrac{5-x}{4+x}$</li>
-  <li> <span class="scale-08">$f(x)=(3-x)(x^2-2x+1)(x^2-4x+3)$</span></li>
-  <li> $f(x)=\ln(x+1)-1$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Να προσδιορίσετε τις τιμές του $x\in\mathbb{R}$ για τις οποίες η γραφική παράσταση της $f$ βρίσκεται πάνω από την γραφική παράσταση της $g$, όταν:
-  <ol class="vertical-list">
-  <li>$f(x)=1+2x-x^3$, $g(x)=1-x^4$</li>
-  <li>$f(x)=x^3+x+2$, $g(x)=2+x-x^2$</li>
-  <li>$f(x)=e^{2x}-e^x$, $g(x)=5e^x-5$</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Δίνεται η συνάρτηση $f(x)=\dfrac{|x+2|-|x-2|}{|x+2|+|x-2|}$. Να παρασταθεί γραφικά και να προσδιοριστεί το σύνολο τιμών της.
-  </div>
-  
-  <div class="exercise">
-  Δίνεται η συνάρτηση
-  \[f(x)=\begin{cases}\ \dfrac{1}{x},& |x|\geq 1\\[1ex] x|x|,&|x|\lt 1 \end{cases}.\]
-  Να παρασταθεί γραφικά και να προσδιοριστεί το σύνολο τιμών της.
-  </div>
-  
-  <div class="exercise">
-  Να χαράξετε την γραφική παράσταση της συνάρτησης $f(x)=|x-2|+|x+1|$ και στην συνέχεια, με την βοήθεια της, να προσδιορίσετε το σύνολο τιμών της $f$.
-  </div>
-  
-  <div class="exercise">
-  Να χαράξετε την γραφική παράσταση της συνάρτησης $f(x)= \sqrt{16-x^2}$ και στην συνέχεια, με την βοήθεια της, να προσδιορίσετε το σύνολο τιμών της $f$.
-  </div>
-  
-  <div class="exercise">
-  Για τις συναρτήσεις
-
-  \[\begin{align}
-  f(x)&=\begin{cases} -x-1,&x\lt 1 \\ 2x-3,&x\geq 1 \end{cases}\ ,\\[2ex]
-  g(x)&=\begin{cases} -4x+1,&x\lt 0 \\ 3x-3, &x\geq 0 \end{cases}
-  \end{align}\]
-  να χαράξετε την γραφική παράσταση της συνάρτησης $f-g$ και στην συνέχεια, με την βοήθεια της, να προσδιορίσετε το σύνολο τιμών της $f$.
-  </div>
-  
-  <div class="exercise">
-  Για τις συναρτήσεις
-  \[\begin{align}
-  f(x)&=\begin{cases} x^2-1,&x\lt 1 \\ 1,&x\geq 1 \end{cases}\ ,\\[1ex]
-  g(x)&=\begin{cases} |x|+1,&x\lt 1 \\ x, &x\geq 1 \end{cases}
-  \end{align}\]
-  να χαράξετε την γραφική παράσταση της συνάρτησης $\dfrac{f}{g}$ και στην συνέχεια, με την βοήθεια της, να προσδιορίσετε το σύνολο τιμών της $f$.
-  </div>
-  
-  <div class="exercise">
-  Aν $f(x)=\alpha|x^2-1|-\beta|x+3|$, να προσδιορίσετε τους $\alpha,\beta\in\mathbb{R}$ ώστε η γραφική παράσταση της $f$ να διέρχεται από την αρχή των αξόνων και από το σημείο $\mathrm{A}(-1,4)$. 
-  </div>
-  
-  <div class="exercise">
-  Αν $f(x)= (\alpha^2-5)x^2+2x+3$ και $g(x)= x^2+\beta x+1$, να προσδιορίσετε τις τιμές των $\alpha,\beta\in\mathbb{R}$ ώστε οι $f$, $g$ να έχουν κοινά σημεία πάνω στις ευθείες με εξισώσεις $x=-1$ και $x=1$. 
-  </div>
-  
-  <div class="exercise">
-  Αν $f(x)= 2x^2$ και $g(x)=2x+\kappa$, να προσδιοριστεί ο $\kappa\in\mathbb{R}$ ώστε οι γραφικές παραστάσεις των συναρτήσεων $f$ και $g$ να διαθέτουν ακριβώς ένα κοινό σημείο. Ποιο είναι το σημείο αυτό;
-  </div>
-  
-  <div class="exercise">
-  Δίνεται η συνάρτηση $f(x)= \alpha x^3-13x^2+\beta x+1$.
-  <ol class="vertical-list">
-  <li> Να προσδιοριστούν οι $\alpha,\beta\in\mathbb{R}$ ώστε τα σημεία $\mathrm{A}(2,33)$ και $\mathrm{B}(1,0)$ να ανήκουν στην $C_f$.</li>
-  <li> Να μετασχηματιστεί η συνάρτηση $f$ σε γινόμενο πρωτοβάθμιων παραγόντων.</li>
-  <li> Να προσδιοριστούν τα $x\in\mathbb{R}$ για τα οποία η $C_f$ βρίσκεται πάνω από τον άξονα $x^\prime x$.</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Δίνεται η συνάρτηση $f(x)= \dfrac{\alpha x+12}{3x+\alpha}$, όπου $\alpha\in\mathbb{R}$. Να προσδιοριστούν τα σταθερά σημεία του επιπέδου, από τα οποία διέρχεται η γραφική παράσταση της $f$.
-  </div>
-  
-  <div class="exercise">
-  Θεωρούµε τις συναρτήσεις $f(x)=5|x-3|-10$ και $g(x) = 4x-x^3$.
-  <ol class="vertical-list">
-  <li> Να προσδιορίσετε για ποιες τιµές του $x$ η γραφική παράσταση της συνάρτησης $f$ βρίσκεται πάνω από τον άξονα $x^\prime x$.</li>
-  <li> Να προσδιορίσετε για ποιες τιµές του $x$ η γραφική παράσταση της συνάρτησης $g$ βρίσκεται κάτω από τον άξονα $x^\prime x$.</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Για $\alpha\in\mathbb{R}$ θεωρούµε τη συνάρτηση $f_\alpha(x)=x^6 + \alpha x^4-\alpha$.
-  <ol class="vertical-list">
-  <li> Αποδείξτε ότι οι γραφικές παραστάσεις των $f_0$ και $f_1$ διαθέτουν ακριβώς δύο κοινά σηµεία.</li>
-  <li> Αποδείξτε ότι η γραφική παράσταση της $f_\alpha$, για τις διάφορες τιµές του $\alpha\in\mathbb{R}$, διέρχεται από δύο σταθερά σηµεία.</li>
-  </ol>
-  </div>
-  
-  <div class="exercise">
-  Δίνεται η συνάρτηση $f:\mathbb{R}\to\mathbb{R}$ για την οποία ισχύει
-  <div class="mobile-display">
-    \[\begin{array}{l}
-    f^3(x)-3f^2(x)+4f(x)=\\[1ex]
-    =x^2-x+2,
-    \end{array}\tag{$\ast$}\]
-  </div>
-  <div class="desktop-display">
-    \[f^3(x)-3f^2(x)+4f(x)=x^2-x+2,\tag{$\ast$}\]
-  </div>
-  για κάθε $x\in\mathbb{R}$. Να αποδειχθεί ότι η $C_f$ βρίσκεται πάνω από τον άξονα $x^\prime x$.
-  </div>
-  
-  <div class="exercise">
-  Δίνεται η συνάρτηση $f:\mathbb{R}\to\mathbb{R}$ για την οποία ισχύει
-  <div class="mobile-display">
-    \[\begin{array}{l}
-    f^3(x)-2f^2(x)+5f(x)=\\[1ex]
-    =-x^2+3,
-    \end{array}\tag{$\ast$}\]
-  </div>
-  <div class="desktop-display">
-    \[f^3(x)-2f^2(x)+5f(x)=-x^2+3,\tag{$\ast$}\]
-  </div>
-  για κάθε $x\in\mathbb{R}$. Να αποδειχθεί ότι η $C_f$ βρίσκεται κάτω από τον άξονα $x^\prime x$.
-  </div>
-  
-  <div class="exercise">
-  Θεωρούμε τις συναρτήσεις $f(x)=x^3-\alpha x^2+\beta x+2$ και $g(x)=x^2+\alpha x +3\beta$. Να προσδιορίσετε τα $\alpha,\beta\in\mathbb{R}$ ώστε οι γραφικές παραστάσεις των συναρτήσεων $f$, $g$ να τέμνονται επί των ευθειών $x=1$ και $x=2$.
-  </div>
-  
-  <div class="exercise">
-  Δίνονται οι συναρτήσεις $f,g: \mathbb{R}\to\mathbb{R}$, για τις οποίες ισχύει
-  \[f(x)+1=g(x)+x^3,\tag{$\ast$}\]
-  για κάθε $x\in\mathbb{R}$. Να προσδιοριστεί η σχετική θέση των $C_f$, $C_g$.
-  </div>
-  
-  <div class="exercise">
-  Έστω οι συναρτήσεις $f(x)= \dfrac{3}{x}$ και $g(x)=\alpha x+3-\alpha$, όπου $\alpha\in\mathbb{R}$.
-  <ol class="vertical-list">
-  <li> Αποδείξτε ότι, για κάθε $\alpha\in\mathbb{R}$, η γραφική παράσταση της $g$ διέρχεται από σταθερό σημείο.</li>
-  <li> Αποδείξτε ότι, για κάθε $\alpha\in\mathbb{R}$, οι γραφικές παραστάσεις των $f$ και $g$ διαθέτουν κοινά σημεία.</li>
-  <li> Να προσδιορίσετε τον πραγματικό αριθμό $\alpha$ για τον οποίο οι γραφικές παραστάσεις των $f$ και $g$ διαθέτουν κοινό σημείο.</li>
-  </ol>
-  </div>
-  
-
-  </section>
-
-  <section id="functions-composition">
-
-    <h2>Σύνθεση συναρτήσεων</h2>
-  
-<div class="exercise">
-Για τις συναρτήσεις $f,g$, να προσδιορίσετε τις $f\circ g$ και $g\circ f$, όταν:
-<ol class="array-list">
-<li>$f(x)= 3x-1$, $g(x)= -2x+1$</li>
-<li>$f(x)= 3x^2-2$, $g(x)= \gsin x$</li>
-<li>$f(x)=\sqrt{x+2}$, $g(x)=\sqrt{x}-2$</li>
-<li>$f(x)= x^2+2$ , $g(x)=\dfrac{1}{x-3}$</li>
-<li>$f(x)=2x-1$, $g(x)= \sqrt{1-x^2}$</li>
-<li>$f(x)= \dfrac{1}{x}$, $g(x)= \dfrac{x}{x+1}$</li>
-</ol>
-</div>
-
-<div class="exercise">
-Για τις συναρτήσεις $f,g$, να προσδιορίσετε τις $f\circ g$ και $g\circ f$, όταν:
-<ol class="array-list">
-<li>$f(x)= \gcos x$, $g(x)= \dfrac{1}{2x}$</li>
-<li>$f(x)= \gsin x$, $g(x)= \dfrac{1}{x}$</li>
-<li>$f(x)= x^2$, $g(x)= \sqrt{x}$</li>
-<li>$f(x)= \gsin x$, $g(x)= \sqrt{1-x^2}$</li>
-<li>$f(x)= x^2+1$, $g(x)= \sqrt{x-2}$</li>
-<li>$f(x)=x^2-2x$, $g(x)=1+\sqrt{x+1}$</li>
-</ol>
-</div>
-
-<div class="exercise">
-Να εκφράσετε τη συνάρτηση $f$ ως σύνθεση δύο ή τριών συναρτήσεων, όταν:
-<ol class="array-list">
-<li>$f(x)= \gcos(4x^2+1)$</li>
-<li>$f(x)=\gsin(\gcos x)$</li>
-<li>$f(x)= 2\ln^4\dfrac{3}{x}$</li>
-<li>$f(x)=\left(e^{x+x^2}\right)^3$</li>
-<li>$f(x)=\sqrt{\ln(e^x+1)}$</li>
-<li>$f(x)=\sqrt[3]{1-|x-2|}$</li>
-</ol>
-</div>
-
-<div class="exercise">
-Να ορίσετε τη συνάρτηση $g\circ f$ στις ακόλουθες περιπτώσεις:
-<ol class="array-list">
-<li>$f(x)=1+\dfrac{1}{x}$, $g(x)=\sqrt{1+\dfrac{1}{x}}$</li>
-<li>$f(x)=x^2 +x$, $g(x)=\sqrt{x-5}+\sqrt{x-2}$</li>
-<li>$f(x)=x^3 -2x^2 -x+2$, $g(x)=\ln x$</li>
-<li>$f(x)=\sqrt{1-x^2}$, $g(x)=3\sqrt{x}-2$</li>
-<li>$f(x)=\ln(x-e)$, $g(x)=\sqrt{x-1}$</li>
-<li>$f(x)=\dfrac{\ln(1-x)}{x^2-1}$, $g(x)=\sqrt{x}$</li>
-</ol>
-</div>
-
-<div class="exercise">
-Να προσδιορίσετε τον τύπο της συνάρτησης $f:\mathrm{A}\to\mathbb{R}$, στο ευρύτερο δυνατό πεδίο ορισμού $\mathrm{A}$, αν για κάθε $x\in\mathrm{A}$ ισχύει:
-<ol class="array-list">
-<li>$f(x+1)=2x+1$</li>
-<li>$f(x+1)=e^{x}+x+1$</li>
-<li>$f(e^x)=2x+1$</li>
-<li>$f^{2}(x)+x^{2}e^{2x}=2xe^{x}f(x)$</li>
-<li>$f(2x-1)=x^2-2x+3$</li>
-<li>$f\left(\dfrac{1}{\sqrt{x}}\right)=\dfrac{x^2}{x^2+1}$</li>
-</ol>
-</div>
-
-<div class="exercise">
-Στις περιπτώσεις όπου είναι δυνατό, να προσδιορίσετε τον τύπο της συνάρτησης $f:\mathrm{A}\to\mathbb{R}$, στο ευρύτερο δυνατό πεδίο ορισμού $\mathrm{A}$, αν για κάθε $x\in\mathrm{A}$ ισχύει:
-<ol class="array-list">
-<li>$xf(1-x)+f(x)=1$</li>
-<li>$5f(x)+f(2-x)=x$</li>
-<li>$3f(1-x)+f(x)=4+x^2$</li>
-<li>$f(x-2)-4f(3-x)=10x-31$</li>
-<li>$2f(x)-f\left(\dfrac{1}{x}\right)=x$</li>
-<li>$xf^2(x)f(2-x)=1$</li>
-</ol>
-</div>
-
-<div class="exercise">
-Έστω οι συναρτήσεις $f(x)=\sqrt[3]{1-x}$, $g(x)=\gcos x$, $h(x)=\sqrt{x}$. Να ορίσετε την συνάρτηση $f\circ(g\circ h)$.
-</div>
-
-<div class="exercise">
-Θεωρούμε τις συναρτήσεις $f(x)=\ln x$, $g(x)=\sqrt{x}-1$, $h(x)=\sqrt[3]{x}$. Να ορίσετε τις συναρτήσεις $f\circ g\circ h$ και $g\circ h\circ f$. 
-</div>
-
-<div class="exercise">
-Αν $f(x)=4-|x|$, να ορίσετε τη συνάρτηση $f\circ f$, να χαράξετε την γραφική της παράσταση και να προσδιορίσετε το σύνολο τιμών της.
-</div>
-
-<div class="exercise">
-Έστω $f,h$ συναρτήσεις με τύπους $f(x)=x^2 -x+2$ και $h(x)=x(x-1)$. Να προσδιορίσετε συνάρτηση $g$ της οποίας ο τύπος έχει τη μορφή $g(x)=\alpha x+\beta$ και ισχύει $g\circ f=h$.
-</div>
-
-<div class="exercise">
-Θεωρούμε τις συναρτήσεις $g(x)=3x-2$ και $f(x)= \alpha x+\beta$. Να προσδιορίσετε τα $\alpha,\beta\in\mathbb{R}$ ώστε να ισχύει $g\circ g=f$.
-</div>
-
-<div class="exercise">
-Έστω συνάρτηση $f:[-4,2]\to\mathbb{R}$. Να προσδιοριστεί το πεδίο ορισμού της συνάρτησης $g$, με τύπο $g(x)=f(5-x^2)$.
-</div>
-
-<div class="exercise">
-Δίνονται οι συναρτήσεις $I(x)=x$ και $f(x)=\dfrac{\alpha x-\beta}{3x-\alpha}$, όπου $\alpha\in\mathbb{R}$. Αποδείξτε ότι οι συναρτήσεις $f\circ f$ και $I$ είναι ίσες στο σύνολο $\mathbb{R}\setminus\left\{\frac{\alpha}{3}\right\}$.
-</div>
-
-<div class="exercise">
-Έστω $\alpha,\beta, \gamma,\delta\in\mathbb{R}$. Θεωρούμε τις συναρτήσεις στο $\mathbb{R}$ με $f(x)= \alpha x+\beta$ και $g(x)=\gamma x+\delta$. Αποδείξτε ότι $f\circ g=g\circ f$ αν και μόνο αν $(\alpha-1) \delta-(\gamma-1)\beta=0$.
-</div>
-
-<div class="exercise">
-Θεωρούμε συναρτήσεις $f,g: \mathbb{R}\to\mathbb{R}$. Αν για κάθε σταθερή συνάρτηση $h$ ισχύει $f\circ h=g\circ h$, αποδείξτε ότι $f=g$.
-</div>
-
-<div class="exercise">
-Δίνεται συνάρτηση $f:\mathbb{R}\to\mathbb{R}$. Αν για κάθε σταθερή συνάρτηση $g$ ισχύει $g\circ f=-(f\circ g)$, αποδείξτε ότι $f(x)=-x$, για κάθε $x\in\mathbb{R}$.
-</div>
-
-<div class="exercise">
-Δίνεται συνάρτηση $f:\mathbb{R}\to\mathbb{R}$ για την οποία ισχύουν $(f\circ f)(x)=4x-3$ και $(f\circ f\circ f)(x)=8x+\alpha$, όπου $\alpha \in\mathbb{R}$. Να προσδιορίσετε τη συνάρτηση $f$.
-</div>
-
-<div class="exercise">
-Θεωρούμε τις συναρτήσεις $g,h:\mathbb{R}\to\mathbb{R}$ με $g(x)=2^x$ και $h(x)= x^2$. Αποδείξτε ότι δεν υπάρχει συνάρτηση $f:(0,+\infty) \to\mathbb{R}$ για την οποία $(f\circ g)^2+1=f\circ h$.
-</div>
-
-<div class="exercise">
-Έστω $f:\mathbb{R}\to\mathbb{R}$ άρτια συνάρτηση. Θεωρούμε τη συνάρτηση απόλυτης τιμής $h$, ορισμένη στο $\mathbb{R}$. Αποδείξτε ότι υπάρχει συνάρτηση $g$ ώστε $f=g\circ h$.
-</div>
-
-<div class="exercise">
-Έστω συνάρτηση $f:\mathbb{R}\to\mathbb{R}$ με $f^5(x)+x^5=1$, για κάθε $x\in\mathbb{R}$. Αποδείξτε ότι $f\circ f=I$, όπου $I(x)=x$, για κάθε $x\in\mathbb{R}$. 
-</div>
-
-<div class="exercise">
-Θεωρούµε συνάρτηση $f: \mathbb{R}\to\mathbb{R}$ με $f(x^2+ 6)+f (5x) = 0$, για κάθε $x\in\mathbb{R}$. Αποδείξτε ότι η γραφική παράσταση της $f$ τέµνει τον άξονα $x^\prime x$ σε δύο τουλάχιστον σηµεία.
-</div>
-
-<div class="exercise">
-Θεωρούµε συνάρτηση $f: \mathbb{R}\to\mathbb{R}$ με $f(f (x)) = x^2-2x + 2$, για κάθε $x\in\mathbb{R}$.
-<ol class="vertical-list">
-<li> Αποδείξτε ότι $f(x^2-2x+2)=f^2(x)-2f(x)+2$, για κάθε $x\in\mathbb{R}$.</li>
-<li> Αν η γραφική παράσταση της $f$ δεν διέρχεται από το σηµείο $\textnormal{Α}(1, 2)$, να υπολογίσετε την τιµή $f (1)$.</li>
-</ol>
-</div>
-
-<div class="exercise">
-Θεωρούµε συνάρτηση $f: \mathbb{R}\to\mathbb{R}$ με $f(f (x)) = x^2-8x +20$, για κάθε $x\in\mathbb{R}$.
-<ol class="vertical-list">
-<li> Αποδείξτε ότι $f(x^2-8x + 20)=f^2(x)-8f (x) + 20$, για κάθε $x\in\mathbb{R}$.</li>
-<li> Αν η γραφική παράσταση της $f$ δεν διέρχεται από το σηµείο $\textnormal{Α}(4,5)$, να υπολογίσετε την τιµή $f (4)$.</li>
-</ol>
-</div>
-
-  
-  </section>
-
-  <section id="functions-monotonicity-extrema">
-
-    <h2>Μονοτονία και ακρότατα</h2>
-
-
-<div class="exercise">
-Να μελετήσετε ως προς μονοτονία τη συνάρτηση $f$, όταν:
-<ol class="array-list">
-<li>$f(x)=x^3+2x-3$</li>
-<li>$f(x)=1-3x+\sqrt{2-x}$</li>
-<li>$f(x)= 3e^{7-x}+5$</li>
-<li>$f(x) =2\ln(x-3)+5$</li>
-<li>$f(x)=\dfrac{1}{x^2+1}$</li>
-<li>$f(x)=\left(\dfrac{1}{2}\right)^x -3^x$</li>
-</ol>
-</div>
-
-<div class="exercise">
-Να μελετήσετε ως προς μονοτονία τη συνάρτηση $f$ στο διάστημα $\Delta$, όταν: 
-<ol class="array-list">
-<li>$f(x)=\dfrac{1}{x-2}$, $\Delta=(-\infty,2)$</li>
-<li>$f(x)=-2x^3+\dfrac{1}{x}$, $\Delta=(0, +\infty)$</li>
-<li>$f(x)=-\dfrac{x^2}{2}+\dfrac{1}{e^x}$, $\Delta=[0, +\infty)$</li>
-<li>$f(x)=(x-3)^2+1$, $\Delta=[3,+\infty)$</li>
-<li>$f(x)= x(x+4)-4$, $\Delta=(-\infty,-2]$</li>
-<li>$f(x)= x(x+4)-4$, $\Delta=[-2,+\infty)$</li>
-</ol>
-</div>
-
-<div class="exercise">
-Να μελετήσετε ως προς μονοτονία τη συνάρτηση $f$, όταν: 
-<ol class="array-list">
-<li>$f(x)=\begin{cases}-x, & x\lt 0 \\ x^2 , & x\geq 0 \end{cases}$</li>
-<li>$f(x)=\begin{cases}-x^2 , &x\lt 0 \\ x, & x\geq 0\end{cases}$</li>
-<li>$f(x)=\begin{cases}5x-1,& x\lt 2 \\ -2x+3, & x\geq 2 \end{cases}$</li>
-<li>$f(x)=\begin{cases}2x^2 , &x\leq 0 \\ 2x^4, & x\gt 0\end{cases}$</li>
-<li>$f(x)=\begin{cases}x+5,& x\lt 0 \\ \sqrt{x}, & x\geq 0 \end{cases}$</li>
-<li>$f(x)=\begin{cases}-x^2+1 , &x\lt 0 \\ x^3+1, & x\geq 0\end{cases}$</li>
-</ol>
-</div>
-
-<div class="exercise">
-Με την βοήθεια της γραφικής παράστασης, να προσδιορίσετε τη μονοτονία και τα ακρότατα της συνάρτησης $f$, όταν: 
-<ol class="array-list">
-<li>$f(x)=-3|x+1|+2$</li>
-<li>$f(x)= 2|x-2|+1$</li>
-<li>$f(x)= -3\sqrt{x-1}+2$</li>
-<li>$f(x)= 5\sqrt{x-2}+7$</li>
-<li>$f(x)=\sqrt{|x|}$</li>
-<li>$f(x)=x^2-|x|$</li>
-</ol>
-</div>
-
-<div class="exercise">
-Με την βοήθεια της γραφικής παράστασης, να προσδιορίσετε τη μονοτονία και τα ακρότατα της συνάρτησης $f$, όταν:
-<ol class="array-list">
-<li>$f(x)=\begin{cases}-x+1, &x\lt 0\\ x^2-1,& x\geq 0 \end{cases}$</li>
-<li>$f(x)=\begin{cases}(x-1)^2+3, &0\lt x\lt 1 \\ \dfrac{x^2}{2}+1,& 1\leq x\leq 2 \end{cases}$</li>
-<li>$f(x)=\begin{cases}e^x, &x\lt 1 \\ \ln x,& x\geq 1 \end{cases}$</li>
-<li>$f(x)=\begin{cases}-x^2, &x\leq 0 \\ -e^x,& x\gt 0 \end{cases}$</li>
-</ol>
-</div>
-
-<div class="exercise">
-Δίνεται η συνάρτηση $f(x)=(x-1)^2-4$. Να προσδιορίσετε τα διαστήματα μονοτονίας της $f$, καθώς και το σύνολο $f(\Delta)$, όταν:
-<ol class="array-list">
-<li>$\Delta=[2,3]$</li>
-<li>$\Delta=(-4,1]$</li>
-<li>$\Delta=(-2,2)$</li>
-<li>$\Delta=(5,+\infty)$</li>
-<li>$\Delta=[0,+\infty)$</li>
-<li>$\Delta=\left(-\infty, \frac{1}{2}\right)$</li>
-<li>$\Delta=\left(-\infty, \frac{3}{2}\right]$</li>
-<li>$\Delta=\mathbb{R}$</li></li>
-</ol>
-</div>
-
-<div class="exercise">
-Σε καθεµία από τις παρακάτω περιπτώσεις, αποδείξτε ότι η συνάρτηση $f$ διαθέτει ολικό ακρότατο, το οποίο να προσδιορίσετε:
-<ol class="array-list">
-<li>$f(x) = 3|x-2|+4$</li>
-<li>$f(x) =-\ln^2 x + 2$</li>
-<li>$f(x)=(x-1)^2+2(x-1)^4-3$</li>
-<li>$f (x) = -(x-5)^4 + 1$</li>
-<li>$f (x) = 2\sqrt{x+1} + 5$</li>
-<li>$f (x) = -2 |x-1|-|x^2-1|$</li>
-</ol>
-</div>
-
-<div class="exercise">
-Για τις διάφορες τιμές του $\alpha\in\mathbb{R}$, να μελετηθεί ως προς τη μονοτονία η συνάρτηση $f(x)= 5x+\alpha (1-x)$.
-</div>
-
-<div class="exercise">
-Έστω $f:\mathbb{R}\to\mathbb{R}$ περιττή συνάρτηση. Αν η $f$ είναι γνησίως φθίνουσα στο διάστημα $(0,+\infty)$, αποδείξτε ότι είναι γνησίως αύξουσα στο διάστημα $(-\infty,0)$.
-</div>
-
-<div class="exercise">
-Έστω $f:\mathbb{R}\to\mathbb{R}$ άρτια συνάρτηση. Αν η $f$ είναι γνησίως φθίνουσα στο διάστημα $(0,+\infty)$, αποδείξτε ότι είναι γνησίως αύξουσα στο διάστημα $(-\infty,0)$.
-</div>
-
-<div class="exercise">
-Έστω $f:\mathbb{R}\to\mathbb{R}$ περιττή και γνησίως φθίνουσα συνάρτηση. Αποδείξτε ότι $f(x)\gt 0$ αν και μόνο αν $x\lt 0$.
-</div>
-
-<div class="exercise">
-Έστω $f:\mathbb{R}\to\mathbb{R}$ γνησίως μονότονη συνάρτηση. Αποδείξτε ότι η συνάρτηση $f\circ f$ είναι γνησίως αύξουσα.
-</div>
-
-<div class="exercise">
-Έστω $f,g$ δύο γνησίως μονότονες συναρτήσεις με το ίδιο είδος μονοτονίας. Αποδείξτε ότι η συνάρτηση $f+g$ διαθέτει επίσης το ίδιο είδος μονοτονίας.
-</div>
-
-<div class="exercise">
-Έστω $f,g$ δύο γνησίως μονότονες συναρτήσεις, με διαφορετικό είδος μονοτονίας. Να μελετηθεί ως προς την μονοτονία η συνάρτηση $f-g$.
-</div>
-
-<div class="exercise">
-Έστω $f,g$ δύο μη αρνητικές και γνησίως μονότονες συναρτήσεις, με το ίδιο είδος μονοτονίας. Αποδείξτε ότι η συνάρτηση $fg$ διαθέτει επίσης το ίδιο είδος μονοτονίας.
-</div>
-
-<div class="exercise">
-Έστω $f,g$ δύο μη θετικές και γνησίως μονότονες συναρτήσεις, με το ίδιο είδος μονοτονίας. Αποδείξτε ότι η συνάρτηση $fg$ διαθέτει διαφορετικό είδος μονοτονίας.
-</div>
-
-<div class="exercise">
-Έστω συναρτήσεις $f,g$, ορισμένες στα σύνολα $\textnormal{A}$, $\textnormal{B}$ ώστε να ορίζεται η $g\circ f$. Υποθέτουμε ότι οι $f,g$ είναι γνησίως μονότονες.
-<ol class="vertical-list">
-<li> Αν οι $f,g$ διαθέτουν το ίδιο είδος μονοτονίας, αποδείξτε ότι $g\circ f$ είναι γνησίως αύξουσα.</li>
-<li> Αν οι $f,g$ διαθέτουν διαφορετικό είδος μονοτονίας, αποδείξτε ότι $g\circ f$ είναι γνησίως φθίνουσα.</li>
-</ol>
-</div>
-
-<div class="exercise">
-Έστω $f,g: \mathbb{R}\to\mathbb{R}$ συναρτήσεις, όπου η $f$ είναι γνησίως αύξουσα και η $g$ γνησίως φθίνουσα στο $\mathbb{R}$.
-<ol class="vertical-list">
-<li> Αποδείξτε ότι η συνάρτηση $h_1= 3f-2g$ είναι γνησίως αύξουσα στο $\mathbb{R}$.</li>
-<li> Αποδείξτε ότι η συνάρτηση $h_2= -5f+ 4g$ είναι γνησίως φθίνουσα στο $\mathbb{R}$.</li>
-<li> Αποδείξτε ότι η συνάρτηση $h_3=(f\circ g)+(g\circ f)$ είναι γνησίως φθίνουσα στο $\mathbb{R}$.</li>
-<li> Αποδείξτε ότι η συνάρτηση $h_4=(f\circ f)+(g\circ g)$ είναι γνησίως αύξουσα στο $\mathbb{R}$.</li>
-</ol>
-</div>
-
-<div class="exercise">
-Να μελετήσετε ως προς μονοτονία τη συνάρτηση $f$ στο διάστημα $\Delta$, όταν: 
-<ol class="array-list">
-<li>$f(x)=\gcos x+\dfrac{1}{x}$, $\Delta=(0,\pi]$</li>
-<li>$f(x)= \ln x+x^3$, $\Delta=(0,+\infty)$</li>
-<li>$f(x)=x-\gctan x$, $\Delta=(0,\pi)$</li>
-<li>$f(x)=\dfrac{\gcos x}{x}$, $\Delta=\left(0,\frac{\pi}{2}\right)$</li>
-<li>$f(x)=x^3\gctan x$, $\Delta=\left(-\frac{\pi}{2},0\right)$</li>
-<li>$f(x)=-x^2\gctan x$, $\Delta=\left(\frac{\pi}{2},\pi\right)$</li>
-</ol>
-</div>
-
-<div class="exercise">
-Να μελετήσετε ως προς μονοτονία τη συνάρτηση $f$ στο διάστημα $\Delta$, όταν: 
-<ol class="array-list">
-<li>$f(x)=3(5-2x^3)^5-1$, $\Delta=\mathbb{R}$</li>
-<li>$f(x)=2-(1-x^5)^7$, $\Delta=\mathbb{R}$</li>
-<li>$f(x)=\sqrt{x}-\sqrt{2-x}$, $\Delta=(0,1)$</li>
-<li>$f(x)=x^3-2x^2+x$, $\Delta=[1,+\infty)$</li>
-<li>$f(x)=\dfrac{1}{x^2+2x+1}$, $\Delta=[1,+\infty)$</li>
-<li>$f(x)=\dfrac{x+1}{x^2+1}$, $\Delta=\left[\frac{1}{2},+\infty\right)$</li>
-</ol>
-</div>
-
-<div class="exercise">
-Θεωρούμε τις συναρτήσεις $f(x)= 3\cdot 2^x+3\cdot 2^{-x}+1$ και $g(x)= 2+5\gcos x$.
-<ol class="vertical-list">
-<li> Αποδείξτε ότι η $f$ παρουσιάζει ελάχιστο στο $x=0$.</li>
-<li> Αποδείξτε ότι η $g$ παρουσιάζει μέγιστο στο $x=2\kappa\pi$, όπου $\kappa\in\mathbb{Z}$.</li>
-<li> Επιλύστε την εξίσωση $f(x)=g(x)$.</li>
-</ol>
-</div>
-
-<div class="exercise">
-Δίνονται οι συναρτήσεις $f(x)= x^2-3x+10$ και $g(x)= 3x^2-9x+\dfrac{29}{2}$.
-<ol class="vertical-list"><li> Να προσδιορίσετε τα ακρότατα των $f,g$.</li>
-<li> Να επιλύσετε την εξίσωση $f(x)=g(x)$.</li>
-<li> Να αποδείξετε ότι $\dfrac{4f(x)}{31}\geq\dfrac{31g(x)}{4}$.</li>
-</ol>
-</div>
-
-<div class="exercise">
-Να προσδιοριστεί ο $\kappa\in\mathbb{R}$ ώστε το μέγιστο της συνάρτησης $f(x)= \kappa x^2-3\kappa x-\dfrac{13}{2}$ να είναι ο $\kappa$.
-</div>
-
-<div class="exercise">
-Να προσδιοριστεί ο θετικός αριθμός $\kappa$ ώστε η συνάρτηση $f(x)= \kappa x^2+\sqrt{k}x +\kappa$ να διαθέτει ως ελάχιστο το $0$.
-</div>
-
-<div class="exercise">
-Να προσδιοριστεί ο $\alpha\in\mathbb{R}$ ώστε η συνάρτηση $f(x)= -\alpha^2 x^2-4\alpha^2 x-|\alpha|$ να διαθέτει ως μέγιστο το $3$.
-</div>
-
-<div class="exercise">
-Να προσδιοριστεί ο $\alpha\in\mathbb{R}$ ώστε η συνάρτηση $f(x)= 2x^2-(4\alpha-1)x+1$ να διαθέτει ως ελάχιστο το $-1$.
-</div>
-
-<div class="exercise">
-Για τις διάφορες τιμές του $\lambda\in\mathbb{R}$, να προσδιοριστεί το μέγιστο ή το ελάχιστο της συνάρτησης $f(x)=\lambda x^2-2\lambda x +4$. 
-</div>
-
-<div class="exercise">
-Θεωρούμε τη συνάρτηση $f$ με $f(x)= x^2-(2\lambda+1)x+\lambda$, όπου $\lambda\in\mathbb{R}$.
-<ol class="vertical-list">
-<li> Να αποδείξετε ότι για κάθε $\lambda\in\mathbb{R}$, η γραφική παράσταση της $f$ τέμνει τον άξονα $x^{\prime}x$ σε δύο σημεία $\textnormal{A}(x_1,0)$, $\textnormal{B}(x_2,0)$.</li>
-<li> Να προσδιορίσετε για ποιο $\lambda$ η παράσταση $\Pi=x_1(x_1+3x_2)+x_2(x_2+3x_1)$ παρουσιάζει ελάχιστη τιμή και ποια είναι αυτή.</li>
-</ol>
-</div>
-
-<div class="exercise">
-Έστω $f$ γνησίως μονότονη συνάρτηση με πεδίο ορισμού $\Delta$ και $f(\Delta)\subseteq(-1,1)$. Αποδείξτε ότι η συνάρτηση $g$ με $g(x)=\dfrac{f(x)}{1+f(x)^2}$ διαθέτει ίδιο είδος μονοτονίας με την $f$.
-</div>
-
-<div class="exercise">
-Έστω $f,g$ δύο συναρτήσεις με κοινό πεδίο ορισμού, που παρουσιάζουν μέγιστο (αντιστοίχως ελάχιστο) στο σημείο $x_0$.
-<ol class="vertical-list">
-<li> Αποδείξτε ότι η $f+g$ παρουσιάζει μέγιστο (αντιστοίχως ελάχιστο) στο σημείο $x_0$.</li>
-<li> Αν οι $f,g$ είναι θετικές, αποδείξτε ότι η $f\cdot g$ παρουσιάζει μέγιστο (αντιστοίχως ελάχιστο) στο σημείο $x_0$.</li>
-</ol>
-</div>
-
-<div class="exercise">
-Έστω $f:(0,1)\to\mathbb{R}$ μια γνησίως μονότονη συνάρτηση. Αποδείξτε ότι δεν παρουσιάζει ακρότατα.
-</div>
-
-<div class="exercise">
-Θεωρούµε τη συνάρτηση $f: \mathbb{R}\to\mathbb{R}$ µε
-\[f (x)\cdot 2^{f(x)} = e^x, \tag{$\ast$}\]
-για κάθε $x\in\mathbb{R}$.
-<ol class="vertical-list">
-<li> Αποδείξτε ότι η γραφική παράσταση της $f$ βρίσκεται πάνω από τον άξονα $x^\prime x$.</li>
-<li> Αποδείξτε ότι η $f$ είναι γνησίως αύξουσα στο $\mathbb{R}$.</li>
-</ol>
-</div>
-
-<div class="exercise">
-Θεωρούµε τη συνάρτηση $f: \mathbb{R}\to\mathbb{R}$ µε
-\[e^x \cdot 3^{f(x)}+f(x) = 0, \tag{$\ast$}\]
-για κάθε $x\in\mathbb{R}$.
-<ol class="vertical-list">
-<li> Αποδείξτε ότι η γραφική παράσταση της $f$ βρίσκεται κάτω από τον άξονα $x^\prime x$.</li>
-<li> Αποδείξτε ότι η $f$ είναι γνησίως φθίνουσα στο $\mathbb{R}$.</li>
-</ol>
-</div>
-
-<div class="exercise">
-Θεωρούµε τη συνάρτηση $f$, ορισµένη και γνησίως φθίνουσα στο $\mathbb{R}$. Αποδείξτε ότι για κάθε $x \gt 0$ ισχύει $f(x) + f (4x) \gt f(2x) + f (8x)$.
-</div>
-
-<div class="exercise">
-Θεωρούµε τη συνάρτηση f ορισµένη και γνησίως αύξουσα στο $\mathbb{R}$. Αποδείξτε ότι για κάθε $x \lt 0$ ισχύει $f(2x) + f (4x)\gt f(3x) + f (5x)$.
-</div>
-
-<div class="exercise">
-Θεωρούµε τη συνάρτηση f ορισµένη και γνησίως φθίνουσα στο $(0,+\infty)$. Να επιλυθεί η εξίσωση $f(x^2) +f(x^5) = f(x^3) +f(x^6)$.
-</div>
-
-
-  
-  </section>
-  
-  <section id="functions-one-to-one-inverse">
-
-    <h2>1-1 και αντίστροφες συναρτήσεις</h2>
-  
-  
-<div class="exercise">
-Να εξετάσετε αν η συνάρτηση $f$ είναι 1-1, όταν:
-<ol class="array-list">
-<li>$f(x)=\dfrac{1}{3}x+2$</li>
-<li>$f(x)=x^3 +1$</li>
-<li>$f(x)=3^{3x+1}+1$</li>
-<li>$f(x)=|x|+1$</li>
-<li>$f(x)=\dfrac{1}{x^4 +1}+x^2$</li>
-<li>$f(x)=x^2 +x+1$</li>
-</ol>
-</div>
-
-<div class="exercise">
-Να εξετάσετε αν η συνάρτηση $f$ είναι 1-1, όταν:
-<ol class="array-list">
-<li>$f(x)=-x^2+2x$</li>
-<li>$f(x)= x^2-8x+3$</li>
-<li>$f(x)=x^2-6x+2$</li>
-<li>$f(x)=\dfrac{2x-1}{x-3}$</li>
-<li>$f(x)=\dfrac{x-1}{2x-3}$</li>
-<li>$f(x)=\dfrac{1}{(x-1)^2}$</li>
-</ol>
-</div>
-
-<div class="exercise">
-Να εξετάσετε αν η συνάρτηση $f$ είναι 1-1, όταν:
-<ol class="array-list">
-<li>$f(x)=(x-1)^{10} (x-2)^{8}$</li>
-<li>$f(x)=\sqrt[3]{x-3}$</li>
-<li>$f(x)=\sqrt[4]{|x+2|}$</li>
-<li>$f(x)=|x|+x$</li>
-<li>$f(x)=\gcos x+\gsin x$</li>
-<li>$f(x)=e^{x}-e^{-x}$</li>
-</ol>
-</div>
-
-<div class="exercise">
-Να προσδιορίσετε την αντίστροφη της συνάρτησης $f$, καθώς και το σύνολο τιμών της $f$, όταν:
-<ol class="array-list">
-<li>$f(x)=-3x+4$</li>
-<li>$f(x)=\dfrac{2}{x+1}$</li>
-<li>$f(x)= \dfrac{x+1}{3-x}$</li>
-<li>$f(x)=\sqrt{\dfrac{x}{2}+1}$</li>
-<li>$f(x)=\sqrt{4-\sqrt{x-1}}$</li>
-<li>$f(x)=\ln(x-2)$</li>
-</ol>
-</div>
-
-<div class="exercise">
-Να προσδιορίσετε την αντίστροφη της συνάρτησης $f$, καθώς και το σύνολο τιμών της $f$, όταν:
-<ol class="array-list">
-<li>$f(x)= \dfrac{e^x+1}{e^x}$</li>
-<li>$g(x)=\ln(2+e^x)$</li>
-<li>$f(x)=\dfrac{e^x-e^{-x}}{2}$</li>
-<li>$f(x)= \dfrac{e^x-1}{e^x+1}$</li>
-<li>$f(x)= \sqrt{\dfrac{x}{x+1}}$</li>
-<li>$f(x)= \dfrac{1}{\sqrt{1-x^3}}$</li>
-</ol>
-</div>
-
-<div class="exercise">
-Να προσδιορίσετε την αντίστροφη της συνάρτησης $f:\Delta\to\mathbb{R}$, καθώς και το σύνολο τιμών της $f$, όταν: 
-<ol class="array-list">
-<li>$f(x)=4-3x^2$, $\Delta=(-\infty,0]$</li>
-<li>$f(x)= 1-x^4$, $\Delta=(0,+\infty)$</li>
-<li>$f(x)= 4x^2-2$, $\Delta=(0,+\infty)$</li>
-<li>$f(x)=(x+1)^2-9$, $\Delta=(-1,+\infty)$</li>
-<li>$f(x)=x^2-2x-3$, $\Delta=[2,+\infty)$</li>
-<li>$f(x)=x^6-2x^3+5$, $\Delta=[1,+\infty)$</li>
-</ol>
-</div>
-
-<div class="exercise">
-Να προσδιορίσετε την αντίστροφη της συνάρτησης $f$, καθώς και το σύνολο τιμών της $f$, όταν:
-<ol class="array-list-3">
-<li>$f(x)=\begin{cases}x-1, &x\lt 0\\ x+1,&x\geq 0 \end{cases}$</li>
-<li>$f(x)=\begin{cases}2x-2, &x\lt 1 \\ \ln x,&x\geq 1 \end{cases}$</li>
-<li>$f(x)=\begin{cases}x+1, &x\leq 0 \\ x-2,&x\gt 0 \end{cases}$</li>
-</ol>
-</div>
-
-<div class="exercise">
-Να επιλύσετε τις παρακάτω εξισώσεις:
-<ol class="array-list">
-<li> $x^{10}+x^6=(3x-2)^5+(3x-2)^3$</li>
-<li>$x^7+2x^5=4-x$</li>
-<li>$e^{x-2}=3-x$</li>
-<li>$e^{e-x}=\ln x$</li>
-<li>$\ln\dfrac{x^2+x+1}{x^2-x+5}=-2x+4$</li>
-<li>$\left(\dfrac{3}{5}\right)^{x}=1-\left(\dfrac{4}{5}\right)^{x}$</li>
-</ol>
-</div>
-
-<div class="exercise">
-Να προσδιορίσετε την αντίστροφη της συνάρτησης $f:(-\infty,2]\to\mathbb{R}$ με $f(x)= 4x-x^2$ και να χαράξετε την γραφική παράσταση των $f$ και $f^{-1}$ στο ίδιο σύστημα αξόνων. 
-</div>
-
-<div class="exercise">
-Αποδείξτε ότι η συνάρτηση $f(x)=\dfrac{1}{3^x}-2x$ είναι $1-1$ και έπειτα επιλύστε την εξίσωση $f(x^2-9)=f(x+3)$. 
-</div>
-
-<div class="exercise">
-Έστω συνάρτηση $f:\mathbb{R}\to\mathbb{R}$ με $f(x+1)=f(x^2)$, για κάθε $x\in\mathbb{R}$. Εξετάστε αν είναι αντιστρέψιμη.
-</div>
-
-<div class="exercise">
-Έστω συνάρτηση $f$ µε $f(f(x))= 2x-1+f(x)$, για κάθε $x\in\mathbb{R}$. Αποδείξτε ότι η $f$ είναι 1-1. Στη συνέχεια, εξετάστε αν η γραφική παράσταση της $f$ διέρχεται από την αρχή των αξόνων.
-</div>
-
-<div class="exercise">
-Έστω συνάρτηση $f$ µε πεδίο ορισµού το $\mathbb{R}$. Να εξετάσετε αν η $f$ είναι 1-1, όταν για κάθε $x\in\mathbb{R}$ ισχύουν οι παρακάτω σχέσεις:
-<ol class="array-list">
-<li>$f(f(x))=4x-1$</li>
-<li>$f(f(x))=x^9$</li>
-<li>$f(f(x))=x^4$</li>
-<li>$f(f(x))=2$</li>
-</ol>
-</div>
-
-<div class="exercise">
-Έστω $f:\mathbb{R}\to\mathbb{R}$ άρτια συνάρτηση. Αποδείξτε ότι η $f$ δεν αντιστρέφεται.
-</div>
-
-<div class="exercise">
-Έστω οι συναρτήσεις $f(x)= 4x+1$ και $g(x)= 3x-2$. Να προσδιορίσετε τις συναρτήσεις
-\[\begin{array}{ll}
-(f\circ g)^{-1}\ , & (g\circ f)^{-1}\ ,\\
-g^{-1}\circ f^{-1}\ , & f^{-1}\circ g^{-1}\ .
-\end{array}\]
-Τι παρατηρείτε;
-</div>
-
-<div class="exercise">
-Έστω ότι οι συναρτήσεις $f,g:\mathbb{R}\to\mathbb{R}$ είναι $1-1$. Αποδείξτε ότι η συνάρτηση $g\circ f$ είναι επίσης $1-1$.
-</div>
-
-<div class="exercise">
-Δίνεται η συνάρτηση $f$ με $f(x)=4\sqrt{e^x-2}+3$.
-<ol class="vertical-list">
-<li> Να προσδιορίσετε το πεδίο ορισμού της.</li>
-<li> Να προσδιορίσετε το σύνολο τιμών της.</li>
-<li> Να ορίσετε την $f^{-1}$.</li>
-</ol>
-</div>
-
-<div class="exercise">
-Θεωρούµε τις συναρτήσεις $f,g: \mathbb{R}\to\mathbb{R}$ με
-<div class="scale-08">
-\[(g\circ g)(x) =\alpha g(x)+\beta f (x^5 + 2x), \tag{$\ast$}\]
-</div>
-για κάθε $x\in\mathbb{R}$, όπου $\alpha,\beta\in\mathbb{R}^{\ast}$. Αν η $f$ είναι 1-1, αποδείξτε ότι η $g$ είναι 1-1.
-</div>
-
-<div class="exercise">
-Δίνεται η συνάρτηση $f$ με $f(x)=\ln(3e^x+1)-2$.
-<ol class="vertical-list">
-<li> Να προσδιορίσετε το πεδίο ορισμού της $f$.</li>
-<li> Να αποδείξετε ότι η $f$ αντιστρέφεται.</li>
-<li> Να ορίσετε την $f^{-1}$.</li>
-<li> Να λύσετε την ανίσωση $f(x)\lt f^{-1}(\ln 5-2)-2$.</li>
-</ol>
-</div>
-
-<div class="exercise">
-Έστω οι συναρτήσεις $f(x)= \dfrac{2\ln x-3}{5}$ και $g(x)= 1+\ln x$.
-<ol class="vertical-list">
-<li> Να προσδιορίσετε τις συναρτήσεις $f^{-1}$ και $g^{-1}$.</li>
-<li> Να προσδιορίσετε τις συναρτήσεις $F=f^{-1}\circ g$ και $G=g^{-1}\circ f$.</li>
-<li> Αποδείξτε ότι $F^{-1}=G$.</li>
-</ol>
-</div>
-
-<div class="exercise">
-Έστω $\alpha,\beta\in\mathbb{R}$ με $\alpha\neq 0$. Θεωρούμε τη συνάρτηση $f(x)= \alpha x+\beta$.
-<ol class="vertical-list">
-<li> Να προσδιορίσετε την $f^{-1}$.</li>
-<li> Να προσδιορίσετε τους $\alpha,\beta$ ώστε να ισχύει $f^{-1}= f$.</li>
-</ol>
-</div>
-
-<div class="exercise">
-Να προσδιορίσετε τη συνάρτηση $f:\mathbb{R}\to\mathbb{R}$, η οποία είναι $1-1$ και για την οποία ισχύει
-<div class="scale-08">
-    \[(f\circ f\circ f)(x^3-1)=(f\circ f)(x+1), \tag{$\ast$}\]
-    για κάθε $x\in\mathbb{R}$.
-</div>
-</div>
-
-<div class="exercise">
-Έστω η συνάρτηση $f$ µε $f(f (x))= x^5$, για κάθε $x\in\mathbb{R}$.
-<ol class="vertical-list">
-<li> Αποδείξτε ότι η $f$ είναι 1-1.</li>
-<li> Αποδείξτε ότι $f^5(x)= f(x^5)$, για κάθε $x\in\mathbb{R}$.</li>
-<li> Προσδιορίστε τα κοινά σηµεία της γραφικής παράστασης της $f$ µε την ευθεία $y = x$.</li>
-</ol>
-</div>
-
-<div class="exercise">
-Έστω η συνάρτηση $f$ µε
-\[f(2f (x))=x+6+f (x), \tag{$\ast$}\]
-για κάθε $x\in\mathbb{R}$.
-<ol class="vertical-list">
-<li> Αποδείξτε ότι η $f$ είναι αντιστρέψιµη.</li>
-<li> Αποδείξτε ότι η γραφική παράσταση της $f^{-1}$ διέρχεται από το σηµείο $\mathrm{A}(-3,-6)$.</li>
-<li> Για κάθε $x$ που ανήκει στο σύνολο τιµών της $f$, αποδείξτε ότι $f (2x)-f^{-1}(x) = x+6$.</li>
-</ol>
-</div>
-
-<div class="exercise">
-Θεωρούµε συνάρτηση $f$, γνησίως αύξουσα στο πεδίο ορισµού της $\mathrm{A}$. Απο- δείξτε ότι η εξίσωση $(f\circ f)(x)=x$ είναι ισοδύναµη µε την εξίσωση $f(x)=x$.
-</div>
-
-<div class="exercise">
-Δίνεται η συνάρτηση $f$ με $f(x)=3x^{15}+2x-5$, $x\in\mathbb{R}$
-<ol class="vertical-list">
-<li> Να αποδείξετε ότι η $f$ είναι γνησίως αύξουσα στο $\mathbb{R}$.</li>
-<li> Να αποδείξετε ότι η εξίσωση $f(x)=0$ διαθέτει μοναδική λύση.</li>
-<li> Να προσδιορίσετε το πρόσημο της $f$.</li>
-</ol>
-</div>
-
-<div class="exercise">
-Δίνεται η συνάρτηση $f$ με τύπο $f(x)=2x^{21}+5x-7$, $x\in\mathbb{R}$.
-<ol class="vertical-list">
-<li> Να αποδείξετε ότι η συνάρτηση $f$ είναι γνησίως αύξουσα στο $\mathbb{R}$.</li>
-<li> Να επιλύσετε την εξίσωση $f(x)=0$.</li>
-<li> Να προσδιορίσετε το πρόσημο της συνάρτησης $f$.</li>
-</ol>
-</div>
-
-<div class="exercise">
-Δίνεται η συνάρτηση $f$ με $f(x)=2\ln\left(\sqrt{x-1}+1\right)+3$.
-<ol class="vertical-list">
-<li> Να προσδιορίσετε το πεδίο ορισμού της $f$.</li>
-<li> Να αποδείξετε ότι η $f$ είναι 1-1.</li>
-<li> Να ορίσετε την $f^{-1}$.</li>
-<li> Να επιλύσετε την εξίσωση $f^{-1}(1+x)=2$.</li>
-</ol>
-</div>
-
-<div class="exercise">
-Δίνεται συνάρτηση $f:\mathbb{R}^{\ast}\to\mathbb{R}$ και η συνάρτηση $g$ με τύπο $g(x)=\ln\left(\dfrac{2+x}{2-x}\right)$.
-<ol class="vertical-list">
-<li> Να προσδιορίσετε το πεδίο ορισμού της $f\circ g$.</li>
-<li> Να προσδιορίσετε συνάρτηση $h$ για την οποία να ισχύει $(h\circ g)(x)=x$.</li>
-<li> Να αποδείξετε ότι η συνάρτηση $h$ είναι περιττή.</li>
-</ol>
-</div>
-
-<div class="exercise">
-Δίνεται η συνάρτηση $f$ με $f(x)=-2x^3-3x-1$, $x\in\mathbb{R}$
-<ol class="vertical-list">
-<li> Να προσδιορίσετε το είδος μονοτονίας της $f$.</li>
-<li> Να αποδείξετε ότι η $f$ αντιστρέφεται.</li>
-<li> Να λυθεί η εξίσωση $f^{-1}(x)=2$.</li>
-<li> Να λυθεί η ανίσωση $f^{-1}(x)\geq x-1$.</li>
-</ol>
-</div>
-
-<div class="exercise">
-Δίνεται η συνάρτηση $f:\mathbb{R}\to\mathbb{R}$ για την οποία ισχύει
-\[(f\circ f)(x)+2f(x)=2x+1,\tag{$\ast$}\]
-για κάθε $x\in\mathbb{R}$, και $f(2)=5$.
-<ol class="vertical-list">
-<li> Να προσδιορίσετε το $f(5)$.</li>
-<li> Να αποδείξετε ότι η $f$ αντιστρέφεται.</li>
-<li> Να προσδιορίσετε το $f^{-1}(2)$.</li>
-<li> Να επιλύσετε την εξίσωση $f\left(f^{-1}(2x^2 +7x)-1\right)=2$.</li>
-</ol>
-</div>
-
-<div class="exercise">
-Δίνεται η συνάρτηση $f:\mathbb{R}\to\mathbb{R}$ για την οποία ισχύει
-\[3f(x)+2f^{3}(x)=4x+1,\tag{$\ast$}\]
-για κάθε $x\in\mathbb{R}$. 
-<ol class="vertical-list">
-<li> Να αποδείξετε ότι η $f$ αντιστρέφεται και να ορίσετε την $f^{-1}$.</li>
-<li> Να αποδείξετε ότι η $f^{-1}$ είναι γνησίως αύξουσα.</li>
-<li> Να προσδιορίσετε τα σημεία τομής των γραφικών παραστάσεων των συναρτήσεων $f$ και $f^{-1}$, αν γνωρίζετε ότι αυτά βρίσκονται πάνω στην ευθεία με εξίσωση $y=x$.</li>
-<li> Να επιλύσετε την εξίσωση $f(2e^{x-1})=f(3-x)$.</li>
-</ol>
-</div>
-
-<div class="exercise">
-Δίνονται οι συναρτήσεις $f(x)=\sqrt{x+1}-1$ και $g(x)=2-x$.
-<ol class="vertical-list">
-<li> Να προσδιορίσετε το πεδίο ορισμού των συναρτήσεων $f$ και $g$.</li>
-<li> Να ορίσετε τη συνάρτηση $f\circ g$.</li>
-<li> Να αποδείξετε ότι η $f$ αντιστρέφεται και να προσδιορίσετε την $f^{-1}$.</li>
-<li> Να προσδιορίσετε το είδος της μονοτονίας της συνάρτησης $f\circ f\circ g$.</li>
-</ol>
-</div>
-
-<div class="exercise">
-Δίνεται συνάρτηση $f:(0,+\infty)\to\mathbb{R}$ για την οποία ισχύει
-<ul class="bullet-list">
-<li> $f(x)-f(y)=f\left(\dfrac{x}{y}\right)$, για κάθε $x,y\gt 0$,</li>
-<li> η εξίσωση $f(x)=0$ διαθέτει μοναδική λύση.</li>
-</ul>
-<ol class="vertical-list">
-<li> Να προσδιορίσετε την τιμή $f(1)$.</li>
-<li> Να αποδείξετε ότι η $f$ είναι αντιστρέψιμη.</li>
-<li> Να αποδείξετε ότι $f(x)+f(y)=f(xy)$, για κάθε $x,y\gt 0$.</li>
-</ol>
-</div>
-
-<div class="exercise">
-Θεωρούµε τη συνάρτηση $f:(0,+\infty)\to\mathbb{R}$ τέτοια ώστε
-\[f(xy)=f(x)+f(y), \tag{$\ast$}\]
-για κάθε $x, y\in(0,+\infty) $. Με δεδοµένο ότι η γραφική παράσταση της $f$ διαθέτει µόνο ένα κοινό σηµείο µε τον άξονα $x^\prime x$, να αποδείξετε ότι η $f$ είναι 1-1.
-</div>
-
-<div class="exercise">
-Έστω $f$ γνησίως μονότονη συνάρτηση. Αποδείξτε ότι η $f^{-1}$ διαθέτει το ίδιο είδος μονοτονίας.
-</div>
-
-<div class="exercise">
-Θεωρούμε τη συνάρτηση
-\[f(x)=\begin{cases}\dfrac{x}{\alpha(x-1)}, & x\neq 1 \\ \alpha, &x=1\end{cases}.\]
-Να προσδιοριστούν οι τιμές του $\alpha\in\mathbb{R}$ για τις οποίες η $f$ είναι 1-1. Για τις τιμές αυτές, να προσδιοριστεί η αντίστροφη της $f$.
-</div>
-
-  
-  </section>
-
+    <section id="functions-concepts">
+
+      <h2>Αρχικές έννοιες</h2>
+
+      <h3 id="functions-concepts-general">Γενικές ασκήσεις</h3>
+
+
+      <div class="exercise">
+        Να προσδιορίσετε το πεδίο ορισμού της συνάρτησης $f$ όταν o τύπος $f(x)$ είναι:
+        <ol class="array-list">
+          <li>$f(x)=\dfrac{x-3}{3x^2-5x+2}$</li>
+          <li>$f(x)=\sqrt{5x-30}$</li>
+          <li>$f(x)=\sqrt[5]{x-1}$</li>
+          <li>$f(x)=\dfrac{\sqrt{x-2}}{x-3}$</li>
+          <li>$f(x)=\dfrac{\sqrt{9-x^2}}{x}$</li>
+          <li>$f(x)=\dfrac{1}{\sqrt{x^2-1}}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να προσδιορίσετε το πεδίο ορισμού της συνάρτησης $f$ όταν o τύπος $f(x)$ είναι:
+        <ol class="array-list">
+          <li>$f(x)=\dfrac{1}{x^2-4x+3}$</li>
+          <li>$f(x)=\sqrt{x^2-4x+3}$</li>
+          <li>$f(x)=\dfrac{1}{\sqrt{x^2-4x+3}}$</li>
+          <li>$f(x)=\ln(x^2-4x+3)$</li>
+          <li>$f(x)=\dfrac{1}{\ln(x^2-4x+3)}$</li>
+          <li>$f(x)=\dfrac{1}{\sqrt{\ln(x^2-4x+3)}}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να προσδιορίσετε το πεδίο ορισμού της συνάρτησης $f$ όταν o τύπος $f(x)$ είναι:
+        <ol class="array-list">
+          <li>$f(x)=\sqrt{\dfrac{x-1}{x-2}}$</li>
+          <li>$f(x)=\dfrac{\sqrt{x-1}}{\sqrt{x-2}}$</li>
+          <li>$f(x)=\sqrt{x-1}\sqrt{x-2}$</li>
+          <li>$f(x)=\sqrt{(x-1)(x-2)}$</li>
+          <li>$f(x)=\sqrt{1-\sqrt{1-x^2}}$</li>
+          <li>$f(x)=\ln(e^{2x}-5e^x +6)$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να προσδιορίσετε το πεδίο ορισμού της συνάρτησης $f$ όταν o τύπος $f(x)$ είναι:
+        <ol class="array-list">
+          <li>$f(x)=\dfrac{\sqrt{10-x^2}}{x-1}$</li>
+          <li>$f(x)=\dfrac{\sqrt{x^2+2x-15}}{x^2-16}$</li>
+          <li>$f(x)=\sqrt{x^2-9x}-\sqrt[3]{x+2}$</li>
+          <li>$f(x)=\dfrac{\sqrt{x+3}}{\sqrt{x-4}}$</li>
+          <li>$f(x)=\dfrac{\sqrt{2-x}}{\sqrt{x+3}}$</li>
+          <li>$f(x)=\sqrt{\dfrac{2-x}{x+3}}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να προσδιορίσετε το πεδίο ορισμού της συνάρτησης $f$ όταν o τύπος $f(x)$ είναι:
+        <ol class="array-list">
+          <li>$f(x)=\sqrt{\ln(x-1)}$</li>
+          <li>$f(x)=1-\sqrt{2-\ln x}$</li>
+          <li>$f(x)=\ln(2-\ln x)$</li>
+          <li>$f(x)=\gtan\dfrac{x}{2}$</li>
+          <li>$f(x)=\left(\gctan\dfrac{x}{2}\right)^{-1}$</li>
+          <li>$f(x)=\dfrac{|x|-x+2}{\sqrt{x}+|x|-1}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Δίνεται η συνάρτηση $f$ με $f(x)= 2-3x.$ Να προσδιορίσετε το $f((-2,4]).$
+      </div>
+
+      <div class="exercise">
+        Δίνεται η συνάρτηση $f:[0,1]\to\mathbb{R}$ με $f(x)=\dfrac{(x+1)(x+\alpha)}{x^2+1}.$ Να προσδιοριστεί ο
+        $\alpha\in\mathbb{R}$ ώστε $f([0,1])\subseteq[0,1].$
+      </div>
+
+      <div class="exercise">
+        Δίνεται η συνάρτηση $f(x)= \dfrac{x^2-\alpha x+6}{x^2-\alpha x+4}.$ Να προσδιοριστούν οι τιμές του
+        $\alpha\in\mathbb{R}$ για τις οποίες το πεδίο ορισμού της $f$ είναι το $\mathbb{R}.$
+      </div>
+
+      <div class="exercise">
+        Για τις διάφορες τιμές του πραγματικού αριθμού $\alpha,$ να προσδιοριστεί το πεδίο ορισμού της συνάρτησης
+        $f(x)=\sqrt{x^2-\alpha x+4}-x.$
+      </div>
+
+      <div class="exercise">
+        Να εξετάσετε αν είναι ίσες οι συναρτήσεις $f,g$ στις παρακάτω περιπτώσεις. Αν $f\neq g,$ να προσδιορίσετε το
+        ευρύτερο υποσύνολο $\textnormal{A}$ του $\mathbb{R}$ στο οποίο είναι $f(x)=g(x),$ για κάθε $x\in\textnormal{A}.$
+        <ol class="array-list">
+          <li>$f(x)=\dfrac{x^3-1}{(x-1)^2},\quad$ $g(x)=\dfrac{x^2+x+1}{x-1}$</li>
+          <li>$f(x)=2x,\quad$ $g(x)=\dfrac{2x^3+4x}{x^2+2}$</li>
+          <li>$f(x)= (2-x)^2,\quad$ $g(x)=x-2$</li>
+          <li>$f(x)=\sqrt{x^2},\quad$ $g(x)=\left(\sqrt{x}\right)^2$</li>
+          <li>$f(x)=\ln x^2,\quad$ $g(x)=2\ln x$</li>
+          <li>$f(x)=\ln x^3,\quad$ $g(x)=3\ln x$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Δίνονται οι συναρτήσεις $f(x)= \dfrac{x-\lambda -1}{x-\lambda+1}$ και $g(x)= \dfrac{x^2-2x+\lambda
+        -1}{(x-\lambda^2+\lambda)^2}.$ Να προσδιορίσετε το $\lambda\in\mathbb{R}$ ώστε $f=g.$
+      </div>
+
+      <div class="exercise">
+        Θεωρούμε τις συναρτήσεις $f(x)=\dfrac{(\lambda+1)x-1}{x+\lambda^2 -1}$ και $g(x)=
+        \dfrac{(1-2\lambda)x+1-\lambda}{\lambda-x-5}.$ Να εξετάσετε αν υπάρχει $\lambda\in\mathbb{R}$ ώστε να είναι
+        ίσες.
+      </div>
+
+      <div class="exercise">
+        Να προσδιορίσετε τις συναρτήσεις $f+g,$ $fg,$ $\dfrac{f}{g},$ όταν:
+        <ol class="array-list">
+          <li>$f(x)= \dfrac{ x^2+1}{x-2},\quad$ $g(x)= \dfrac{4x-3}{2-x}$</li>
+          <li>$f(x)= \dfrac{x-4}{2-x},\quad$ $g(x)= \dfrac{x^2-3x}{x-2}$</li>
+          <li>$f(x)= \dfrac{1}{3-|x|},\quad$ $g(x)= \dfrac{|x|-2}{x^2-9}$</li>
+          <li>$f(x)= \dfrac{|x|}{3+|x|},\quad$ $g(x)= \dfrac{6-2|x|}{x^2-9}$</li>
+          <li>$f(x)=\sqrt{4-x^2},\quad$ $g(x)=\dfrac{1}{2}\sqrt{x}$</li>
+          <li>$f(x)=\dfrac{1}{x^2-9},\quad$ $g(x)=\dfrac{x-3}{x}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να προσδιοριστούν τα διαστήματα στα οποία είναι ίσες οι συναρτήσεις $f,g,$ όταν:
+        <ol class="array-list">
+          <li>$f(x)=|x-1|+2|x+1|+x,\quad$ $g(x)=2x+3$</li>
+          <li>$f(x)=|x-2|+3|x|,\quad$ $g(x)=4x-2$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Δίνονται οι συναρτήσεις $f(x)= x^3-x^2-2x$ και $g(x)= x^2-2x.$ Να ορίσετε τις συναρτήσεις $\dfrac{1}{f}$ και
+        $\dfrac{1}{g}.$
+      </div>
+
+      <div class="exercise">
+        Θεωρούμε τις συναρτήσεις $f(x)=\dfrac{x+2}{x^2-9}$ και $g(x)= \dfrac{x-3}{x^2+5x+6}.$ Να ορίσετε τις συναρτήσεις
+        $f-g$ και $fg.$
+      </div>
+
+      <div class="exercise">
+        Για τις συναρτήσεις
+        \[\begin{align}
+        f(x)&=\begin{cases} 1-x,&x\leq 0 \\ 1-2x,&0\lt x\lt 4\end{cases}\\[1ex]
+        g(x)&=\begin{cases} -2x,&-3\leq x\leq 2\\ 0, &x\gt 2 \end{cases}
+        \end{align}\]
+        να προσδιορίσετε την $f\cdot g$ και το σύνολο τιμών της.
+      </div>
+
+      <div class="exercise">
+        Αποδείξτε ότι δεν υπάρχει συνάρτηση $f: \mathbb{R}\to\mathbb{R}$ για την οποία να ισχύει η σχέση
+        \[f(2-x)+f(x)=x^3+3,\tag{$\ast$}\]
+        Για κάθε $x\in\mathbb{R}.$
+      </div>
+
+      <h3 id="functions-concepts-graph">Γραφική παράσταση</h3>
+
+      <div class="exercise">
+        Να σχεδιάσετε τη γραφική παράσταση της συνάρτησης $f$ όταν:
+        <ol class="array-list">
+          <li>$f(x)= x^2-1$</li>
+          <li>$f(x)=-x^2+3$</li>
+          <li>$f(x)=(x-2)^2$</li>
+          <li>$f(x)= (x-1)^2+2$</li>
+          <li>$f(x)=x^2-6x+8$</li>
+          <li>$f(x)=-2(x-1)(x-3)$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να σχεδιάσετε τη γραφική παράσταση της συνάρτησης $f$ όταν:
+        <ol class="array-list">
+          <li>$f(x)=1+\dfrac{3}{x}$</li>
+          <li>$f(x)=\dfrac{x-4}{x}$</li>
+          <li>$f(x)=\dfrac{1}{x+2}$</li>
+          <li>$f(x)=-1-\dfrac{2}{x-2}$</li>
+          <li>$f(x)=\dfrac{x}{x-1}$</li>
+          <li>$f(x)=\dfrac{1-2x}{x-1}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να σχεδιάσετε τη γραφική παράσταση της συνάρτησης $f$ όταν:
+        <ol class="array-list">
+          <li>$f (x) = |x - 2|$</li>
+          <li>$f(x) =\sqrt{9-x^2}$</li>
+          <li>$f(x) =\sqrt{1-4x^2}$</li>
+          <li>$f (x)=|\ln x|$</li>
+          <li>$f(x) = |\gsin x|$</li>
+          <li>$f(x) = |\gcos x|$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να σχεδιάσετε στο ίδιο σύστηµα συντεταγµένων τις γραφικές παραστάσεις των συναρτήσεων $f(x)=\ln x$ και
+        \[
+        \begin{array}{ll}
+        f_1(x) = -f(x),& f_2(x)=f(-x),\\[1ex]
+        f_3(x)=f(x)-2, & f_4(x)=f(x - 2).
+        \end{array}
+        \]
+      </div>
+
+      <div class="exercise">
+        Να σχεδιάσετε στο ίδιο σύστηµα συντεταγµένων τις γραφικές παραστάσεις των συναρτήσεων $f(x)=e^{x}$ και
+        \[\begin{array}{ll}
+        f_1(x) = -f(x),& f_2(x)=f(-x),\\[1ex]
+        f_3(x) = f(x)+1,& f_4(x)=f(x+1).
+        \end{array}\]
+      </div>
+
+      <div class="exercise">
+        Να σχεδιάσετε τη γραφική παράσταση και να προσδιορίσετε το σύνολο τιμών της συνάρτησης $f$ όταν:
+        <ol class="array-list">
+          <li>$f(x)=\begin{cases}3x, &x\lt 1\\ x^2,& x\geq 1\end{cases}$</li>
+          <li>$f(x)=\begin{cases}2x-2,& x\leq 2\\ x^2-2 , &x\gt 2\end{cases}$</li>
+          <li>$f(x)=\begin{cases}\dfrac{1}{x},& x\lt 0\\[1ex] x, &x\geq 0\end{cases}$</li>
+          <li>$f(x)=|x^2-1|+x^2$</li>
+          <li>$f(x)=\begin{cases}-x, &x\leq e \\ \ln x,& x\gt e\end{cases}$</li>
+          <li>$f(x)=\begin{cases}\ln x,& 0\lt x\leq e\\ x-1, &x\gt e\end{cases}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να σχεδιάσετε τη γραφική παράσταση και να προσδιορίσετε το σύνολο τιμών της συνάρτησης $f$ όταν:
+        <ol class="array-list">
+          <li>$f(x)=\begin{cases} 2x^2, & x\lt 1 \\ -x^2,& x\geq 1\end{cases}$</li>
+          <li>$f(x)=\begin{cases}-x, &-2\pi\leq x\lt 0 \\ \gsin x,& 0\leq x\leq 2\pi \end{cases}$</li>
+          <li>$f(x)=|3x - 6| + (x+1)^2$</li>
+          <li>$f(x) =\dfrac{|x|e^x}{x}$</li>
+          <li>$f(x)=\dfrac{(x-1)^2}{|x-1|}\ln x$</li>
+          <li>$f(x)=\dfrac{|x-2|+|x|}{|x|}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να προσδιορίσετε, αν υπάρχουν, τα σημεία τομής της γραφικής παράστασης της συνάρτησης $f$ με τους άξονες, όταν:
+        <ol class="array-list">
+          <li>$f(x)= x^3-5x+4$</li>
+          <li>$f(x)=2x^3-7x^2+7x-2$</li>
+          <li>$f(x)= \dfrac{3}{x-2}$</li>
+          <li>$f(x)= \dfrac{x-4}{x-1}$</li>
+          <li>$f(x)= \dfrac{x^2+x-6}{x+3}$</li>
+          <li>$f(x)= \dfrac{3x^2+x-4}{3x-1}$</li>
+        </ol>
+
+      </div>
+
+      <div class="exercise">
+        Να προσδιορίσετε, αν υπάρχουν, τα σημεία τομής της γραφικής παράστασης της συνάρτησης $f$ με τους άξονες, όταν:
+        <ol class="array-list">
+          <li>$f(x)= x-\sqrt{x}+2$</li>
+          <li>$f(x)=x-\sqrt{x^2+4}$</li>
+          <li>$f(x)=\sqrt[4]{x-4}+7$</li>
+          <li>$f(x)= 3-\ln(x+2)$</li>
+          <li>$f(x)=\ln(x-2)-3$</li>
+          <li>$f(x)= e^x-\dfrac{1}{e^x}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να προσδιορίσετε, αν υπάρχουν, τα σημεία τομής της γραφικής παράστασης της συνάρτησης $f$ με τους άξονες, όταν:
+        <ol class="array-list">
+          <li>$f(x)=\ln\dfrac{1+x}{1-x}$</li>
+          <li>$f(x)= 9^x+3^x-12$</li>
+          <li>$f(x)= 25^x -15^x -10^x$</li>
+          <li>$f(x)=\sqrt{3}+2\gsin x$</li>
+          <li>$f(x)= 2\gcos 2x -\sqrt{2}$</li>
+          <li>$f(x)=\sqrt{\dfrac{2x-4}{x^2+x}}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να προσδιορίσετε, αν υπάρχουν, τα κοινά σημεία των γραφικών παραστάσεων των συναρτήσεων $f,g$ όταν:
+        <ol class="array-list">
+          <li>$f(x)=3x^2-4x,\quad$ $g(x)=2x^2-3$</li>
+          <li>$f(x)=5x^2+x+2,\quad$ $g(x)=3x^2$</li>
+          <li>$f(x)= 4x^3+5x,\quad$ $g(x)=12x^2-6$</li>
+          <li>$f(x)=8x^2+10x+4,\quad$ $g(x)=\dfrac{11}{2x}$</li>
+          <li>$f(x)= \dfrac{x+3}{x},\quad$ $g(x)=\dfrac{2}{x-1}$</li>
+          <li>$f(x)= x^2-x,\quad$ $g(x)=\dfrac{6}{x+1}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να προσδιορίσετε, αν υπάρχουν, τα κοινά σημεία των γραφικών παραστάσεων των συναρτήσεων $f,$ $g$ όταν:
+        <ol class="array-list">
+          <li>$f(x)=4x,\quad$ $g(x)=2\sqrt{x}$</li>
+          <li>$f(x)=\dfrac{x^2-2}{1+2x},\quad$ $g(x)=\dfrac{1}{x(1+2x)}$</li>
+          <li>$f(x)=-\sqrt{x},\quad$ $g(x)=x^2-2$</li>
+          <li>$f(x)=2^x-3,\quad$ $g(x)=2^{-x}$</li>
+          <li>$f(x)=x+\sqrt{x^2+9},\quad$ $g(x)=2x+1$</li>
+          <li>$f(x)=\ln 2x,\quad$ $g(x)=\ln(3-2x^2)$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να προσδιορίσετε τις τιμές του $x\in\mathbb{R}$ για τις οποίες η γραφική παράσταση της συνάρτησης $f$ βρίσκεται
+        πάνω από τον άξονα $x^\prime x$ όταν:
+        <ol class="array-list-3">
+          <li>$f(x)=x^2-5x+4$</li>
+          <li>$f(x)= \dfrac{2+x}{2-x}$</li>
+          <li>$f(x)= \dfrac{1-e^x}{e^x}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να προσδιορίσετε τις τιμές του $x\in\mathbb{R}$ για τις οποίες η γραφική παράσταση της συνάρτησης $f$ βρίσκεται
+        κάτω από τον άξονα $x^\prime x$ όταν:
+        <ol class="vertical-list">
+          <li> $f(x)= \dfrac{5-x}{4+x}$</li>
+          <li> $f(x)=(x^2-2x+1)(x^2-4x+3)$</li>
+          <li> $f(x)=\ln(x+1)-1$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να προσδιορίσετε τις τιμές του $x\in\mathbb{R}$ για τις οποίες η γραφική παράσταση της $f$ βρίσκεται πάνω από
+        την γραφική παράσταση της $g$ όταν:
+        <ol class="vertical-list">
+          <li>$f(x)=1+2x-x^3,\quad$ $g(x)=1-x^4$</li>
+          <li>$f(x)=x^3+x+2,\quad$ $g(x)=2+x-x^2$</li>
+          <li>$f(x)=e^{2x}-e^x,\quad$ $g(x)=5e^x-5$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Δίνεται η συνάρτηση $f(x)=\dfrac{|x+2|-|x-2|}{|x+2|+|x-2|}.$ Να παρασταθεί γραφικά και να προσδιοριστεί το
+        σύνολο τιμών της.
+      </div>
+
+      <div class="exercise">
+        Δίνεται η συνάρτηση
+        \[f(x)=\begin{cases}\ \dfrac{1}{x},& |x|\geq 1\\[1ex] x|x|,&|x|\lt 1 \end{cases}\]
+        Να παρασταθεί γραφικά και να προσδιοριστεί το σύνολο τιμών της.
+      </div>
+
+      <div class="exercise">
+        Να χαράξετε την γραφική παράσταση της συνάρτησης $f(x)=|x-2|+|x+1|$ και στην συνέχεια, με την βοήθεια της, να
+        προσδιορίσετε το σύνολο τιμών της $f.$
+      </div>
+
+      <div class="exercise">
+        Να χαράξετε την γραφική παράσταση της συνάρτησης $f(x)= \sqrt{16-x^2}$ και στην συνέχεια, με την βοήθεια της, να
+        προσδιορίσετε το σύνολο τιμών της $f.$
+      </div>
+
+      <div class="exercise">
+        Για τις συναρτήσεις
+        \[\begin{align}
+        f(x)&=\begin{cases} -x-1,&x\lt 1 \\ 2x-3,&x\geq 1 \end{cases}\ ,\\[2ex]
+        g(x)&=\begin{cases} -4x+1,&x\lt 0 \\ 3x-3, &x\geq 0 \end{cases}
+        \end{align}\]
+        να χαράξετε την γραφική παράσταση της συνάρτησης $f-g$ και στην συνέχεια, με την βοήθεια της, να προσδιορίσετε
+        το σύνολο τιμών της $f.$
+      </div>
+
+      <div class="exercise">
+        Για τις συναρτήσεις
+        \[\begin{align}
+        f(x)&=\begin{cases} x^2-1,&x\lt 1 \\ 1,&x\geq 1 \end{cases}\ ,\\[1ex]
+        g(x)&=\begin{cases} |x|+1,&x\lt 1 \\ x, &x\geq 1 \end{cases}
+        \end{align}\]
+        να χαράξετε την γραφική παράσταση της συνάρτησης $\dfrac{f}{g}$ και στην συνέχεια, με την βοήθεια της, να
+        προσδιορίσετε το σύνολο τιμών της $f.$
+      </div>
+
+      <div class="exercise">
+        Aν $f(x)=\alpha|x^2-1|-\beta|x+3|,$ να προσδιορίσετε τους $\alpha,\beta\in\mathbb{R}$ ώστε η γραφική παράσταση
+        της $f$ να διέρχεται από την αρχή των αξόνων και από το σημείο $\mathrm{A}(-1,4).$
+      </div>
+
+      <div class="exercise">
+        Αν $f(x)= (\alpha^2-5)x^2+2x+3$ και $g(x)= x^2+\beta x+1,$ να προσδιορίσετε τις τιμές των
+        $\alpha,\beta\in\mathbb{R}$ ώστε οι $f,g$ να έχουν κοινά σημεία πάνω στις ευθείες με εξισώσεις $x=-1$ και $x=1.$
+      </div>
+
+      <div class="exercise">
+        Αν $f(x)= 2x^2$ και $g(x)=2x+\kappa,$ να προσδιοριστεί ο $\kappa\in\mathbb{R}$ ώστε οι γραφικές παραστάσεις των
+        συναρτήσεων $f$ και $g$ να διαθέτουν ακριβώς ένα κοινό σημείο. Ποιο είναι το σημείο αυτό;
+      </div>
+
+      <div class="exercise">
+        Δίνεται η συνάρτηση $f(x)= \alpha x^3-13x^2+\beta x+1.$
+        <ol class="vertical-list">
+          <li> Να προσδιοριστούν οι $\alpha,\beta\in\mathbb{R}$ ώστε τα σημεία $\mathrm{A}(2,33)$ και $\mathrm{B}(1,0)$
+            να ανήκουν στην $C_f.$</li>
+          <li> Να μετασχηματιστεί η συνάρτηση $f$ σε γινόμενο πρωτοβάθμιων παραγόντων.</li>
+          <li> Να προσδιοριστούν τα $x\in\mathbb{R}$ για τα οποία η $C_f$ βρίσκεται πάνω από τον άξονα $x^\prime x.$
+          </li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Δίνεται η συνάρτηση $f(x)= \dfrac{\alpha x+12}{3x+\alpha},$ όπου $\alpha\in\mathbb{R}.$ Να προσδιοριστούν τα
+        σταθερά σημεία του επιπέδου, από τα οποία διέρχεται η γραφική παράσταση της $f.$
+      </div>
+
+      <div class="exercise">
+        Θεωρούµε τις συναρτήσεις $f(x)=5|x-3|-10$ και $g(x) = 4x-x^3.$
+        <ol class="vertical-list">
+          <li> Να προσδιορίσετε για ποιες τιµές του $x$ η γραφική παράσταση της συνάρτησης $f$ βρίσκεται πάνω από τον
+            άξονα $x^\prime x.$</li>
+          <li> Να προσδιορίσετε για ποιες τιµές του $x$ η γραφική παράσταση της συνάρτησης $g$ βρίσκεται κάτω από τον
+            άξονα $x^\prime x.$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Για $\alpha\in\mathbb{R}$ θεωρούµε τη συνάρτηση $f_\alpha(x)=x^6 + \alpha x^4-\alpha.$
+        <ol class="vertical-list">
+          <li> Αποδείξτε ότι οι γραφικές παραστάσεις των $f_0$ και $f_1$ διαθέτουν ακριβώς δύο κοινά σηµεία.</li>
+          <li> Αποδείξτε ότι η γραφική παράσταση της $f_\alpha,$ για τις διάφορες τιµές του $\alpha\in\mathbb{R},$
+            διέρχεται από δύο σταθερά σηµεία.</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Δίνεται η συνάρτηση $f:\mathbb{R}\to\mathbb{R}$ για την οποία ισχύει
+        \[f^3(x)-3f^2(x)+4f(x)=x^2-x+2,\tag{$\ast$}\]
+        για κάθε $x\in\mathbb{R}.$ Να αποδειχθεί ότι η $C_f$ βρίσκεται πάνω από τον άξονα $x^\prime x.$
+      </div>
+
+      <div class="exercise">
+        Δίνεται η συνάρτηση $f:\mathbb{R}\to\mathbb{R}$ για την οποία ισχύει
+        \[f^3(x)-2f^2(x)+5f(x)=-x^2+3,\tag{$\ast$}\]
+        για κάθε $x\in\mathbb{R}.$ Να αποδειχθεί ότι η $C_f$ βρίσκεται κάτω από τον άξονα $x^\prime x.$
+      </div>
+
+      <div class="exercise">
+        Θεωρούμε τις συναρτήσεις $f(x)=x^3-\alpha x^2+\beta x+2$ και $g(x)=x^2+\alpha x +3\beta.$ Να προσδιορίσετε τα
+        $\alpha,\beta\in\mathbb{R}$ ώστε οι γραφικές παραστάσεις των συναρτήσεων $f,g$ να τέμνονται επί των ευθειών
+        $x=1$ και $x=2.$
+      </div>
+
+      <div class="exercise">
+        Δίνονται οι συναρτήσεις $f,g: \mathbb{R}\to\mathbb{R},$ για τις οποίες ισχύει
+        \[f(x)+1=g(x)+x^3,\tag{$\ast$}\]
+        για κάθε $x\in\mathbb{R}.$ Να προσδιοριστεί η σχετική θέση των $C_f,C_g.$
+      </div>
+
+      <div class="exercise">
+        Έστω οι συναρτήσεις $f(x)= \dfrac{3}{x}$ και $g(x)=\alpha x+3-\alpha,$ όπου $\alpha\in\mathbb{R}.$
+        <ol class="vertical-list">
+          <li> Αποδείξτε ότι, για κάθε $\alpha\in\mathbb{R},$ η γραφική παράσταση της $g$ διέρχεται από σταθερό σημείο.
+          </li>
+          <li> Αποδείξτε ότι, για κάθε $\alpha\in\mathbb{R},$ οι γραφικές παραστάσεις των $f$ και $g$ διαθέτουν κοινά
+            σημεία.</li>
+          <li> Να προσδιορίσετε τον πραγματικό αριθμό $\alpha$ για τον οποίο οι γραφικές παραστάσεις των $f$ και $g$
+            διαθέτουν κοινό σημείο.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="functions-composition">
+
+      <h2>Σύνθεση συναρτήσεων</h2>
+
+      <div class="exercise">
+        Για τις συναρτήσεις $f,g,$ να προσδιορίσετε τις $f\circ g$ και $g\circ f$ όταν:
+        <ol class="array-list">
+          <li>$f(x)= 3x-1,\quad$ $g(x)= -2x+1$</li>
+          <li>$f(x)= 3x^2-2,\quad$ $g(x)= \gsin x$</li>
+          <li>$f(x)=\sqrt{x+2},\quad$ $g(x)=\sqrt{x}-2$</li>
+          <li>$f(x)= x^2+2$ , $g(x)=\dfrac{1}{x-3}$</li>
+          <li>$f(x)=2x-1,\quad$ $g(x)= \sqrt{1-x^2}$</li>
+          <li>$f(x)= \dfrac{1}{x},\quad$ $g(x)= \dfrac{x}{x+1}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Για τις συναρτήσεις $f,g$ να προσδιορίσετε τις $f\circ g$ και $g\circ f$ όταν:
+        <ol class="array-list">
+          <li>$f(x)= \gcos x,\quad$ $g(x)= \dfrac{1}{2x}$</li>
+          <li>$f(x)= \gsin x,\quad$ $g(x)= \dfrac{1}{x}$</li>
+          <li>$f(x)= x^2,\quad$ $g(x)= \sqrt{x}$</li>
+          <li>$f(x)= \gsin x,\quad$ $g(x)= \sqrt{1-x^2}$</li>
+          <li>$f(x)= x^2+1,\quad$ $g(x)= \sqrt{x-2}$</li>
+          <li>$f(x)=x^2-2x,\quad$ $g(x)=1+\sqrt{x+1}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να εκφράσετε τη συνάρτηση $f$ ως σύνθεση δύο ή τριών συναρτήσεων, όταν:
+        <ol class="array-list">
+          <li>$f(x)= \gcos(4x^2+1)$</li>
+          <li>$f(x)=\gsin(\gcos x)$</li>
+          <li>$f(x)= 2\ln^4\dfrac{3}{x}$</li>
+          <li>$f(x)=\left(e^{x+x^2}\right)^3$</li>
+          <li>$f(x)=\sqrt{\ln(e^x+1)}$</li>
+          <li>$f(x)=\sqrt[3]{1-|x-2|}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να ορίσετε τη συνάρτηση $g\circ f$ στις ακόλουθες περιπτώσεις:
+        <ol class="array-list">
+          <li>$f(x)=1+\dfrac{1}{x},\quad$ $g(x)=\sqrt{1+\dfrac{1}{x}}$</li>
+          <li>$f(x)=x^2 +x,\quad$ $g(x)=\sqrt{x-5}+\sqrt{x-2}$</li>
+          <li>$f(x)=x^3 -2x^2 -x+2,\quad$ $g(x)=\ln x$</li>
+          <li>$f(x)=\sqrt{1-x^2},\quad$ $g(x)=3\sqrt{x}-2$</li>
+          <li>$f(x)=\ln(x-e),\quad$ $g(x)=\sqrt{x-1}$</li>
+          <li>$f(x)=\dfrac{\ln(1-x)}{x^2-1},\quad$ $g(x)=\sqrt{x}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να προσδιορίσετε τον τύπο της συνάρτησης $f:\mathrm{A}\to\mathbb{R},$ στο ευρύτερο δυνατό πεδίο ορισμού
+        $\mathrm{A},$ αν για κάθε $x\in\mathrm{A}$ ισχύει:
+        <ol class="array-list">
+          <li>$f(x+1)=2x+1$</li>
+          <li>$f(x+1)=e^{x}+x+1$</li>
+          <li>$f(e^x)=2x+1$</li>
+          <li>$f^{2}(x)+x^{2}e^{2x}=2xe^{x}f(x)$</li>
+          <li>$f(2x-1)=x^2-2x+3$</li>
+          <li>$f\left(\dfrac{1}{\sqrt{x}}\right)=\dfrac{x^2}{x^2+1}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Στις περιπτώσεις όπου είναι δυνατό, να προσδιορίσετε τον τύπο της συνάρτησης $f:\mathrm{A}\to\mathbb{R},$ στο
+        ευρύτερο δυνατό πεδίο ορισμού $\mathrm{A},$ αν για κάθε $x\in\mathrm{A}$ ισχύει:
+        <ol class="array-list">
+          <li>$xf(1-x)+f(x)=1$</li>
+          <li>$5f(x)+f(2-x)=x$</li>
+          <li>$3f(1-x)+f(x)=4+x^2$</li>
+          <li>$f(x-2)-4f(3-x)=10x-31$</li>
+          <li>$2f(x)-f\left(\dfrac{1}{x}\right)=x$</li>
+          <li>$xf^2(x)f(2-x)=1$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Έστω οι συναρτήσεις $f(x)=\sqrt[3]{1-x},$ $g(x)=\gcos x,$ $h(x)=\sqrt{x}.$ Να ορίσετε την συνάρτηση
+        $f\circ(g\circ h).$
+      </div>
+
+      <div class="exercise">
+        Θεωρούμε τις συναρτήσεις $f(x)=\ln x,$ $g(x)=\sqrt{x}-1,$ $h(x)=\sqrt[3]{x}.$ Να ορίσετε τις συναρτήσεις $f\circ
+        g\circ h$ και $g\circ h\circ f.$
+      </div>
+
+      <div class="exercise">
+        Αν $f(x)=4-|x|,$ να ορίσετε τη συνάρτηση $f\circ f,$ να χαράξετε την γραφική της παράσταση και να προσδιορίσετε
+        το σύνολο τιμών της.
+      </div>
+
+      <div class="exercise">
+        Έστω $f,h$ συναρτήσεις με τύπους $f(x)=x^2 -x+2$ και $h(x)=x(x-1).$ Να προσδιορίσετε συνάρτηση $g$ της οποίας ο
+        τύπος έχει τη μορφή $g(x)=\alpha x+\beta$ και ισχύει $g\circ f=h.$
+      </div>
+
+      <div class="exercise">
+        Θεωρούμε τις συναρτήσεις $g(x)=3x-2$ και $f(x)= \alpha x+\beta.$ Να προσδιορίσετε τα $\alpha,\beta\in\mathbb{R}$
+        ώστε να ισχύει $g\circ g=f.$
+      </div>
+
+      <div class="exercise">
+        Έστω συνάρτηση $f:[-4,2]\to\mathbb{R}.$ Να προσδιοριστεί το πεδίο ορισμού της συνάρτησης $g,$ με τύπο
+        $g(x)=f(5-x^2).$
+      </div>
+
+      <div class="exercise">
+        Δίνονται οι συναρτήσεις $I(x)=x$ και $f(x)=\dfrac{\alpha x-\beta}{3x-\alpha},$ όπου $\alpha\in\mathbb{R}.$
+        Αποδείξτε ότι οι συναρτήσεις $f\circ f$ και $I$ είναι ίσες στο σύνολο
+        $\mathbb{R}\setminus\left\{\frac{\alpha}{3}\right\}.$
+      </div>
+
+      <div class="exercise">
+        Έστω $\alpha,\beta, \gamma,\delta\in\mathbb{R}.$ Θεωρούμε τις συναρτήσεις στο $\mathbb{R}$ με $f(x)= \alpha
+        x+\beta$ και $g(x)=\gamma x+\delta.$ Αποδείξτε ότι $f\circ g=g\circ f$ αν και μόνο αν $(\alpha-1)
+        \delta-(\gamma-1)\beta=0.$
+      </div>
+
+      <div class="exercise">
+        Θεωρούμε συναρτήσεις $f,g: \mathbb{R}\to\mathbb{R}.$ Αν για κάθε σταθερή συνάρτηση $h$ ισχύει $f\circ h=g\circ
+        h,$ αποδείξτε ότι $f=g.$
+      </div>
+
+      <div class="exercise">
+        Δίνεται συνάρτηση $f:\mathbb{R}\to\mathbb{R}.$ Αν για κάθε σταθερή συνάρτηση $g$ ισχύει $g\circ f=-(f\circ g),$
+        αποδείξτε ότι $f(x)=-x,$ για κάθε $x\in\mathbb{R}.$
+      </div>
+
+      <div class="exercise">
+        Δίνεται συνάρτηση $f:\mathbb{R}\to\mathbb{R}$ για την οποία ισχύουν $(f\circ f)(x)=4x-3$ και $(f\circ f\circ
+        f)(x)=8x+\alpha,$ όπου $\alpha \in\mathbb{R}.$ Να προσδιορίσετε τη συνάρτηση $f.$
+      </div>
+
+      <div class="exercise">
+        Θεωρούμε τις συναρτήσεις $g,h:\mathbb{R}\to\mathbb{R}$ με $g(x)=2^x$ και $h(x)= x^2.$ Αποδείξτε ότι δεν υπάρχει
+        συνάρτηση $f:(0,+\infty) \to\mathbb{R}$ για την οποία $(f\circ g)^2+1=f\circ h.$
+      </div>
+
+      <div class="exercise">
+        Έστω $f:\mathbb{R}\to\mathbb{R}$ άρτια συνάρτηση. Θεωρούμε τη συνάρτηση απόλυτης τιμής $h,$ ορισμένη στο
+        $\mathbb{R}.$ Αποδείξτε ότι υπάρχει συνάρτηση $g$ ώστε $f=g\circ h.$
+      </div>
+
+      <div class="exercise">
+        Έστω συνάρτηση $f:\mathbb{R}\to\mathbb{R}$ με $f^5(x)+x^5=1,$ για κάθε $x\in\mathbb{R}.$ Αποδείξτε ότι $f\circ
+        f=I,$ όπου $I(x)=x,$ για κάθε $x\in\mathbb{R}.$
+      </div>
+
+      <div class="exercise">
+        Θεωρούµε συνάρτηση $f: \mathbb{R}\to\mathbb{R}$ με $f(x^2+ 6)+f (5x) = 0,$ για κάθε $x\in\mathbb{R}.$ Αποδείξτε
+        ότι η γραφική παράσταση της $f$ τέµνει τον άξονα $x^\prime x$ σε δύο τουλάχιστον σηµεία.
+      </div>
+
+      <div class="exercise">
+        Θεωρούµε συνάρτηση $f: \mathbb{R}\to\mathbb{R}$ με $f(f(x)) = x^2-2x + 2,$ για κάθε $x\in\mathbb{R}.$
+        <ol class="vertical-list">
+          <li> Αποδείξτε ότι \[f(x^2-2x+2)=f^2(x)-2f(x)+2,\] για κάθε $x\in\mathbb{R}.$</li>
+          <li> Αν η γραφική παράσταση της $f$ δεν διέρχεται από το σηµείο $\textnormal{Α}(1, 2),$ να υπολογίσετε την
+            τιµή $f (1).$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Θεωρούµε συνάρτηση $f: \mathbb{R}\to\mathbb{R}$ με $f(f (x)) = x^2-8x +20,$ για κάθε $x\in\mathbb{R}.$
+        <ol class="vertical-list">
+          <li> Αποδείξτε ότι \[f(x^2-8x + 20)=f^2(x)-8f (x) + 20,\] για κάθε $x\in\mathbb{R}.$</li>
+          <li> Αν η γραφική παράσταση της $f$ δεν διέρχεται από το σηµείο $\textnormal{Α}(4,5),$ να υπολογίσετε την τιµή
+            $f (4).$</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="functions-monotonicity-extrema">
+
+      <h2>Μονοτονία και ακρότατα</h2>
+
+      <div class="exercise">
+        Να μελετήσετε ως προς μονοτονία τη συνάρτηση $f$ όταν:
+        <ol class="array-list">
+          <li>$f(x)=x^3+2x-3$</li>
+          <li>$f(x)=1-3x+\sqrt{2-x}$</li>
+          <li>$f(x)= 3e^{7-x}+5$</li>
+          <li>$f(x) =2\ln(x-3)+5$</li>
+          <li>$f(x)=\dfrac{1}{x^2+1}$</li>
+          <li>$f(x)=\left(\dfrac{1}{2}\right)^x -3^x$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να μελετήσετε ως προς μονοτονία τη συνάρτηση $f$ στο διάστημα $\Delta$ όταν:
+        <ol class="array-list">
+          <li>$f(x)=\dfrac{1}{x-2},\quad$ $\Delta=(-\infty,2)$</li>
+          <li>$f(x)=-2x^3+\dfrac{1}{x},\quad$ $\Delta=(0, +\infty)$</li>
+          <li>$f(x)=-\dfrac{x^2}{2}+\dfrac{1}{e^x},\quad$ $\Delta=[0, +\infty)$</li>
+          <li>$f(x)=(x-3)^2+1,\quad$ $\Delta=[3,+\infty)$</li>
+          <li>$f(x)= x(x+4)-4,\quad$ $\Delta=(-\infty,-2]$</li>
+          <li>$f(x)= x(x+4)-4,\quad$ $\Delta=[-2,+\infty)$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να μελετήσετε ως προς μονοτονία τη συνάρτηση $f$ όταν:
+        <ol class="array-list">
+          <li>$f(x)=\begin{cases}-x, & x\lt 0 \\ x^2 , & x\geq 0 \end{cases}$</li>
+          <li>$f(x)=\begin{cases}-x^2 , &x\lt 0 \\ x, & x\geq 0\end{cases}$</li>
+          <li>$f(x)=\begin{cases}5x-1,& x\lt 2 \\ -2x+3, & x\geq 2 \end{cases}$</li>
+          <li>$f(x)=\begin{cases}2x^2 , &x\leq 0 \\ 2x^4, & x\gt 0\end{cases}$</li>
+          <li>$f(x)=\begin{cases}x+5,& x\lt 0 \\ \sqrt{x}, & x\geq 0 \end{cases}$</li>
+          <li>$f(x)=\begin{cases}-x^2+1 , &x\lt 0 \\ x^3+1, & x\geq 0\end{cases}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Με την βοήθεια της γραφικής παράστασης, να προσδιορίσετε τη μονοτονία και τα ακρότατα της συνάρτησης $f$ όταν:
+        <ol class="array-list">
+          <li>$f(x)=-3|x+1|+2$</li>
+          <li>$f(x)= 2|x-2|+1$</li>
+          <li>$f(x)= -3\sqrt{x-1}+2$</li>
+          <li>$f(x)= 5\sqrt{x-2}+7$</li>
+          <li>$f(x)=\sqrt{|x|}$</li>
+          <li>$f(x)=x^2-|x|$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Με την βοήθεια της γραφικής παράστασης, να προσδιορίσετε τη μονοτονία και τα ακρότατα της συνάρτησης $f$ όταν:
+        <ol class="array-list">
+          <li>$f(x)=\begin{cases}-x+1, &x\lt 0\\ x^2-1,& x\geq 0 \end{cases}$</li>
+          <li>$f(x)=\begin{cases}(x-1)^2+3, &0\lt x\lt 1 \\ \dfrac{x^2}{2}+1,& 1\leq x\leq 2 \end{cases}$</li>
+          <li>$f(x)=\begin{cases}e^x, &x\lt 1 \\ \ln x,& x\geq 1 \end{cases}$</li>
+          <li>$f(x)=\begin{cases}-x^2, &x\leq 0 \\ -e^x,& x\gt 0 \end{cases}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Δίνεται η συνάρτηση $f(x)=(x-1)^2-4.$ Να προσδιορίσετε τα διαστήματα μονοτονίας της $f,$ καθώς και το σύνολο
+        $f(\Delta)$ όταν:
+        <ol class="array-list">
+          <li>$\Delta=[2,3]$</li>
+          <li>$\Delta=(-4,1]$</li>
+          <li>$\Delta=(-2,2)$</li>
+          <li>$\Delta=(5,+\infty)$</li>
+          <li>$\Delta=[0,+\infty)$</li>
+          <li>$\Delta=\left(-\infty, \frac{1}{2}\right)$</li>
+          <li>$\Delta=\left(-\infty, \frac{3}{2}\right]$</li>
+          <li>$\Delta=\mathbb{R}$</li>
+          </li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Σε καθεµία από τις παρακάτω περιπτώσεις, αποδείξτε ότι η συνάρτηση $f$ διαθέτει ολικό ακρότατο, το οποίο να
+        προσδιορίσετε:
+        <ol class="array-list">
+          <li>$f(x) = 3|x-2|+4$</li>
+          <li>$f(x) =-\ln^2 x + 2$</li>
+          <li>$f(x)=(x-1)^2+2(x-1)^4-3$</li>
+          <li>$f (x) = -(x-5)^4 + 1$</li>
+          <li>$f (x) = 2\sqrt{x+1} + 5$</li>
+          <li>$f (x) = -2 |x-1|-|x^2-1|$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Για τις διάφορες τιμές του $\alpha\in\mathbb{R},$ να μελετηθεί ως προς τη μονοτονία η συνάρτηση $f(x)= 5x+\alpha
+        (1-x).$
+      </div>
+
+      <div class="exercise">
+        Έστω $f:\mathbb{R}\to\mathbb{R}$ περιττή συνάρτηση. Αν η $f$ είναι γνησίως φθίνουσα στο διάστημα $(0,+\infty),$
+        αποδείξτε ότι είναι γνησίως αύξουσα στο διάστημα $(-\infty,0).$
+      </div>
+
+      <div class="exercise">
+        Έστω $f:\mathbb{R}\to\mathbb{R}$ άρτια συνάρτηση. Αν η $f$ είναι γνησίως φθίνουσα στο διάστημα $(0,+\infty),$
+        αποδείξτε ότι είναι γνησίως αύξουσα στο διάστημα $(-\infty,0).$
+      </div>
+
+      <div class="exercise">
+        Έστω $f:\mathbb{R}\to\mathbb{R}$ περιττή και γνησίως φθίνουσα συνάρτηση. Αποδείξτε ότι $f(x)\gt 0$ αν και μόνο
+        αν $x\lt 0.$
+      </div>
+
+      <div class="exercise">
+        Έστω $f:\mathbb{R}\to\mathbb{R}$ γνησίως μονότονη συνάρτηση. Αποδείξτε ότι η συνάρτηση $f\circ f$ είναι γνησίως
+        αύξουσα.
+      </div>
+
+      <div class="exercise">
+        Έστω $f,g$ δύο γνησίως μονότονες συναρτήσεις με το ίδιο είδος μονοτονίας. Αποδείξτε ότι η συνάρτηση $f+g$
+        διαθέτει επίσης το ίδιο είδος μονοτονίας.
+      </div>
+
+      <div class="exercise">
+        Έστω $f,g$ δύο γνησίως μονότονες συναρτήσεις, με διαφορετικό είδος μονοτονίας. Να μελετηθεί ως προς την
+        μονοτονία η συνάρτηση $f-g.$
+      </div>
+
+      <div class="exercise">
+        Έστω $f,g$ δύο μη αρνητικές και γνησίως μονότονες συναρτήσεις, με το ίδιο είδος μονοτονίας. Αποδείξτε ότι η
+        συνάρτηση $fg$ διαθέτει επίσης το ίδιο είδος μονοτονίας.
+      </div>
+
+      <div class="exercise">
+        Έστω $f,g$ δύο μη θετικές και γνησίως μονότονες συναρτήσεις, με το ίδιο είδος μονοτονίας. Αποδείξτε ότι η
+        συνάρτηση $fg$ διαθέτει διαφορετικό είδος μονοτονίας.
+      </div>
+
+      <div class="exercise">
+        Έστω συναρτήσεις $f,g,$ ορισμένες στα σύνολα $\textnormal{A},$ $\textnormal{B}$ ώστε να ορίζεται η $g\circ f.$
+        Υποθέτουμε ότι οι $f,g$ είναι γνησίως μονότονες.
+        <ol class="vertical-list">
+          <li> Αν οι $f,g$ διαθέτουν το ίδιο είδος μονοτονίας, αποδείξτε ότι $g\circ f$ είναι γνησίως αύξουσα.</li>
+          <li> Αν οι $f,g$ διαθέτουν διαφορετικό είδος μονοτονίας, αποδείξτε ότι $g\circ f$ είναι γνησίως φθίνουσα.</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Έστω $f,g: \mathbb{R}\to\mathbb{R}$ συναρτήσεις, όπου η $f$ είναι γνησίως αύξουσα και η $g$ γνησίως φθίνουσα στο
+        $\mathbb{R}.$
+        <ol class="vertical-list">
+          <li> Αποδείξτε ότι η συνάρτηση $h_1= 3f-2g$ είναι γνησίως αύξουσα στο $\mathbb{R}.$</li>
+          <li> Αποδείξτε ότι η συνάρτηση $h_2= -5f+ 4g$ είναι γνησίως φθίνουσα στο $\mathbb{R}.$</li>
+          <li> Αποδείξτε ότι η συνάρτηση $h_3=(f\circ g)+(g\circ f)$ είναι γνησίως φθίνουσα στο $\mathbb{R}.$</li>
+          <li> Αποδείξτε ότι η συνάρτηση $h_4=(f\circ f)+(g\circ g)$ είναι γνησίως αύξουσα στο $\mathbb{R}.$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να μελετήσετε ως προς μονοτονία τη συνάρτηση $f$ στο διάστημα $\Delta$ όταν:
+        <ol class="array-list">
+          <li>$f(x)=\gcos x+\dfrac{1}{x},\quad$ $\Delta=(0,\pi]$</li>
+          <li>$f(x)= \ln x+x^3,\quad$ $\Delta=(0,+\infty)$</li>
+          <li>$f(x)=x-\gctan x,\quad$ $\Delta=(0,\pi)$</li>
+          <li>$f(x)=\dfrac{\gcos x}{x},\quad$ $\Delta=\left(0,\frac{\pi}{2}\right)$</li>
+          <li>$f(x)=x^3\gctan x,\quad$ $\Delta=\left(-\frac{\pi}{2},0\right)$</li>
+          <li>$f(x)=-x^2\gctan x,\quad$ $\Delta=\left(\frac{\pi}{2},\pi\right)$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να μελετήσετε ως προς μονοτονία τη συνάρτηση $f$ στο διάστημα $\Delta$ όταν:
+        <ol class="array-list">
+          <li>$f(x)=3(5-2x^3)^5-1,\quad$ $\Delta=\mathbb{R}$</li>
+          <li>$f(x)=2-(1-x^5)^7,\quad$ $\Delta=\mathbb{R}$</li>
+          <li>$f(x)=\sqrt{x}-\sqrt{2-x},\quad$ $\Delta=(0,1)$</li>
+          <li>$f(x)=x^3-2x^2+x,\quad$ $\Delta=[1,+\infty)$</li>
+          <li>$f(x)=\dfrac{1}{x^2+2x+1},\quad$ $\Delta=[1,+\infty)$</li>
+          <li>$f(x)=\dfrac{x+1}{x^2+1},\quad$ $\Delta=\left[\frac{1}{2},+\infty\right)$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Θεωρούμε τις συναρτήσεις $f(x)= 3\cdot 2^x+3\cdot 2^{-x}+1$ και $g(x)= 2+5\gcos x.$
+        <ol class="vertical-list">
+          <li> Αποδείξτε ότι η $f$ παρουσιάζει ελάχιστο στο $x=0.$</li>
+          <li> Αποδείξτε ότι η $g$ παρουσιάζει μέγιστο στο $x=2\kappa\pi,$ όπου $\kappa\in\mathbb{Z}.$</li>
+          <li> Επιλύστε την εξίσωση $f(x)=g(x).$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Δίνονται οι συναρτήσεις $f(x)= x^2-3x+10$ και $g(x)= 3x^2-9x+\dfrac{29}{2}.$
+        <ol class="vertical-list">
+          <li> Να προσδιορίσετε τα ακρότατα των $f,g.$</li>
+          <li> Να επιλύσετε την εξίσωση $f(x)=g(x).$</li>
+          <li> Να αποδείξετε ότι $\dfrac{4f(x)}{31}\geq\dfrac{31g(x)}{4}.$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να προσδιοριστεί ο $\kappa\in\mathbb{R}$ ώστε το μέγιστο της συνάρτησης $f(x)= \kappa x^2-3\kappa
+        x-\dfrac{13}{2}$ να είναι ο $\kappa.$
+      </div>
+
+      <div class="exercise">
+        Να προσδιοριστεί ο θετικός αριθμός $\kappa$ ώστε η συνάρτηση $f(x)= \kappa x^2+\sqrt{k}x +\kappa$ να διαθέτει ως
+        ελάχιστο το $0.$
+      </div>
+
+      <div class="exercise">
+        Να προσδιοριστεί ο $\alpha\in\mathbb{R}$ ώστε η συνάρτηση $f(x)= -\alpha^2 x^2-4\alpha^2 x-|\alpha|$ να διαθέτει
+        ως μέγιστο το $3.$
+      </div>
+
+      <div class="exercise">
+        Να προσδιοριστεί ο $\alpha\in\mathbb{R}$ ώστε η συνάρτηση $f(x)= 2x^2-(4\alpha-1)x+1$ να διαθέτει ως ελάχιστο το
+        $-1.$
+      </div>
+
+      <div class="exercise">
+        Για τις διάφορες τιμές του $\lambda\in\mathbb{R},$ να προσδιοριστεί το μέγιστο ή το ελάχιστο της συνάρτησης
+        $f(x)=\lambda x^2-2\lambda x +4.$
+      </div>
+
+      <div class="exercise">
+        Θεωρούμε τη συνάρτηση $f$ με $f(x)= x^2-(2\lambda+1)x+\lambda,$ όπου $\lambda\in\mathbb{R}.$
+        <ol class="vertical-list">
+          <li> Να αποδείξετε ότι για κάθε $\lambda\in\mathbb{R},$ η γραφική παράσταση της $f$ τέμνει τον άξονα
+            $x^{\prime}x$ σε δύο σημεία $\textnormal{A}(x_1,0),$ $\textnormal{B}(x_2,0).$</li>
+          <li> Να προσδιορίσετε για ποιο $\lambda$ η παράσταση $\Pi=x_1(x_1+3x_2)+x_2(x_2+3x_1)$ παρουσιάζει ελάχιστη
+            τιμή και ποια είναι αυτή.</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Έστω $f$ γνησίως μονότονη συνάρτηση με πεδίο ορισμού $\Delta$ και $f(\Delta)\subseteq(-1,1).$ Αποδείξτε ότι η
+        συνάρτηση $g$ με $g(x)=\dfrac{f(x)}{1+f(x)^2}$ διαθέτει ίδιο είδος μονοτονίας με την $f.$
+      </div>
+
+      <div class="exercise">
+        Έστω $f,g$ δύο συναρτήσεις με κοινό πεδίο ορισμού, που παρουσιάζουν μέγιστο (αντιστοίχως ελάχιστο) στο σημείο
+        $x_0.$
+        <ol class="vertical-list">
+          <li> Αποδείξτε ότι η $f+g$ παρουσιάζει μέγιστο (αντιστοίχως ελάχιστο) στο σημείο $x_0.$</li>
+          <li> Αν οι $f,g$ είναι θετικές, αποδείξτε ότι η $f\cdot g$ παρουσιάζει μέγιστο (αντιστοίχως ελάχιστο) στο
+            σημείο $x_0.$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Έστω $f:(0,1)\to\mathbb{R}$ μια γνησίως μονότονη συνάρτηση. Αποδείξτε ότι δεν παρουσιάζει ακρότατα.
+      </div>
+
+      <div class="exercise">
+        Θεωρούµε τη συνάρτηση $f: \mathbb{R}\to\mathbb{R}$ µε
+        \[f (x)\cdot 2^{f(x)} = e^x, \tag{$\ast$}\]
+        για κάθε $x\in\mathbb{R}.$
+        <ol class="vertical-list">
+          <li> Αποδείξτε ότι η γραφική παράσταση της $f$ βρίσκεται πάνω από τον άξονα $x^\prime x.$</li>
+          <li> Αποδείξτε ότι η $f$ είναι γνησίως αύξουσα στο $\mathbb{R}.$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Θεωρούµε τη συνάρτηση $f: \mathbb{R}\to\mathbb{R}$ µε
+        \[e^x \cdot 3^{f(x)}+f(x) = 0, \tag{$\ast$}\]
+        για κάθε $x\in\mathbb{R}.$
+        <ol class="vertical-list">
+          <li> Αποδείξτε ότι η γραφική παράσταση της $f$ βρίσκεται κάτω από τον άξονα $x^\prime x.$</li>
+          <li> Αποδείξτε ότι η $f$ είναι γνησίως φθίνουσα στο $\mathbb{R}.$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Θεωρούµε τη συνάρτηση $f,$ ορισµένη και γνησίως φθίνουσα στο $\mathbb{R}.$ Αποδείξτε ότι για κάθε $x \gt 0$
+        ισχύει $f(x) + f (4x) \gt f(2x) + f (8x).$
+      </div>
+
+      <div class="exercise">
+        Θεωρούµε τη συνάρτηση f ορισµένη και γνησίως αύξουσα στο $\mathbb{R}.$ Αποδείξτε ότι για κάθε $x \lt 0$ ισχύει
+        $f(2x) + f (4x)\gt f(3x) + f (5x).$
+      </div>
+
+      <div class="exercise">
+        Θεωρούµε τη συνάρτηση f ορισµένη και γνησίως φθίνουσα στο $(0,+\infty).$ Να επιλυθεί η εξίσωση $f(x^2) +f(x^5) =
+        f(x^3) +f(x^6).$
+      </div>
+    </section>
+
+    <section id="functions-one-to-one-inverse">
+
+      <h2>1-1 και αντίστροφες συναρτήσεις</h2>
+
+
+      <div class="exercise">
+        Να εξετάσετε αν η συνάρτηση $f$ είναι 1-1, όταν:
+        <ol class="array-list">
+          <li>$f(x)=\dfrac{1}{3}x+2$</li>
+          <li>$f(x)=x^3 +1$</li>
+          <li>$f(x)=3^{3x+1}+1$</li>
+          <li>$f(x)=|x|+1$</li>
+          <li>$f(x)=\dfrac{1}{x^4 +1}+x^2$</li>
+          <li>$f(x)=x^2 +x+1$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να εξετάσετε αν η συνάρτηση $f$ είναι 1-1, όταν:
+        <ol class="array-list">
+          <li>$f(x)=-x^2+2x$</li>
+          <li>$f(x)= x^2-8x+3$</li>
+          <li>$f(x)=x^2-6x+2$</li>
+          <li>$f(x)=\dfrac{2x-1}{x-3}$</li>
+          <li>$f(x)=\dfrac{x-1}{2x-3}$</li>
+          <li>$f(x)=\dfrac{1}{(x-1)^2}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να εξετάσετε αν η συνάρτηση $f$ είναι 1-1, όταν:
+        <ol class="array-list">
+          <li>$f(x)=(x-1)^{10} (x-2)^{8}$</li>
+          <li>$f(x)=\sqrt[3]{x-3}$</li>
+          <li>$f(x)=\sqrt[4]{|x+2|}$</li>
+          <li>$f(x)=|x|+x$</li>
+          <li>$f(x)=\gcos x+\gsin x$</li>
+          <li>$f(x)=e^{x}-e^{-x}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να προσδιορίσετε την αντίστροφη της συνάρτησης $f,$ καθώς και το σύνολο τιμών της $f$ όταν:
+        <ol class="array-list">
+          <li>$f(x)=-3x+4$</li>
+          <li>$f(x)=\dfrac{2}{x+1}$</li>
+          <li>$f(x)= \dfrac{x+1}{3-x}$</li>
+          <li>$f(x)=\sqrt{\dfrac{x}{2}+1}$</li>
+          <li>$f(x)=\sqrt{4-\sqrt{x-1}}$</li>
+          <li>$f(x)=\ln(x-2)$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να προσδιορίσετε την αντίστροφη της συνάρτησης $f,$ καθώς και το σύνολο τιμών της $f$ όταν:
+        <ol class="array-list">
+          <li>$f(x)= \dfrac{e^x+1}{e^x}$</li>
+          <li>$g(x)=\ln(2+e^x)$</li>
+          <li>$f(x)=\dfrac{e^x-e^{-x}}{2}$</li>
+          <li>$f(x)= \dfrac{e^x-1}{e^x+1}$</li>
+          <li>$f(x)= \sqrt{\dfrac{x}{x+1}}$</li>
+          <li>$f(x)= \dfrac{1}{\sqrt{1-x^3}}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να προσδιορίσετε την αντίστροφη της συνάρτησης $f:\Delta\to\mathbb{R},$ καθώς και το σύνολο τιμών της $f$ όταν:
+        <ol class="array-list">
+          <li>$f(x)=4-3x^2,\quad$ $\Delta=(-\infty,0]$</li>
+          <li>$f(x)= 1-x^4,\quad$ $\Delta=(0,+\infty)$</li>
+          <li>$f(x)= 4x^2-2,\quad$ $\Delta=(0,+\infty)$</li>
+          <li>$f(x)=(x+1)^2-9,\quad$ $\Delta=(-1,+\infty)$</li>
+          <li>$f(x)=x^2-2x-3,\quad$ $\Delta=[2,+\infty)$</li>
+          <li>$f(x)=x^6-2x^3+5,\quad$ $\Delta=[1,+\infty)$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να προσδιορίσετε την αντίστροφη της συνάρτησης $f,$ καθώς και το σύνολο τιμών της $f$ όταν:
+        <ol class="array-list-3">
+          <li>$f(x)=\begin{cases}x-1, &x\lt 0\\ x+1,&x\geq 0 \end{cases}$</li>
+          <li>$f(x)=\begin{cases}2x-2, &x\lt 1 \\ \ln x,&x\geq 1 \end{cases}$</li>
+          <li>$f(x)=\begin{cases}x+1, &x\leq 0 \\ x-2,&x\gt 0 \end{cases}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να επιλύσετε τις παρακάτω εξισώσεις:
+        <ol class="array-list">
+          <li> $x^{10}+x^6=(3x-2)^5+(3x-2)^3$</li>
+          <li>$x^7+2x^5=4-x$</li>
+          <li>$e^{x-2}=3-x$</li>
+          <li>$e^{e-x}=\ln x$</li>
+          <li>$\ln\dfrac{x^2+x+1}{x^2-x+5}=-2x+4$</li>
+          <li>$\left(\dfrac{3}{5}\right)^{x}=1-\left(\dfrac{4}{5}\right)^{x}$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να προσδιορίσετε την αντίστροφη της συνάρτησης $f:(-\infty,2]\to\mathbb{R}$ με $f(x)= 4x-x^2$ και να χαράξετε
+        την γραφική παράσταση των $f$ και $f^{-1}$ στο ίδιο σύστημα αξόνων.
+      </div>
+
+      <div class="exercise">
+        Αποδείξτε ότι η συνάρτηση $f(x)=\dfrac{1}{3^x}-2x$ είναι $1-1$ και έπειτα επιλύστε την εξίσωση
+        $f(x^2-9)=f(x+3).$
+      </div>
+
+      <div class="exercise">
+        Έστω συνάρτηση $f:\mathbb{R}\to\mathbb{R}$ με $f(x+1)=f(x^2),$ για κάθε $x\in\mathbb{R}.$ Εξετάστε αν είναι
+        αντιστρέψιμη.
+      </div>
+
+      <div class="exercise">
+        Έστω συνάρτηση $f$ µε $f(f(x))= 2x-1+f(x),$ για κάθε $x\in\mathbb{R}.$ Αποδείξτε ότι η $f$ είναι 1-1. Στη
+        συνέχεια, εξετάστε αν η γραφική παράσταση της $f$ διέρχεται από την αρχή των αξόνων.
+      </div>
+
+      <div class="exercise">
+        Έστω συνάρτηση $f$ µε πεδίο ορισµού το $\mathbb{R}.$ Να εξετάσετε αν η $f$ είναι 1-1, όταν για κάθε
+        $x\in\mathbb{R}$ ισχύουν οι παρακάτω σχέσεις:
+        <ol class="array-list">
+          <li>$f(f(x))=4x-1$</li>
+          <li>$f(f(x))=x^9$</li>
+          <li>$f(f(x))=x^4$</li>
+          <li>$f(f(x))=2$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Έστω $f:\mathbb{R}\to\mathbb{R}$ άρτια συνάρτηση. Αποδείξτε ότι η $f$ δεν αντιστρέφεται.
+      </div>
+
+      <div class="exercise">
+        Έστω οι συναρτήσεις $f(x)= 4x+1$ και $g(x)= 3x-2.$ Να προσδιορίσετε τις συναρτήσεις
+        \[\begin{array}{ll}
+        (f\circ g)^{-1}\ , & (g\circ f)^{-1}\ ,\\
+        g^{-1}\circ f^{-1}\ , & f^{-1}\circ g^{-1}\ .
+        \end{array}\]
+        Τι παρατηρείτε;
+      </div>
+
+      <div class="exercise">
+        Έστω ότι οι συναρτήσεις $f,g:\mathbb{R}\to\mathbb{R}$ είναι $1-1.$ Αποδείξτε ότι η συνάρτηση $g\circ f$ είναι
+        επίσης $1-1.$
+      </div>
+
+      <div class="exercise">
+        Δίνεται η συνάρτηση $f$ με $f(x)=4\sqrt{e^x-2}+3.$
+        <ol class="vertical-list">
+          <li> Να προσδιορίσετε το πεδίο ορισμού της.</li>
+          <li> Να προσδιορίσετε το σύνολο τιμών της.</li>
+          <li> Να ορίσετε την $f^{-1}.$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Θεωρούµε τις συναρτήσεις $f,g: \mathbb{R}\to\mathbb{R}$ με
+        \[(g\circ g)(x) =\alpha g(x)+\beta f (x^5 + 2x), \tag{$\ast$}\]
+        για κάθε $x\in\mathbb{R},$ όπου $\alpha,\beta\in\mathbb{R}^{\ast}.$ Αν η $f$ είναι 1-1, αποδείξτε ότι η $g$
+        είναι 1-1.
+      </div>
+
+      <div class="exercise">
+        Δίνεται η συνάρτηση $f$ με $f(x)=\ln(3e^x+1)-2.$
+        <ol class="vertical-list">
+          <li> Να προσδιορίσετε το πεδίο ορισμού της $f.$</li>
+          <li> Να αποδείξετε ότι η $f$ αντιστρέφεται.</li>
+          <li> Να ορίσετε την $f^{-1}.$</li>
+          <li> Να λύσετε την ανίσωση $f(x)\lt f^{-1}(\ln 5-2)-2.$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Έστω οι συναρτήσεις $f(x)= \dfrac{2\ln x-3}{5}$ και $g(x)= 1+\ln x.$
+        <ol class="vertical-list">
+          <li> Να προσδιορίσετε τις συναρτήσεις $f^{-1}$ και $g^{-1}.$</li>
+          <li> Να προσδιορίσετε τις συναρτήσεις $F=f^{-1}\circ g$ και $G=g^{-1}\circ f.$</li>
+          <li> Αποδείξτε ότι $F^{-1}=G.$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Έστω $\alpha,\beta\in\mathbb{R}$ με $\alpha\neq 0.$ Θεωρούμε τη συνάρτηση $f(x)= \alpha x+\beta.$
+        <ol class="vertical-list">
+          <li> Να προσδιορίσετε την $f^{-1}.$</li>
+          <li> Να προσδιορίσετε τους $\alpha,\beta$ ώστε να ισχύει $f^{-1}= f.$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Να προσδιορίσετε τη συνάρτηση $f:\mathbb{R}\to\mathbb{R},$ η οποία είναι $1-1$ και για την οποία ισχύει
+        \[(f\circ f\circ f)(x^3-1)=(f\circ f)(x+1), \tag{$\ast$}\]
+        για κάθε $x\in\mathbb{R}.$
+      </div>
+
+      <div class="exercise">
+        Έστω η συνάρτηση $f$ µε $f(f (x))= x^5,$ για κάθε $x\in\mathbb{R}.$
+        <ol class="vertical-list">
+          <li> Αποδείξτε ότι η $f$ είναι 1-1.</li>
+          <li> Αποδείξτε ότι $f^5(x)= f(x^5),$ για κάθε $x\in\mathbb{R}.$</li>
+          <li> Προσδιορίστε τα κοινά σηµεία της γραφικής παράστασης της $f$ µε την ευθεία $y = x.$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Έστω η συνάρτηση $f$ µε
+        \[f(2f (x))=x+6+f (x), \tag{$\ast$}\]
+        για κάθε $x\in\mathbb{R}.$
+        <ol class="vertical-list">
+          <li> Αποδείξτε ότι η $f$ είναι αντιστρέψιµη.</li>
+          <li> Αποδείξτε ότι η γραφική παράσταση της $f^{-1}$ διέρχεται από το σηµείο $\mathrm{A}(-3,-6).$</li>
+          <li> Για κάθε $x$ που ανήκει στο σύνολο τιµών της $f,$ αποδείξτε ότι $f (2x)-f^{-1}(x) = x+6.$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Θεωρούµε συνάρτηση $f,$ γνησίως αύξουσα στο πεδίο ορισµού της $\mathrm{A}.$ Αποδείξτε ότι η εξίσωση $(f\circ
+        f)(x)=x$ είναι ισοδύναµη µε την εξίσωση $f(x)=x.$
+      </div>
+
+      <div class="exercise">
+        Δίνεται η συνάρτηση $f$ με $f(x)=3x^{15}+2x-5,$ $x\in\mathbb{R}$
+        <ol class="vertical-list">
+          <li> Να αποδείξετε ότι η $f$ είναι γνησίως αύξουσα στο $\mathbb{R}.$</li>
+          <li> Να αποδείξετε ότι η εξίσωση $f(x)=0$ διαθέτει μοναδική λύση.</li>
+          <li> Να προσδιορίσετε το πρόσημο της $f.$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Δίνεται η συνάρτηση $f$ με τύπο $f(x)=2x^{21}+5x-7,$ $x\in\mathbb{R}.$
+        <ol class="vertical-list">
+          <li> Να αποδείξετε ότι η συνάρτηση $f$ είναι γνησίως αύξουσα στο $\mathbb{R}.$</li>
+          <li> Να επιλύσετε την εξίσωση $f(x)=0.$</li>
+          <li> Να προσδιορίσετε το πρόσημο της συνάρτησης $f.$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Δίνεται η συνάρτηση $f$ με $f(x)=2\ln\left(\sqrt{x-1}+1\right)+3.$
+        <ol class="vertical-list">
+          <li> Να προσδιορίσετε το πεδίο ορισμού της $f.$</li>
+          <li> Να αποδείξετε ότι η $f$ είναι 1-1.</li>
+          <li> Να ορίσετε την $f^{-1}.$</li>
+          <li> Να επιλύσετε την εξίσωση $f^{-1}(1+x)=2.$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Δίνεται συνάρτηση $f:\mathbb{R}^{\ast}\to\mathbb{R}$ και η συνάρτηση $g$ με τύπο
+        $g(x)=\ln\left(\dfrac{2+x}{2-x}\right).$
+        <ol class="vertical-list">
+          <li> Να προσδιορίσετε το πεδίο ορισμού της $f\circ g.$</li>
+          <li> Να προσδιορίσετε συνάρτηση $h$ για την οποία να ισχύει $(h\circ g)(x)=x.$</li>
+          <li> Να αποδείξετε ότι η συνάρτηση $h$ είναι περιττή.</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Δίνεται η συνάρτηση $f$ με $f(x)=-2x^3-3x-1,$ $x\in\mathbb{R}$
+        <ol class="vertical-list">
+          <li> Να προσδιορίσετε το είδος μονοτονίας της $f.$</li>
+          <li> Να αποδείξετε ότι η $f$ αντιστρέφεται.</li>
+          <li> Να λυθεί η εξίσωση $f^{-1}(x)=2.$</li>
+          <li> Να λυθεί η ανίσωση $f^{-1}(x)\geq x-1.$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Δίνεται η συνάρτηση $f:\mathbb{R}\to\mathbb{R}$ για την οποία ισχύει
+        \[(f\circ f)(x)+2f(x)=2x+1,\tag{$\ast$}\]
+        για κάθε $x\in\mathbb{R},$ και $f(2)=5.$
+        <ol class="vertical-list">
+          <li> Να προσδιορίσετε το $f(5).$</li>
+          <li> Να αποδείξετε ότι η $f$ αντιστρέφεται.</li>
+          <li> Να προσδιορίσετε το $f^{-1}(2).$</li>
+          <li> Να επιλύσετε την εξίσωση $f\left(f^{-1}(2x^2 +7x)-1\right)=2.$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Δίνεται η συνάρτηση $f:\mathbb{R}\to\mathbb{R}$ για την οποία ισχύει
+        \[3f(x)+2f^{3}(x)=4x+1,\tag{$\ast$}\]
+        για κάθε $x\in\mathbb{R}.$
+        <ol class="vertical-list">
+          <li> Να αποδείξετε ότι η $f$ αντιστρέφεται και να ορίσετε την $f^{-1}.$</li>
+          <li> Να αποδείξετε ότι η $f^{-1}$ είναι γνησίως αύξουσα.</li>
+          <li> Να προσδιορίσετε τα σημεία τομής των γραφικών παραστάσεων των συναρτήσεων $f$ και $f^{-1},$ αν γνωρίζετε
+            ότι αυτά βρίσκονται πάνω στην ευθεία με εξίσωση $y=x.$</li>
+          <li> Να επιλύσετε την εξίσωση $f(2e^{x-1})=f(3-x).$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Δίνονται οι συναρτήσεις $f(x)=\sqrt{x+1}-1$ και $g(x)=2-x.$
+        <ol class="vertical-list">
+          <li> Να προσδιορίσετε το πεδίο ορισμού των συναρτήσεων $f$ και $g.$</li>
+          <li> Να ορίσετε τη συνάρτηση $f\circ g.$</li>
+          <li> Να αποδείξετε ότι η $f$ αντιστρέφεται και να προσδιορίσετε την $f^{-1}.$</li>
+          <li> Να προσδιορίσετε το είδος της μονοτονίας της συνάρτησης $f\circ f\circ g.$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Δίνεται συνάρτηση $f:(0,+\infty)\to\mathbb{R}$ για την οποία ισχύει
+        <ul class="bullet-list">
+          <li> $f(x)-f(y)=f\left(\dfrac{x}{y}\right),$ για κάθε $x,y\gt 0,$</li>
+          <li> η εξίσωση $f(x)=0$ διαθέτει μοναδική λύση.</li>
+        </ul>
+        <ol class="vertical-list">
+          <li> Να προσδιορίσετε την τιμή $f(1).$</li>
+          <li> Να αποδείξετε ότι η $f$ είναι αντιστρέψιμη.</li>
+          <li> Να αποδείξετε ότι $f(x)+f(y)=f(xy),$ για κάθε $x,y\gt 0.$</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        Θεωρούµε τη συνάρτηση $f:(0,+\infty)\to\mathbb{R}$ τέτοια ώστε
+        \[f(xy)=f(x)+f(y), \tag{$\ast$}\]
+        για κάθε $x, y\in(0,+\infty).$ Με δεδοµένο ότι η γραφική παράσταση της $f$ διαθέτει µόνο ένα κοινό σηµείο µε τον
+        άξονα $x^\prime x,$ να αποδείξετε ότι η $f$ είναι 1-1.
+      </div>
+
+      <div class="exercise">
+        Έστω $f$ γνησίως μονότονη συνάρτηση. Αποδείξτε ότι η $f^{-1}$ διαθέτει το ίδιο είδος μονοτονίας.
+      </div>
+
+      <div class="exercise">
+        Θεωρούμε τη συνάρτηση
+        \[f(x)=\begin{cases}\dfrac{x}{\alpha(x-1)}, & x\neq 1 \\ \alpha, &x=1\end{cases}\]
+        Να προσδιοριστούν οι τιμές του $\alpha\in\mathbb{R}$ για τις οποίες η $f$ είναι 1-1. Για τις τιμές αυτές, να
+        προσδιοριστεί η αντίστροφη της $f.$
+      </div>
+    </section>
   </main>
-
 </body>
+
 </html>
