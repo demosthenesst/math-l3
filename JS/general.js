@@ -6,9 +6,9 @@ const footer = document.createElement("footer");
 const nav = document.createElement("nav");
 //
 const homeAnchor = document.createElement("a");
-homeAnchor.href = "/main.html";
+homeAnchor.href = "./main.html";
 
-console.log("0");
+console.log("1");
 
 homeAnchor.innerHTML = '<i class="fa-solid fa-house"></i>';
 //
