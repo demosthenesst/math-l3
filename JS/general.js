@@ -90,3 +90,5 @@ exercises.forEach((el, idx) => {
   //el.before(label);
   el.prepend(label);
 });
+
+console.log("head");
