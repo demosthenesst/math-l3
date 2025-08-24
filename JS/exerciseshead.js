@@ -5,7 +5,7 @@ const favLink = document.createElement("link");
 favLink.rel = "icon";
 favLink.type = "image/png";
 favLink.href = "./icons/integral.png"; // your favicon path
-document.head.appendChild(link);
+document.head.appendChild(favLink);
 
 // -----------------------------
 // MathJax configuration
