@@ -1,8 +1,8 @@
 html {
   font-family: "Geologica", "Trebuchet MS", "Lucida Sans Unicode",
     "Lucida Grande", "Lucida Sans", Arial, sans-serif;
-  ---theme-color: rgb(15, 90, 150);
-  ---theme-color-transparent: rgba(15, 90, 150, 0.15);
+  --theme-color: rgb(15, 90, 150);
+  --theme-color-transparent: rgba(15, 90, 150, 0.15);
 }
 
 body {
@@ -24,7 +24,7 @@ main {
 
 h1 {
   font-size: clamp(1.5rem, 0.25rem + 4vw, 2.5rem);
-  background-color: var(---theme-color-transparent);
+  background-color: var(--theme-color-transparent);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,14 +37,14 @@ span:last-child {
 }
 
 span:last-child {
-  border: 0.2rem solid var(---theme-color);
+  border: 0.2rem solid var(--theme-color);
   border-radius: 0.5rem;
   padding: 0.5rem;
 }
 
 h1,
 h2 {
-  color: var(---theme-color);
+  color: var(--theme-color);
   text-align: center;
   padding-block: 0.5em;
   margin: 0;
@@ -71,23 +71,26 @@ ul {
   box-sizing: border-box;
   backdrop-filter: blur(4px);
   box-shadow: 0px 10px 30px 15px rgb(110, 110, 110);
-  border: 3px solid var(---theme-color);
+  border: 3px solid var(--theme-color);
 }
 
 ul {
+  width: 100%;
   list-style-type: none;
-  padding: 1em;
-  margin: 0;
-  background-color: var(---theme-color-transparent);
-  column-count: 2;
+  margin: auto;
+  background-color: var(--theme-color-transparent);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  padding: 1rem;
 }
 
-li {
-  line-height: 1.7;
+li::marker {
+  color: var(--theme-color);
 }
 
 a {
-  color: var(---theme-color);
+  color: var(--theme-color);
   font-weight: 600;
   letter-spacing: 0.5px;
 }
@@ -110,7 +113,21 @@ a {
   }
 
   ul {
-    display: flex;
-    justify-content: space-around;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+
+@media (600px <= width <= 899px) {
+  .mobile-display {
+    display: none;
+  }
+
+  .desktop-display {
+    display: initial;
+  }
+
+  ul {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
