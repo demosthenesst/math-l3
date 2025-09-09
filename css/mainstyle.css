@@ -81,7 +81,7 @@ ul {
   background-color: var(--theme-color-transparent);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  gap: 0.5rem;
   padding: 1rem;
 }
 
@@ -93,6 +93,7 @@ a {
   color: var(--theme-color);
   font-weight: 600;
   letter-spacing: 0.5px;
+  font-size: clamp(0.8rem, 0.6857rem + 0.4571vw, 1rem);
 }
 
 .mobile-display {
@@ -106,6 +107,7 @@ a {
 @media (900px <= width) {
   .mobile-display {
     display: none;
+    gap: 1rem;
   }
 
   .desktop-display {
