@@ -334,6 +334,12 @@ h2 {
 .options {
   list-style: none;
   padding: 0;
+  /*  */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 1rem;
+  align-items: center;
+  /*  */
 }
 .options li {
   margin: 0.5rem 0;
@@ -482,6 +488,13 @@ footer nav a:hover {
   #search-container input {
     width: 100%;
   }
+
+.options {
+  list-style: none;
+  padding: 0;
+  /*  */
+  display: block;
+}
 
   #search-container * {
     font-size: 1.2rem;
