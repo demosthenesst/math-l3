@@ -7,33 +7,14 @@ favLink.type = "image/png";
 favLink.href = "./icons/integral.png"; // your favicon path
 document.head.appendChild(favLink);
 
-// -----------------------------
-// MathJax configuration
-// -----------------------------
-window.MathJax = {
-  tex: {
-    macros: {
-      gsin: "\\operatorname{ημ}",
-      gcos: "\\operatorname{συν}",
-      gtan: "\\operatorname{εφ}",
-      gctan: "\\operatorname{σφ}",
-      dint: "\\displaystyle\\int",
-    },
-    inlineMath: [
-      ["$", "$"],
-      ["\\(", "\\)"],
-    ],
-  },
-};
 
-// -----------------------------
-// MathJax script
-// -----------------------------
-const mj = document.createElement("script");
-mj.id = "MathJax-script";
-mj.async = true;
-mj.src = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js";
-document.head.appendChild(mj);
+
+
+
+
+
+
+
 
 // -----------------------------
 // Google Fonts preconnect
@@ -107,4 +88,57 @@ html.style.setProperty(
   pageColors[currentPage].replace(", 1)", ", 0.2)") || "rgba(40, 80, 83, 1)"
 );
 
+
 //console.log(`CSS variable --theme-color set for page: ${currentPage}`);
+
+
+
+
+
+
+
+
+// -----------------------------
+// MathJax configuration
+// -----------------------------
+window.MathJax = {
+  tex: {
+    macros: {
+      gsin: "\\operatorname{ημ}",
+      gcos: "\\operatorname{συν}",
+      gtan: "\\operatorname{εφ}",
+      gctan: "\\operatorname{σφ}",
+      dint: "\\displaystyle\\int",
+    },
+    inlineMath: [
+      ["$", "$"],
+      ["\\(", "\\)"],
+    ],
+  },
+};
+
+// -----------------------------
+// MathJax script
+// -----------------------------
+const mj = document.createElement("script");
+mj.id = "MathJax-script";
+mj.async = true;
+mj.src = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js";
+document.head.appendChild(mj);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
